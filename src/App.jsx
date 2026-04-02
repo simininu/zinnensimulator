@@ -2061,7 +2061,7 @@ const BottomNav = ({ tab, setTab }) => {
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 
-export default export default function NT2Simulator() {
+export default function NT2Simulator() {
 
   // inject font
   useEffect(() => {
