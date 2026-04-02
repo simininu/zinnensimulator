@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="115" fill="#FF385C"/>
+  
+  <!-- NL flag stripe top -->
+  <rect x="0" y="0" width="512" height="50" rx="115" fill="#AE1C28"/>
+  <rect x="0" y="0" width="512" height="50" fill="#AE1C28"/>
+  
+  <!-- Simple "Z" letter representing Zinnen -->
+  <text x="256" y="320" 
+    font-family="-apple-system, 'Helvetica Neue', sans-serif" 
+    font-size="280" 
+    font-weight="800"
+    text-anchor="middle" 
+    fill="white"
+    opacity="0.95">Z</text>
+  
+  <!-- Small NL text below -->
+  <text x="256" y="420"
+    font-family="-apple-system, 'Helvetica Neue', sans-serif"
+    font-size="72"
+    font-weight="600"
+    text-anchor="middle"
+    fill="rgba(255,255,255,0.75)">NT2 A2</text>
+</svg>
