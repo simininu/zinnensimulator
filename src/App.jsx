@@ -2883,11 +2883,9 @@ export default function NT2Simulator() {
       <SaveModal {...saveModalProps} />
       <Wrap>
         <div style={{ padding: "0 0 60px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "24px 0 20px" }}>
-            <button onClick={() => handleTabChange("home")} style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}>
-              <Icon d={Icons.back} size={22} stroke={C.mid} />
-            </button>
-            <div style={{ fontSize: 20, fontWeight: 700 }}>{t("cfg_title")}</div>
+          <div style={{ padding: "24px 0 20px" }}>
+            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>Personalize sua experiência</div>
+            <div style={{ fontSize: 24, fontWeight: 700 }}>{t("cfg_title")}</div>
           </div>
 
           <CardBox style={{ marginBottom: 12 }}>
@@ -3098,11 +3096,6 @@ export default function NT2Simulator() {
         <SaveModal {...saveModalProps} />
   
         <Wrap>
-          {/* Header */}
-          <div style={{ padding: "24px 0 8px", marginBottom: 20 }}>
-            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>NT2 · A2</div>
-            <div style={{ fontSize: 24, fontWeight: 700 }}>Zinnensimulator</div>
-          </div>
 
           {/* Unified progress card */}
           <CardBox style={{ marginBottom: 20 }}>
@@ -3294,7 +3287,7 @@ export default function NT2Simulator() {
         <SaveModal {...saveModalProps} />
         <Wrap>
           <div style={{ padding: "24px 0 20px" }}>
-            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>NT2 · A2</div>
+            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>Escolha uma atividade</div>
             <div style={{ fontSize: 24, fontWeight: 700 }}>Praticar</div>
           </div>
 
@@ -3684,7 +3677,10 @@ export default function NT2Simulator() {
         <Page dir={isRTL ? "rtl" : "ltr"}>
           <SaveModal {...saveModalProps} />
           <Wrap>
-            <AppHeader title="Quiz KNM" subtitle="Conhecimento da Holanda" onBack={() => handleTabChange("praticar")} onSave={openSave} />
+            <div style={{ padding: "24px 0 20px" }}>
+              <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>Teste seu conhecimento sobre a Holanda</div>
+              <div style={{ fontSize: 24, fontWeight: 700 }}>{t("quiz_title")}</div>
+            </div>
             <p style={{ fontSize: 14, color: C.mid, marginBottom: 20, lineHeight: 1.6 }}>Escolha um tema ou pratique todos juntos:</p>
             <div style={{ display: "grid", gap: 10 }}>
               {cats.map(cat => (
