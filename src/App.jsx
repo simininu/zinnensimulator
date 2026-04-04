@@ -2937,10 +2937,9 @@ export default function NT2Simulator() {
           </button>
         </div>
       </Wrap>
+      <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
     </Page>
   );
-
-  // FIRST-TIME ONBOARDING
   if (screen === "setup") return (
     <Page dir={isRTL ? "rtl" : "ltr"}>
       <SaveModal {...saveModalProps} />
