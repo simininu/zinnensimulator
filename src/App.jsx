@@ -3096,6 +3096,7 @@ export default function NT2Simulator() {
         <SaveModal {...saveModalProps} />
   
         <Wrap>
+          <div style={{ paddingTop: 24 }} />
 
           {/* Unified progress card */}
           <CardBox style={{ marginBottom: 20 }}>
