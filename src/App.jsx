@@ -1378,64 +1378,64 @@ function generateExplanation(sentence) {
 
 const KNM_QUESTIONS = [
   // SAÚDE
-  { cat: "Saude", q: "Wat doe je als je ziek bent en naar een dokter wilt?", opts: ["Je gaat direct naar het ziekenhuis", "Je belt of gaat naar de huisarts", "Je koopt medicijnen bij de apotheek", "Je belt 112"], a: 1, exp: "In Nederland ga je eerst naar de huisarts (clínico geral). De huisarts verwijst je door naar het ziekenhuis als dat nodig is.", expPt: "Na Holanda, voce vai primeiro ao clinico geral (huisarts). Ele te encaminha ao hospital se necessario." },
-  { cat: "Saude", q: "Wat is het telefoonnummer voor spoedeisende hulp in Nederland?", opts: ["911", "999", "112", "0800"], a: 2, exp: "112 is het algemene alarmnummer in Nederland voor politie, brandweer en ambulance.", expPt: "112 e o numero de emergencia geral na Holanda para policia, bombeiros e ambulancia." },
-  { cat: "Saude", q: "Wat is een zorgverzekering?", opts: ["Een verzekering voor je huis", "Een verzekering voor medische kosten", "Een pensioenspaarplan", "Een schoolverzekering"], a: 1, exp: "In Nederland is iedereen verplicht een zorgverzekering te hebben. Die betaalt (een deel van) de medische kosten.", expPt: "Na Holanda, todo mundo e obrigado a ter plano de saude. Ele paga (parte d)as despesas medicas." },
-  { cat: "Saude", q: "Waar koop je medicijnen op recept in Nederland?", opts: ["Bij de supermarkt", "Bij de huisarts", "Bij de apotheek", "Bij het ziekenhuis"], a: 2, exp: "Medicijnen op recept haal je op bij de apotheek. Zonder recept kun je sommige medicijnen ook bij de drogist kopen.", expPt: "Medicamentos com receita sao retirados na farmacia (apotheek). Sem receita, alguns podem ser comprados na drogaria." },
-  { cat: "Saude", q: "Wat is het eigen risico bij een zorgverzekering?", opts: ["Het bedrag dat je zelf betaalt voordat de verzekering betaalt", "De maandelijkse premie", "Het bedrag dat de werkgever betaalt", "De eigen bijdrage voor de tandarts"], a: 0, exp: "Het eigen risico is een bedrag (in 2024: 385 euro) dat je per jaar zelf betaalt voordat de zorgverzekering bijdraagt.", expPt: "O proprio risco e o valor (em 2024: 385 euros) que voce paga por ano antes do plano de saude cobrir os custos." },
-  { cat: "Saude", q: "Hoe noem je de dokter waar je als eerste naartoe gaat in Nederland?", opts: ["Specialist", "Tandarts", "Huisarts", "Verpleegkundige"], a: 2, exp: "De huisarts is de eerste dokter die je bezoekt. Hij of zij verwijst je door naar een specialist als dat nodig is.", expPt: "O clinico geral (huisarts) e o primeiro medico que voce visita. Ele te encaminha a um especialista quando necessario." },
+  { cat: "Saude", q: "Wat doe je als je ziek bent en naar een dokter wilt?", opts: ["Je gaat direct naar het ziekenhuis", "Je belt of gaat naar de huisarts", "Je koopt medicijnen bij de apotheek", "Je belt 112"], a: 1, exp: "In Nederland ga je eerst naar de huisarts (clínico geral). De huisarts verwijst je door naar het ziekenhuis als dat nodig is.", expPt: "Na Holanda, voce vai primeiro ao clinico geral (huisarts). Ele te encaminha ao hospital se necessario.", expEn: "In the Netherlands, you first go to the general practitioner (huisarts). They refer you to a specialist if needed.", expEs: "En Holanda, primero vas al medico de cabecera (huisarts). El te deriva al hospital si es necesario." },
+  { cat: "Saude", q: "Wat is het telefoonnummer voor spoedeisende hulp in Nederland?", opts: ["911", "999", "112", "0800"], a: 2, exp: "112 is het algemene alarmnummer in Nederland voor politie, brandweer en ambulance.", expPt: "112 e o numero de emergencia geral na Holanda para policia, bombeiros e ambulancia.", expEn: "112 is the general emergency number in the Netherlands for police, fire and ambulance.", expEs: "112 es el numero de emergencias en Holanda para policia, bomberos y ambulancia." },
+  { cat: "Saude", q: "Wat is een zorgverzekering?", opts: ["Een verzekering voor je huis", "Een verzekering voor medische kosten", "Een pensioenspaarplan", "Een schoolverzekering"], a: 1, exp: "In Nederland is iedereen verplicht een zorgverzekering te hebben. Die betaalt (een deel van) de medische kosten.", expPt: "Na Holanda, todo mundo e obrigado a ter plano de saude. Ele paga (parte d)as despesas medicas.", expEn: "In the Netherlands, everyone is required to have health insurance. It pays (part of) medical costs.", expEs: "En Holanda, todos estan obligados a tener seguro medico. Paga (parte de) los gastos medicos." },
+  { cat: "Saude", q: "Waar koop je medicijnen op recept in Nederland?", opts: ["Bij de supermarkt", "Bij de huisarts", "Bij de apotheek", "Bij het ziekenhuis"], a: 2, exp: "Medicijnen op recept haal je op bij de apotheek. Zonder recept kun je sommige medicijnen ook bij de drogist kopen.", expPt: "Medicamentos com receita sao retirados na farmacia (apotheek). Sem receita, alguns podem ser comprados na drogaria.", expEn: "Prescription medicines are picked up at the pharmacy (apotheek). Without a prescription, some can be bought at the drugstore.", expEs: "Los medicamentos con receta se recogen en la farmacia (apotheek). Sin receta, algunos se pueden comprar en la drogueria." },
+  { cat: "Saude", q: "Wat is het eigen risico bij een zorgverzekering?", opts: ["Het bedrag dat je zelf betaalt voordat de verzekering betaalt", "De maandelijkse premie", "Het bedrag dat de werkgever betaalt", "De eigen bijdrage voor de tandarts"], a: 0, exp: "Het eigen risico is een bedrag (in 2024: 385 euro) dat je per jaar zelf betaalt voordat de zorgverzekering bijdraagt.", expPt: "O proprio risco e o valor (em 2024: 385 euros) que voce paga por ano antes do plano de saude cobrir os custos.", expEn: "The deductible (eigen risico) is the amount (in 2024: 385 euros) you pay per year before health insurance covers costs.", expEs: "El deducible (eigen risico) es el monto (en 2024: 385 euros) que pagas por ano antes de que el seguro cubra los costos." },
+  { cat: "Saude", q: "Hoe noem je de dokter waar je als eerste naartoe gaat in Nederland?", opts: ["Specialist", "Tandarts", "Huisarts", "Verpleegkundige"], a: 2, exp: "De huisarts is de eerste dokter die je bezoekt. Hij of zij verwijst je door naar een specialist als dat nodig is.", expPt: "O clinico geral (huisarts) e o primeiro medico que voce visita. Ele te encaminha a um especialista quando necessario.", expEn: "The general practitioner (huisarts) is the first doctor you visit. They refer you to a specialist when needed.", expEs: "El medico de cabecera (huisarts) es el primer medico al que vas. Te deriva a un especialista cuando es necesario." },
 
   // EDUCAÇÃO
-  { cat: "Educacao", q: "Hoe oud zijn kinderen als ze naar de basisschool gaan in Nederland?", opts: ["3 jaar", "4 jaar", "5 jaar", "6 jaar"], a: 1, exp: "Kinderen gaan in Nederland naar de basisschool vanaf 4 jaar. Leerplicht begint op 5 jaar.", expPt: "Na Holanda, as criancas vao para a escola primaria a partir dos 4 anos. A escolaridade obrigatoria comeca aos 5 anos." },
-  { cat: "Educacao", q: "Tot welke leeftijd zijn kinderen in Nederland leerplichtig?", opts: ["14 jaar", "16 jaar", "18 jaar", "21 jaar"], a: 2, exp: "Kinderen in Nederland zijn leerplichtig tot 18 jaar. Tussen 16 en 18 jaar geldt de kwalificatieplicht: ze moeten een diploma halen.", expPt: "Na Holanda, as criancas sao obrigadas a estudar ate os 18 anos. Entre 16 e 18 anos devem obter um diploma." },
-  { cat: "Educacao", q: "Wat is het VMBO in Nederland?", opts: ["Een type universiteit", "Een soort basisschool", "Een middelbare school met beroepsgericht onderwijs", "Een school voor volwassenen"], a: 2, exp: "VMBO staat voor Voorbereidend Middelbaar Beroepsonderwijs. Na de basisschool kunnen leerlingen naar VMBO, HAVO of VWO.", expPt: "VMBO e o ensino medio profissionalizante. Apos a escola primaria, os alunos podem ir para VMBO, HAVO ou VWO." },
-  { cat: "Educacao", q: "Wat is een BSN-nummer?", opts: ["Een schoolnummer", "Een persoonlijk identificatienummer voor alle overheidszaken", "Een banknummer", "Een zorgverzekeringsnummer"], a: 1, exp: "Het BSN (Burgerservicenummer) is een uniek persoonlijk nummer dat je nodig hebt voor contact met de overheid, belasting, zorg en werk.", expPt: "O BSN e um numero pessoal unico necessario para contato com o governo, impostos, saude e trabalho. E como o CPF no Brasil." },
-  { cat: "Educacao", q: "Welk document heb je nodig om in Nederland te werken als buitenlander?", opts: ["Alleen een paspoort", "Een verblijfsvergunning en BSN", "Een bankrekening", "Een rijbewijs"], a: 1, exp: "Als buitenlander heb je een verblijfsvergunning en een BSN nodig om legaal te werken in Nederland.", expPt: "Como estrangeiro, voce precisa de uma autorizacao de residencia e um BSN para trabalhar legalmente na Holanda." },
+  { cat: "Educacao", q: "Hoe oud zijn kinderen als ze naar de basisschool gaan in Nederland?", opts: ["3 jaar", "4 jaar", "5 jaar", "6 jaar"], a: 1, exp: "Kinderen gaan in Nederland naar de basisschool vanaf 4 jaar. Leerplicht begint op 5 jaar.", expPt: "Na Holanda, as criancas vao para a escola primaria a partir dos 4 anos. A escolaridade obrigatoria comeca aos 5 anos.", expEn: "In the Netherlands, children start primary school at age 4. Compulsory education begins at age 5.", expEs: "En Holanda, los ninos van a la escuela primaria a partir de los 4 anos. La escolaridad obligatoria comienza a los 5." },
+  { cat: "Educacao", q: "Tot welke leeftijd zijn kinderen in Nederland leerplichtig?", opts: ["14 jaar", "16 jaar", "18 jaar", "21 jaar"], a: 2, exp: "Kinderen in Nederland zijn leerplichtig tot 18 jaar. Tussen 16 en 18 jaar geldt de kwalificatieplicht: ze moeten een diploma halen.", expPt: "Na Holanda, as criancas sao obrigadas a estudar ate os 18 anos. Entre 16 e 18 anos devem obter um diploma.", expEn: "In the Netherlands, children must attend school until age 18. Between 16 and 18 they must obtain a diploma.", expEs: "En Holanda, los ninos deben estudiar hasta los 18 anos. Entre 16 y 18 deben obtener un diploma." },
+  { cat: "Educacao", q: "Wat is het VMBO in Nederland?", opts: ["Een type universiteit", "Een soort basisschool", "Een middelbare school met beroepsgericht onderwijs", "Een school voor volwassenen"], a: 2, exp: "VMBO staat voor Voorbereidend Middelbaar Beroepsonderwijs. Na de basisschool kunnen leerlingen naar VMBO, HAVO of VWO.", expPt: "VMBO e o ensino medio profissionalizante. Apos a escola primaria, os alunos podem ir para VMBO, HAVO ou VWO.", expEn: "VMBO is vocational secondary education. After primary school, students can go to VMBO, HAVO or VWO.", expEs: "VMBO es la educacion secundaria vocacional. Despues de primaria, los alumnos pueden ir a VMBO, HAVO o VWO." },
+  { cat: "Educacao", q: "Wat is een BSN-nummer?", opts: ["Een schoolnummer", "Een persoonlijk identificatienummer voor alle overheidszaken", "Een banknummer", "Een zorgverzekeringsnummer"], a: 1, exp: "Het BSN (Burgerservicenummer) is een uniek persoonlijk nummer dat je nodig hebt voor contact met de overheid, belasting, zorg en werk.", expPt: "O BSN e um numero pessoal unico necessario para contato com o governo, impostos, saude e trabalho. E como o CPF no Brasil.", expEn: "The BSN is a unique personal number needed for contact with the government, taxes, healthcare and work.", expEs: "El BSN es un numero personal unico necesario para contacto con el gobierno, impuestos, salud y trabajo." },
+  { cat: "Educacao", q: "Welk document heb je nodig om in Nederland te werken als buitenlander?", opts: ["Alleen een paspoort", "Een verblijfsvergunning en BSN", "Een bankrekening", "Een rijbewijs"], a: 1, exp: "Als buitenlander heb je een verblijfsvergunning en een BSN nodig om legaal te werken in Nederland.", expPt: "Como estrangeiro, voce precisa de uma autorizacao de residencia e um BSN para trabalhar legalmente na Holanda.", expEn: "As a foreigner, you need a residence permit and a BSN to work legally in the Netherlands.", expEs: "Como extranjero, necesitas un permiso de residencia y un BSN para trabajar legalmente en Holanda." },
 
   // TRABALHO
-  { cat: "Trabalho", q: "Hoeveel vakantiedagen heeft een werknemer minimaal per jaar in Nederland?", opts: ["10 dagen", "20 dagen", "25 dagen", "30 dagen"], a: 1, exp: "In Nederland heb je wettelijk recht op minimaal 20 vakantiedagen per jaar (bij een fulltime baan van 5 dagen per week).", expPt: "Na Holanda, voce tem direito legal a pelo menos 20 dias de ferias por ano (em emprego integral de 5 dias por semana)." },
-  { cat: "Trabalho", q: "Wat is het minimumloon in Nederland?", opts: ["Er is geen minimumloon", "Het loon dat de werkgever bepaalt", "Een wettelijk vastgesteld minimumbedrag per uur", "Het gemiddelde loon in Nederland"], a: 2, exp: "Nederland heeft een wettelijk minimumloon. Dit bedrag wordt regelmatig aangepast en geldt voor werknemers van 21 jaar en ouder.", expPt: "A Holanda tem salario minimo legal. O valor e atualizado regularmente e vale para trabalhadores com 21 anos ou mais." },
-  { cat: "Trabalho", q: "Wat is een arbeidscontract?", opts: ["Een bankrekening voor je salaris", "Een schriftelijke afspraak tussen werknemer en werkgever", "Een verzekering bij ziekte", "Een identiteitsbewijs voor werk"], a: 1, exp: "Een arbeidscontract is een schriftelijke overeenkomst tussen jou en je werkgever over je werk, salaris, werktijden en andere afspraken.", expPt: "Um contrato de trabalho e um acordo escrito entre voce e seu empregador sobre funcao, salario, horarios e outras condicoes." },
-  { cat: "Trabalho", q: "Waar vraag je een uitkering aan als je geen werk hebt?", opts: ["Bij de huisarts", "Bij het UWV of de gemeente", "Bij de bank", "Bij de politie"], a: 1, exp: "Als je geen werk hebt, kun je een WW-uitkering aanvragen bij het UWV. Als je nooit gewerkt hebt, ga je naar de gemeente voor bijstand.", expPt: "Sem trabalho, voce pode pedir auxilio-desemprego no UWV. Se nunca trabalhou, va a prefeitura pedir assistencia social (bijstand)." },
-  { cat: "Trabalho", q: "Wat is de AOW?", opts: ["Een werkloosheidsuitkering", "Een ziekteverzekering", "Het Nederlandse staatspensioen", "Een kinderbijslag"], a: 2, exp: "De AOW (Algemene Ouderdomswet) is het basispensioen dat iedereen in Nederland krijgt als hij of zij de pensioengerechtigde leeftijd bereikt.", expPt: "A AOW e a aposentadoria basica que todos na Holanda recebem ao atingir a idade de reforma." },
+  { cat: "Trabalho", q: "Hoeveel vakantiedagen heeft een werknemer minimaal per jaar in Nederland?", opts: ["10 dagen", "20 dagen", "25 dagen", "30 dagen"], a: 1, exp: "In Nederland heb je wettelijk recht op minimaal 20 vakantiedagen per jaar (bij een fulltime baan van 5 dagen per week).", expPt: "Na Holanda, voce tem direito legal a pelo menos 20 dias de ferias por ano (em emprego integral de 5 dias por semana).", expEn: "In the Netherlands, you are legally entitled to at least 20 vacation days per year (in a full-time 5-day-a-week job).", expEs: "En Holanda, tienes derecho legal a al menos 20 dias de vacaciones al ano (en un trabajo de 5 dias a la semana)." },
+  { cat: "Trabalho", q: "Wat is het minimumloon in Nederland?", opts: ["Er is geen minimumloon", "Het loon dat de werkgever bepaalt", "Een wettelijk vastgesteld minimumbedrag per uur", "Het gemiddelde loon in Nederland"], a: 2, exp: "Nederland heeft een wettelijk minimumloon. Dit bedrag wordt regelmatig aangepast en geldt voor werknemers van 21 jaar en ouder.", expPt: "A Holanda tem salario minimo legal. O valor e atualizado regularmente e vale para trabalhadores com 21 anos ou mais.", expEn: "The Netherlands has a legal minimum wage. The amount is updated regularly and applies to workers aged 21 and over.", expEs: "Holanda tiene salario minimo legal. El monto se actualiza regularmente y aplica a trabajadores de 21 anos o mas." },
+  { cat: "Trabalho", q: "Wat is een arbeidscontract?", opts: ["Een bankrekening voor je salaris", "Een schriftelijke afspraak tussen werknemer en werkgever", "Een verzekering bij ziekte", "Een identiteitsbewijs voor werk"], a: 1, exp: "Een arbeidscontract is een schriftelijke overeenkomst tussen jou en je werkgever over je werk, salaris, werktijden en andere afspraken.", expPt: "Um contrato de trabalho e um acordo escrito entre voce e seu empregador sobre funcao, salario, horarios e outras condicoes.", expEn: "An employment contract is a written agreement between you and your employer about your role, salary, hours and other conditions.", expEs: "Un contrato de trabajo es un acuerdo escrito entre tu y tu empleador sobre funciones, salario, horarios y otras condiciones." },
+  { cat: "Trabalho", q: "Waar vraag je een uitkering aan als je geen werk hebt?", opts: ["Bij de huisarts", "Bij het UWV of de gemeente", "Bij de bank", "Bij de politie"], a: 1, exp: "Als je geen werk hebt, kun je een WW-uitkering aanvragen bij het UWV. Als je nooit gewerkt hebt, ga je naar de gemeente voor bijstand.", expPt: "Sem trabalho, voce pode pedir auxilio-desemprego no UWV. Se nunca trabalhou, va a prefeitura pedir assistencia social (bijstand).", expEn: "Without work, you can apply for unemployment benefits at the UWV. If you never worked, go to the municipality for social assistance.", expEs: "Sin trabajo, puedes solicitar subsidio de desempleo en el UWV. Si nunca trabajaste, ve al ayuntamiento para asistencia social." },
+  { cat: "Trabalho", q: "Wat is de AOW?", opts: ["Een werkloosheidsuitkering", "Een ziekteverzekering", "Het Nederlandse staatspensioen", "Een kinderbijslag"], a: 2, exp: "De AOW (Algemene Ouderdomswet) is het basispensioen dat iedereen in Nederland krijgt als hij of zij de pensioengerechtigde leeftijd bereikt.", expPt: "A AOW e a aposentadoria basica que todos na Holanda recebem ao atingir a idade de reforma.", expEn: "The AOW is the basic state pension that everyone in the Netherlands receives upon reaching retirement age.", expEs: "La AOW es la pension basica del estado que todos en Holanda reciben al alcanzar la edad de jubilacion." },
 
   // GOVERNO & POLITICA
-  { cat: "Governo", q: "Wat is de Tweede Kamer?", opts: ["Het Nederlandse koningshuis", "Het lagerhuis van het Nederlandse parlement", "De rechtbank in Den Haag", "De burgemeester van Amsterdam"], a: 1, exp: "De Tweede Kamer is het lagerhuis van het Nederlandse parlement. De 150 leden worden gekozen door de bevolking.", expPt: "A Tweede Kamer e a camara baixa do parlamento holandes. Os 150 membros sao eleitos pela populacao." },
-  { cat: "Governo", q: "Wie is het staatshoofd van Nederland?", opts: ["De minister-president", "De burgemeester van Amsterdam", "De koning of koningin", "De voorzitter van de Tweede Kamer"], a: 2, exp: "Het staatshoofd van Nederland is de koning of koningin. De huidige koning is Willem-Alexander.", expPt: "O chefe de Estado da Holanda e o rei ou rainha. O rei atual e Willem-Alexander." },
-  { cat: "Governo", q: "Wat doet de gemeente?", opts: ["Maakt nationale wetten", "Regelt lokale zaken zoals vergunningen, bijstand en openbare ruimte", "Beheert de rijksbelasting", "Leidt het leger"], a: 1, exp: "De gemeente regelt lokale zaken: vergunningen, sociale hulp, openbare ruimte, onderwijs en meer. Elke stad of dorp heeft een eigen gemeente.", expPt: "A prefeitura (gemeente) cuida de assuntos locais: licencas, assistencia social, espacos publicos, educacao e mais." },
-  { cat: "Governo", q: "Hoe vaak zijn er nationale verkiezingen in Nederland?", opts: ["Elke 2 jaar", "Elke 4 jaar", "Elke 6 jaar", "Elke 10 jaar"], a: 1, exp: "De Tweede Kamer wordt normaal elke 4 jaar gekozen. Er kunnen ook tussentijdse verkiezingen zijn als de regering valt.", expPt: "A Tweede Kamer e normalmente eleita a cada 4 anos. Podem ocorrer eleicoes antecipadas se o governo cair." },
-  { cat: "Governo", q: "Wat is de hoofdstad van Nederland?", opts: ["Rotterdam", "Den Haag", "Amsterdam", "Utrecht"], a: 2, exp: "Amsterdam is de officiële hoofdstad van Nederland. De regering en het parlement zitten in Den Haag.", expPt: "Amsterdam e a capital oficial da Holanda. Porem o governo e o parlamento ficam em Den Haag (Haia)." },
-  { cat: "Governo", q: "In welke stad zitten de Nederlandse regering en het parlement?", opts: ["Amsterdam", "Rotterdam", "Utrecht", "Den Haag"], a: 3, exp: "De Nederlandse regering, het parlement (Tweede en Eerste Kamer) en de ministeries zitten in Den Haag.", expPt: "O governo holandes, o parlamento e os ministerios ficam em Den Haag (Haia), nao em Amsterdam." },
+  { cat: "Governo", q: "Wat is de Tweede Kamer?", opts: ["Het Nederlandse koningshuis", "Het lagerhuis van het Nederlandse parlement", "De rechtbank in Den Haag", "De burgemeester van Amsterdam"], a: 1, exp: "De Tweede Kamer is het lagerhuis van het Nederlandse parlement. De 150 leden worden gekozen door de bevolking.", expPt: "A Tweede Kamer e a camara baixa do parlamento holandes. Os 150 membros sao eleitos pela populacao.", expEn: "The Tweede Kamer is the lower house of the Dutch parliament. The 150 members are elected by the people.", expEs: "La Tweede Kamer es la camara baja del parlamento holandes. Los 150 miembros son elegidos por la poblacion." },
+  { cat: "Governo", q: "Wie is het staatshoofd van Nederland?", opts: ["De minister-president", "De burgemeester van Amsterdam", "De koning of koningin", "De voorzitter van de Tweede Kamer"], a: 2, exp: "Het staatshoofd van Nederland is de koning of koningin. De huidige koning is Willem-Alexander.", expPt: "O chefe de Estado da Holanda e o rei ou rainha. O rei atual e Willem-Alexander.", expEn: "The head of state of the Netherlands is the king or queen. The current king is Willem-Alexander.", expEs: "El jefe de Estado de Holanda es el rey o la reina. El rey actual es Willem-Alexander." },
+  { cat: "Governo", q: "Wat doet de gemeente?", opts: ["Maakt nationale wetten", "Regelt lokale zaken zoals vergunningen, bijstand en openbare ruimte", "Beheert de rijksbelasting", "Leidt het leger"], a: 1, exp: "De gemeente regelt lokale zaken: vergunningen, sociale hulp, openbare ruimte, onderwijs en meer. Elke stad of dorp heeft een eigen gemeente.", expPt: "A prefeitura (gemeente) cuida de assuntos locais: licencas, assistencia social, espacos publicos, educacao e mais.", expEn: "The municipality (gemeente) handles local matters: permits, social assistance, public spaces, education and more.", expEs: "El ayuntamiento (gemeente) gestiona asuntos locales: licencias, asistencia social, espacios publicos, educacion y mas." },
+  { cat: "Governo", q: "Hoe vaak zijn er nationale verkiezingen in Nederland?", opts: ["Elke 2 jaar", "Elke 4 jaar", "Elke 6 jaar", "Elke 10 jaar"], a: 1, exp: "De Tweede Kamer wordt normaal elke 4 jaar gekozen. Er kunnen ook tussentijdse verkiezingen zijn als de regering valt.", expPt: "A Tweede Kamer e normalmente eleita a cada 4 anos. Podem ocorrer eleicoes antecipadas se o governo cair.", expEn: "The Tweede Kamer is normally elected every 4 years. Early elections can occur if the government falls.", expEs: "La Tweede Kamer normalmente se elige cada 4 anos. Pueden ocurrir elecciones anticipadas si el gobierno cae." },
+  { cat: "Governo", q: "Wat is de hoofdstad van Nederland?", opts: ["Rotterdam", "Den Haag", "Amsterdam", "Utrecht"], a: 2, exp: "Amsterdam is de officiële hoofdstad van Nederland. De regering en het parlement zitten in Den Haag.", expPt: "Amsterdam e a capital oficial da Holanda. Porem o governo e o parlamento ficam em Den Haag (Haia).", expEn: "Amsterdam is the official capital of the Netherlands. However, the government and parliament are in Den Haag (The Hague).", expEs: "Amsterdam es la capital oficial de Holanda. Sin embargo, el gobierno y el parlamento estan en Den Haag (La Haya)." },
+  { cat: "Governo", q: "In welke stad zitten de Nederlandse regering en het parlement?", opts: ["Amsterdam", "Rotterdam", "Utrecht", "Den Haag"], a: 3, exp: "De Nederlandse regering, het parlement (Tweede en Eerste Kamer) en de ministeries zitten in Den Haag.", expPt: "O governo holandes, o parlamento e os ministerios ficam em Den Haag (Haia), nao em Amsterdam.", expEn: "The Dutch government, parliament and ministries are in Den Haag (The Hague), not in Amsterdam.", expEs: "El gobierno holandes, el parlamento y los ministerios estan en Den Haag (La Haya), no en Amsterdam." },
 
   // HABITAÇÃO
-  { cat: "Habitacao", q: "Wat is huurtoeslag?", opts: ["Een lening om een huis te kopen", "Financiele hulp van de overheid voor mensen met een laag inkomen die huren", "Een belasting op huurwoningen", "Een verzekering voor huurders"], a: 1, exp: "Huurtoeslag is een bijdrage van de overheid om de huurkosten te helpen betalen voor mensen met een laag inkomen.", expPt: "O huurtoeslag e um subsidio do governo para ajudar a pagar o aluguel para pessoas de baixa renda." },
-  { cat: "Habitacao", q: "Wat moet je doen als je verhuist naar een nieuwe gemeente?", opts: ["Niets, het gaat automatisch", "Je meldt je aan bij de nieuwe gemeente (inschrijven in de BRP)", "Je betaalt een verhuisbelasting", "Je vraagt een nieuw paspoort aan"], a: 1, exp: "Als je verhuist, moet je je inschrijven bij de gemeente in de Basisregistratie Personen (BRP). Dit moet binnen 5 dagen.", expPt: "Ao se mudar, voce deve se registrar na prefeitura (BRP). Isso deve ser feito dentro de 5 dias." },
-  { cat: "Habitacao", q: "Wat is een hypotheek?", opts: ["Een huurcontract", "Een lening om een huis te kopen, waarbij het huis als onderpand dient", "Een soort huurtoeslag", "Een belasting voor huiseigenaren"], a: 1, exp: "Een hypotheek is een lening bij de bank om een huis te kopen. Het huis is het onderpand: als je niet betaalt, kan de bank het huis verkopen.", expPt: "Uma hipoteca e um emprestimo bancario para comprar uma casa. A casa serve como garantia: se nao pagar, o banco pode vende-la." },
+  { cat: "Habitacao", q: "Wat is huurtoeslag?", opts: ["Een lening om een huis te kopen", "Financiele hulp van de overheid voor mensen met een laag inkomen die huren", "Een belasting op huurwoningen", "Een verzekering voor huurders"], a: 1, exp: "Huurtoeslag is een bijdrage van de overheid om de huurkosten te helpen betalen voor mensen met een laag inkomen.", expPt: "O huurtoeslag e um subsidio do governo para ajudar a pagar o aluguel para pessoas de baixa renda.", expEn: "Huurtoeslag is a government subsidy to help pay rent for people with low incomes.", expEs: "El huurtoeslag es un subsidio gubernamental para ayudar a pagar el alquiler a personas con bajos ingresos." },
+  { cat: "Habitacao", q: "Wat moet je doen als je verhuist naar een nieuwe gemeente?", opts: ["Niets, het gaat automatisch", "Je meldt je aan bij de nieuwe gemeente (inschrijven in de BRP)", "Je betaalt een verhuisbelasting", "Je vraagt een nieuw paspoort aan"], a: 1, exp: "Als je verhuist, moet je je inschrijven bij de gemeente in de Basisregistratie Personen (BRP). Dit moet binnen 5 dagen.", expPt: "Ao se mudar, voce deve se registrar na prefeitura (BRP). Isso deve ser feito dentro de 5 dias.", expEn: "When you move, you must register at the municipality (BRP). This must be done within 5 days.", expEs: "Al mudarte, debes registrarte en el ayuntamiento (BRP). Esto debe hacerse dentro de 5 dias." },
+  { cat: "Habitacao", q: "Wat is een hypotheek?", opts: ["Een huurcontract", "Een lening om een huis te kopen, waarbij het huis als onderpand dient", "Een soort huurtoeslag", "Een belasting voor huiseigenaren"], a: 1, exp: "Een hypotheek is een lening bij de bank om een huis te kopen. Het huis is het onderpand: als je niet betaalt, kan de bank het huis verkopen.", expPt: "Uma hipoteca e um emprestimo bancario para comprar uma casa. A casa serve como garantia: se nao pagar, o banco pode vende-la.", expEn: "A mortgage is a bank loan to buy a house. The house serves as collateral: if you don't pay, the bank can sell it.", expEs: "Una hipoteca es un prestamo bancario para comprar una casa. La casa sirve de garantia: si no pagas, el banco puede venderla." },
 
   // TRANSPORTE
-  { cat: "Transporte", q: "Wat is een OV-chipkaart?", opts: ["Een creditcard voor de supermarkt", "Een kaart om met het openbaar vervoer te reizen", "Een rijbewijs voor de bus", "Een identiteitsbewijs"], a: 1, exp: "De OV-chipkaart is de betaalkaart voor het openbaar vervoer (bus, tram, metro, trein) in Nederland.", expPt: "O OV-chipkaart e o cartao de pagamento para o transporte publico (onibus, bonde, metro, trem) na Holanda." },
-  { cat: "Transporte", q: "Welke kant rijdt het verkeer in Nederland?", opts: ["Links", "Rechts", "Beide kanten", "Hangt af van de provincie"], a: 1, exp: "In Nederland rijdt het verkeer aan de rechterkant van de weg, net als in de meeste Europese landen.", expPt: "Na Holanda, o transito circula pelo lado direito da estrada, como na maioria dos paises europeus." },
-  { cat: "Transporte", q: "Wat is de maximumsnelheid op de meeste snelwegen in Nederland?", opts: ["100 km/u", "120 km/u", "130 km/u", "150 km/u"], a: 2, exp: "Op de meeste snelwegen in Nederland geldt overdag een maximumsnelheid van 100 km/u. 's Nachts (tussen 19:00 en 06:00) is dit 130 km/u op sommige wegen.", expPt: "Na maioria das autoestradas holandesas, a velocidade maxima diurna e de 100 km/h. A noite, em algumas estradas, sobe para 130 km/h." },
+  { cat: "Transporte", q: "Wat is een OV-chipkaart?", opts: ["Een creditcard voor de supermarkt", "Een kaart om met het openbaar vervoer te reizen", "Een rijbewijs voor de bus", "Een identiteitsbewijs"], a: 1, exp: "De OV-chipkaart is de betaalkaart voor het openbaar vervoer (bus, tram, metro, trein) in Nederland.", expPt: "O OV-chipkaart e o cartao de pagamento para o transporte publico (onibus, bonde, metro, trem) na Holanda.", expEn: "The OV-chipkaart is the payment card for public transport (bus, tram, metro, train) in the Netherlands.", expEs: "El OV-chipkaart es la tarjeta de pago para el transporte publico (autobus, tranvia, metro, tren) en Holanda." },
+  { cat: "Transporte", q: "Welke kant rijdt het verkeer in Nederland?", opts: ["Links", "Rechts", "Beide kanten", "Hangt af van de provincie"], a: 1, exp: "In Nederland rijdt het verkeer aan de rechterkant van de weg, net als in de meeste Europese landen.", expPt: "Na Holanda, o transito circula pelo lado direito da estrada, como na maioria dos paises europeus.", expEn: "In the Netherlands, traffic drives on the right side of the road, as in most European countries.", expEs: "En Holanda, el trafico circula por el lado derecho de la carretera, como en la mayoria de los paises europeos." },
+  { cat: "Transporte", q: "Wat is de maximumsnelheid op de meeste snelwegen in Nederland?", opts: ["100 km/u", "120 km/u", "130 km/u", "150 km/u"], a: 2, exp: "Op de meeste snelwegen in Nederland geldt overdag een maximumsnelheid van 100 km/u. 's Nachts (tussen 19:00 en 06:00) is dit 130 km/u op sommige wegen.", expPt: "Na maioria das autoestradas holandesas, a velocidade maxima diurna e de 100 km/h. A noite, em algumas estradas, sobe para 130 km/h.", expEn: "On most Dutch highways, the daytime speed limit is 100 km/h. At night, on some roads, it rises to 130 km/h.", expEs: "En la mayoria de las autopistas holandesas, el limite diurno es 100 km/h. De noche, en algunas vias, sube a 130 km/h." },
 
   // COSTUMES & CULTURA
-  { cat: "Cultura", q: "Wat vieren Nederlanders op 5 december?", opts: ["Kerstmis", "Sinterklaas", "Koningsdag", "Oud en Nieuw"], a: 1, exp: "Op 5 december (Pakjesavond) vieren Nederlanders Sinterklaas. Kinderen krijgen dan cadeautjes.", expPt: "Em 5 de dezembro (Noite dos Presentes), os holandeses celebram o Sinterklaas. As criancas recebem presentes." },
-  { cat: "Cultura", q: "Op welke dag viert Nederland Koningsdag?", opts: ["30 april", "27 april", "5 mei", "15 augustus"], a: 1, exp: "Koningsdag is op 27 april (de verjaardag van koning Willem-Alexander). Er zijn feesten en vrijmarkten door het hele land.", expPt: "O Dia do Rei e em 27 de abril (aniversario do rei Willem-Alexander). Ha festas e feiras de pulga por todo o pais." },
-  { cat: "Cultura", q: "Wat is 5 mei in Nederland?", opts: ["Koningsdag", "Bevrijdingsdag", "Sinterklaas", "Dodenherdenking"], a: 1, exp: "5 mei is Bevrijdingsdag: de dag dat Nederland in 1945 werd bevrijd van de Duitse bezetting tijdens de Tweede Wereldoorlog.", expPt: "5 de maio e o Dia da Libertacao: o dia em que a Holanda foi libertada da ocupacao alema em 1945, na Segunda Guerra Mundial." },
-  { cat: "Cultura", q: "Wat is een gebruikelijke manier om iemand te begroeten in Nederland?", opts: ["Drie kussen op de wang", "Een diepe buiging", "Een handdruk of drie kussen (bij bekenden)", "Alleen zwaaien"], a: 2, exp: "In Nederland begroet je mensen met een handdruk (formeel) of drie kussen op de wang (bij bekenden en familie).", expPt: "Na Holanda, cumprimentam-se com um aperto de mao (formal) ou tres beijos na bochecha (com conhecidos e familia)." },
-  { cat: "Cultura", q: "Welke taal wordt gesproken in de provincie Friesland naast Nederlands?", opts: ["Duits", "Fries", "Engels", "Zeeuws"], a: 1, exp: "In Friesland is Fries een officiële taal naast het Nederlands. Friezen kunnen officieel zaken doen in het Fries.", expPt: "Na provincia de Friesland, o Frisao e uma lingua oficial alem do holandes. Os frisioes podem lidar com o governo em frisao." },
+  { cat: "Cultura", q: "Wat vieren Nederlanders op 5 december?", opts: ["Kerstmis", "Sinterklaas", "Koningsdag", "Oud en Nieuw"], a: 1, exp: "Op 5 december (Pakjesavond) vieren Nederlanders Sinterklaas. Kinderen krijgen dan cadeautjes.", expPt: "Em 5 de dezembro (Noite dos Presentes), os holandeses celebram o Sinterklaas. As criancas recebem presentes.", expEn: "On December 5th (Sinterklaasavond), the Dutch celebrate Sinterklaas. Children receive gifts.", expEs: "El 5 de diciembre (Noche de Regalos), los holandeses celebran el Sinterklaas. Los ninos reciben regalos." },
+  { cat: "Cultura", q: "Op welke dag viert Nederland Koningsdag?", opts: ["30 april", "27 april", "5 mei", "15 augustus"], a: 1, exp: "Koningsdag is op 27 april (de verjaardag van koning Willem-Alexander). Er zijn feesten en vrijmarkten door het hele land.", expPt: "O Dia do Rei e em 27 de abril (aniversario do rei Willem-Alexander). Ha festas e feiras de pulga por todo o pais.", expEn: "King's Day is on April 27th (King Willem-Alexander's birthday). There are parties and flea markets across the country.", expEs: "El Dia del Rey es el 27 de abril (cumpleanos del rey Willem-Alexander). Hay fiestas y mercadillos por todo el pais." },
+  { cat: "Cultura", q: "Wat is 5 mei in Nederland?", opts: ["Koningsdag", "Bevrijdingsdag", "Sinterklaas", "Dodenherdenking"], a: 1, exp: "5 mei is Bevrijdingsdag: de dag dat Nederland in 1945 werd bevrijd van de Duitse bezetting tijdens de Tweede Wereldoorlog.", expPt: "5 de maio e o Dia da Libertacao: o dia em que a Holanda foi libertada da ocupacao alema em 1945, na Segunda Guerra Mundial.", expEn: "May 5th is Liberation Day: the day the Netherlands was liberated from German occupation in 1945, during World War II.", expEs: "El 5 de mayo es el Dia de la Liberacion: el dia en que Holanda fue liberada de la ocupacion alemana en 1945." },
+  { cat: "Cultura", q: "Wat is een gebruikelijke manier om iemand te begroeten in Nederland?", opts: ["Drie kussen op de wang", "Een diepe buiging", "Een handdruk of drie kussen (bij bekenden)", "Alleen zwaaien"], a: 2, exp: "In Nederland begroet je mensen met een handdruk (formeel) of drie kussen op de wang (bij bekenden en familie).", expPt: "Na Holanda, cumprimentam-se com um aperto de mao (formal) ou tres beijos na bochecha (com conhecidos e familia).", expEn: "In the Netherlands, people greet with a handshake (formal) or three kisses on the cheek (with acquaintances and family).", expEs: "En Holanda, se saluda con un apretón de manos (formal) o tres besos en la mejilla (con conocidos y familia)." },
+  { cat: "Cultura", q: "Welke taal wordt gesproken in de provincie Friesland naast Nederlands?", opts: ["Duits", "Fries", "Engels", "Zeeuws"], a: 1, exp: "In Friesland is Fries een officiële taal naast het Nederlands. Friezen kunnen officieel zaken doen in het Fries.", expPt: "Na provincia de Friesland, o Frisao e uma lingua oficial alem do holandes. Os frisioes podem lidar com o governo em frisao.", expEn: "In the province of Friesland, Frisian is an official language alongside Dutch. Frisians can deal with the government in Frisian.", expEs: "En la provincia de Frisia, el frisio es una lengua oficial junto con el holandes. Los frisioneses pueden tratar con el gobierno en frisio." },
 
   // INTEGRAÇÃO
-  { cat: "Integracao", q: "Wat is het inburgeringsexamen?", opts: ["Een examen om rijbewijs te halen", "Een examen dat aantoont dat je Nederlands spreekt en de samenleving begrijpt", "Een belastingexamen", "Een examen voor de universiteit"], a: 1, exp: "Het inburgeringsexamen toont aan dat je de Nederlandse taal beheerst en de Nederlandse samenleving begrijpt. Het is verplicht voor veel nieuwkomers.", expPt: "O exame de integracao (inburgeringsexamen) mostra que voce domina o holandes e entende a sociedade holandesa. E obrigatorio para muitos imigrantes." },
-  { cat: "Integracao", q: "Welk taalniveau moet je halen voor het inburgeringsexamen?", opts: ["A1", "A2", "B1", "B2"], a: 2, exp: "Voor het inburgeringsexamen moet je Nederlands spreken op B1-niveau. Dit is een basisniveau waarmee je in de meeste situaties kunt communiceren.", expPt: "Para o exame de integracao, voce precisa falar holandes no nivel B1. E um nivel basico para comunicar na maioria das situacoes." },
-  { cat: "Integracao", q: "Wat is de DUO?", opts: ["Een bank in Nederland", "Een organisatie die studie- en inburgeringszaken regelt", "Een zorgverzekeraar", "Een politieke partij"], a: 1, exp: "DUO (Dienst Uitvoering Onderwijs) is de overheidsorganisatie die onder andere studiefinanciering en inburgering regelt.", expPt: "O DUO e a organizacao governamental que cuida de financiamento estudantil e do processo de integracao (inburgering)." },
-  { cat: "Integracao", q: "Wat is de Participatieverklaring?", opts: ["Een arbeidscontract", "Een verklaring dat je de waarden van de Nederlandse samenleving onderschrijft", "Een huurcontract", "Een belastingformulier"], a: 1, exp: "De Participatieverklaring is een document dat je ondertekent als je belooft de basiswaarden van Nederland te respecteren. Dit is onderdeel van het inburgeringstraject.", expPt: "A Declaracao de Participacao e um documento que voce assina prometendo respeitar os valores basicos da Holanda. Faz parte do processo de integracao." },
+  { cat: "Integracao", q: "Wat is het inburgeringsexamen?", opts: ["Een examen om rijbewijs te halen", "Een examen dat aantoont dat je Nederlands spreekt en de samenleving begrijpt", "Een belastingexamen", "Een examen voor de universiteit"], a: 1, exp: "Het inburgeringsexamen toont aan dat je de Nederlandse taal beheerst en de Nederlandse samenleving begrijpt. Het is verplicht voor veel nieuwkomers.", expPt: "O exame de integracao (inburgeringsexamen) mostra que voce domina o holandes e entende a sociedade holandesa. E obrigatorio para muitos imigrantes.", expEn: "The integration exam (inburgeringsexamen) shows you master Dutch and understand Dutch society. It is mandatory for many immigrants.", expEs: "El examen de integracion (inburgeringsexamen) muestra que dominas el holandes y entiendes la sociedad holandesa. Es obligatorio para muchos inmigrantes." },
+  { cat: "Integracao", q: "Welk taalniveau moet je halen voor het inburgeringsexamen?", opts: ["A1", "A2", "B1", "B2"], a: 2, exp: "Voor het inburgeringsexamen moet je Nederlands spreken op B1-niveau. Dit is een basisniveau waarmee je in de meeste situaties kunt communiceren.", expPt: "Para o exame de integracao, voce precisa falar holandes no nivel B1. E um nivel basico para comunicar na maioria das situacoes.", expEn: "For the integration exam, you need to speak Dutch at B1 level. It is a basic level to communicate in most situations.", expEs: "Para el examen de integracion, necesitas hablar holandes en nivel B1. Es un nivel basico para comunicar en la mayoria de situaciones." },
+  { cat: "Integracao", q: "Wat is de DUO?", opts: ["Een bank in Nederland", "Een organisatie die studie- en inburgeringszaken regelt", "Een zorgverzekeraar", "Een politieke partij"], a: 1, exp: "DUO (Dienst Uitvoering Onderwijs) is de overheidsorganisatie die onder andere studiefinanciering en inburgering regelt.", expPt: "O DUO e a organizacao governamental que cuida de financiamento estudantil e do processo de integracao (inburgering).", expEn: "DUO is the government organization that handles student financing and the integration process (inburgering).", expEs: "DUO es la organizacion gubernamental que gestiona la financiacion estudiantil y el proceso de integracion (inburgering)." },
+  { cat: "Integracao", q: "Wat is de Participatieverklaring?", opts: ["Een arbeidscontract", "Een verklaring dat je de waarden van de Nederlandse samenleving onderschrijft", "Een huurcontract", "Een belastingformulier"], a: 1, exp: "De Participatieverklaring is een document dat je ondertekent als je belooft de basiswaarden van Nederland te respecteren. Dit is onderdeel van het inburgeringstraject.", expPt: "A Declaracao de Participacao e um documento que voce assina prometendo respeitar os valores basicos da Holanda. Faz parte do processo de integracao.", expEn: "The Participation Declaration is a document you sign promising to respect the basic values of the Netherlands. It is part of the integration process.", expEs: "La Declaracion de Participacion es un documento que firmas prometiendo respetar los valores basicos de Holanda. Forma parte del proceso de integracion." },
 
   // SERVIÇOS PÚBLICOS
-  { cat: "Servicos", q: "Waar haal je een paspoort of identiteitskaart op in Nederland?", opts: ["Bij de politie", "Bij de gemeente", "Bij de bank", "Bij het postkantoor"], a: 1, exp: "Een paspoort of identiteitskaart vraag je aan bij de gemeente waar je ingeschreven staat.", expPt: "Voce solicita passaporte ou carteira de identidade na prefeitura (gemeente) onde esta registrado." },
-  { cat: "Servicos", q: "Wat is de Belastingdienst?", opts: ["Een bank", "De organisatie die belastingen int en toeslagen uitkeert", "Een verzekeringsmaatschappij", "Een gemeentelijke dienst"], a: 1, exp: "De Belastingdienst is de overheidsorganisatie die belastingen int en toeslagen (zoals huurtoeslag en zorgtoeslag) uitbetaalt.", expPt: "O Belastingdienst e o fisco holandes: cobra impostos e paga subsidios como huurtoeslag (aluguel) e zorgtoeslag (saude)." },
-  { cat: "Servicos", q: "Wat is zorgtoeslag?", opts: ["Een soort zorgverzekering", "Financiele hulp van de overheid voor de premie van de zorgverzekering", "Een uitkering bij ziekte", "Een vergoeding van de werkgever"], a: 1, exp: "Zorgtoeslag is een bijdrage van de overheid om de kosten van de verplichte zorgverzekering te helpen betalen voor mensen met een laag inkomen.", expPt: "O zorgtoeslag e um subsidio do governo para ajudar a pagar o plano de saude obrigatorio para pessoas de baixa renda." },
-  { cat: "Servicos", q: "Wat is kinderopvang?", opts: ["Een school voor kinderen van 4-12 jaar", "Opvang voor jonge kinderen terwijl ouders werken", "Een kinderziekenhuis", "Een speeltuin"], a: 1, exp: "Kinderopvang is professionele opvang voor kinderen (0-4 jaar) terwijl de ouders werken. Er is kinderopvangtoeslag beschikbaar voor werkende ouders.", expPt: "Kinderopvang e creche profissional para criancas (0-4 anos) enquanto os pais trabalham. Ha subsidio de creche para pais que trabalham." },
-  { cat: "Servicos", q: "Wat is de politie?", opts: ["De organisatie die wetten maakt", "De organisatie die de openbare orde handhaaft en criminaliteit bestrijdt", "De rechtbank", "De gemeente"], a: 1, exp: "De politie handhaaft de openbare orde, helpt burgers en bestrijdt criminaliteit. Bel 112 voor spoed, 0900-8844 voor niet-spoedeisende zaken.", expPt: "A policia mantem a ordem publica, ajuda cidadaos e combate o crime. Ligue 112 para emergencias, 0900-8844 para situacoes nao urgentes." },
+  { cat: "Servicos", q: "Waar haal je een paspoort of identiteitskaart op in Nederland?", opts: ["Bij de politie", "Bij de gemeente", "Bij de bank", "Bij het postkantoor"], a: 1, exp: "Een paspoort of identiteitskaart vraag je aan bij de gemeente waar je ingeschreven staat.", expPt: "Voce solicita passaporte ou carteira de identidade na prefeitura (gemeente) onde esta registrado.", expEn: "You apply for a passport or ID card at the municipality (gemeente) where you are registered.", expEs: "Solicitas el pasaporte o el documento de identidad en el ayuntamiento (gemeente) donde estas registrado." },
+  { cat: "Servicos", q: "Wat is de Belastingdienst?", opts: ["Een bank", "De organisatie die belastingen int en toeslagen uitkeert", "Een verzekeringsmaatschappij", "Een gemeentelijke dienst"], a: 1, exp: "De Belastingdienst is de overheidsorganisatie die belastingen int en toeslagen (zoals huurtoeslag en zorgtoeslag) uitbetaalt.", expPt: "O Belastingdienst e o fisco holandes: cobra impostos e paga subsidios como huurtoeslag (aluguel) e zorgtoeslag (saude).", expEn: "The Belastingdienst is the Dutch tax authority: it collects taxes and pays subsidies like huurtoeslag (rent) and zorgtoeslag (health).", expEs: "El Belastingdienst es la agencia tributaria holandesa: recauda impuestos y paga subsidios como huurtoeslag (alquiler) y zorgtoeslag (salud)." },
+  { cat: "Servicos", q: "Wat is zorgtoeslag?", opts: ["Een soort zorgverzekering", "Financiele hulp van de overheid voor de premie van de zorgverzekering", "Een uitkering bij ziekte", "Een vergoeding van de werkgever"], a: 1, exp: "Zorgtoeslag is een bijdrage van de overheid om de kosten van de verplichte zorgverzekering te helpen betalen voor mensen met een laag inkomen.", expPt: "O zorgtoeslag e um subsidio do governo para ajudar a pagar o plano de saude obrigatorio para pessoas de baixa renda.", expEn: "Zorgtoeslag is a government subsidy to help pay for the mandatory health insurance for people with low incomes.", expEs: "El zorgtoeslag es un subsidio gubernamental para ayudar a pagar el seguro medico obligatorio para personas con bajos ingresos." },
+  { cat: "Servicos", q: "Wat is kinderopvang?", opts: ["Een school voor kinderen van 4-12 jaar", "Opvang voor jonge kinderen terwijl ouders werken", "Een kinderziekenhuis", "Een speeltuin"], a: 1, exp: "Kinderopvang is professionele opvang voor kinderen (0-4 jaar) terwijl de ouders werken. Er is kinderopvangtoeslag beschikbaar voor werkende ouders.", expPt: "Kinderopvang e creche profissional para criancas (0-4 anos) enquanto os pais trabalham. Ha subsidio de creche para pais que trabalham.", expEn: "Kinderopvang is professional childcare for children (0-4 years) while parents work. There is a childcare subsidy for working parents.", expEs: "Kinderopvang es la guarderia profesional para ninos (0-4 anos) mientras los padres trabajan. Hay subsidio de guarderia para padres que trabajan." },
+  { cat: "Servicos", q: "Wat is de politie?", opts: ["De organisatie die wetten maakt", "De organisatie die de openbare orde handhaaft en criminaliteit bestrijdt", "De rechtbank", "De gemeente"], a: 1, exp: "De politie handhaaft de openbare orde, helpt burgers en bestrijdt criminaliteit. Bel 112 voor spoed, 0900-8844 voor niet-spoedeisende zaken.", expPt: "A policia mantem a ordem publica, ajuda cidadaos e combate o crime. Ligue 112 para emergencias, 0900-8844 para situacoes nao urgentes.", expEn: "The police maintain public order, help citizens and fight crime. Call 112 for emergencies, 0900-8844 for non-urgent situations.", expEs: "La policia mantiene el orden publico, ayuda a los ciudadanos y combate el crimen. Llama al 112 para emergencias, 0900-8844 para situaciones no urgentes." },
 ];
 
 const LEITURA_TEXTOS = [
@@ -1443,90 +1443,90 @@ const LEITURA_TEXTOS = [
     id: 1, cat: "Bericht", label: "Bericht", title: "Bericht van de buren",
     text: `Hallo,\n\nIk ben uw buurvrouw, mevrouw De Vries. Ik woon naast u op nummer 12.\n\nMorgen, dinsdag 15 maart, komen er mensen om de straat te repareren. Ze beginnen om 8 uur 's ochtends. De straat is dan afgesloten tot 17 uur.\n\nU kunt uw auto niet voor de deur parkeren. Zet uw auto vanavond al op de parkeerplaats achter de supermarkt.\n\nMet vriendelijke groet,\nMevrouw De Vries`,
     questions: [
-      { q: "Waarom schrijft mevrouw De Vries dit bericht?", opts: ["Om een feest aan te kondigen", "Om te vertellen dat de straat morgen afgesloten is", "Om te vragen of de buurman haar auto kan verplaatsen", "Om een klacht in te dienen"], a: 1, exp: "Mevrouw De Vries schrijft dat de straat morgen wordt gerepareerd en afgesloten is.", expPt: "A Sra. De Vries escreve que a rua sera reparada amanha e estara fechada." },
-      { q: "Hoe laat begint het werk aan de straat?", opts: ["7 uur", "8 uur", "17 uur", "15 uur"], a: 1, exp: "In het bericht staat: 'Ze beginnen om 8 uur ochtends.'", expPt: "No texto diz: 'Eles comecam as 8 horas da manha.'" },
-      { q: "Waar moet u uw auto parkeren?", opts: ["Voor de deur van nummer 12", "Op de parkeerplaats achter de supermarkt", "Op straat", "In de garage"], a: 1, exp: "Mevrouw De Vries schrijft: 'Zet uw auto op de parkeerplaats achter de supermarkt.'", expPt: "A Sra. De Vries escreve: 'Coloque seu carro no estacionamento atras do supermercado.'" },
+      { q: "Waarom schrijft mevrouw De Vries dit bericht?", opts: ["Om een feest aan te kondigen", "Om te vertellen dat de straat morgen afgesloten is", "Om te vragen of de buurman haar auto kan verplaatsen", "Om een klacht in te dienen"], a: 1, exp: "Mevrouw De Vries schrijft dat de straat morgen wordt gerepareerd en afgesloten is.", expPt: "A Sra. De Vries escreve que a rua sera reparada amanha e estara fechada.", expEn: "Mrs. De Vries writes that the street will be repaired tomorrow and will be closed.", expEs: "La Sra. De Vries escribe que la calle sera reparada manana y estara cerrada." },
+      { q: "Hoe laat begint het werk aan de straat?", opts: ["7 uur", "8 uur", "17 uur", "15 uur"], a: 1, exp: "In het bericht staat: 'Ze beginnen om 8 uur ochtends.'", expPt: "No texto diz: 'Eles comecam as 8 horas da manha.'", expEn: "The text says: 'They start at 8 o'clock in the morning.'", expEs: "El texto dice: 'Empiezan a las 8 de la manana.'" },
+      { q: "Waar moet u uw auto parkeren?", opts: ["Voor de deur van nummer 12", "Op de parkeerplaats achter de supermarkt", "Op straat", "In de garage"], a: 1, exp: "Mevrouw De Vries schrijft: 'Zet uw auto op de parkeerplaats achter de supermarkt.'", expPt: "A Sra. De Vries escreve: 'Coloque seu carro no estacionamento atras do supermercado.'", expEn: "Mrs. De Vries writes: 'Park your car in the car park behind the supermarket.'", expEs: "La Sra. De Vries escribe: 'Aparca tu coche en el aparcamiento detras del supermercado.'" },
     ]
   },
   {
     id: 2, cat: "Advertentie", label: "Advertentie", title: "Cursus Nederlands voor beginners",
     text: `CURSUS NEDERLANDS VOOR BEGINNERS\n\nStart: maandag 3 april\nTijd: elke maandag en woensdag van 19:00 tot 21:00 uur\nLocatie: Bibliotheek De Bron, Kerkstraat 45, Haarlem\nPrijs: 150 euro voor 10 lessen (inclusief boek)\nNiveau: A1 - A2\n\nVoor wie?\nDeze cursus is voor mensen die Nederlands willen leren. U heeft geen kennis van het Nederlands nodig om te beginnen.\n\nAanmelden?\nBel ons op 023-456 7890 of stuur een e-mail naar info@taalcursus.nl\nAanmelden voor 25 maart.`,
     questions: [
-      { q: "Op welke dagen is de cursus?", opts: ["Dinsdag en donderdag", "Maandag en woensdag", "Elke dag", "Alleen op zaterdag"], a: 1, exp: "In de advertentie staat: 'elke maandag en woensdag'.", expPt: "No anuncio diz: 'toda segunda e quarta-feira'." },
-      { q: "Hoeveel kost de cursus?", opts: ["100 euro", "150 euro", "200 euro", "Gratis"], a: 1, exp: "De prijs is 150 euro voor 10 lessen, inclusief het boek.", expPt: "O preco e de 150 euros por 10 aulas, incluindo o livro." },
-      { q: "Wanneer moet u zich aanmelden?", opts: ["Voor 3 april", "Voor 25 maart", "Voor 1 mei", "Wanneer u wilt"], a: 1, exp: "In de advertentie staat: 'Aanmelden voor 25 maart.'", expPt: "No anuncio diz: 'Inscreva-se antes de 25 de marco.'" },
+      { q: "Op welke dagen is de cursus?", opts: ["Dinsdag en donderdag", "Maandag en woensdag", "Elke dag", "Alleen op zaterdag"], a: 1, exp: "In de advertentie staat: 'elke maandag en woensdag'.", expPt: "No anuncio diz: 'toda segunda e quarta-feira'.", expEn: "The advertisement says: 'every Monday and Wednesday'.", expEs: "El anuncio dice: 'todos los lunes y miercoles'." },
+      { q: "Hoeveel kost de cursus?", opts: ["100 euro", "150 euro", "200 euro", "Gratis"], a: 1, exp: "De prijs is 150 euro voor 10 lessen, inclusief het boek.", expPt: "O preco e de 150 euros por 10 aulas, incluindo o livro.", expEn: "The price is 150 euros for 10 lessons, including the book.", expEs: "El precio es de 150 euros por 10 clases, incluido el libro." },
+      { q: "Wanneer moet u zich aanmelden?", opts: ["Voor 3 april", "Voor 25 maart", "Voor 1 mei", "Wanneer u wilt"], a: 1, exp: "In de advertentie staat: 'Aanmelden voor 25 maart.'", expPt: "No anuncio diz: 'Inscreva-se antes de 25 de marco.'", expEn: "The advertisement says: 'Register before 25 March.'", expEs: "El anuncio dice: 'Inscribete antes del 25 de marzo.'" },
     ]
   },
   {
     id: 3, cat: "Brief", label: "Brief", title: "Brief van het ziekenhuis",
     text: `Ziekenhuis Westland\nAfdeling Polikliniek\n\nGeachte mevrouw Bakker,\n\nU heeft een afspraak bij ons ziekenhuis op:\nDatum: woensdag 22 februari\nTijd: 10:30 uur\nAfdeling: Orthopedie, kamer 3B\n\nWij vragen u om 10 minuten voor uw afspraak aanwezig te zijn.\nNeem uw verzekeringspas en identiteitsbewijs mee.\n\nAls u niet kunt komen, bel dan minstens 24 uur van tevoren:\nTelefoon: 070-234 5678\n\nMet vriendelijke groet,\nDe afdeling Polikliniek`,
     questions: [
-      { q: "Bij welke afdeling is de afspraak?", opts: ["Cardiologie", "Orthopedie", "Neurologie", "Spoedeisende hulp"], a: 1, exp: "In de brief staat: 'Afdeling: Orthopedie, kamer 3B'.", expPt: "Na carta diz: 'Departamento: Ortopedia, sala 3B'." },
-      { q: "Hoe laat moet mevrouw Bakker aanwezig zijn?", opts: ["Om 10:30 uur", "Om 10:20 uur", "Om 11:00 uur", "Om 10:00 uur"], a: 1, exp: "De afspraak is om 10:30, maar men vraagt 10 minuten eerder te komen: dus om 10:20.", expPt: "A consulta e as 10:30, mas pedem para chegar 10 minutos antes: entao as 10:20." },
-      { q: "Wat moet mevrouw Bakker meenemen?", opts: ["Alleen haar identiteitsbewijs", "Haar verzekeringspas en identiteitsbewijs", "Haar medisch dossier", "Niets"], a: 1, exp: "In de brief staat: 'Neem uw verzekeringspas en identiteitsbewijs mee.'", expPt: "Na carta diz: 'Traga seu cartao do plano de saude e documento de identidade.'" },
+      { q: "Bij welke afdeling is de afspraak?", opts: ["Cardiologie", "Orthopedie", "Neurologie", "Spoedeisende hulp"], a: 1, exp: "In de brief staat: 'Afdeling: Orthopedie, kamer 3B'.", expPt: "Na carta diz: 'Departamento: Ortopedia, sala 3B'.", expEn: "The letter says: 'Department: Orthopaedics, room 3B'.", expEs: "La carta dice: 'Departamento: Ortopedia, sala 3B'." },
+      { q: "Hoe laat moet mevrouw Bakker aanwezig zijn?", opts: ["Om 10:30 uur", "Om 10:20 uur", "Om 11:00 uur", "Om 10:00 uur"], a: 1, exp: "De afspraak is om 10:30, maar men vraagt 10 minuten eerder te komen: dus om 10:20.", expPt: "A consulta e as 10:30, mas pedem para chegar 10 minutos antes: entao as 10:20.", expEn: "The appointment is at 10:30, but they ask you to arrive 10 minutes early: so at 10:20.", expEs: "La cita es a las 10:30, pero piden llegar 10 minutos antes: es decir, a las 10:20." },
+      { q: "Wat moet mevrouw Bakker meenemen?", opts: ["Alleen haar identiteitsbewijs", "Haar verzekeringspas en identiteitsbewijs", "Haar medisch dossier", "Niets"], a: 1, exp: "In de brief staat: 'Neem uw verzekeringspas en identiteitsbewijs mee.'", expPt: "Na carta diz: 'Traga seu cartao do plano de saude e documento de identidade.'", expEn: "The letter says: 'Bring your health insurance card and ID.'", expEs: "La carta dice: 'Trae tu tarjeta del seguro medico y tu documento de identidad.'" },
     ]
   },
   {
     id: 4, cat: "Folder", label: "Folder", title: "Gemeentelijke diensten",
     text: `GEMEENTE AMSTERDAM\nInformatie voor nieuwe inwoners\n\nWelkom in Amsterdam!\n\nAls u nieuw in Amsterdam bent, moet u een paar dingen regelen:\n\n1. Inschrijven bij de gemeente\nU moet zich inschrijven binnen 5 dagen na uw aankomst.\n\n2. DigiD aanvragen\nMet een DigiD kunt u online zaken regelen met de overheid.\n\n3. Zorgverzekering afsluiten\nIedereen in Nederland moet een zorgverzekering hebben. Dit moet binnen 4 maanden na aankomst.\n\n4. BSN nummer\nU krijgt een BSN nummer automatisch als u zich inschrijft bij de gemeente.\n\nVragen? Bel 14 020 (maandag t/m vrijdag, 8:00 - 18:00 uur)`,
     questions: [
-      { q: "Binnen hoeveel dagen moet u zich inschrijven bij de gemeente?", opts: ["2 dagen", "5 dagen", "10 dagen", "30 dagen"], a: 1, exp: "In de folder staat: 'U moet zich inschrijven binnen 5 dagen na uw aankomst.'", expPt: "No folheto diz: 'Voce deve se registrar dentro de 5 dias apos sua chegada.'" },
-      { q: "Waarvoor heeft u een DigiD nodig?", opts: ["Om boodschappen te doen", "Om online zaken te regelen met de overheid", "Om een bankrekening te openen", "Om naar school te gaan"], a: 1, exp: "Een DigiD is nodig om online zaken te regelen met de overheid.", expPt: "O DigiD e necessario para resolver assuntos online com o governo." },
-      { q: "Wanneer krijgt u automatisch een BSN nummer?", opts: ["Als u een DigiD aanvraagt", "Als u een zorgverzekering afsluit", "Als u zich inschrijft bij de gemeente", "Als u een baan vindt"], a: 2, exp: "In de folder staat: 'U krijgt een BSN nummer automatisch als u zich inschrijft bij de gemeente.'", expPt: "No folheto diz: 'Voce recebe um numero BSN automaticamente ao se registrar na prefeitura.'" },
+      { q: "Binnen hoeveel dagen moet u zich inschrijven bij de gemeente?", opts: ["2 dagen", "5 dagen", "10 dagen", "30 dagen"], a: 1, exp: "In de folder staat: 'U moet zich inschrijven binnen 5 dagen na uw aankomst.'", expPt: "No folheto diz: 'Voce deve se registrar dentro de 5 dias apos sua chegada.'", expEn: "The leaflet says: 'You must register within 5 days of your arrival.'", expEs: "El folleto dice: 'Debes registrarte dentro de los 5 dias posteriores a tu llegada.'" },
+      { q: "Waarvoor heeft u een DigiD nodig?", opts: ["Om boodschappen te doen", "Om online zaken te regelen met de overheid", "Om een bankrekening te openen", "Om naar school te gaan"], a: 1, exp: "Een DigiD is nodig om online zaken te regelen met de overheid.", expPt: "O DigiD e necessario para resolver assuntos online com o governo.", expEn: "DigiD is needed to handle online matters with the government.", expEs: "El DigiD es necesario para gestionar asuntos en linea con el gobierno." },
+      { q: "Wanneer krijgt u automatisch een BSN nummer?", opts: ["Als u een DigiD aanvraagt", "Als u een zorgverzekering afsluit", "Als u zich inschrijft bij de gemeente", "Als u een baan vindt"], a: 2, exp: "In de folder staat: 'U krijgt een BSN nummer automatisch als u zich inschrijft bij de gemeente.'", expPt: "No folheto diz: 'Voce recebe um numero BSN automaticamente ao se registrar na prefeitura.'", expEn: "The leaflet says: 'You automatically receive a BSN number when you register at the municipality.'", expEs: "El folleto dice: 'Recibes un numero BSN automaticamente al registrarte en el ayuntamiento.'" },
     ]
   },
   {
     id: 5, cat: "Bericht", label: "Bericht", title: "WhatsApp van een collega",
     text: `Van: Fatima\nAan: Groep Werk\n\nHoi allemaal,\n\nIk wil jullie laten weten dat ik morgen niet op het werk kan zijn. Mijn dochter is ziek en ik moet thuis blijven.\n\nIk heb al een e-mail gestuurd naar onze baas, meneer Visser.\n\nKunnen jullie mijn taken overnemen?\n- De vergadering om 10 uur: kan iemand de notulen schrijven?\n- De bestelling bij leverancier Van Dam: ik heb alles al geregeld, jullie hoeven alleen de bevestiging te tekenen.\n\nIk ben wel bereikbaar via telefoon en e-mail als er iets is.\n\nBedankt!\nFatima`,
     questions: [
-      { q: "Waarom kan Fatima morgen niet werken?", opts: ["Ze is ziek", "Ze heeft een afspraak bij de dokter", "Haar dochter is ziek", "Ze heeft vakantie"], a: 2, exp: "Fatima schrijft: 'Mijn dochter is ziek en ik moet thuis blijven.'", expPt: "Fatima escreve: 'Minha filha esta doente e eu preciso ficar em casa.'" },
-      { q: "Wat moet een collega doen tijdens de vergadering om 10 uur?", opts: ["Een presentatie geven", "De notulen schrijven", "De vergadering annuleren", "Meneer Visser bellen"], a: 1, exp: "Fatima vraagt: 'kan iemand de notulen schrijven?'", expPt: "Fatima pergunta: 'alguem pode escrever a ata?'" },
-      { q: "Hoe is Fatima bereikbaar terwijl ze thuis is?", opts: ["Alleen via WhatsApp", "Via telefoon en e-mail", "Ze is niet bereikbaar", "Alleen via e-mail"], a: 1, exp: "Fatima schrijft: 'Ik ben bereikbaar via telefoon en e-mail.'", expPt: "Fatima escreve: 'Estou disponivel por telefone e email.'" },
+      { q: "Waarom kan Fatima morgen niet werken?", opts: ["Ze is ziek", "Ze heeft een afspraak bij de dokter", "Haar dochter is ziek", "Ze heeft vakantie"], a: 2, exp: "Fatima schrijft: 'Mijn dochter is ziek en ik moet thuis blijven.'", expPt: "Fatima escreve: 'Minha filha esta doente e eu preciso ficar em casa.'", expEn: "Fatima writes: 'My daughter is sick and I need to stay home.'", expEs: "Fatima escribe: 'Mi hija esta enferma y necesito quedarme en casa.'" },
+      { q: "Wat moet een collega doen tijdens de vergadering om 10 uur?", opts: ["Een presentatie geven", "De notulen schrijven", "De vergadering annuleren", "Meneer Visser bellen"], a: 1, exp: "Fatima vraagt: 'kan iemand de notulen schrijven?'", expPt: "Fatima pergunta: 'alguem pode escrever a ata?'", expEn: "Fatima asks: 'can someone take the minutes?'", expEs: "Fatima pregunta: '¿alguien puede tomar las actas?'" },
+      { q: "Hoe is Fatima bereikbaar terwijl ze thuis is?", opts: ["Alleen via WhatsApp", "Via telefoon en e-mail", "Ze is niet bereikbaar", "Alleen via e-mail"], a: 1, exp: "Fatima schrijft: 'Ik ben bereikbaar via telefoon en e-mail.'", expPt: "Fatima escreve: 'Estou disponivel por telefone e email.'", expEn: "Fatima writes: 'I am available by phone and email.'", expEs: "Fatima escribe: 'Estoy disponible por telefono y correo electronico.'" },
     ]
   },
   {
     id: 6, cat: "Aankondiging", label: "Aankondiging", title: "Aankondiging school",
     text: `BASISSCHOOL DE REGENBOOG\n\nBeste ouders en verzorgers,\n\nVOORJAARSVAKANTIE\nMaandag 20 februari t/m vrijdag 24 februari\nDe school is gesloten. De naschoolse opvang is ook gesloten.\n\nINFOAVOND\nDonderdag 2 maart, 19:30 uur\nInformatieavond over de nieuwe lesmethode.\nLocatie: Aula van de school.\nAanmelden is niet nodig.\n\nSCHOOLREISJE\nVrijdag 17 maart: groepen 5, 6 en 7 gaan naar Artis.\nKosten: 12,50 euro per kind.\n\nMet vriendelijke groet,\nHet team van De Regenboog`,
     questions: [
-      { q: "Wanneer is de voorjaarsvakantie?", opts: ["1 t/m 5 maart", "20 t/m 24 februari", "17 t/m 21 maart", "6 t/m 10 februari"], a: 1, exp: "In de aankondiging staat: 'Maandag 20 februari t/m vrijdag 24 februari'.", expPt: "No comunicado diz: 'Segunda 20 de fevereiro ate sexta 24 de fevereiro'." },
-      { q: "Hoeft u zich aan te melden voor de infoavond?", opts: ["Ja, via e-mail", "Ja, via telefoon", "Nee, aanmelden is niet nodig", "Ja, voor 25 februari"], a: 2, exp: "In de aankondiging staat: 'Aanmelden is niet nodig.'", expPt: "No comunicado diz: 'Nao e necessario se inscrever.'" },
-      { q: "Welke groepen gaan op schoolreisje?", opts: ["Alle groepen", "Groepen 1, 2 en 3", "Groepen 5, 6 en 7", "Alleen groep 7"], a: 2, exp: "In de aankondiging staat: 'de groepen 5, 6 en 7 gaan op schoolreisje naar Artis'.", expPt: "No comunicado diz: 'os grupos 5, 6 e 7 vao numa excursao ao Artis'." },
+      { q: "Wanneer is de voorjaarsvakantie?", opts: ["1 t/m 5 maart", "20 t/m 24 februari", "17 t/m 21 maart", "6 t/m 10 februari"], a: 1, exp: "In de aankondiging staat: 'Maandag 20 februari t/m vrijdag 24 februari'.", expPt: "No comunicado diz: 'Segunda 20 de fevereiro ate sexta 24 de fevereiro'.", expEn: "The notice says: 'Monday 20 February to Friday 24 February'.", expEs: "El comunicado dice: 'Lunes 20 de febrero hasta viernes 24 de febrero'." },
+      { q: "Hoeft u zich aan te melden voor de infoavond?", opts: ["Ja, via e-mail", "Ja, via telefoon", "Nee, aanmelden is niet nodig", "Ja, voor 25 februari"], a: 2, exp: "In de aankondiging staat: 'Aanmelden is niet nodig.'", expPt: "No comunicado diz: 'Nao e necessario se inscrever.'", expEn: "The notice says: 'Registration is not necessary.'", expEs: "El comunicado dice: 'No es necesario inscribirse.'" },
+      { q: "Welke groepen gaan op schoolreisje?", opts: ["Alle groepen", "Groepen 1, 2 en 3", "Groepen 5, 6 en 7", "Alleen groep 7"], a: 2, exp: "In de aankondiging staat: 'de groepen 5, 6 en 7 gaan op schoolreisje naar Artis'.", expPt: "No comunicado diz: 'os grupos 5, 6 e 7 vao numa excursao ao Artis'.", expEn: "The notice says: 'groups 5, 6 and 7 are going on a trip to Artis'.", expEs: "El comunicado dice: 'los grupos 5, 6 y 7 van de excursion al Artis'." },
     ]
   },
   {
     id: 7, cat: "Formulier", label: "Formulier", title: "Aanvraag huurtoeslag",
     text: `BELASTINGDIENST - TOESLAGEN\nAanvraag Huurtoeslag 2024\n\nHuurtoeslag is een bijdrage van de overheid voor mensen die huren en een laag inkomen hebben.\n\nHeeft u recht op huurtoeslag?\nU heeft mogelijk recht als:\n- U 18 jaar of ouder bent\n- U een huurwoning heeft\n- Uw huur niet hoger is dan 808 euro per maand\n- Uw inkomen niet te hoog is\n\nHoe vraagt u huurtoeslag aan?\n1. Log in op Mijn Toeslagen via belastingdienst.nl met uw DigiD\n2. Klik op "Nieuwe toeslag aanvragen"\n3. Vul het formulier in en stuur het op\n\nWanneer ontvangt u huurtoeslag?\nU ontvangt de huurtoeslag elke maand op uw bankrekening.\nDe eerste betaling is ongeveer 6 weken na uw aanvraag.`,
     questions: [
-      { q: "Voor wie is huurtoeslag bedoeld?", opts: ["Voor mensen die een huis kopen", "Voor mensen die huren en een laag inkomen hebben", "Voor alle studenten", "Alleen voor mensen ouder dan 65"], a: 1, exp: "Huurtoeslag is voor mensen die huren en een laag inkomen hebben.", expPt: "O subsidio de aluguel e para pessoas que alugam e tem baixa renda." },
-      { q: "Wat heeft u nodig om huurtoeslag aan te vragen?", opts: ["Alleen uw paspoort", "Een DigiD en een huurwoning", "Een bankrekening en een auto", "Een brief van uw baas"], a: 1, exp: "U moet inloggen op Mijn Toeslagen met uw DigiD.", expPt: "Voce precisa fazer login no Mijn Toeslagen com seu DigiD." },
-      { q: "Wanneer ontvangt u de eerste betaling?", opts: ["Direct na aanvraag", "Na 1 week", "Na ongeveer 6 weken", "Na 3 maanden"], a: 2, exp: "In het formulier staat: 'De eerste betaling is ongeveer 6 weken na uw aanvraag.'", expPt: "No formulario diz: 'O primeiro pagamento e aproximadamente 6 semanas apos o seu pedido.'" },
+      { q: "Voor wie is huurtoeslag bedoeld?", opts: ["Voor mensen die een huis kopen", "Voor mensen die huren en een laag inkomen hebben", "Voor alle studenten", "Alleen voor mensen ouder dan 65"], a: 1, exp: "Huurtoeslag is voor mensen die huren en een laag inkomen hebben.", expPt: "O subsidio de aluguel e para pessoas que alugam e tem baixa renda.", expEn: "The rent subsidy is for people who rent and have a low income.", expEs: "El subsidio de alquiler es para personas que alquilan y tienen bajos ingresos." },
+      { q: "Wat heeft u nodig om huurtoeslag aan te vragen?", opts: ["Alleen uw paspoort", "Een DigiD en een huurwoning", "Een bankrekening en een auto", "Een brief van uw baas"], a: 1, exp: "U moet inloggen op Mijn Toeslagen met uw DigiD.", expPt: "Voce precisa fazer login no Mijn Toeslagen com seu DigiD.", expEn: "You need to log in to Mijn Toeslagen with your DigiD.", expEs: "Necesitas iniciar sesion en Mijn Toeslagen con tu DigiD." },
+      { q: "Wanneer ontvangt u de eerste betaling?", opts: ["Direct na aanvraag", "Na 1 week", "Na ongeveer 6 weken", "Na 3 maanden"], a: 2, exp: "In het formulier staat: 'De eerste betaling is ongeveer 6 weken na uw aanvraag.'", expPt: "No formulario diz: 'O primeiro pagamento e aproximadamente 6 semanas apos o seu pedido.'", expEn: "The form says: 'The first payment is approximately 6 weeks after your application.'", expEs: "El formulario dice: 'El primer pago es aproximadamente 6 semanas despues de tu solicitud.'" },
     ]
   },
   {
     id: 8, cat: "Advertentie", label: "Advertentie", title: "Supermarkt aanbieding",
     text: `SUPERMARKT DIRK\nWEEKAANBIEDING - geldig van maandag 6 t/m zondag 12 maart\n\nHalfvolle melk 1 liter: 0,89 euro (was 1,19)\nAppels 1 kg: 1,49 euro (was 2,29)\nKipfilet 500 gram: 3,99 euro (was 5,49)\nVolkoren brood: 1,69 euro (was 2,15)\n\nEXTRA AANBIEDING:\nKoop 2 pakken koffie, betaal voor 1!\nKoffie Douwe Egberts 250 gram - normaal 4,99 euro per pak\n\nOpeningstijden:\nMa-za: 8:00 - 21:00 uur\nZondag: 10:00 - 18:00 uur\n\nGratis parkeren voor klanten (max. 2 uur)`,
     questions: [
-      { q: "Hoe lang is de weekaanbieding geldig?", opts: ["Alleen op maandag", "Van maandag tot en met zondag", "Alleen in het weekend", "De hele maand maart"], a: 1, exp: "De aanbieding is geldig 'van maandag 6 t/m zondag 12 maart'.", expPt: "A oferta e valida 'de segunda 6 ate domingo 12 de marco'." },
-      { q: "Wat is de actie voor koffie?", opts: ["50% korting", "Koop 2 pakken, betaal voor 1", "Gratis koffie bij aankoop van 20 euro", "Koffie voor 1,99 euro"], a: 1, exp: "De actie is: 'Koop 2 pakken koffie, betaal voor 1!'", expPt: "A promocao e: 'Compre 2 pacotes de cafe, pague 1!'" },
-      { q: "Hoe laat sluit de supermarkt op zondag?", opts: ["21:00 uur", "20:00 uur", "18:00 uur", "19:00 uur"], a: 2, exp: "Op zondag sluit de supermarkt om 18:00 uur.", expPt: "No domingo o supermercado fecha as 18:00." },
+      { q: "Hoe lang is de weekaanbieding geldig?", opts: ["Alleen op maandag", "Van maandag tot en met zondag", "Alleen in het weekend", "De hele maand maart"], a: 1, exp: "De aanbieding is geldig 'van maandag 6 t/m zondag 12 maart'.", expPt: "A oferta e valida 'de segunda 6 ate domingo 12 de marco'.", expEn: "The offer is valid 'from Monday 6 to Sunday 12 March'.", expEs: "La oferta es valida 'del lunes 6 al domingo 12 de marzo'." },
+      { q: "Wat is de actie voor koffie?", opts: ["50% korting", "Koop 2 pakken, betaal voor 1", "Gratis koffie bij aankoop van 20 euro", "Koffie voor 1,99 euro"], a: 1, exp: "De actie is: 'Koop 2 pakken koffie, betaal voor 1!'", expPt: "A promocao e: 'Compre 2 pacotes de cafe, pague 1!'", expEn: "The promotion is: 'Buy 2 packs of coffee, pay for 1!'", expEs: "La promocion es: '¡Compra 2 paquetes de cafe, paga 1!'" },
+      { q: "Hoe laat sluit de supermarkt op zondag?", opts: ["21:00 uur", "20:00 uur", "18:00 uur", "19:00 uur"], a: 2, exp: "Op zondag sluit de supermarkt om 18:00 uur.", expPt: "No domingo o supermercado fecha as 18:00.", expEn: "On Sunday the supermarket closes at 18:00.", expEs: "El domingo el supermercado cierra a las 18:00." },
     ]
   },
   {
     id: 9, cat: "Bericht", label: "Bericht", title: "E-mail van de verhuurder",
     text: `Van: Wonen Utrecht B.V.\nAan: Huurders Zonnebloemstraat 8-24\nOnderwerp: Onderhoud verwarmingsinstallatie\n\nGeachte huurder,\n\nOp donderdag 9 maart komen onze monteurs de verwarmingsinstallatie controleren.\n\nUw afspraak is:\nDonderdag 9 maart tussen 13:00 en 17:00 uur\n\nWij vragen u thuis te zijn tijdens dit tijdvak.\nDe monteurs hebben toegang nodig tot de meterkast en de cv-ketel.\n\nAls u niet thuis kunt zijn, vraag dan een buurman of buurvrouw om de deur open te doen, of neem contact met ons op:\nTelefoon: 030-789 0123\n\nMet vriendelijke groet,\nWonen Utrecht B.V.`,
     questions: [
-      { q: "Waarom sturen de verhuurder dit bericht?", opts: ["Om de huur te verhogen", "Om een nieuwe huurder voor te stellen", "Om te vertellen dat er onderhoud aan de verwarming komt", "Om een klacht te bespreken"], a: 2, exp: "De verhuurder informeert over onderhoud aan de verwarmingsinstallatie.", expPt: "O locador informa sobre a manutencao do sistema de aquecimento." },
-      { q: "Tussen welke tijden moet u thuis zijn?", opts: ["9:00 en 13:00 uur", "13:00 en 17:00 uur", "10:00 en 14:00 uur", "8:00 en 12:00 uur"], a: 1, exp: "In het bericht staat: 'tussen 13:00 en 17:00 uur'.", expPt: "Na mensagem diz: 'entre 13:00 e 17:00 horas'." },
-      { q: "Wat moet u doen als u niet thuis kunt zijn?", opts: ["De afspraak annuleren", "Een buurman vragen of een nieuwe afspraak maken", "De sleutel onder de mat leggen", "Niets doen"], a: 1, exp: "U kunt een buurman vragen of contact opnemen voor een andere afspraak.", expPt: "Voce pode pedir a um vizinho ou entrar em contato para marcar outro horario." },
+      { q: "Waarom sturen de verhuurder dit bericht?", opts: ["Om de huur te verhogen", "Om een nieuwe huurder voor te stellen", "Om te vertellen dat er onderhoud aan de verwarming komt", "Om een klacht te bespreken"], a: 2, exp: "De verhuurder informeert over onderhoud aan de verwarmingsinstallatie.", expPt: "O locador informa sobre a manutencao do sistema de aquecimento.", expEn: "The landlord informs about the maintenance of the heating system.", expEs: "El arrendador informa sobre el mantenimiento del sistema de calefaccion." },
+      { q: "Tussen welke tijden moet u thuis zijn?", opts: ["9:00 en 13:00 uur", "13:00 en 17:00 uur", "10:00 en 14:00 uur", "8:00 en 12:00 uur"], a: 1, exp: "In het bericht staat: 'tussen 13:00 en 17:00 uur'.", expPt: "Na mensagem diz: 'entre 13:00 e 17:00 horas'.", expEn: "The message says: 'between 13:00 and 17:00'.", expEs: "El mensaje dice: 'entre las 13:00 y las 17:00'." },
+      { q: "Wat moet u doen als u niet thuis kunt zijn?", opts: ["De afspraak annuleren", "Een buurman vragen of een nieuwe afspraak maken", "De sleutel onder de mat leggen", "Niets doen"], a: 1, exp: "U kunt een buurman vragen of contact opnemen voor een andere afspraak.", expPt: "Voce pode pedir a um vizinho ou entrar em contato para marcar outro horario.", expEn: "You can ask a neighbour or contact them to schedule another time.", expEs: "Puedes pedirle a un vecino o ponerte en contacto para concertar otro horario." },
     ]
   },
   {
     id: 10, cat: "Aankondiging", label: "Aankondiging", title: "Buurtbijeenkomst",
     text: `UITNODIGING BUURTBIJEENKOMST\n\nBeste buren,\n\nDe buurtvereniging Oud-West nodigt u uit voor onze jaarlijkse buurtbijeenkomst.\n\nWanneer: Woensdag 15 maart, 20:00 uur\nWaar: Buurtcentrum De Kern, Palmstraat 12\n\nOp het programma:\n- Plannen voor de nieuwe speeltuin\n- Problemen met parkeren in de buurt\n- Vragen en opmerkingen van bewoners\n- Drankje en hapje na afloop\n\nU hoeft zich niet aan te melden. Iedereen is welkom!\n\nHeeft u een agendapunt? Stuur een e-mail naar buurtOudwest@gmail.com voor 10 maart.\n\nTot ziens!\nBuurtvereniging Oud-West`,
     questions: [
-      { q: "Moet u zich aanmelden voor de bijeenkomst?", opts: ["Ja, voor 10 maart", "Ja, via e-mail", "Nee, iedereen is welkom", "Ja, per telefoon"], a: 2, exp: "In de uitnodiging staat: 'U hoeft zich niet aan te melden. Iedereen is welkom!'", expPt: "No convite diz: 'Voce nao precisa se inscrever. Todos sao bem-vindos!'" },
-      { q: "Wat staat er op het programma?", opts: ["Een feest", "Plannen voor de speeltuin en parkeerproblematiek", "Alleen vragen van bewoners", "Een film kijken"], a: 1, exp: "Op het programma staan plannen voor de speeltuin en problemen met parkeren.", expPt: "No programa estao planos para o parquinho e problemas de estacionamento." },
-      { q: "Wat moet u doen als u een agendapunt wilt toevoegen?", opts: ["Dat kan niet", "Op de bijeenkomst zelf vragen", "Voor 10 maart een e-mail sturen", "De voorzitter bellen"], a: 2, exp: "U kunt een e-mail sturen naar buurtOudwest@gmail.com voor 10 maart.", expPt: "Voce pode enviar um email para buurtOudwest@gmail.com antes de 10 de marco." },
+      { q: "Moet u zich aanmelden voor de bijeenkomst?", opts: ["Ja, voor 10 maart", "Ja, via e-mail", "Nee, iedereen is welkom", "Ja, per telefoon"], a: 2, exp: "In de uitnodiging staat: 'U hoeft zich niet aan te melden. Iedereen is welkom!'", expPt: "No convite diz: 'Voce nao precisa se inscrever. Todos sao bem-vindos!'", expEn: "The invitation says: 'You do not need to register. Everyone is welcome!'", expEs: "La invitacion dice: '¡No necesitas inscribirte. Todos son bienvenidos!'" },
+      { q: "Wat staat er op het programma?", opts: ["Een feest", "Plannen voor de speeltuin en parkeerproblematiek", "Alleen vragen van bewoners", "Een film kijken"], a: 1, exp: "Op het programma staan plannen voor de speeltuin en problemen met parkeren.", expPt: "No programa estao planos para o parquinho e problemas de estacionamento.", expEn: "The agenda includes plans for the playground and parking problems.", expEs: "El programa incluye planes para el parque infantil y problemas de aparcamiento." },
+      { q: "Wat moet u doen als u een agendapunt wilt toevoegen?", opts: ["Dat kan niet", "Op de bijeenkomst zelf vragen", "Voor 10 maart een e-mail sturen", "De voorzitter bellen"], a: 2, exp: "U kunt een e-mail sturen naar buurtOudwest@gmail.com voor 10 maart.", expPt: "Voce pode enviar um email para buurtOudwest@gmail.com antes de 10 de marco.", expEn: "You can send an email to buurtOudwest@gmail.com before 10 March.", expEs: "Puedes enviar un correo a buurtOudwest@gmail.com antes del 10 de marzo." },
     ]
   },
 ];
@@ -1597,6 +1597,55 @@ const T = {
     dash_pratica_done: "Concluida hoje",
     dash_pratica_back: "Volte amanha para uma nova sessao",
     dash_pratica_repeat: "Repetir",
+    dash_activities: "ATIVIDADES",
+    prat_subtitle: "Escolha uma atividade",
+    cfg_subtitle: "Personalize sua experiência",
+    quiz_subtitle2: "Teste seu conhecimento sobre a Holanda",
+    save_load: "Salvar / carregar progresso",
+    cfg_save_changes: "Salvar alterações",
+    lbl_tap_listen: "Toque para ouvir",
+    lbl_copy: "Copiar codigo",
+    lbl_days_exam: "d para o exame",
+    lbl_dominated: "dominadas",
+    lbl_learning: "aprendendo",
+    lbl_new: "novas",
+    lbl_reveal_all: "Revelar todas as formas",
+    lbl_listening: "Reproduzindo...",
+    lbl_listen: "Ouvir frase",
+    lbl_reveal: "Revelar frase", act_revisao: "Revision Inteligente",
+    lbl_frases_meta: "frases · meta diaria",
+    lbl_frases_hoje: "frases hoje",
+    lbl_arraste: "Arraste para avaliar",
+    lbl_ouca: "Ouca e tente lembrar",
+    lbl_textos: "textos · avisos, cartas, anuncios",
+    cat_all: "Todos os temas",
+    cat_saude: "Saude",
+    cat_educacao: "Educacao",
+    cat_trabalho: "Trabalho",
+    cat_governo: "Governo",
+    cat_habitacao: "Habitacao",
+    cat_transporte: "Transporte",
+    cat_cultura: "Cultura",
+    cat_integracao: "Integracao",
+    cat_servicos: "Servicos",
+    lbl_questions: "perguntas",
+    lbl_excellent: "Excelente resultado!",
+    lbl_good: "Bom trabalho!",
+    lbl_keep: "Continue praticando!",
+    lbl_of: "de",
+    lbl_frases: "frases",
+    lbl_verbos: "verbos",
+    lbl_progress: "Progresso",
+    lbl_progress_auto: "Progresso salvo a cada carta.",
+    lbl_back: "Voltar",
+    lbl_add_date: "+ Adicionar data",
+    lbl_goal_done: "Meta de hoje concluida!",
+    lbl_goal_today: "Meta de hoje",
+    lbl_repeat_session: "Repetir sessao",
+    lbl_i_know: "Ja sei →",
+    lbl_choose_theme: "Escolha um tema ou pratique todos juntos:",
+    lbl_back_home: "Voltar ao Home",
+    lbl_back_praticar: "Voltar ao Praticar",
     dash_pratica_desc: "atividades • flashcard, escuta, quiz e leitura",
     dash_priority: "Prioridade",
     dash_revisao: "Revisao Inteligente",
@@ -1610,7 +1659,7 @@ const T = {
     act_leitura: "Leitura",
     act_revisao: "Revisao Inteligente",
     act_frases_meta: "frases • meta diaria",
-    act_frases_zinnen: "492 zinnen • arraste para avaliar",
+    act_frases_zinnen: "492 zinnen • Arraste para avaliar",
     act_escuta_desc: "ouca e tente lembrar",
     act_conj_desc: "25 verbos essenciais com audio",
     act_quiz_desc: "perguntas sobre a sociedade holandesa",
@@ -1634,7 +1683,7 @@ const T = {
     fc_evaluated: "Avaliado",
     // Escuta
     esc_listening: "Ouvindo...",
-    esc_tap: "Toque para ouvir",
+    esc_tap: "`· ${t('lbl_tap_listen')}`",
     esc_reveal: "Revelar frase",
     esc_understood: "Entendi!",
     esc_not_understood: "Nao entendi",
@@ -1681,18 +1730,24 @@ const T = {
     cfg_goal_auto: "Calculada automaticamente pela data do exame.",
     cfg_goal_choose: "Escolha quantas frases estudar por dia:",
     cfg_voice: "Voz holandesa",
-    cfg_voice_tap: "Toque para ouvir",
-    cfg_save: "Salvar / carregar progresso",
+    cfg_voice_tap: "`· ${t('lbl_tap_listen')}`",
+    cfg_save: "Save / load progress",
     cfg_reset: "Apagar tudo e comecar do zero",
     cfg_reset_confirm: "Tem certeza?",
     cfg_reset_desc: "Todo o progresso sera apagado permanentemente.",
     cfg_cancel: "Cancelar",
     cfg_reset_btn: "Apagar tudo",
+    cfg_reset_confirm: "Tem certeza? Isso apaga todo o progresso.",
+    lbl_cancel: "Cancelar",
     // Save modal
     save_title: "Progresso",
     save_auto: "Salvo automaticamente",
-    save_auto_desc: "Progresso salvo a cada carta.",
     save_backup: "Backup para outro dispositivo",
+    save_restore: "Restaurar de outro dispositivo:",
+    save_paste: "Cole o codigo aqui...",
+    save_auto_title: "Salvo automaticamente",
+    save_auto_desc: "Progress saved with each card.",
+    save_backup: "Backup",
     save_copy: "Copiar codigo",
     save_restore: "Restaurar de outro dispositivo:",
     save_load: "Carregar progresso",
@@ -1713,7 +1768,7 @@ const T = {
     lbl_of: "de",
     lbl_frases: "frases",
     lbl_perday: "frases/dia",
-    lbl_exam: "d para o exame",
+    lbl_exam: "d to exam",
     lbl_questions: "perguntas",
     lbl_texts: "textos",
     lbl_verbs: "verbos",
@@ -1756,6 +1811,67 @@ const T = {
     dash_pratica_done: "Done today",
     dash_pratica_back: "Come back tomorrow for a new session",
     dash_pratica_repeat: "Repeat",
+    dash_activities: "ACTIVITIES",
+    prat_subtitle: "Choose an activity",
+    cfg_subtitle: "Customize your experience",
+    quiz_subtitle2: "Test your knowledge about the Netherlands",
+    save_load: "Save / load progress",
+    cfg_save_changes: "Save changes",
+    lbl_tap_listen: "Tap to listen",
+    lbl_copy: "Copy code",
+    dash_activities: "ACTIVITIES",
+    save_backup: "Backup to another device",
+    save_restore: "Restore from another device:",
+    save_paste: "Paste the code here...",
+    save_load: "Load progress",
+    save_copy: "Copy code",
+    save_auto_title: "Saved automatically",
+    cfg_reset: "Delete everything and start over",
+    cfg_reset_btn: "Delete all",
+    cfg_reset_confirm: "Are you sure? This deletes all your progress.",
+    lbl_cancel: "Cancel",
+    lbl_copy: "Copy code",
+    lbl_days_exam: "d to exam",
+    lbl_dominated: "mastered",
+    lbl_learning: "learning",
+    lbl_new: "new",
+    lbl_reveal_all: "Reveal all forms",
+    lbl_listening: "Playing...",
+    lbl_listen: "Listen",
+    lbl_reveal: "Reveal sentence",
+    lbl_frases_meta: "sentences · daily goal",
+    lbl_frases_hoje: "sentences today",
+    lbl_arraste: "Swipe to evaluate",
+    lbl_ouca: "Listen and try to remember",
+    lbl_textos: "texts · notices, letters, ads",
+    cat_all: "All themes",
+    cat_saude: "Health",
+    cat_educacao: "Education",
+    cat_trabalho: "Work",
+    cat_governo: "Government",
+    cat_habitacao: "Housing",
+    cat_transporte: "Transport",
+    cat_cultura: "Culture",
+    cat_integracao: "Integration",
+    cat_servicos: "Services",
+    lbl_questions: "questions",
+    lbl_excellent: "Excellent result!",
+    lbl_good: "Good work!",
+    lbl_keep: "Keep practicing!",
+    lbl_of: "of",
+    lbl_frases: "sentences",
+    lbl_verbos: "verbs",
+    lbl_progress: "Progress",
+    lbl_progress_auto: "Progress saved with each card.",
+    lbl_back: "Back",
+    lbl_add_date: "+ Add date",
+    lbl_goal_done: "Today's goal completed!",
+    lbl_goal_today: "Today's goal",
+    lbl_repeat_session: "Repeat session",
+    lbl_i_know: "I know it →",
+    lbl_choose_theme: "Choose a theme or practice all together:",
+    lbl_back_home: "Back to Home",
+    lbl_back_praticar: "Back to Practice",
     dash_pratica_desc: "activities • flashcard, listening, quiz & reading",
     dash_priority: "Priority",
     dash_revisao: "Smart Review",
@@ -1904,6 +2020,55 @@ const T = {
     dash_pratica_done: "Completada hoy",
     dash_pratica_back: "Vuelve manana para una nueva sesion",
     dash_pratica_repeat: "Repetir",
+    dash_activities: "ATIVIDADES",
+    prat_subtitle: "Escolha uma atividade",
+    cfg_subtitle: "Personalize sua experiência",
+    quiz_subtitle2: "Teste seu conhecimento sobre a Holanda",
+    save_load: "Guardar / cargar progreso",
+    cfg_save_changes: "Guardar cambios",
+    lbl_tap_listen: "Toca para escuchar",
+    lbl_copy: "Copiar codigo",
+    lbl_days_exam: "d para el examen",
+    lbl_dominated: "dominadas",
+    lbl_learning: "aprendiendo",
+    lbl_new: "nuevas",
+    lbl_reveal_all: "Revelar todas las formas",
+    lbl_listening: "Reproduciendo...",
+    lbl_listen: "Escuchar frase",
+    lbl_reveal: "Revelar frase", act_revisao: "Revision Inteligente",
+    lbl_frases_meta: "frases · meta diaria",
+    lbl_frases_hoje: "frases hoy",
+    lbl_arraste: "Desliza para evaluar",
+    lbl_ouca: "Escucha e intenta recordar",
+    lbl_textos: "textos · avisos, cartas, anuncios",
+    cat_all: "Todos os temas",
+    cat_saude: "Saude",
+    cat_educacao: "Educacao",
+    cat_trabalho: "Trabalho",
+    cat_governo: "Governo",
+    cat_habitacao: "Habitacao",
+    cat_transporte: "Transporte",
+    cat_cultura: "Cultura",
+    cat_integracao: "Integracao",
+    cat_servicos: "Servicos",
+    lbl_questions: "perguntas",
+    lbl_excellent: "Excelente resultado!",
+    lbl_good: "Buen trabajo!",
+    lbl_keep: "Sigue practicando!",
+    lbl_of: "de",
+    lbl_frases: "frases",
+    lbl_verbos: "verbos",
+    lbl_progress: "Progresso",
+    lbl_progress_auto: "Progreso guardado con cada tarjeta.",
+    lbl_back: "Voltar",
+    lbl_add_date: "+ Adicionar data",
+    lbl_goal_done: "Meta de hoje concluida!",
+    lbl_goal_today: "Meta de hoje",
+    lbl_repeat_session: "Repetir sessao",
+    lbl_i_know: "Ja sei →",
+    lbl_choose_theme: "Elige un tema o practica todos juntos:",
+    lbl_back_home: "Voltar ao Home",
+    lbl_back_praticar: "Voltar ao Praticar",
     dash_pratica_desc: "actividades • flashcard, escucha, quiz y lectura",
     dash_priority: "Prioridad",
     dash_revisao: "Repaso Inteligente",
@@ -1944,6 +2109,15 @@ const T = {
     cfg_cancel: "Cancelar", cfg_reset_btn: "Borrar todo",
     save_title: "Progreso", save_auto: "Guardado automaticamente", save_auto_desc: "Progreso guardado en cada tarjeta.",
     save_backup: "Copia de seguridad", save_copy: "Copiar codigo", save_restore: "Restaurar desde otro dispositivo:",
+    save_backup: "Copia de seguridad a otro dispositivo",
+    save_restore: "Restaurar desde otro dispositivo:",
+    save_paste: "Pega el codigo aqui...",
+    save_load: "Cargar progreso",
+    save_auto_title: "Guardado automaticamente",
+    cfg_reset: "Borrar todo y empezar de cero",
+    cfg_reset_btn: "Borrar todo",
+    cfg_reset_confirm: "Estas seguro? Esto borra todo tu progreso.",
+    lbl_cancel: "Cancelar",
     save_load: "Cargar progreso", save_paste: "Pega el codigo aqui...", save_invalid: "Codigo invalido.",
     conj_all: "Escuchar todo", conj_prev: "← Anterior", conj_next: "Siguiente →", conj_reveal: "Revelar",
     btn_back: "Volver", btn_start: "Empezar", btn_save: "Guardar", btn_next: "Siguiente →",
@@ -2297,13 +2471,14 @@ function getCardById(id) {
 }
 
 // ─── SAVE MODAL ──────────────────────────────────────────────────────────────
-function SaveModal({ show, onClose, exportCode, importCode, setImportCode, importError, onImport, confirmReset, setConfirmReset, onReset }) {
+function SaveModal({ show, onClose, exportCode, importCode, setImportCode, importError, onImport, confirmReset, setConfirmReset, onReset, tFn }) {
+  const t = tFn || ((k) => k);
   if (!show) return null;
   return (
     <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 300, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
       <div style={{ background: C.white, borderRadius: `${R.xl}px ${R.xl}px 0 0`, padding: "28px 24px 40px", width: "100%", maxWidth: 640, boxShadow: shadow.lg, maxHeight: "85vh", overflowY: "auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-          <div style={{ fontSize: 17, fontWeight: 700 }}>Progresso</div>
+          <div style={{ fontSize: 17, fontWeight: 700 }}>"Progresso"</div>
           <button onClick={onClose} style={{ background: C.bg, border: "none", borderRadius: R.full, width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
             <Icon d={Icons.close} size={20} stroke={C.dark} />
           </button>
@@ -2311,25 +2486,25 @@ function SaveModal({ show, onClose, exportCode, importCode, setImportCode, impor
         <div style={{ background: C.greenLight, borderRadius: R.md, padding: "12px 16px", marginBottom: 16, display: "flex", alignItems: "center", gap: 10 }}>
           <Icon d={Icons.check} size={18} stroke={C.green} />
           <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: C.green }}>Salvo automaticamente</div>
-            <div style={{ fontSize: 12, color: C.mid }}>Progresso salvo a cada carta.</div>
+            <div style={{ fontSize: 13, fontWeight: 600, color: C.green }}>{t("save_auto_title")}</div>
+            <div style={{ fontSize: 12, color: C.mid }}>"Progresso salvo a cada carta."</div>
           </div>
         </div>
         <div style={{ borderTop: `1px solid ${C.light}`, paddingTop: 16, marginBottom: 16 }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: C.mid, marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.5 }}>Backup para outro dispositivo</div>
+          <div style={{ fontSize: 12, fontWeight: 600, color: C.mid, marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.5 }}>{t("save_backup")}</div>
           <textarea readOnly value={exportCode} style={{ width: "100%", height: 64, fontFamily: "monospace", fontSize: 11, padding: 12, border: `1.5px solid ${C.light}`, borderRadius: R.md, background: C.bg, resize: "none", boxSizing: "border-box" }} />
-          <Btn onClick={() => navigator.clipboard?.writeText(exportCode)} variant="secondary" icon={Icons.copy} style={{ marginTop: 8, width: "100%" }}>Copiar código</Btn>
+          <Btn onClick={() => navigator.clipboard?.writeText(exportCode)} variant="secondary" icon={Icons.copy} style={{ marginTop: 8, width: "100%" }}>{t("save_copy")}</Btn>
         </div>
         <div style={{ borderTop: `1px solid ${C.light}`, paddingTop: 16, marginBottom: 16 }}>
-          <div style={{ fontSize: 12, color: C.mid, marginBottom: 8 }}>Restaurar de outro dispositivo:</div>
-          <textarea value={importCode} onChange={e => setImportCode(e.target.value)} placeholder="Cole o código aqui..." style={{ width: "100%", height: 64, fontFamily: "monospace", fontSize: 11, padding: 12, border: `1.5px solid ${C.light}`, borderRadius: R.md, background: "#fff", resize: "none", boxSizing: "border-box" }} />
+          <div style={{ fontSize: 12, color: C.mid, marginBottom: 8 }}>{t("save_restore")}</div>
+          <textarea value={importCode} onChange={e => setImportCode(e.target.value)} placeholder={t("save_paste")} style={{ width: "100%", height: 64, fontFamily: "monospace", fontSize: 11, padding: 12, border: `1.5px solid ${C.light}`, borderRadius: R.md, background: "#fff", resize: "none", boxSizing: "border-box" }} />
           {importError && <div style={{ color: C.coral, fontSize: 12, marginTop: 6 }}>{importError}</div>}
-          <Btn onClick={onImport} style={{ marginTop: 10, width: "100%" }}>Carregar progresso</Btn>
+          <Btn onClick={onImport} style={{ marginTop: 10, width: "100%" }}>{t("save_load")}</Btn>
         </div>
         <div style={{ borderTop: `1px solid ${C.light}`, paddingTop: 16 }}>
           {!confirmReset ? (
             <button onClick={() => setConfirmReset(true)} style={{ width: "100%", background: "none", border: `1.5px solid ${C.light}`, borderRadius: R.full, padding: "13px", cursor: "pointer", fontSize: 14, fontWeight: 600, color: C.mid, fontFamily: font }}>
-              🗑 Apagar tudo e começar do zero
+              🗑 {t("cfg_reset")}
             </button>
           ) : (
             <div style={{ background: "#FFF0F3", borderRadius: R.md, padding: 16 }}>
@@ -2337,7 +2512,7 @@ function SaveModal({ show, onClose, exportCode, importCode, setImportCode, impor
               <div style={{ fontSize: 13, color: C.mid, marginBottom: 12 }}>Todo o progresso será apagado permanentemente.</div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                 <button onClick={() => setConfirmReset(false)} style={{ background: C.white, border: `1.5px solid ${C.light}`, borderRadius: R.full, padding: "11px", cursor: "pointer", fontSize: 14, fontFamily: font, color: C.dark, fontWeight: 600 }}>Cancelar</button>
-                <button onClick={onReset} style={{ background: C.coral, border: "none", borderRadius: R.full, padding: "11px", cursor: "pointer", fontSize: 14, fontFamily: font, color: "#fff", fontWeight: 600 }}>Apagar tudo</button>
+                <button onClick={onReset} style={{ background: C.coral, border: "none", borderRadius: R.full, padding: "11px", cursor: "pointer", fontSize: 14, fontFamily: font, color: "#fff", fontWeight: 600 }}>{t("cfg_reset_btn")}</button>
               </div>
             </div>
           )}
@@ -2836,6 +3011,7 @@ export default function NT2Simulator() {
     confirmReset,
     setConfirmReset,
     onReset: () => { setProgress(DEFAULT_PROGRESS); setOnboardingStep("lang"); setDailyGoalPick(10); try { localStorage.removeItem("nt2_progress"); } catch {} setConfirmReset(false); setShowSave(false); setScreen("setup"); },
+    tFn: t,
   };
 
   // ─────────────────────────────────────────────────────────────────────────────
@@ -2869,7 +3045,7 @@ export default function NT2Simulator() {
         }} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 14px", border: `1.5px solid ${chosenVoice === v.name ? C.blue : C.light}`, borderRadius: R.md, background: chosenVoice === v.name ? C.blueLight : C.white, cursor: "pointer", fontFamily: font, textAlign: "left" }}>
           <div>
             <div style={{ fontSize: 14, fontWeight: 600, color: chosenVoice === v.name ? C.blue : C.dark }}>{v.name}</div>
-            <div style={{ fontSize: 11, color: C.mid }}>{v.lang} · Toque para ouvir</div>
+            <div style={{ fontSize: 11, color: C.mid }}>{v.lang} · `· ${t('lbl_tap_listen')}`</div>
           </div>
           {chosenVoice === v.name && <Icon d={Icons.check} size={18} stroke={C.blue} />}
         </button>
@@ -2884,7 +3060,7 @@ export default function NT2Simulator() {
       <Wrap>
         <div style={{ padding: "0 0 60px" }}>
           <div style={{ padding: "24px 0 20px" }}>
-            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>Personalize sua experiência</div>
+            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>{t("cfg_subtitle")}</div>
             <div style={{ fontSize: 24, fontWeight: 700 }}>{t("cfg_title")}</div>
           </div>
 
@@ -2932,9 +3108,33 @@ export default function NT2Simulator() {
             <VoicePicker />
           </CardBox>
 
-          <button onClick={openSave} style={{ width: "100%", background: "none", border: `1.5px solid ${C.light}`, borderRadius: R.full, padding: "13px", cursor: "pointer", fontSize: 14, color: C.mid, fontFamily: font, fontWeight: 500 }}>
-            Salvar / carregar progresso
-          </button>
+          {/* Backup / Restore inline */}
+          <CardBox style={{ marginBottom: 12 }}>
+            <div style={{ fontSize: 12, fontWeight: 600, color: C.mid, marginBottom: 14, textTransform: "uppercase", letterSpacing: 1 }}>{t("save_backup")}</div>
+            <textarea readOnly value={exportCode} style={{ width: "100%", height: 56, fontFamily: "monospace", fontSize: 11, padding: 10, border: `1.5px solid ${C.light}`, borderRadius: R.md, background: C.bg, resize: "none", boxSizing: "border-box", marginBottom: 8 }} />
+            <Btn onClick={() => navigator.clipboard?.writeText(exportCode)} variant="secondary" icon={Icons.copy} style={{ width: "100%", marginBottom: 16 }}>{t("save_copy")}</Btn>
+            <div style={{ fontSize: 12, color: C.mid, marginBottom: 6 }}>{t("save_restore")}</div>
+            <textarea value={importCode} onChange={e => setImportCode(e.target.value)} placeholder={t("save_paste")} style={{ width: "100%", height: 56, fontFamily: "monospace", fontSize: 11, padding: 10, border: `1.5px solid ${C.light}`, borderRadius: R.md, background: "#fff", resize: "none", boxSizing: "border-box", marginBottom: 8 }} />
+            {importError && <div style={{ color: C.coral, fontSize: 12, marginBottom: 8 }}>{importError}</div>}
+            <Btn onClick={handleImport} style={{ width: "100%" }} disabled={!importCode.trim()} variant={importCode.trim() ? "primary" : "secondary"}>{t("save_load")}</Btn>
+          </CardBox>
+
+          {/* Reset */}
+          <CardBox style={{ marginBottom: 12 }}>
+            {!confirmReset ? (
+              <button onClick={() => setConfirmReset(true)} style={{ width: "100%", background: "none", border: "none", padding: "4px", cursor: "pointer", fontSize: 14, fontWeight: 500, color: C.coral, fontFamily: font, textAlign: "left" }}>
+                🗑 {t("cfg_reset")}
+              </button>
+            ) : (
+              <div>
+                <div style={{ fontSize: 13, color: C.coral, marginBottom: 12, fontWeight: 600 }}>{t("cfg_reset_confirm") || "Tem certeza? Isso apaga todo o progresso."}</div>
+                <div style={{ display: "flex", gap: 8 }}>
+                  <button onClick={() => setConfirmReset(false)} style={{ flex: 1, background: C.white, border: `1.5px solid ${C.light}`, borderRadius: R.full, padding: "11px", cursor: "pointer", fontSize: 14, fontFamily: font, color: C.dark, fontWeight: 600 }}>{t("lbl_cancel") || "Cancelar"}</button>
+                  <button onClick={saveModalProps.onReset} style={{ flex: 1, background: C.coral, border: "none", borderRadius: R.full, padding: "11px", cursor: "pointer", fontSize: 14, fontFamily: font, color: "#fff", fontWeight: 600 }}>{t("cfg_reset_btn")}</button>
+                </div>
+              </div>
+            )}
+          </CardBox>
         </div>
       </Wrap>
       <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
@@ -3005,7 +3205,7 @@ export default function NT2Simulator() {
           {onboardingStep === 2 && (
             <div>
               <button onClick={() => setOnboardingStep(1)} style={{ display: "flex", alignItems: "center", gap: 6, background: "none", border: "none", color: C.mid, cursor: "pointer", fontFamily: font, fontSize: 14, marginBottom: 32, padding: 0 }}>
-                <Icon d={Icons.back} size={18} stroke={C.mid} /> Voltar
+                <Icon d={Icons.back} size={18} stroke={C.mid} /> {t("lbl_back")}
               </button>
               <div style={{ textAlign: "center", marginBottom: 32 }}>
                 <div style={{ width: 72, height: 72, background: C.coralLight, borderRadius: R.xl, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
@@ -3030,7 +3230,7 @@ export default function NT2Simulator() {
           {onboardingStep === "goal" && (
             <div>
               <button onClick={() => setOnboardingStep(2)} style={{ display: "flex", alignItems: "center", gap: 6, background: "none", border: "none", color: C.mid, cursor: "pointer", fontFamily: font, fontSize: 14, marginBottom: 32, padding: 0 }}>
-                <Icon d={Icons.back} size={18} stroke={C.mid} /> Voltar
+                <Icon d={Icons.back} size={18} stroke={C.mid} /> {t("lbl_back")}
               </button>
               <div style={{ textAlign: "center", marginBottom: 32 }}>
                 <div style={{ width: 72, height: 72, background: C.coralLight, borderRadius: R.xl, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
@@ -3061,7 +3261,7 @@ export default function NT2Simulator() {
           {onboardingStep === 3 && (
             <div>
               <button onClick={() => setOnboardingStep(progress.examDate ? 2 : "goal")} style={{ display: "flex", alignItems: "center", gap: 6, background: "none", border: "none", color: C.mid, cursor: "pointer", fontFamily: font, fontSize: 14, marginBottom: 32, padding: 0 }}>
-                <Icon d={Icons.back} size={18} stroke={C.mid} /> Voltar
+                <Icon d={Icons.back} size={18} stroke={C.mid} /> {t("lbl_back")}
               </button>
               <div style={{ textAlign: "center", marginBottom: 32 }}>
                 <div style={{ width: 72, height: 72, background: C.blueLight, borderRadius: R.xl, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
@@ -3111,11 +3311,11 @@ export default function NT2Simulator() {
               {stats.daysLeft != null ? (
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                   <Icon d={Icons.calendar} size={14} stroke={C.coral} />
-                  <span style={{ fontSize: 13, fontWeight: 600, color: C.coral }}>{stats.daysLeft}d para o exame</span>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: C.coral }}>{stats.daysLeft}{t("lbl_days_exam")}</span>
                 </div>
               ) : (
                 <button onClick={() => handleTabChange("config")} style={{ background: "none", border: "none", fontSize: 12, color: C.mid, cursor: "pointer", fontFamily: font, padding: 0 }}>
-                  + Adicionar data
+                  {t("lbl_add_date")}
                 </button>
               )}
             </div>
@@ -3132,13 +3332,13 @@ export default function NT2Simulator() {
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: stats.dailyGoal != null ? 14 : 0 }}>
               <div style={{ display: "flex", gap: 12, fontSize: 11, color: C.mid }}>
                 <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: C.green, display: "inline-block" }} />{stats.dominated} dominadas
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: C.green, display: "inline-block" }} />{stats.dominated} {t("lbl_dominated")}
                 </span>
                 <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#FFD166", display: "inline-block" }} />{stats.learning} aprendendo
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#FFD166", display: "inline-block" }} />{stats.learning} {t("lbl_learning")}
                 </span>
                 <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#E0E0E0", display: "inline-block" }} />{stats.unseen} novas
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#E0E0E0", display: "inline-block" }} />{stats.unseen} {t("lbl_new")}
                 </span>
               </div>
               <span style={{ fontSize: 14, fontWeight: 700, color: C.coral }}>{pct}%</span>
@@ -3152,7 +3352,7 @@ export default function NT2Simulator() {
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                         <span style={{ fontSize: 18, lineHeight: 1 }}>🏆</span>
-                        <span style={{ fontSize: 13, fontWeight: 700, color: C.green }}>Meta de hoje concluida!</span>
+                        <span style={{ fontSize: 13, fontWeight: 700, color: C.green }}>{t("lbl_goal_done")}</span>
                       </div>
                       <span style={{ fontSize: 13, fontWeight: 700, color: C.green }}>{todayStudied}/{stats.dailyGoal}</span>
                     </div>
@@ -3161,7 +3361,7 @@ export default function NT2Simulator() {
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                       <Icon d={Icons.target} size={16} stroke={C.coral} />
-                      <span style={{ fontSize: 13, fontWeight: 600, color: C.dark }}>Meta de hoje</span>
+                      <span style={{ fontSize: 13, fontWeight: 600, color: C.dark }}>{t("lbl_goal_today")}</span>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                       <div style={{ width: 80, height: 6, background: "#F0F0F0", borderRadius: R.full, overflow: "hidden" }}>
@@ -3180,22 +3380,22 @@ export default function NT2Simulator() {
             <div style={{ background: "#59962D", borderRadius: R.lg, padding: "20px 18px", marginBottom: 12, display: "flex", alignItems: "center", gap: 16 }}>
               <div style={{ width: 80, height: 80, flexShrink: 0, borderRadius: 12, backgroundImage: `url(${ICONS.trophy})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>Concluida hoje</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>{t("dash_pratica_done")}</div>
                 <div style={{ fontSize: 17, fontWeight: 700, color: "#fff", marginBottom: 2 }}>Pratica do Dia</div>
-                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }}>Volte amanha para uma nova sessao</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }}>{t("dash_pratica_back")}</div>
               </div>
               <button onClick={startPraticaDoDia} style={{ background: "rgba(255,255,255,0.2)", border: "none", borderRadius: R.full, padding: "8px 14px", cursor: "pointer", fontSize: 12, fontWeight: 600, color: "#fff", fontFamily: font }}>
-                Repetir
+                {t("dash_pratica_repeat")}
               </button>
             </div>
           ) : (
             <button onClick={startPraticaDoDia} style={{ width: "100%", background: "linear-gradient(135deg, #FF385C, #D4003B)", border: "none", borderRadius: R.lg, padding: "20px 18px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 16, marginBottom: 16, fontFamily: font, boxShadow: "0 4px 20px rgba(255,56,92,0.35)" }}>
               <div style={{ width: 40, height: 64, flexShrink: 0, marginLeft: 0, backgroundImage: `url(${ICONS.zap})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>Sessao do dia</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>{t("dash_session")}</div>
                 <div style={{ fontSize: 17, fontWeight: 700, color: "#fff", marginBottom: 2 }}>Pratica do Dia</div>
                 <div style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }}>
-                  {stats.dailyGoal ?? 10} atividades • flashcard, escuta, quiz e leitura
+                  {`${stats.dailyGoal ?? 10} ${t("dash_pratica_desc")}`}
                 </div>
               </div>
               <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: R.full, width: 36, height: 36, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -3224,8 +3424,8 @@ export default function NT2Simulator() {
               const goal = stats.dailyGoal;
               const todayDone = progress.todayDate === getToday() ? progress.todayStudied : 0;
               const sessionSize = goal != null ? Math.max(goal - todayDone > 0 ? goal - todayDone : goal, 10) : 20;
-              const desc1 = goal != null ? `${sessionSize} frases • meta diaria` : "492 zinnen • arraste para avaliar";
-              const desc2 = goal != null ? `${sessionSize} frases • ouca e tente lembrar` : "Ouca e tente lembrar";
+              const desc1 = goal != null ? `${sessionSize} ${t("lbl_frases_meta")}` : `492 zinnen • ${t("lbl_arraste")}`;
+              const desc2 = goal != null ? `${sessionSize} frases • ouca e tente lembrar` : t("lbl_ouca");
 
               const cardStyle = { background: C.white, border: "none", borderRadius: R.lg, padding: "12px 18px", cursor: "pointer", textAlign: "left", display: "flex", flexDirection: "row", alignItems: "center", gap: 16, boxShadow: shadow.card, fontFamily: font, width: "100%" };
               const iconBox = { width: 52, height: 52, flexShrink: 0 };
@@ -3251,7 +3451,7 @@ export default function NT2Simulator() {
                   <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.conj})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_conjugacao")}</div>
-                    <div style={{ fontSize: 12, color: C.mid }}>25 verbos essenciais</div>
+                    <div style={{ fontSize: 12, color: C.mid }}>{t("act_conj_desc")}</div>
                   </div>
                   <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
                 </button>,
@@ -3287,7 +3487,7 @@ export default function NT2Simulator() {
         <SaveModal {...saveModalProps} />
         <Wrap>
           <div style={{ padding: "24px 0 20px" }}>
-            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>Escolha uma atividade</div>
+            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>{t("prat_subtitle") || "Escolha uma atividade"}</div>
             <div style={{ fontSize: 24, fontWeight: 700 }}>Praticar</div>
           </div>
 
@@ -3299,7 +3499,7 @@ export default function NT2Simulator() {
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_flashcards")}</div>
-                <div style={{ fontSize: 12, color: C.mid }}>{goal != null ? `${sessionSize} frases hoje` : 'Arraste para avaliar'}</div>
+                <div style={{ fontSize: 12, color: C.mid }}>{goal != null ? `${sessionSize} ${t("lbl_frases_hoje")}` : t("lbl_arraste")}</div>
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
@@ -3309,7 +3509,7 @@ export default function NT2Simulator() {
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_escuta")}</div>
-                <div style={{ fontSize: 12, color: C.mid }}>{goal != null ? `${sessionSize} frases hoje` : 'Ouca e tente lembrar'}</div>
+                <div style={{ fontSize: 12, color: C.mid }}>{goal != null ? `${sessionSize} ${t("lbl_frases_hoje")}` : t("lbl_ouca")}</div>
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
@@ -3347,7 +3547,7 @@ export default function NT2Simulator() {
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_leitura")}</div>
-                <div style={{ fontSize: 12, color: C.mid }}>{LEITURA_TEXTOS.length} textos • avisos, cartas, anuncios</div>
+                <div style={{ fontSize: 12, color: C.mid }}>{LEITURA_TEXTOS.length} {t("lbl_textos")}</div>
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
@@ -3361,7 +3561,7 @@ export default function NT2Simulator() {
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_conjugacao")}</div>
-                <div style={{ fontSize: 12, color: C.mid }}>25 verbos essenciais com audio</div>
+                <div style={{ fontSize: 12, color: C.mid }}>{t("act_conj_desc")}</div>
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
@@ -3383,7 +3583,7 @@ export default function NT2Simulator() {
         <SaveModal {...saveModalProps} />
   
         <Wrap>
-          <AppHeader title="Conjugação" subtitle={`${verbIdx + 1} / ${VERBOS.length} verbos`} onBack={() => handleTabChange("praticar")} onSave={openSave} />
+          <AppHeader title={t("act_conjugacao")} subtitle={`${verbIdx + 1} / ${VERBOS.length} ${t("lbl_verbos")}`} onBack={() => handleTabChange("praticar")} onSave={openSave} />
 
           {/* Progress dots */}
           <div style={{ display: "flex", gap: 6, marginBottom: 20, flexWrap: "wrap" }}>
@@ -3434,7 +3634,7 @@ export default function NT2Simulator() {
 
             {!allRevealed && (
               <button onClick={() => setVerbRevealed(verb.forms.map((_, i) => i))} style={{ marginTop: 16, width: "100%", background: C.bg, border: "none", color: C.mid, padding: "12px", borderRadius: R.md, cursor: "pointer", fontSize: 13, fontFamily: font, fontWeight: 500 }}>
-                Revelar todas as formas
+                {t("lbl_reveal_all")}
               </button>
             )}
           </CardBox>
@@ -3456,9 +3656,9 @@ export default function NT2Simulator() {
   // SESSION DONE
   // ─────────────────────────────────────────────────────────────────────────────
   if (sessionDone) {
-    const total = sessionScore.correct + sessionScore.wrong;
+    const total = sessionScore.correct + sessionScore.wrong; const scoreText = `${sessionScore.correct} ${t("lbl_of")} ${total} ${t("lbl_frases")}`;
     const pct = total > 0 ? Math.round((sessionScore.correct / total) * 100) : 0;
-    const modeLabel = screen === "escuta" ? "Modo Escuta" : screen === "revisao" ? "Revisão Inteligente" : "Flashcards";
+    const modeLabel = screen === "escuta" ? t("act_escuta") : screen === "revisao" ? t("act_revisao") : t("act_flashcards");
     return (
       <Page dir={isRTL ? "rtl" : "ltr"}>
         <SaveModal {...saveModalProps} />
@@ -3469,9 +3669,9 @@ export default function NT2Simulator() {
           </div>
           <div style={{ fontSize: 11, letterSpacing: 2, color: C.mid, fontWeight: 600, marginBottom: 8, textTransform: "uppercase" }}>{modeLabel}</div>
           <div style={{ fontSize: 68, fontWeight: 700, marginBottom: 4, color: C.dark }}>{pct}%</div>
-          <div style={{ fontSize: 16, color: C.mid, marginBottom: 8 }}>{sessionScore.correct} de {total} frases</div>
+          <div style={{ fontSize: 16, color: C.mid, marginBottom: 8 }}>{sessionScore.correct} {t("lbl_of")} {total} {t("lbl_frases")}</div>
           <div style={{ fontSize: 14, color: C.mid, marginBottom: 40 }}>
-            {pct >= 80 ? "Excelente resultado!" : pct >= 60 ? "Bom trabalho!" : "Continue praticando!"}
+            {pct >= 80 ? t("lbl_excellent") : pct >= 60 ? t("lbl_good") : t("lbl_keep")}
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 32 }}>
             <CardBox style={{ textAlign: "center", background: C.greenLight }}>
@@ -3485,7 +3685,7 @@ export default function NT2Simulator() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <Btn onClick={() => { if (screen === "revisao") startRevisao(); else if (screen === "escuta") startEscuta(); else startFlashcards("both"); }} icon={Icons.repeat}>
-              Repetir sessão
+              {t("lbl_repeat_session")}
             </Btn>
             <Btn onClick={() => setScreen("dashboard")} variant="secondary" icon={Icons.home}>
               Dashboard
@@ -3531,7 +3731,7 @@ export default function NT2Simulator() {
           {/* Swipe hints */}
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
             <div style={{ fontSize: 13, fontWeight: 600, color: C.coral, opacity: isLeft ? swipeRatio : 0.2, transition: isDragging ? "none" : "opacity 0.3s" }}>← Praticar</div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: C.green, opacity: isRight ? swipeRatio : 0.2, transition: isDragging ? "none" : "opacity 0.3s" }}>Já sei →</div>
+            <div style={{ fontSize: 13, fontWeight: 600, color: C.green, opacity: isRight ? swipeRatio : 0.2, transition: isDragging ? "none" : "opacity 0.3s" }}>{t("lbl_i_know")}</div>
           </div>
 
           {/* Card */}
@@ -3551,7 +3751,7 @@ export default function NT2Simulator() {
               position: "relative",
             }}
           >
-            {isRight && <div style={{ position: "absolute", top: 16, left: 18, background: C.green, color: "#fff", padding: "6px 14px", fontSize: 13, fontWeight: 700, borderRadius: R.full, opacity: swipeRatio }}>✓ Já sei</div>}
+            {isRight && <div style={{ position: "absolute", top: 16, left: 18, background: C.green, color: "#fff", padding: "6px 14px", fontSize: 13, fontWeight: 700, borderRadius: R.full, opacity: swipeRatio }}>{t("lbl_i_know")}</div>}
             {isLeft && <div style={{ position: "absolute", top: 16, right: 18, background: C.coral, color: "#fff", padding: "6px 14px", fontSize: 13, fontWeight: 700, borderRadius: R.full, opacity: swipeRatio }}>Praticar</div>}
 
             <div style={{ position: "absolute", top: 14, right: 18, fontSize: 11, color: "rgba(255,255,255,0.25)" }}>#{current.id + 1}</div>
@@ -3594,7 +3794,7 @@ export default function NT2Simulator() {
         <SaveModal {...saveModalProps} />
   
         <Wrap>
-          <AppHeader title="Modo Escuta" subtitle={`${sessionIdx + 1} de ${sessionCards.length}`} onBack={() => handleTabChange("praticar")} onSave={openSave} />
+          <AppHeader title={t("act_escuta")} subtitle={`${sessionIdx + 1} de ${sessionCards.length}`} onBack={() => handleTabChange("praticar")} onSave={openSave} />
 
           <div style={{ height: 4, background: C.light, borderRadius: R.full, marginBottom: 20, overflow: "hidden" }}>
             <div style={{ height: 4, width: `${sessionPct}%`, background: C.blue, borderRadius: R.full, transition: "width 0.3s" }} />
@@ -3621,7 +3821,7 @@ export default function NT2Simulator() {
               boxShadow: speaking ? "0 4px 16px rgba(0,102,255,0.3)" : "none",
             }}>
               <Icon d={speaking ? Icons.speaker : Icons.play} size={18} stroke="currentColor" />
-              {speaking ? "Reproduzindo..." : "Ouvir frase"}
+              {speaking ? t("lbl_listening") : t("lbl_listen")}
             </button>
 
             {!flipped ? (
@@ -3648,7 +3848,7 @@ export default function NT2Simulator() {
           {flipped && (
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 16 }}>
               <Btn onClick={() => handleResult(false)} variant="outline">← Praticar</Btn>
-              <Btn onClick={() => handleResult(true)}>Já sei →</Btn>
+              <Btn onClick={() => handleResult(true)}>{t("lbl_i_know")}</Btn>
             </div>
           )}
 
@@ -3669,7 +3869,7 @@ export default function NT2Simulator() {
     const PURPLE = "#7B2D8B";
     const PURPLE_LIGHT = "#F3E5F5";
     const cats = ["all", ...Array.from(new Set(KNM_QUESTIONS.map(q => q.cat)))];
-    const catLabels = { all: "Todos os temas", Saude: "Saude", Educacao: "Educacao", Trabalho: "Trabalho", Governo: "Governo", Habitacao: "Habitacao", Transporte: "Transporte", Cultura: "Cultura", Integracao: "Integracao", Servicos: "Servicos" };
+    const catLabels = { all: t("cat_all"), Saude: t("cat_saude"), Educacao: t("cat_educacao"), Trabalho: t("cat_trabalho"), Governo: t("cat_governo"), Habitacao: t("cat_habitacao"), Transporte: t("cat_transporte"), Cultura: t("cat_cultura"), Integracao: t("cat_integracao"), Servicos: t("cat_servicos") };
 
     // Category picker screen
     if (!quizDone && quizQuestions.length === 0) {
@@ -3678,16 +3878,16 @@ export default function NT2Simulator() {
           <SaveModal {...saveModalProps} />
           <Wrap>
             <div style={{ padding: "24px 0 20px" }}>
-              <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>Teste seu conhecimento sobre a Holanda</div>
+              <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>{t("quiz_subtitle2")}</div>
               <div style={{ fontSize: 24, fontWeight: 700 }}>{t("quiz_title")}</div>
             </div>
-            <p style={{ fontSize: 14, color: C.mid, marginBottom: 20, lineHeight: 1.6 }}>Escolha um tema ou pratique todos juntos:</p>
+            <p style={{ fontSize: 14, color: C.mid, marginBottom: 20, lineHeight: 1.6 }}>{t("lbl_choose_theme")}</p>
             <div style={{ display: "grid", gap: 10 }}>
               {cats.map(cat => (
                 <button key={cat} onClick={() => startQuiz(cat)} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: C.white, border: `1.5px solid ${cat === "all" ? PURPLE : C.light}`, borderRadius: R.lg, padding: "16px 18px", cursor: "pointer", fontFamily: font, textAlign: "left", boxShadow: shadow.sm }}>
                   <div>
                     <div style={{ fontSize: 15, fontWeight: 600, color: cat === "all" ? PURPLE : C.dark }}>{catLabels[cat]}</div>
-                    <div style={{ fontSize: 12, color: C.mid }}>{cat === "all" ? `${KNM_QUESTIONS.length} perguntas` : `${KNM_QUESTIONS.filter(q => q.cat === cat).length} perguntas`}</div>
+                    <div style={{ fontSize: 12, color: C.mid }}>{cat === "all" ? `${KNM_QUESTIONS.length} ${t("lbl_questions")}` : `${KNM_QUESTIONS.filter(q => q.cat === cat).length} ${t("lbl_questions")}`}</div>
                   </div>
                   <Icon d={Icons.arrowRight} size={18} stroke={cat === "all" ? PURPLE : C.mid} />
                 </button>
@@ -3715,7 +3915,7 @@ export default function NT2Simulator() {
             <div style={{ fontSize: 14, color: C.mid, marginBottom: 40 }}>{pct >= 80 ? "Excelente! Voce esta pronto para o KNM!" : pct >= 60 ? "Bom resultado! Continue praticando." : "Continue estudando — voce consegue!"}</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <Btn onClick={() => { setQuizQuestions([]); setQuizDone(false); }} style={{ background: PURPLE, boxShadow: "none" }} icon={Icons.repeat}>Escolher outro tema</Btn>
-              <Btn onClick={() => startQuiz(quizCat)} variant="secondary" icon={Icons.repeat}>Repetir este quiz</Btn>
+              <Btn onClick={() => startQuiz(quizCat)} variant="secondary" icon={Icons.repeat}>{t("quiz_repeat")}</Btn>
               <Btn onClick={() => handleTabChange("home")} variant="secondary" icon={Icons.home}>Home</Btn>
             </div>
           </Wrap>
@@ -3734,7 +3934,7 @@ export default function NT2Simulator() {
       <Page dir={isRTL ? "rtl" : "ltr"}>
         <SaveModal {...saveModalProps} />
         <Wrap style={{ paddingBottom: answered ? 90 : 40 }}>
-          <AppHeader title="Quiz KNM" subtitle={`${quizIdx + 1} / ${quizQuestions.length}`} onBack={() => { setQuizQuestions([]); setQuizDone(false); }} onSave={openSave} />
+          <AppHeader title={t("quiz_title")} subtitle={`${quizIdx + 1} / ${quizQuestions.length}`} onBack={() => { setQuizQuestions([]); setQuizDone(false); }} onSave={openSave} />
 
           {/* Progress */}
           <div style={{ height: 4, background: C.light, borderRadius: R.full, marginBottom: 16, overflow: "hidden" }}>
@@ -3771,14 +3971,14 @@ export default function NT2Simulator() {
             })}
           </div>
 
-          {/* Explanation */}
+          {/* Explanation - always shows Dutch + translation */}
           {answered && (
             <div style={{ background: correct ? C.greenLight : "#FFF8E7", borderRadius: R.md, padding: "14px 16px", marginBottom: 16, borderLeft: `4px solid ${correct ? C.green : C.gold}` }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: correct ? C.green : C.gold, marginBottom: 8, textTransform: "uppercase" }}>{correct ? "Correto!" : "Explicacao"}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: correct ? C.green : C.gold, marginBottom: 8, textTransform: "uppercase" }}>{correct ? t("quiz_correct") : t("quiz_explanation")}</div>
               <div style={{ fontSize: 13, color: C.dark, lineHeight: 1.7, marginBottom: 8 }}>{qn.exp}</div>
-              {qn.expPt && (
+              {(lang === "pt" ? qn.expPt : lang === "en" ? qn.expEn : qn.expEs) && (
                 <div style={{ fontSize: 13, color: C.mid, lineHeight: 1.7, borderTop: `1px solid ${correct ? "#C8E6C9" : "#FFE082"}`, paddingTop: 8, fontStyle: "italic" }}>
-                  🇧🇷 {qn.expPt}
+                  {lang === "pt" ? "🇧🇷" : lang === "en" ? "🇬🇧" : "🇪🇸"} {lang === "pt" ? qn.expPt : lang === "en" ? qn.expEn : qn.expEs}
                 </div>
               )}
             </div>
@@ -3786,7 +3986,7 @@ export default function NT2Simulator() {
 
           {/* Next — fixed at bottom */}
           {answered && (
-            <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, padding: "12px 16px", paddingBottom: "calc(12px + env(safe-area-inset-bottom))", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 50 }}>
+            <div style={{ position: "fixed", bottom: "calc(60px + env(safe-area-inset-bottom))", left: 0, right: 0, padding: "12px 16px", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 250 }}>
               <Btn onClick={() => {
                 const newScore = quizScore + (correct ? 1 : 0);
                 if (quizIdx + 1 >= quizQuestions.length) {
@@ -3798,7 +3998,7 @@ export default function NT2Simulator() {
                   setQuizSelected(null);
                 }
               }} style={{ width: "100%", background: PURPLE, boxShadow: "none" }}>
-                {quizIdx + 1 >= quizQuestions.length ? "Ver resultado" : "Proxima pergunta →"}
+                {quizIdx + 1 >= quizQuestions.length ? t("quiz_result") : t("quiz_next")}
               </Btn>
             </div>
           )}
@@ -3819,7 +4019,7 @@ export default function NT2Simulator() {
   // PRATICA DO DIA SCREEN
   // ─────────────────────────────────────────────────────────────────────────────
   if (screen === "pratica") {
-    const typeLabels = { flashcard: "Flashcard", escuta: "Escuta", quiz: "Quiz KNM", leitura: "Leitura" };
+    const typeLabels = { flashcard: t("act_flashcards"), escuta: t("act_escuta"), quiz: t("act_quiz"), leitura: t("act_leitura") };
     const typeColors = { flashcard: C.coral, escuta: C.blue, quiz: "#7B2D8B", leitura: "#673AB7" };
     const typeBgs = { flashcard: C.coralLight, escuta: C.blueLight, quiz: "#F3E5F5", leitura: "#EDE7F6" };
     const typeIcons = { flashcard: Icons.cards, escuta: Icons.headphones, quiz: Icons.target, leitura: Icons.book };
@@ -3855,7 +4055,7 @@ export default function NT2Simulator() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <Btn onClick={startPraticaDoDia} icon={Icons.repeat}>Nova sessao</Btn>
-              <Btn onClick={() => handleTabChange("home")} variant="secondary" icon={Icons.home}>Voltar ao Home</Btn>
+              <Btn onClick={() => handleTabChange("home")} variant="secondary" icon={Icons.home}>{t("lbl_back_home")}</Btn>
             </div>
           </Wrap>
           <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
@@ -3916,7 +4116,7 @@ export default function NT2Simulator() {
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8, opacity: 0.5 }}>
                 <span style={{ fontSize: 12, color: C.coral, fontWeight: 600 }}>← Praticar</span>
-                <span style={{ fontSize: 12, color: C.green, fontWeight: 600 }}>Já sei →</span>
+                <span style={{ fontSize: 12, color: C.green, fontWeight: 600 }}>{t("lbl_i_know")}</span>
               </div>
               <div
                 onMouseDown={e => { if (!praticaAnswered) { dragStartX.current = e.clientX; setIsDragging(true); } }}
@@ -3946,7 +4146,7 @@ export default function NT2Simulator() {
                   transition: isDragging ? "none" : "transform 0.25s",
                   boxShadow: dragX > 20 ? "0 8px 32px rgba(0,138,5,0.3)" : dragX < -20 ? "0 8px 32px rgba(255,56,92,0.3)" : "0 4px 24px rgba(0,0,0,0.2)",
                 }}>
-                {dragX > 20 && <div style={{ position: "absolute", top: 16, left: 16, background: C.green, color: "#fff", fontSize: 12, fontWeight: 700, padding: "4px 10px", borderRadius: R.full }}>Já sei ✓</div>}
+                {dragX > 20 && <div style={{ position: "absolute", top: 16, left: 16, background: C.green, color: "#fff", fontSize: 12, fontWeight: 700, padding: "4px 10px", borderRadius: R.full }}>{t("lbl_i_know")}</div>}
                 {dragX < -20 && <div style={{ position: "absolute", top: 16, right: 16, background: C.coral, color: "#fff", fontSize: 12, fontWeight: 700, padding: "4px 10px", borderRadius: R.full }}>Praticar</div>}
                 <div style={{ position: "absolute", top: 14, right: 18, fontSize: 11, color: "rgba(255,255,255,0.25)" }}>#{item.card.id + 1}</div>
                 <div style={{ width: 48, height: 48, borderRadius: R.lg, background: "rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
@@ -4075,7 +4275,7 @@ export default function NT2Simulator() {
 
         {/* Fixed next button */}
         {praticaAnswered && (
-          <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, padding: "12px 16px", paddingBottom: "calc(12px + env(safe-area-inset-bottom))", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 50 }}>
+          <div style={{ position: "fixed", bottom: "calc(60px + env(safe-area-inset-bottom))", left: 0, right: 0, padding: "12px 16px", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 250 }}>
             <Btn onClick={goNext} style={{ width: "100%" }}>
               {praticaIdx + 1 >= praticaItems.length ? "Ver resultado" : "Proxima →"}
             </Btn>
@@ -4108,7 +4308,7 @@ export default function NT2Simulator() {
             <div style={{ fontSize: 14, color: C.mid, marginBottom: 40 }}>{pct >= 80 ? "Excelente compreensao!" : pct >= 60 ? "Bom resultado! Continue praticando." : "Continue lendo — voce melhora!"}</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               <Btn onClick={startLeitura} style={{ background: PURPLE, boxShadow: "none" }} icon={Icons.repeat}>Novos textos</Btn>
-              <Btn onClick={() => handleTabChange("praticar")} variant="secondary">Voltar ao Praticar</Btn>
+              <Btn onClick={() => handleTabChange("praticar")} variant="secondary">{t("lbl_back_praticar")}</Btn>
             </div>
           </Wrap>
           <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
@@ -4148,7 +4348,7 @@ export default function NT2Simulator() {
       <Page dir={isRTL ? "rtl" : "ltr"}>
         <SaveModal {...saveModalProps} />
         <Wrap style={{ paddingBottom: answered ? 90 : 40 }}>
-          <AppHeader title="Leitura" subtitle={`Texto ${leituraIdx + 1} de ${leituraTextos.length}`} onBack={goBack} onSave={openSave} />
+          <AppHeader title={t("act_leitura")} subtitle={`Texto ${leituraIdx + 1} de ${leituraTextos.length}`} onBack={goBack} onSave={openSave} />
 
           {/* Progress */}
           <div style={{ height: 4, background: C.light, borderRadius: R.full, marginBottom: 16, overflow: "hidden" }}>
@@ -4215,7 +4415,7 @@ export default function NT2Simulator() {
 
         {/* Fixed next button */}
         {answered && (
-          <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, padding: "12px 16px", paddingBottom: "calc(12px + env(safe-area-inset-bottom))", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 50 }}>
+          <div style={{ position: "fixed", bottom: "calc(60px + env(safe-area-inset-bottom))", left: 0, right: 0, padding: "12px 16px", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 250 }}>
             <Btn onClick={goNext} style={{ width: "100%", background: PURPLE, boxShadow: "none" }}>
               {isLastQ && isLastText ? "Ver resultado" : isLastQ ? `Proximo texto →` : "Proxima pergunta →"}
             </Btn>
