@@ -1696,7 +1696,7 @@ const T = {
     fc_evaluated: "Avaliado",
     // Escuta
     esc_listening: "Ouvindo...",
-    esc_tap: "`· ${t('lbl_tap_listen')}`",
+    esc_tap: "Toque para ouvir",
     esc_reveal: "Revelar frase",
     esc_understood: "Entendi!",
     esc_not_understood: "Nao entendi",
@@ -1743,7 +1743,7 @@ const T = {
     cfg_goal_auto: "Calculada automaticamente pela data do exame.",
     cfg_goal_choose: "Escolha quantas frases estudar por dia:",
     cfg_voice: "Voz holandesa",
-    cfg_voice_tap: "`· ${t('lbl_tap_listen')}`",
+    cfg_voice_tap: "Toque para ouvir",
     cfg_save: "Save / load progress",
     cfg_reset: "Apagar tudo e comecar do zero",
     cfg_reset_confirm: "Tem certeza?",
@@ -2801,6 +2801,9 @@ export default function NT2Simulator() {
 
   // ── Pratica do Dia ──
   const [praticaItems, setPraticaItems] = useState([]);
+  const [praticaSchrijvenInput, setPraticaSchrijvenInput] = useState("");
+  const [praticaSchrijvenFeedback, setPraticaSchrijvenFeedback] = useState(null);
+  const [praticaSchrijvenLoading, setPraticaSchrijvenLoading] = useState(false);
   const [praticaIdx, setPraticaIdx] = useState(0);
   const [praticaAnswered, setPraticaAnswered] = useState(false);
   const [praticaSelected, setPraticaSelected] = useState(null);
@@ -2953,11 +2956,12 @@ export default function NT2Simulator() {
   const startPraticaDoDia = () => {
     const goal = stats.dailyGoal ?? 10;
     const total = Math.max(goal, 8);
-    // Proportions: 40% flashcard, 20% escuta, 20% quiz, 20% leitura
-    const nFlash = Math.round(total * 0.4);
-    const nEscuta = Math.round(total * 0.2);
-    const nQuiz = Math.round(total * 0.2);
-    const nLeitura = total - nFlash - nEscuta - nQuiz;
+    // Proportions: 35% flashcard, 20% escuta, 20% quiz, 15% leitura, 10% schrijven
+    const nFlash = Math.round(total * 0.35);
+    const nEscuta = Math.round(total * 0.20);
+    const nQuiz = Math.round(total * 0.20);
+    const nSchrijven = Math.max(1, Math.round(total * 0.10));
+    const nLeitura = total - nFlash - nEscuta - nQuiz - nSchrijven;
 
     const items = [];
 
@@ -2986,11 +2990,14 @@ export default function NT2Simulator() {
       if (lCount >= nLeitura) break;
     }
 
+    // Schrijven items
+    shuffle([...AANVULZINNEN]).filter(s => typeof s === "string").slice(0, nSchrijven).forEach(s => items.push({ type: "schrijven", sentence: s }));
+
     setPraticaItems(shuffle(items));
     setPraticaIdx(0);
     setPraticaAnswered(false);
     setPraticaSelected(null);
-    setPraticaScore({ flashcard: [0,0], escuta: [0,0], quiz: [0,0], leitura: [0,0] });
+    setPraticaScore({ flashcard: [0,0], escuta: [0,0], quiz: [0,0], leitura: [0,0], schrijven: [0,0] });
     setPraticaDone(false);
     setPraticaAudioReady(false);
     setPraticaSpeaking(false);
@@ -3135,7 +3142,7 @@ export default function NT2Simulator() {
         }} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 14px", border: `1.5px solid ${chosenVoice === v.name ? C.blue : C.light}`, borderRadius: R.md, background: chosenVoice === v.name ? C.blueLight : C.white, cursor: "pointer", fontFamily: font, textAlign: "left" }}>
           <div>
             <div style={{ fontSize: 14, fontWeight: 600, color: chosenVoice === v.name ? C.blue : C.dark }}>{v.name}</div>
-            <div style={{ fontSize: 11, color: C.mid }}>{v.lang} · `· ${t('lbl_tap_listen')}`</div>
+            <div style={{ fontSize: 11, color: C.mid }}>{v.lang} · {t('lbl_tap_listen')}</div>
           </div>
           {chosenVoice === v.name && <Icon d={Icons.check} size={18} stroke={C.blue} />}
         </button>
@@ -4240,9 +4247,9 @@ export default function NT2Simulator() {
   // PRATICA DO DIA SCREEN
   // ─────────────────────────────────────────────────────────────────────────────
   if (screen === "pratica") {
-    const typeLabels = { flashcard: t("act_flashcards"), escuta: t("act_escuta"), quiz: t("act_quiz"), leitura: t("act_leitura") };
-    const typeColors = { flashcard: C.coral, escuta: C.blue, quiz: "#7B2D8B", leitura: "#673AB7" };
-    const typeBgs = { flashcard: C.coralLight, escuta: C.blueLight, quiz: "#F3E5F5", leitura: "#EDE7F6" };
+    const typeLabels = { flashcard: t("act_flashcards"), escuta: t("act_escuta"), quiz: t("act_quiz"), leitura: t("act_leitura"), schrijven: t("act_schrijven") };
+    const typeColors = { flashcard: C.coral, escuta: C.blue, quiz: "#7B2D8B", leitura: "#673AB7", schrijven: "#2E7D32" };
+    const typeBgs = { flashcard: C.coralLight, escuta: C.blueLight, quiz: "#F3E5F5", leitura: "#EDE7F6", schrijven: "#E8F5E9" };
     const typeIcons = { flashcard: Icons.cards, escuta: Icons.headphones, quiz: Icons.target, leitura: Icons.book };
 
     // Done screen
@@ -4304,9 +4311,11 @@ export default function NT2Simulator() {
       setPraticaSpeaking(false);
       setDragX(0);
       setExplanation(null);
+      setPraticaSchrijvenInput("");
+      setPraticaSchrijvenFeedback(null);
+      setPraticaSchrijvenLoading(false);
       if (praticaIdx + 1 >= praticaItems.length) {
         setPraticaDone(true); setProgress(p => ({ ...p, praticaDate: getToday() }));
-        setProgress(p => ({ ...p, praticaDate: getToday() }));
       } else {
         setPraticaIdx(i => i + 1);
       }
@@ -4488,6 +4497,57 @@ export default function NT2Simulator() {
                   <div style={{ fontSize: 12, fontWeight: 700, color: praticaSelected === item.q.a ? C.green : C.gold, marginBottom: 4, textTransform: "uppercase" }}>{praticaSelected === item.q.a ? "Correto!" : "Resposta"}</div>
                   <div style={{ fontSize: 13, color: C.dark, lineHeight: 1.6, marginBottom: 6 }}>{item.q.exp}</div>
                   <div style={{ fontSize: 12, color: C.mid, fontStyle: "italic", borderTop: `1px solid ${praticaSelected === item.q.a ? "#C8E6C9" : "#FFE082"}`, paddingTop: 6 }}>🇧🇷 {item.q.expPt}</div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ── SCHRIJVEN item ── */}
+          {item.type === "schrijven" && (
+            <div>
+              <CardBox style={{ marginBottom: 16 }}>
+                <div style={{ fontSize: 11, color: "#2E7D32", fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>{t("schr_title")}</div>
+                <div style={{ fontSize: 17, fontWeight: 700, color: C.dark, lineHeight: 1.5 }}>{item.sentence}</div>
+              </CardBox>
+              {!praticaSchrijvenFeedback ? (
+                <div>
+                  <textarea value={praticaSchrijvenInput} onChange={e => setPraticaSchrijvenInput(e.target.value)}
+                    placeholder={t("schr_placeholder")}
+                    style={{ width: "100%", minHeight: 90, fontFamily: font, fontSize: 15, padding: "12px 14px", border: `1.5px solid ${C.light}`, borderRadius: R.md, resize: "none", boxSizing: "border-box", marginBottom: 12 }} />
+                  <Btn onClick={async () => {
+                    if (!praticaSchrijvenInput.trim()) return;
+                    setPraticaSchrijvenLoading(true);
+                    try {
+                      const response = await fetch("/api/evaluate", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ sentence: item.sentence, answer: praticaSchrijvenInput, lang })
+                      });
+                      const result = await response.json();
+                      setPraticaSchrijvenFeedback(result);
+                      markScore(result.correct);
+                      setPraticaAnswered(true);
+                    } catch(e) {
+                      setPraticaSchrijvenFeedback({ score: 0, correct: false, feedback: "Erro ao avaliar.", example: "", grammar_tip: "" });
+                      setPraticaAnswered(true);
+                    }
+                    setPraticaSchrijvenLoading(false);
+                  }} style={{ width: "100%" }} disabled={praticaSchrijvenLoading || !praticaSchrijvenInput.trim()}>
+                    {praticaSchrijvenLoading ? t("schr_evaluating") : t("schr_submit")}
+                  </Btn>
+                </div>
+              ) : (
+                <div>
+                  <div style={{ background: praticaSchrijvenFeedback.correct ? "#E8F5E9" : "#FFF0F3", borderRadius: R.md, padding: "12px 16px", marginBottom: 10, borderLeft: `4px solid ${praticaSchrijvenFeedback.correct ? "#2E7D32" : C.coral}` }}>
+                    <div style={{ fontSize: 12, fontWeight: 700, color: praticaSchrijvenFeedback.correct ? "#2E7D32" : C.coral, marginBottom: 4, textTransform: "uppercase" }}>{t("schr_score")}: {praticaSchrijvenFeedback.score}/10</div>
+                    <div style={{ fontSize: 13, color: C.dark, lineHeight: 1.6 }}>{praticaSchrijvenFeedback.feedback}</div>
+                  </div>
+                  {praticaSchrijvenFeedback.example && (
+                    <CardBox style={{ background: "#E8F5E9" }}>
+                      <div style={{ fontSize: 11, fontWeight: 700, color: "#2E7D32", marginBottom: 4 }}>{t("schr_example")}</div>
+                      <div style={{ fontSize: 13, color: "#1B5E20", fontStyle: "italic" }}>{item.sentence} {praticaSchrijvenFeedback.example}</div>
+                    </CardBox>
+                  )}
                 </div>
               )}
             </div>
