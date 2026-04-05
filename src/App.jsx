@@ -1613,11 +1613,11 @@ const T = {
     lbl_listening: "Reproduzindo...",
     lbl_listen: "Ouvir frase",
     lbl_reveal: "Revelar frase", act_revisao: "Revision Inteligente",
-    lbl_frases_meta: "frases · meta diaria",
-    lbl_frases_hoje: "frases hoje",
+    lbl_frases_meta: "frases para a meta diaria",
+    lbl_frases_hoje: "frases para hoje",
     lbl_arraste: "Arraste para avaliar",
     lbl_ouca: "Ouca e tente lembrar",
-    lbl_textos: "textos · avisos, cartas, anuncios",
+    lbl_textos: "textos: avisos, cartas e anuncios",
     cat_all: "Todos os temas",
     cat_saude: "Saude",
     cat_educacao: "Educacao",
@@ -1632,6 +1632,19 @@ const T = {
     lbl_excellent: "Excelente resultado!",
     lbl_good: "Bom trabalho!",
     lbl_keep: "Continue praticando!",
+    act_schrijven: "Escrita",
+    act_schrijven_desc: "Complete frases em holandes",
+    schr_title: "Complete a frase",
+    schr_placeholder: "Escreva a continuacao em holandes...",
+    schr_submit: "Avaliar resposta",
+    schr_evaluating: "Avaliando...",
+    schr_next: "Proxima frase",
+    schr_score: "Pontuacao",
+    schr_feedback: "Avaliacao",
+    schr_example: "Exemplo de resposta",
+    schr_finish: "Ver resultado",
+    schr_result_title: "Resultado da Escrita",
+    schr_result_sub: "frases avaliadas pelo Claude",
     lbl_of: "de",
     lbl_frases: "frases",
     lbl_verbos: "verbos",
@@ -1662,8 +1675,8 @@ const T = {
     act_frases_zinnen: "492 zinnen • Arraste para avaliar",
     act_escuta_desc: "ouca e tente lembrar",
     act_conj_desc: "25 verbos essenciais com audio",
-    act_quiz_desc: "perguntas sobre a sociedade holandesa",
-    act_leitura_desc: "textos • avisos, cartas, anuncios",
+    act_quiz_desc: "Teste seu conhecimento da Holanda",
+    act_leitura_desc: "textos: avisos, cartas e anuncios",
     act_revisao_desc: "cartas para revisar hoje",
     act_revisao_none: "Nenhuma revisao pendente",
     // Praticar screen
@@ -1839,11 +1852,11 @@ const T = {
     lbl_listening: "Playing...",
     lbl_listen: "Listen",
     lbl_reveal: "Reveal sentence",
-    lbl_frases_meta: "sentences · daily goal",
-    lbl_frases_hoje: "sentences today",
+    lbl_frases_meta: "sentences for your daily goal",
+    lbl_frases_hoje: "sentences for today",
     lbl_arraste: "Swipe to evaluate",
     lbl_ouca: "Listen and try to remember",
-    lbl_textos: "texts · notices, letters, ads",
+    lbl_textos: "texts: notices, letters and ads",
     cat_all: "All themes",
     cat_saude: "Health",
     cat_educacao: "Education",
@@ -1858,6 +1871,19 @@ const T = {
     lbl_excellent: "Excellent result!",
     lbl_good: "Good work!",
     lbl_keep: "Keep practicing!",
+    act_schrijven: "Writing",
+    act_schrijven_desc: "Complete sentences in Dutch",
+    schr_title: "Complete the sentence",
+    schr_placeholder: "Write the continuation in Dutch...",
+    schr_submit: "Evaluate answer",
+    schr_evaluating: "Evaluating...",
+    schr_next: "Next sentence",
+    schr_score: "Score",
+    schr_feedback: "Feedback",
+    schr_example: "Example answer",
+    schr_finish: "See result",
+    schr_result_title: "Writing Result",
+    schr_result_sub: "sentences evaluated by Claude",
     lbl_of: "of",
     lbl_frases: "sentences",
     lbl_verbos: "verbs",
@@ -1887,8 +1913,8 @@ const T = {
     act_frases_zinnen: "492 sentences • swipe to evaluate",
     act_escuta_desc: "listen and try to remember",
     act_conj_desc: "25 essential verbs with audio",
-    act_quiz_desc: "questions about Dutch society",
-    act_leitura_desc: "texts • notices, letters, ads",
+    act_quiz_desc: "Test your knowledge of the Netherlands",
+    act_leitura_desc: "texts: notices, letters and ads",
     act_revisao_desc: "cards to review today",
     act_revisao_none: "No review pending",
     prat_title: "Practice",
@@ -2036,11 +2062,11 @@ const T = {
     lbl_listening: "Reproduciendo...",
     lbl_listen: "Escuchar frase",
     lbl_reveal: "Revelar frase", act_revisao: "Revision Inteligente",
-    lbl_frases_meta: "frases · meta diaria",
+    lbl_frases_meta: "frases para a meta diaria",
     lbl_frases_hoje: "frases hoy",
     lbl_arraste: "Desliza para evaluar",
     lbl_ouca: "Escucha e intenta recordar",
-    lbl_textos: "textos · avisos, cartas, anuncios",
+    lbl_textos: "textos: avisos, cartas e anuncios",
     cat_all: "Todos os temas",
     cat_saude: "Saude",
     cat_educacao: "Educacao",
@@ -2055,6 +2081,19 @@ const T = {
     lbl_excellent: "Excelente resultado!",
     lbl_good: "Buen trabajo!",
     lbl_keep: "Sigue practicando!",
+    act_schrijven: "Escritura",
+    act_schrijven_desc: "Completa frases en holandes",
+    schr_title: "Completa la frase",
+    schr_placeholder: "Escribe la continuacion en holandes...",
+    schr_submit: "Evaluar respuesta",
+    schr_evaluating: "Evaluando...",
+    schr_next: "Siguiente frase",
+    schr_score: "Puntuacion",
+    schr_feedback: "Evaluacion",
+    schr_example: "Ejemplo de respuesta",
+    schr_finish: "Ver resultado",
+    schr_result_title: "Resultado de Escritura",
+    schr_result_sub: "frases evaluadas por Claude",
     lbl_of: "de",
     lbl_frases: "frases",
     lbl_verbos: "verbos",
@@ -2078,7 +2117,7 @@ const T = {
     act_quiz: "Quiz KNM", act_leitura: "Lectura", act_revisao: "Repaso Inteligente",
     act_frases_meta: "frases • meta diaria", act_frases_zinnen: "492 frases • desliza para evaluar",
     act_escuta_desc: "escucha e intenta recordar", act_conj_desc: "25 verbos esenciales con audio",
-    act_quiz_desc: "preguntas sobre la sociedad holandesa", act_leitura_desc: "textos • avisos, cartas, anuncios",
+    act_quiz_desc: "Pon a prueba tu conocimiento de Holanda", act_leitura_desc: "textos: avisos, cartas e anuncios",
     act_revisao_desc: "tarjetas para repasar hoy", act_revisao_none: "Sin repaso pendiente",
     prat_title: "Practicar", prat_frases: "Frases (492 zinnen)", prat_category: "Por categoria",
     prat_va: "Preguntas V&A", prat_va_desc: "1–60 • Vraag & Antwoord",
@@ -2708,6 +2747,57 @@ export default function NT2Simulator() {
       localStorage.setItem("nt2_progress", encodeProgress(progress));
     } catch {}
   }, [progress]);
+
+
+  const [schrijvenCards, setSchrijvenCards] = useState([]);
+  const [schrijvenIdx, setSchrijvenIdx] = useState(0);
+  const [schrijvenInput, setSchrijvenInput] = useState("");
+  const [schrijvenFeedback, setSchrijvenFeedback] = useState(null);
+  const [schrijvenLoading, setSchrijvenLoading] = useState(false);
+  const [schrijvenScores, setSchrijvenScores] = useState([]);
+  const [schrijvenDone, setSchrijvenDone] = useState(false);
+
+  const startSchrijven = () => {
+    const pool = shuffle([...AANVULZINNEN]).filter(s => typeof s === "string").slice(0, 10);
+    setSchrijvenCards(pool);
+    setSchrijvenIdx(0);
+    setSchrijvenInput("");
+    setSchrijvenFeedback(null);
+    setSchrijvenLoading(false);
+    setSchrijvenScores([]);
+    setSchrijvenDone(false);
+    setScreen("schrijven");
+  };
+
+  const evaluateSchrijven = async () => {
+    if (!schrijvenInput.trim()) return;
+    setSchrijvenLoading(true);
+    const card = schrijvenCards[schrijvenIdx] || '';
+    try {
+      let response;
+      try {
+        response = await fetch("/api/evaluate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sentence: card, answer: schrijvenInput, lang })
+        });
+      } catch(fetchErr) {
+        throw new Error(`FETCH FAILED: ${fetchErr.message}`);
+      }
+      if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`HTTP ${response.status}: ${errText.slice(0,150)}`);
+      }
+      const data = await response.json();
+      const result = data;
+      setSchrijvenFeedback(result);
+      setSchrijvenScores(s => [...s, result.score]);
+    } catch(e) {
+      console.error("Schrijven error:", e);
+      setSchrijvenFeedback({ score: 0, correct: false, feedback: `VERSAO2: ${e.message}`, example: "", grammar_tip: "" });
+    }
+    setSchrijvenLoading(false);
+  };
 
   // ── Pratica do Dia ──
   const [praticaItems, setPraticaItems] = useState([]);
@@ -3424,8 +3514,8 @@ export default function NT2Simulator() {
               const goal = stats.dailyGoal;
               const todayDone = progress.todayDate === getToday() ? progress.todayStudied : 0;
               const sessionSize = goal != null ? Math.max(goal - todayDone > 0 ? goal - todayDone : goal, 10) : 20;
-              const desc1 = goal != null ? `${sessionSize} ${t("lbl_frases_meta")}` : `492 zinnen • ${t("lbl_arraste")}`;
-              const desc2 = goal != null ? `${sessionSize} frases • ouca e tente lembrar` : t("lbl_ouca");
+              const desc1 = goal != null ? `${sessionSize} ${t("lbl_frases_meta")}` : `492 zinnen, ${t("lbl_arraste").toLowerCase()}`;
+              const desc2 = goal != null ? `${sessionSize} frases para ouvir e lembrar` : t("lbl_ouca");
 
               const cardStyle = { background: C.white, border: "none", borderRadius: R.lg, padding: "12px 18px", cursor: "pointer", textAlign: "left", display: "flex", flexDirection: "row", alignItems: "center", gap: 16, boxShadow: shadow.card, fontFamily: font, width: "100%" };
               const iconBox = { width: 52, height: 52, flexShrink: 0 };
@@ -3459,7 +3549,7 @@ export default function NT2Simulator() {
                   <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.quiz})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_quiz")}</div>
-                    <div style={{ fontSize: 12, color: C.mid }}>{KNM_QUESTIONS.length} {t("lbl_questions")}</div>
+                    <div style={{ fontSize: 12, color: C.mid }}>{t("act_quiz_desc")}</div>
                   </div>
                   <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
                 </button>,
@@ -3566,6 +3656,137 @@ export default function NT2Simulator() {
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
           </div>
+
+          <div style={{ fontSize: 12, fontWeight: 700, color: C.mid, marginBottom: 12, textTransform: "uppercase", letterSpacing: 0.5 }}>ESCRITA</div>
+          <div style={{ marginBottom: 24 }}>
+          <button onClick={startSchrijven} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+              <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ fontSize: 32 }}>✍️</div>
+              </div>
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_schrijven")}</div>
+                <div style={{ fontSize: 12, color: C.mid }}>{t("act_schrijven_desc")}</div>
+              </div>
+              <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
+            </button>
+          </div>
+        </Wrap>
+        <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+      </Page>
+    );
+  }
+
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SCHRIJVEN (ESCRITA)
+  // ─────────────────────────────────────────────────────────────────────────────
+  if (screen === "schrijven") {
+    const card = schrijvenCards[schrijvenIdx] || '';
+    const avgScore = schrijvenScores.length > 0 ? Math.round(schrijvenScores.reduce((a,b) => a+b, 0) / schrijvenScores.length) : 0;
+    const GREEN = "#2E7D32";
+
+    if (schrijvenDone) return (
+      <Page dir={isRTL ? "rtl" : "ltr"}>
+        <SaveModal {...saveModalProps} />
+        <Wrap style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minHeight: "70vh" }}>
+          <div style={{ fontSize: 48, marginBottom: 16 }}>✍️</div>
+          <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 8, textAlign: "center" }}>{t("schr_result_title")}</div>
+          <div style={{ fontSize: 14, color: C.mid, marginBottom: 24, textAlign: "center" }}>{schrijvenScores.length} {t("schr_result_sub")}</div>
+          <div style={{ width: 120, height: 120, borderRadius: "50%", background: avgScore >= 7 ? "#E8F5E9" : avgScore >= 5 ? "#FFF8E7" : "#FFF0F3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: 24 }}>
+            <div style={{ fontSize: 36, fontWeight: 800, color: avgScore >= 7 ? GREEN : avgScore >= 5 ? C.gold : C.coral }}>{avgScore}</div>
+            <div style={{ fontSize: 12, color: C.mid }}>/10</div>
+          </div>
+          <div style={{ fontSize: 16, fontWeight: 600, color: avgScore >= 7 ? GREEN : avgScore >= 5 ? C.gold : C.coral, marginBottom: 32 }}>
+            {avgScore >= 7 ? t("lbl_excellent") : avgScore >= 5 ? t("lbl_good") : t("lbl_keep")}
+          </div>
+          <Btn onClick={() => handleTabChange("praticar")} style={{ width: "100%", marginBottom: 12 }}>{t("lbl_back_praticar")}</Btn>
+          <Btn onClick={startSchrijven} variant="secondary" style={{ width: "100%" }}>🔄 {t("lbl_repeat_session")}</Btn>
+        </Wrap>
+        <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+      </Page>
+    );
+
+    return (
+      <Page dir={isRTL ? "rtl" : "ltr"}>
+        <SaveModal {...saveModalProps} />
+        <Wrap style={{ paddingBottom: 40 }}>
+          <AppHeader title={t("act_schrijven")} subtitle={`${schrijvenIdx + 1} / ${schrijvenCards.length}`} onBack={() => handleTabChange("praticar")} onSave={openSave} />
+
+          {/* Progress bar */}
+          <div style={{ height: 4, background: C.light, borderRadius: R.full, marginBottom: 20, overflow: "hidden" }}>
+            <div style={{ height: 4, width: `${((schrijvenIdx) / schrijvenCards.length) * 100}%`, background: C.coral, borderRadius: R.full, transition: "width 0.3s" }} />
+          </div>
+
+          {/* Sentence fragment */}
+          <CardBox style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: 11, color: C.coral, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>{t("schr_title")}</div>
+            <div style={{ fontSize: 18, fontWeight: 700, color: C.dark, lineHeight: 1.5, marginBottom: 8 }}>
+              {card}
+            </div>
+          </CardBox>
+
+          {/* Input */}
+          {!schrijvenFeedback && (
+            <div>
+              <textarea
+                value={schrijvenInput}
+                onChange={e => setSchrijvenInput(e.target.value)}
+                placeholder={t("schr_placeholder")}
+                style={{ width: "100%", minHeight: 100, fontFamily: font, fontSize: 15, padding: "12px 14px", border: `1.5px solid ${C.light}`, borderRadius: R.md, resize: "none", boxSizing: "border-box", marginBottom: 12, lineHeight: 1.6 }}
+              />
+              <Btn onClick={evaluateSchrijven} style={{ width: "100%" }} disabled={schrijvenLoading || !schrijvenInput.trim()}>
+                {schrijvenLoading ? t("schr_evaluating") : t("schr_submit")}
+              </Btn>
+            </div>
+          )}
+
+          {/* Feedback */}
+          {schrijvenFeedback && (
+            <div>
+              {/* Score */}
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16, padding: "12px 16px", borderRadius: R.md, background: schrijvenFeedback.correct ? "#E8F5E9" : "#FFF0F3", border: `1.5px solid ${schrijvenFeedback.correct ? "#A5D6A7" : "#FFCDD2"}` }}>
+                <div style={{ width: 44, height: 44, borderRadius: "50%", background: schrijvenFeedback.correct ? GREEN : C.coral, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <span style={{ fontSize: 18, fontWeight: 800, color: "#fff" }}>{schrijvenFeedback.score}</span>
+                </div>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: schrijvenFeedback.correct ? GREEN : C.coral }}>{t("schr_score")}: {schrijvenFeedback.score}/10</div>
+                  <div style={{ fontSize: 12, color: C.mid }}>{schrijvenInput}</div>
+                </div>
+              </div>
+
+              {/* Feedback text */}
+              <CardBox style={{ marginBottom: 12 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: C.coral, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>{t("schr_feedback")}</div>
+                <div style={{ fontSize: 14, color: C.dark, lineHeight: 1.6 }}>{schrijvenFeedback.feedback}</div>
+                {schrijvenFeedback.grammar_tip && (
+                  <div style={{ marginTop: 8, padding: "8px 12px", background: "#EDE7F6", borderRadius: R.md, fontSize: 13, color: "#512DA8" }}>
+                    💡 {schrijvenFeedback.grammar_tip}
+                  </div>
+                )}
+              </CardBox>
+
+              {/* Example */}
+              {schrijvenFeedback.example && (
+                <CardBox style={{ marginBottom: 16, background: "#E8F5E9" }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: GREEN, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>{t("schr_example")}</div>
+                  <div style={{ fontSize: 14, color: "#1B5E20", fontStyle: "italic" }}>{card} {schrijvenFeedback.example}</div>
+                </CardBox>
+              )}
+
+              {/* Next button */}
+              <Btn onClick={() => {
+                if (schrijvenIdx + 1 >= schrijvenCards.length) {
+                  setSchrijvenDone(true);
+                } else {
+                  setSchrijvenIdx(i => i + 1);
+                  setSchrijvenInput("");
+                  setSchrijvenFeedback(null);
+                }
+              }} style={{ width: "100%" }}>
+                {schrijvenIdx + 1 >= schrijvenCards.length ? t("schr_finish") : t("schr_next")} →
+              </Btn>
+            </div>
+          )}
         </Wrap>
         <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
       </Page>
