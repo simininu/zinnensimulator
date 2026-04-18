@@ -1561,7 +1561,27 @@ const T = {
     app_subtitle: "NT2 · A2 · Inburgeringsexamen",
     app_tagline: "O seu treino para o exame de integracao holandes. 492 frases oficiais.",
     // Navigation
-    nav_home: "Home", nav_practice: "Praticar", nav_quiz: "Quiz", nav_config: "Config",
+    sim_title: "Simulados",
+    sim_subtitle: "Teste como na prova real",
+    sim_leitura: "Simulado de Leitura",
+    sim_leitura_desc: "Textos e perguntas cronometradas",
+    sim_escuta: "Simulado de Escuta",
+    sim_escuta_desc: "Ouva uma vez e responda",
+    sim_escrita: "Simulado de Escrita",
+    sim_escrita_desc: "Complete frases avaliadas por IA",
+    sim_start: "Iniciar simulado",
+    sim_time: "minutos",
+    sim_questions: "questoes",
+    sim_result_title: "Resultado do Simulado",
+    sim_passed: "Aprovado!",
+    sim_failed: "Continue praticando!",
+    sim_best: "Melhor nota",
+    sim_last: "Ultima nota",
+    sim_attempts: "tentativas",
+    sim_chrono: "Cronometrado",
+    sim_no_repeat: "Sem repetir audio",
+    sim_one_chance: "Uma tentativa por questao",
+    nav_home: "Home", nav_practice: "Praticar", nav_simulados: "Simulados", nav_config: "Config",
     // Onboarding
     onb_welcome_title: "Zinnensimulator",
     onb_lang_title: "Escolha o idioma",
@@ -1793,7 +1813,27 @@ const T = {
   en: {
     app_subtitle: "NT2 · A2 · Integration Exam",
     app_tagline: "Your training for the Dutch integration exam. 492 official sentences.",
-    nav_home: "Home", nav_practice: "Practice", nav_quiz: "Quiz", nav_config: "Settings",
+    sim_title: "Mock Exams",
+    sim_subtitle: "Test like the real exam",
+    sim_leitura: "Reading Mock Exam",
+    sim_leitura_desc: "Timed texts and questions",
+    sim_escuta: "Listening Mock Exam",
+    sim_escuta_desc: "Listen once and answer",
+    sim_escrita: "Writing Mock Exam",
+    sim_escrita_desc: "Complete sentences evaluated by AI",
+    sim_start: "Start exam",
+    sim_time: "minutes",
+    sim_questions: "questions",
+    sim_result_title: "Exam Result",
+    sim_passed: "Passed!",
+    sim_failed: "Keep practicing!",
+    sim_best: "Best score",
+    sim_last: "Last score",
+    sim_attempts: "attempts",
+    sim_chrono: "Timed",
+    sim_no_repeat: "No audio repeat",
+    sim_one_chance: "One attempt per question",
+    nav_home: "Home", nav_practice: "Practice", nav_simulados: "Exams", nav_config: "Settings",
     onb_welcome_title: "Zinnensimulator",
     onb_lang_title: "Choose your language",
     onb_lang_sub: "We will use this language for explanations and the interface.",
@@ -2019,7 +2059,27 @@ const T = {
   es: {
     app_subtitle: "NT2 · A2 · Examen de integracion",
     app_tagline: "Tu entrenamiento para el examen de integracion holandes. 492 frases oficiales.",
-    nav_home: "Inicio", nav_practice: "Practicar", nav_quiz: "Quiz", nav_config: "Ajustes",
+    sim_title: "Simulacros",
+    sim_subtitle: "Practica como en el examen real",
+    sim_leitura: "Simulacro de Lectura",
+    sim_leitura_desc: "Textos y preguntas cronometradas",
+    sim_escuta: "Simulacro de Escucha",
+    sim_escuta_desc: "Escucha una vez y responde",
+    sim_escrita: "Simulacro de Escritura",
+    sim_escrita_desc: "Completa frases evaluadas por IA",
+    sim_start: "Iniciar simulacro",
+    sim_time: "minutos",
+    sim_questions: "preguntas",
+    sim_result_title: "Resultado del Simulacro",
+    sim_passed: "Aprobado!",
+    sim_failed: "Sigue practicando!",
+    sim_best: "Mejor nota",
+    sim_last: "Ultima nota",
+    sim_attempts: "intentos",
+    sim_chrono: "Cronometrado",
+    sim_no_repeat: "Sin repetir audio",
+    sim_one_chance: "Un intento por pregunta",
+    nav_home: "Inicio", nav_practice: "Practicar", nav_simulados: "Simulacros", nav_config: "Ajustes",
     onb_welcome_title: "Zinnensimulator",
     onb_lang_title: "Elige tu idioma",
     onb_lang_sub: "Usaremos este idioma para las explicaciones y la interfaz.",
@@ -2688,13 +2748,13 @@ const AppHeader = ({ title, onBack, subtitle, right, onSave }) => (
 
 const BottomNav = ({ tab, setTab, tFn }) => {
   const labels = tFn
-    ? { home: tFn("nav_home"), praticar: tFn("nav_practice"), quiz: tFn("nav_quiz"), config: tFn("nav_config") }
-    : { home: "Home", praticar: "Praticar", quiz: "Quiz", config: "Config" };
+    ? { home: tFn("nav_home"), praticar: tFn("nav_practice"), simulados: tFn("nav_simulados"), config: tFn("nav_config") }
+    : { home: "Home", praticar: "Praticar", simulados: "Simulados", config: "Config" };
   const tabs = [
-    { id: "home",     label: labels.home,     icon: Icons.home },
-    { id: "praticar", label: labels.praticar,  icon: Icons.cards },
-    { id: "quiz",     label: labels.quiz,      icon: Icons.target },
-    { id: "config",   label: labels.config,    icon: Icons.settings },
+    { id: "home",      label: labels.home,      icon: Icons.home },
+    { id: "praticar",  label: labels.praticar,   icon: Icons.cards },
+    { id: "simulados", label: labels.simulados,  icon: Icons.target },
+    { id: "config",    label: labels.config,     icon: Icons.settings },
   ];
   return (
     <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 200, background: C.white, borderTop: `1px solid ${C.light}`, display: "flex", paddingBottom: "env(safe-area-inset-bottom)" }}>
@@ -2723,14 +2783,14 @@ export default function NT2Simulator() {
   }, []);
 
   // ── Tab navigation ──
-  const [tab, setTab] = useState("home"); // home | praticar | quiz | config
+  const [tab, setTab] = useState("home"); // home | praticar | simulados | config
 
   const handleTabChange = (newTab) => {
     setTab(newTab);
     // Map tabs to screens
     if (newTab === "home") setScreen("dashboard");
     else if (newTab === "praticar") setScreen("praticar");
-    else if (newTab === "quiz") { setQuizQuestions([]); setQuizDone(false); setScreen("quiz"); }
+    else if (newTab === "simulados") { setSimMode(null); setScreen("simulados"); }
     else if (newTab === "config") setScreen("setup");
   };
 
@@ -2812,6 +2872,18 @@ export default function NT2Simulator() {
 
   // ── Pratica do Dia ──
   const [praticaItems, setPraticaItems] = useState([]);
+  const [simMode, setSimMode] = useState(null);
+  const [simTimer, setSimTimer] = useState(0);
+  const [simStarted, setSimStarted] = useState(false);
+  const [simTextos, setSimTextos] = useState([]);
+  const [simTextoIdx, setSimTextoIdx] = useState(0);
+  const [simQIdx, setSimQIdx] = useState(0);
+  const [simAnswers, setSimAnswers] = useState({});
+  const [simDone, setSimDone] = useState(false);
+  const [simSelected, setSimSelected] = useState(null);
+  const [simEscritaInput, setSimEscritaInput] = useState("");
+  const [simEscritaFeedbacks, setSimEscritaFeedbacks] = useState({});
+  const [simEscritaLoading, setSimEscritaLoading] = useState(false);
   const [praticaSchrijvenInput, setPraticaSchrijvenInput] = useState("");
   const [praticaSchrijvenFeedback, setPraticaSchrijvenFeedback] = useState(null);
   const [praticaSchrijvenLoading, setPraticaSchrijvenLoading] = useState(false);
@@ -3047,6 +3119,14 @@ export default function NT2Simulator() {
       else { window.speechSynthesis.onvoiceschanged = () => { load(); window.speechSynthesis.onvoiceschanged = null; }; window.speechSynthesis.getVoices(); setTimeout(load, 400); }
     }
   }, [screen]);
+
+  // ── Simulado timer ──
+  useEffect(() => {
+    if (!["sim_leitura", "sim_escuta", "sim_escrita"].includes(screen) || !simStarted || simDone) return;
+    if (simTimer <= 0) { setSimDone(true); return; }
+    const interval = setInterval(() => setSimTimer(s => s - 1), 1000);
+    return () => clearInterval(interval);
+  }, [screen, simStarted, simDone, simTimer]);
 
   // ── Card result ──
   const handleResult = (correct) => {
@@ -3678,16 +3758,844 @@ export default function NT2Simulator() {
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
           </div>
+
+          <div style={{ fontSize: 12, fontWeight: 700, color: C.mid, marginBottom: 12, textTransform: "uppercase", letterSpacing: 0.5 }}>{t("act_quiz")}</div>
+          <div style={{ marginBottom: 24 }}>
+          <button onClick={() => startQuiz("all")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+              <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.quiz})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+              </div>
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_quiz")}</div>
+                <div style={{ fontSize: 12, color: C.mid }}>{t("act_quiz_desc")}</div>
+              </div>
+              <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
+            </button>
+          </div>
         </Wrap>
         <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
       </Page>
     );
   }
 
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SIMULADOS
+  // ─────────────────────────────────────────────────────────────────────────────
+  if (screen === "simulados") {
+    const PURPLE = "#673AB7";
+    const simHistory = progress.simHistory || {};
+
+    const exams = [
+      {
+        id: "leitura",
+        title: t("sim_leitura"),
+        desc: t("sim_leitura_desc"),
+        icon: ICONS.leitura,
+        color: PURPLE,
+        colorLight: "#EDE7F6",
+        time: 20,
+        questions: LEITURA_TEXTOS.reduce((s, tx) => s + tx.questions.length, 0),
+        tags: [t("sim_chrono"), t("sim_one_chance")],
+      },
+      {
+        id: "escuta",
+        title: t("sim_escuta"),
+        desc: t("sim_escuta_desc"),
+        icon: ICONS.escuta,
+        color: C.blue,
+        colorLight: C.blueLight,
+        time: 8,
+        questions: 10,
+        tags: [t("sim_chrono"), t("sim_no_repeat")],
+      },
+      {
+        id: "escrita",
+        title: t("sim_escrita"),
+        desc: t("sim_escrita_desc"),
+        icon: null,
+        emoji: "✍️",
+        color: "#2E7D32",
+        colorLight: "#E8F5E9",
+        time: 15,
+        questions: 10,
+        tags: [t("sim_chrono"), "IA"],
+      },
+    ];
+
+    return (
+      <Page dir={isRTL ? "rtl" : "ltr"}>
+        <SaveModal {...saveModalProps} />
+        <Wrap>
+          <div style={{ padding: "24px 0 20px" }}>
+            <div style={{ fontSize: 11, color: C.coral, fontWeight: 600, letterSpacing: 1, textTransform: "uppercase", marginBottom: 2 }}>{t("sim_subtitle")}</div>
+            <div style={{ fontSize: 24, fontWeight: 700 }}>{t("sim_title")}</div>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 24 }}>
+            {exams.map(exam => {
+              const hist = simHistory[exam.id] || { attempts: 0, best: null, last: null };
+              return (
+                <div key={exam.id} style={{ background: C.white, borderRadius: R.lg, overflow: "hidden", boxShadow: shadow.card }}>
+                  {/* Header */}
+                  <div style={{ padding: "16px 16px 14px", display: "flex", alignItems: "center", gap: 14 }}>
+                    <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      {exam.icon
+                        ? <div style={{ width: 52, height: 52, backgroundImage: `url(${exam.icon})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                        : <span style={{ fontSize: 36 }}>{exam.emoji}</span>
+                      }
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: C.dark }}>{exam.title}</div>
+                      <div style={{ fontSize: 12, color: C.mid, marginTop: 2 }}>{exam.desc}</div>
+                    </div>
+                  </div>
+
+                  {/* Info grid - 2x2 */}
+                  <div style={{ margin: "0 16px", borderTop: `1px solid ${C.light}`, borderBottom: `1px solid ${C.light}`, display: "grid", gridTemplateColumns: "1fr 1fr", padding: "10px 0" }}>
+                    <div style={{ padding: "6px 12px 6px 0", borderRight: `1px solid ${C.light}` }}>
+                      <div style={{ fontSize: 10, color: C.mid, fontWeight: 600, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>⏱ Tempo</div>
+                      <div style={{ fontSize: 14, fontWeight: 700, color: C.dark }}>{exam.time} min</div>
+                    </div>
+                    <div style={{ padding: "6px 0 6px 12px" }}>
+                      <div style={{ fontSize: 10, color: C.mid, fontWeight: 600, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>📝 {t("sim_questions")}</div>
+                      <div style={{ fontSize: 14, fontWeight: 700, color: C.dark }}>{exam.questions}</div>
+                    </div>
+                    <div style={{ padding: "6px 12px 6px 0", borderRight: `1px solid ${C.light}`, borderTop: `1px solid ${C.light}` }}>
+                      <div style={{ fontSize: 10, color: C.mid, fontWeight: 600, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>🏷 Formato</div>
+                      <div style={{ fontSize: 12, fontWeight: 600, color: exam.color }}>{exam.tags[0]}</div>
+                    </div>
+                    <div style={{ padding: "6px 0 6px 12px", borderTop: `1px solid ${C.light}` }}>
+                      <div style={{ fontSize: 10, color: C.mid, fontWeight: 600, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>⚠️ Regra</div>
+                      <div style={{ fontSize: 12, fontWeight: 600, color: exam.color }}>{exam.tags[1]}</div>
+                    </div>
+                  </div>
+
+                  {/* History + CTA */}
+                  <div style={{ padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    {hist.attempts > 0 ? (
+                      <div style={{ display: "flex", gap: 16 }}>
+                        <div>
+                          <div style={{ fontSize: 10, color: C.mid, fontWeight: 600, textTransform: "uppercase" }}>{t("sim_best")}</div>
+                          <div style={{ fontSize: 16, fontWeight: 800, color: exam.color }}>{hist.best}%</div>
+                        </div>
+                        <div>
+                          <div style={{ fontSize: 10, color: C.mid, fontWeight: 600, textTransform: "uppercase" }}>{t("sim_last")}</div>
+                          <div style={{ fontSize: 16, fontWeight: 800, color: C.dark }}>{hist.last}%</div>
+                        </div>
+                        <div>
+                          <div style={{ fontSize: 10, color: C.mid, fontWeight: 600, textTransform: "uppercase" }}>{t("sim_attempts")}</div>
+                          <div style={{ fontSize: 16, fontWeight: 800, color: C.dark }}>{hist.attempts}x</div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div style={{ fontSize: 12, color: C.mid, fontStyle: "italic" }}>Nenhuma tentativa ainda</div>
+                    )}
+                    <button onClick={() => {
+                      if (exam.id === "leitura") { setSimMode("leitura"); setScreen("sim_leitura"); setSimTimer(exam.time * 60); setSimStarted(false); }
+                      else if (exam.id === "escuta") { setSimMode("escuta"); setScreen("sim_escuta"); setSimTimer(exam.time * 60); setSimStarted(false); }
+                      else if (exam.id === "escrita") { setSimMode("escrita"); setScreen("sim_escrita"); setSimTimer(exam.time * 60); setSimStarted(false); }
+                    }} style={{
+                      background: exam.color, color: "#fff", border: "none",
+                      borderRadius: R.full, padding: "10px 20px",
+                      fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: font,
+                      flexShrink: 0
+                    }}>
+                      {t("sim_start")} →
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Wrap>
+        <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+      </Page>
+    );
+  }
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SIMULADO DE LEITURA
+  // ─────────────────────────────────────────────────────────────────────────────
+  if (screen === "sim_leitura") {
+    const PURPLE = "#673AB7";
+
+    // ── Start screen ──
+    if (!simStarted) {
+      return (
+        <Page dir={isRTL ? "rtl" : "ltr"}>
+          <Wrap>
+            <AppHeader title={t("sim_leitura")} onBack={() => { setScreen("simulados"); setTab("simulados"); }} onSave={openSave} />
+            <div style={{ textAlign: "center", padding: "32px 8px 24px" }}>
+              <div style={{ width: 90, height: 90, borderRadius: "50%", background: "#EDE7F6", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
+                <div style={{ width: 56, height: 56, backgroundImage: `url(${ICONS.leitura})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+              </div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 8 }}>{t("sim_leitura")}</div>
+              <div style={{ fontSize: 14, color: C.mid, marginBottom: 32, lineHeight: 1.6 }}>{t("sim_leitura_desc")}</div>
+
+              {/* Rules */}
+              <div style={{ background: C.bg, borderRadius: R.lg, padding: 16, marginBottom: 32, textAlign: "left" }}>
+                {[
+                  { icon: "⏱", text: `10 ${t("sim_time")}` },
+                  { icon: "📝", text: `${LEITURA_TEXTOS.reduce((s,tx) => s + tx.questions.length, 0)} ${t("sim_questions")}` },
+                  { icon: "🔒", text: t("sim_one_chance") },
+                  { icon: "📖", text: `${LEITURA_TEXTOS.length} textos` },
+                ].map(({ icon, text }) => (
+                  <div key={text} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
+                    <span style={{ fontSize: 20, width: 28, textAlign: "center" }}>{icon}</span>
+                    <span style={{ fontSize: 14, color: C.dark, fontWeight: 500 }}>{text}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Btn onClick={() => {
+                const txs = shuffle([...LEITURA_TEXTOS]);
+                setSimTextos(txs);
+                setSimTextoIdx(0);
+                setSimQIdx(0);
+                setSimAnswers({});
+                setSimDone(false);
+                setSimSelected(null);
+                setSimTimer(20 * 60);
+                setSimStarted(true);
+              }} style={{ width: "100%", background: PURPLE, boxShadow: "none" }}>
+                {t("sim_start")} →
+              </Btn>
+            </div>
+          </Wrap>
+          <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+        </Page>
+      );
+    }
+
+    // ── Done screen ──
+    if (simDone) {
+      const allQs = simTextos.flatMap((tx, ti) => tx.questions.map((q, qi) => ({ ti, qi, correct: q.a })));
+      const total = allQs.length;
+      const correct = allQs.filter(({ ti, qi, correct }) => simAnswers[`${ti}-${qi}`] === correct).length;
+      const pct = Math.round((correct / total) * 100);
+      const passed = pct >= 60;
+
+      // Save to history
+      const newHist = { ...progress.simHistory };
+      const prev = newHist.leitura || { attempts: 0, best: 0, last: 0 };
+      newHist.leitura = { attempts: prev.attempts + 1, best: Math.max(prev.best || 0, pct), last: pct };
+      if (!progress.simHistory || progress.simHistory.leitura?.last !== pct) {
+        setProgress(p => ({ ...p, simHistory: newHist }));
+      }
+
+      const resultMsg = () => {
+        if (pct >= 90) return { emoji: "🏆", title: "Excelente!", sub: `${pct}% — Muito acima do mínimo. Você está muito bem preparado!`, color: "#2E7D32" };
+        if (pct >= 75) return { emoji: "🎉", title: t("sim_passed"), sub: `${pct}% — Aprovado! O mínimo é 60%. Continue assim!`, color: "#2E7D32" };
+        if (pct >= 60) return { emoji: "✅", title: t("sim_passed"), sub: `${pct}% — Aprovado por margem pequena. O mínimo é 60%. Pratique mais para garantir!`, color: "#2E7D32" };
+        if (pct >= 45) return { emoji: "📚", title: t("sim_failed"), sub: `${pct}% — Quase lá! Você precisa de 60% para passar. Faltaram ${60 - pct}%.`, color: C.gold };
+        return { emoji: "💪", title: t("sim_failed"), sub: `${pct}% — Precisa de 60% para passar. Continue praticando a leitura!`, color: C.coral };
+      };
+      const { emoji, title, sub, color } = resultMsg();
+
+      return (
+        <Page dir={isRTL ? "rtl" : "ltr"}>
+          <Wrap style={{ textAlign: "center", paddingTop: 48 }}>
+            <div style={{ fontSize: 56, marginBottom: 16 }}>{emoji}</div>
+            <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 4 }}>{t("sim_result_title")}</div>
+            <div style={{ fontSize: 15, fontWeight: 600, color, marginBottom: 8 }}>{title}</div>
+            <div style={{ fontSize: 13, color: C.mid, marginBottom: 32, lineHeight: 1.6, maxWidth: 280, margin: "0 auto 32px" }}>{sub}</div>
+
+            <div style={{ width: 120, height: 120, borderRadius: "50%", background: passed ? "#E8F5E9" : "#FFF0F3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin: "0 auto 32px", border: `4px solid ${color}` }}>
+              <div style={{ fontSize: 36, fontWeight: 900, color }}>{pct}%</div>
+              <div style={{ fontSize: 11, color: C.mid }}>{correct}/{total}</div>
+            </div>
+
+            {/* Per-text breakdown */}
+            <div style={{ textAlign: "left", marginBottom: 32 }}>
+              {simTextos.map((tx, ti) => {
+                const txTotal = tx.questions.length;
+                const txCorrect = tx.questions.filter((q, qi) => simAnswers[`${ti}-${qi}`] === q.a).length;
+                const txPct = Math.round((txCorrect / txTotal) * 100);
+                return (
+                  <div key={ti} style={{ background: C.white, borderRadius: R.md, padding: "12px 14px", marginBottom: 8, boxShadow: shadow.sm }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: C.dark }}>{tx.title}</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: txPct >= 60 ? "#2E7D32" : C.coral }}>{txCorrect}/{txTotal}</div>
+                    </div>
+                    <div style={{ height: 5, background: C.light, borderRadius: 99, overflow: "hidden" }}>
+                      <div style={{ height: "100%", width: `${txPct}%`, background: txPct >= 60 ? "#2E7D32" : C.coral, borderRadius: 99 }} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <Btn onClick={() => { setSimStarted(false); setSimDone(false); }} style={{ background: PURPLE, boxShadow: "none" }}>
+                🔄 Tentar novamente
+              </Btn>
+              <Btn onClick={() => { setScreen("simulados"); setTab("simulados"); setSimStarted(false); setSimDone(false); }} variant="secondary">
+                ← {t("sim_title")}
+              </Btn>
+            </div>
+          </Wrap>
+          <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+        </Page>
+      );
+    }
+
+    // ── Exam screen ──
+    const texto = simTextos[simTextoIdx];
+    if (!texto) return null;
+    const q = texto.questions[simQIdx];
+    const totalQs = simTextos.reduce((s, tx) => s + tx.questions.length, 0);
+    const doneQs = simTextos.slice(0, simTextoIdx).reduce((s, tx) => s + tx.questions.length, 0) + simQIdx;
+    const globalKey = `${simTextoIdx}-${simQIdx}`;
+    const answered = simAnswers[globalKey] !== undefined;
+    const isLastQ = simQIdx === texto.questions.length - 1;
+    const isLastText = simTextoIdx === simTextos.length - 1;
+
+
+    const mins = String(Math.floor(simTimer / 60)).padStart(2, "0");
+    const secs = String(simTimer % 60).padStart(2, "0");
+    const timerColor = simTimer < 60 ? C.coral : simTimer < 180 ? C.gold : PURPLE;
+
+    const goNext = () => {
+      setSimSelected(null);
+      if (!isLastQ) {
+        setSimQIdx(i => i + 1);
+      } else if (!isLastText) {
+        setSimTextoIdx(i => i + 1);
+        setSimQIdx(0);
+      } else {
+        setSimDone(true);
+      }
+    };
+
+    return (
+      <Page dir={isRTL ? "rtl" : "ltr"}>
+        <SaveModal {...saveModalProps} />
+        <Wrap style={{ paddingBottom: answered ? 90 : 40 }}>
+          {/* Sticky header with timer */}
+          <div style={{ position: "sticky", top: 0, zIndex: 100, background: C.bg, paddingTop: 20, paddingBottom: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
+              <button onClick={() => { if (window.confirm && window.confirm("Sair do simulado?")) { setSimStarted(false); setScreen("simulados"); } else { setSimStarted(false); setScreen("simulados"); }}} style={{ background: "none", border: "none", cursor: "pointer", padding: 0, fontSize: 13, color: C.mid, fontFamily: font }}>
+                ✕ Sair
+              </button>
+              <div style={{ display: "flex", alignItems: "center", gap: 6, background: C.white, borderRadius: R.full, padding: "6px 14px", boxShadow: shadow.sm }}>
+                <span style={{ fontSize: 14 }}>⏱</span>
+                <span style={{ fontSize: 15, fontWeight: 800, color: timerColor, fontVariantNumeric: "tabular-nums" }}>{mins}:{secs}</span>
+              </div>
+              <span style={{ fontSize: 13, color: C.mid, fontWeight: 600 }}>{doneQs + 1}/{totalQs}</span>
+            </div>
+            <div style={{ height: 4, background: C.light, borderRadius: 99, overflow: "hidden" }}>
+              <div style={{ height: "100%", width: `${((doneQs) / totalQs) * 100}%`, background: PURPLE, borderRadius: 99, transition: "width 0.3s" }} />
+            </div>
+          </div>
+
+          {/* Text */}
+          <div style={{ background: C.white, borderRadius: R.lg, padding: 16, marginBottom: 14, boxShadow: shadow.sm }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: PURPLE, textTransform: "uppercase", marginBottom: 6 }}>{texto.cat} · {texto.title}</div>
+            <pre style={{ fontFamily: font, fontSize: 13, lineHeight: 1.75, color: C.dark, whiteSpace: "pre-wrap", margin: 0 }}>{texto.text}</pre>
+          </div>
+
+          {/* Question */}
+          <CardBox style={{ marginBottom: 10 }}>
+            <div style={{ fontSize: 15, fontWeight: 600, color: C.dark, lineHeight: 1.6 }}>{q.q}</div>
+          </CardBox>
+
+          {/* Options */}
+          <div style={{ display: "grid", gap: 8, marginBottom: 12 }}>
+            {q.opts.map((opt, i) => {
+              let bg = C.white, border = C.light, col = C.dark;
+              if (answered) {
+                if (i === q.a) { bg = C.greenLight; border = C.green; col = C.green; }
+                else if (i === simSelected && i !== q.a) { bg = "#FFF0F3"; border = C.coral; col = C.coral; }
+              }
+              return (
+                <button key={i} onClick={() => {
+                  if (answered) return;
+                  setSimSelected(i);
+                  setSimAnswers(a => ({ ...a, [globalKey]: i }));
+                }} style={{ textAlign: "left", padding: "13px 16px", background: bg, border: `1.5px solid ${border}`, borderRadius: R.md, cursor: answered ? "default" : "pointer", fontFamily: font, display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{ width: 26, height: 26, borderRadius: R.full, background: answered && i === q.a ? C.green : answered && i === simSelected && i !== q.a ? C.coral : "#F0F0F0", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: 12, fontWeight: 700, color: answered && (i === q.a || i === simSelected) ? "#fff" : C.mid }}>
+                    {answered && i === q.a ? "✓" : answered && i === simSelected && i !== q.a ? "✗" : ["A","B","C","D"][i]}
+                  </div>
+                  <span style={{ fontSize: 14, color: col, fontWeight: 500 }}>{opt}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Explanation after answer */}
+          {answered && (
+            <div style={{ background: simSelected === q.a ? C.greenLight : "#FFF8E7", borderRadius: R.md, padding: "12px 16px", borderLeft: `4px solid ${simSelected === q.a ? C.green : C.gold}` }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: simSelected === q.a ? C.green : C.gold, marginBottom: 4, textTransform: "uppercase" }}>
+                {simSelected === q.a ? t("lbl_correct") : t("lbl_answer")}
+              </div>
+              <div style={{ fontSize: 13, color: C.dark, lineHeight: 1.6, marginBottom: 4 }}>{q.exp}</div>
+              {q.expPt && lang === "pt" && <div style={{ fontSize: 12, color: C.mid, fontStyle: "italic" }}>🇧🇷 {q.expPt}</div>}
+              {q.expEn && lang === "en" && <div style={{ fontSize: 12, color: C.mid, fontStyle: "italic" }}>🇬🇧 {q.expEn}</div>}
+              {q.expEs && lang === "es" && <div style={{ fontSize: 12, color: C.mid, fontStyle: "italic" }}>🇪🇸 {q.expEs}</div>}
+            </div>
+          )}
+        </Wrap>
+
+        {/* Next button */}
+        {answered && (
+          <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, padding: "12px 16px", paddingBottom: "calc(12px + env(safe-area-inset-bottom))", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 250 }}>
+            <Btn onClick={goNext} style={{ width: "100%", background: PURPLE, boxShadow: "none" }}>
+              {isLastQ && isLastText ? "Ver resultado →" : "Próxima →"}
+            </Btn>
+          </div>
+        )}
+      </Page>
+    );
+  }
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // SCHRIJVEN (ESCRITA)
+  // SIMULADO DE ESCUTA
   // ─────────────────────────────────────────────────────────────────────────────
+  if (screen === "sim_escuta") {
+    const BLUE = C.blue;
+
+    // Build escuta questions from VRAAG_ANTWOORD with PT translations as options
+    const buildEscutaQuestions = () => {
+      // Use AANVULZINNEN strings — ouve a frase, escolhe qual é o começo correto
+      const pool = shuffle([...AANVULZINNEN].filter(s => typeof s === "string")).slice(0, 15);
+      return pool.map(sentence => {
+        // The correct answer is the first sentence (before "...")
+        const firstPart = sentence.split("...")[0].trim();
+        const correctOpt = sentence; // full sentence shown as option
+        // 3 wrong options = other aanvulzinnen sentences
+        const others = shuffle(AANVULZINNEN.filter(s => typeof s === "string" && s !== sentence))
+          .slice(0, 3);
+        const opts = shuffle([correctOpt, ...others]);
+        return { sentence, opts, a: opts.indexOf(correctOpt) };
+      });
+    };
+
+    // Start screen
+    if (!simStarted) {
+      return (
+        <Page dir={isRTL ? "rtl" : "ltr"}>
+          <Wrap>
+            <AppHeader title={t("sim_escuta")} onBack={() => { setScreen("simulados"); setTab("simulados"); }} onSave={openSave} />
+            <div style={{ textAlign: "center", padding: "32px 8px 24px" }}>
+              <div style={{ width: 90, height: 90, borderRadius: "50%", background: C.blueLight, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
+                <div style={{ width: 56, height: 56, backgroundImage: `url(${ICONS.escuta})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+              </div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 8 }}>{t("sim_escuta")}</div>
+              <div style={{ fontSize: 14, color: C.mid, marginBottom: 32, lineHeight: 1.6 }}>{t("sim_escuta_desc")}</div>
+              <div style={{ background: C.bg, borderRadius: R.lg, padding: 16, marginBottom: 32, textAlign: "left" }}>
+                {[
+                  { icon: "⏱", text: `8 ${t("sim_time")}` },
+                  { icon: "📝", text: `15 ${t("sim_questions")}` },
+                  { icon: "🔇", text: t("sim_no_repeat") },
+                  { icon: "🔒", text: t("sim_one_chance") },
+                ].map(({ icon, text }) => (
+                  <div key={text} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
+                    <span style={{ fontSize: 20, width: 28, textAlign: "center" }}>{icon}</span>
+                    <span style={{ fontSize: 14, color: C.dark, fontWeight: 500 }}>{text}</span>
+                  </div>
+                ))}
+              </div>
+              <Btn onClick={() => {
+                const qs = buildEscutaQuestions();
+                setSimTextos(qs);
+                setSimTextoIdx(0);
+                setSimAnswers({});
+                setSimDone(false);
+                setSimSelected(null);
+                setSimTimer(8 * 60);
+                setSimStarted(true);
+              }} style={{ width: "100%", background: BLUE, boxShadow: "none" }}>
+                {t("sim_start")} →
+              </Btn>
+            </div>
+          </Wrap>
+          <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+        </Page>
+      );
+    }
+
+    // Done screen
+    if (simDone) {
+      const total = simTextos.length;
+      const correct = simTextos.filter((q, i) => simAnswers[i] === q.a).length;
+      const pct = Math.round((correct / total) * 100);
+      const passed = pct >= 60;
+      const newHist = { ...progress.simHistory };
+      const prev = newHist.escuta || { attempts: 0, best: 0, last: 0 };
+      newHist.escuta = { attempts: prev.attempts + 1, best: Math.max(prev.best || 0, pct), last: pct };
+      setProgress(p => ({ ...p, simHistory: newHist }));
+
+      const resultMsg = () => {
+        if (pct >= 90) return { emoji: "🏆", title: "Excelente!", sub: `${pct}% — Ótima compreensão auditiva!`, color: "#2E7D32" };
+        if (pct >= 75) return { emoji: "🎉", title: t("sim_passed"), sub: `${pct}% — Aprovado! Continue praticando o Modo Escuta.`, color: "#2E7D32" };
+        if (pct >= 60) return { emoji: "✅", title: t("sim_passed"), sub: `${pct}% — Aprovado por margem pequena. O mínimo é 60%.`, color: "#2E7D32" };
+        if (pct >= 45) return { emoji: "📻", title: t("sim_failed"), sub: `${pct}% — Faltaram ${60 - pct}%. Pratique mais o Modo Escuta!`, color: C.gold };
+        return { emoji: "💪", title: t("sim_failed"), sub: `${pct}% — Precisa de 60%. Use o Modo Escuta todos os dias!`, color: C.coral };
+      };
+      const { emoji, title, sub, color } = resultMsg();
+
+      return (
+        <Page dir={isRTL ? "rtl" : "ltr"}>
+          <Wrap style={{ textAlign: "center", paddingTop: 48 }}>
+            <div style={{ fontSize: 56, marginBottom: 16 }}>{emoji}</div>
+            <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 4 }}>{t("sim_result_title")}</div>
+            <div style={{ fontSize: 15, fontWeight: 600, color, marginBottom: 8 }}>{title}</div>
+            <div style={{ fontSize: 13, color: C.mid, marginBottom: 32, lineHeight: 1.6, maxWidth: 280, margin: "0 auto 32px" }}>{sub}</div>
+            <div style={{ width: 120, height: 120, borderRadius: "50%", background: passed ? "#E8F5E9" : "#FFF0F3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin: "0 auto 32px", border: `4px solid ${color}` }}>
+              <div style={{ fontSize: 36, fontWeight: 900, color }}>{pct}%</div>
+              <div style={{ fontSize: 11, color: C.mid }}>{correct}/{total}</div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <Btn onClick={() => { setSimStarted(false); setSimDone(false); }} style={{ background: BLUE, boxShadow: "none" }}>🔄 Tentar novamente</Btn>
+              <Btn onClick={() => { setScreen("simulados"); setTab("simulados"); setSimStarted(false); setSimDone(false); }} variant="secondary">← {t("sim_title")}</Btn>
+            </div>
+          </Wrap>
+          <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+        </Page>
+      );
+    }
+
+    // Exam screen
+    const q = simTextos[simTextoIdx];
+    if (!q) return null;
+    const answered = simAnswers[simTextoIdx] !== undefined;
+    const hasPlayed = simAnswers[`played_${simTextoIdx}`] === true;
+    const setHasPlayed = (val) => setSimAnswers(a => ({ ...a, [`played_${simTextoIdx}`]: val }));
+
+    const playOnce = () => {
+      if (hasPlayed) return;
+      setHasPlayed(true);
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(q.sentence);
+      u.lang = "nl-NL"; u.rate = 0.8;
+      const v = window.speechSynthesis.getVoices().find(v => v.lang?.startsWith("nl"));
+      if (v) u.voice = v;
+      window.speechSynthesis.speak(u);
+    };
+
+    const mins = String(Math.floor(simTimer / 60)).padStart(2, "0");
+    const secs = String(simTimer % 60).padStart(2, "0");
+    const timerColor = simTimer < 60 ? C.coral : simTimer < 180 ? C.gold : BLUE;
+
+    return (
+      <Page dir={isRTL ? "rtl" : "ltr"}>
+        <Wrap style={{ paddingBottom: answered ? 90 : 40 }}>
+          {/* Header */}
+          <div style={{ position: "sticky", top: 0, zIndex: 100, background: C.bg, paddingTop: 20, paddingBottom: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
+              <button onClick={() => { setSimStarted(false); setScreen("simulados"); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 13, color: C.mid, fontFamily: font }}>✕ Sair</button>
+              <div style={{ display: "flex", alignItems: "center", gap: 6, background: C.white, borderRadius: R.full, padding: "6px 14px", boxShadow: shadow.sm }}>
+                <span style={{ fontSize: 14 }}>⏱</span>
+                <span style={{ fontSize: 15, fontWeight: 800, color: timerColor, fontVariantNumeric: "tabular-nums" }}>{mins}:{secs}</span>
+              </div>
+              <span style={{ fontSize: 13, color: C.mid, fontWeight: 600 }}>{simTextoIdx + 1}/{simTextos.length}</span>
+            </div>
+            <div style={{ height: 4, background: C.light, borderRadius: 99, overflow: "hidden" }}>
+              <div style={{ height: "100%", width: `${(simTextoIdx / simTextos.length) * 100}%`, background: BLUE, borderRadius: 99, transition: "width 0.3s" }} />
+            </div>
+          </div>
+
+          {/* Play button */}
+          <div style={{ textAlign: "center", padding: "32px 0 24px" }}>
+            <button onClick={playOnce} disabled={hasPlayed} style={{
+              width: 80, height: 80, borderRadius: "50%",
+              background: hasPlayed ? C.light : BLUE,
+              border: "none", cursor: hasPlayed ? "default" : "pointer",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              margin: "0 auto 12px", boxShadow: hasPlayed ? "none" : `0 4px 16px ${BLUE}50`
+            }}>
+              <Icon d={Icons.speaker} size={32} stroke={hasPlayed ? C.mid : "#fff"} />
+            </button>
+            <div style={{ fontSize: 13, color: C.mid, fontWeight: 500 }}>
+              {hasPlayed ? "🔇 " + t("sim_no_repeat") : "▶ Toque para ouvir"}
+            </div>
+          </div>
+
+          {/* Question */}
+          <div style={{ fontSize: 14, fontWeight: 600, color: C.mid, textAlign: "center", marginBottom: 16 }}>
+            Qual frase você ouviu?
+          </div>
+
+          {/* Options */}
+          <div style={{ display: "grid", gap: 10 }}>
+            {q.opts.map((opt, i) => {
+              let bg = C.white, border = C.light, col = C.dark;
+              if (answered) {
+                if (i === q.a) { bg = C.greenLight; border = C.green; col = C.green; }
+                else if (i === simAnswers[simTextoIdx] && i !== q.a) { bg = "#FFF0F3"; border = C.coral; col = C.coral; }
+              }
+              return (
+                <button key={i} onClick={() => {
+                  if (answered || !hasPlayed) return;
+                  setSimAnswers(a => ({ ...a, [simTextoIdx]: i }));
+                }} style={{ textAlign: "left", padding: "13px 16px", background: bg, border: `1.5px solid ${border}`, borderRadius: R.md, cursor: (answered || !hasPlayed) ? "default" : "pointer", fontFamily: font, display: "flex", alignItems: "center", gap: 10, opacity: !hasPlayed && !answered ? 0.5 : 1 }}>
+                  <div style={{ width: 26, height: 26, borderRadius: R.full, background: answered && i === q.a ? C.green : answered && i === simAnswers[simTextoIdx] && i !== q.a ? C.coral : "#F0F0F0", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: 12, fontWeight: 700, color: answered && (i === q.a || i === simAnswers[simTextoIdx]) ? "#fff" : C.mid }}>
+                    {answered && i === q.a ? "✓" : answered && i === simAnswers[simTextoIdx] && i !== q.a ? "✗" : ["A","B","C","D"][i]}
+                  </div>
+                  <span style={{ fontSize: 14, color: col }}>{opt}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* After answer — only show correct if wrong */}
+          {answered && simAnswers[simTextoIdx] !== q.a && (
+            <div style={{ marginTop: 16, background: C.greenLight, borderRadius: R.md, padding: "12px 16px", borderLeft: `4px solid ${C.green}` }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: C.green, marginBottom: 4, textTransform: "uppercase" }}>{t("lbl_correct")}</div>
+              <div style={{ fontSize: 14, color: C.dark, fontWeight: 600 }}>{q.opts[q.a]}</div>
+            </div>
+          )}
+
+          {!hasPlayed && !answered && (
+            <div style={{ textAlign: "center", marginTop: 16, fontSize: 12, color: C.mid }}>
+              Ouça a frase antes de responder
+            </div>
+          )}
+        </Wrap>
+
+        {answered && (
+          <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, padding: "12px 16px", paddingBottom: "calc(12px + env(safe-area-inset-bottom))", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 250 }}>
+            <Btn onClick={() => {
+              setSimSelected(null);
+              if (simTextoIdx + 1 >= simTextos.length) setSimDone(true);
+              else setSimTextoIdx(i => i + 1);
+            }} style={{ width: "100%", background: BLUE, boxShadow: "none" }}>
+              {simTextoIdx + 1 >= simTextos.length ? "Ver resultado →" : "Próxima →"}
+            </Btn>
+          </div>
+        )}
+      </Page>
+    );
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // SIMULADO DE ESCRITA
+  // ─────────────────────────────────────────────────────────────────────────────
+  if (screen === "sim_escrita") {
+    const GREEN = "#2E7D32";
+    const NUM_QUESTIONS = 10;
+
+    // Start screen
+    if (!simStarted) {
+      return (
+        <Page dir={isRTL ? "rtl" : "ltr"}>
+          <Wrap>
+            <AppHeader title={t("sim_escrita")} onBack={() => { setScreen("simulados"); setTab("simulados"); }} onSave={openSave} />
+            <div style={{ textAlign: "center", padding: "32px 8px 24px" }}>
+              <div style={{ width: 90, height: 90, borderRadius: "50%", background: "#E8F5E9", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px", fontSize: 44 }}>✍️</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 8 }}>{t("sim_escrita")}</div>
+              <div style={{ fontSize: 14, color: C.mid, marginBottom: 32, lineHeight: 1.6 }}>{t("sim_escrita_desc")}</div>
+              <div style={{ background: C.bg, borderRadius: R.lg, padding: 16, marginBottom: 32, textAlign: "left" }}>
+                {[
+                  { icon: "⏱", text: `15 ${t("sim_time")}` },
+                  { icon: "📝", text: `${NUM_QUESTIONS} ${t("sim_questions")}` },
+                  { icon: "🤖", text: "Avaliado pelo Claude IA" },
+                  { icon: "🔒", text: t("sim_one_chance") },
+                ].map(({ icon, text }) => (
+                  <div key={text} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
+                    <span style={{ fontSize: 20, width: 28, textAlign: "center" }}>{icon}</span>
+                    <span style={{ fontSize: 14, color: C.dark, fontWeight: 500 }}>{text}</span>
+                  </div>
+                ))}
+              </div>
+              <Btn onClick={() => {
+                const cards = shuffle([...AANVULZINNEN].filter(s => typeof s === "string")).slice(0, NUM_QUESTIONS);
+                setSimTextos(cards);
+                setSimTextoIdx(0);
+                setSimAnswers({});
+                setSimEscritaFeedbacks({});
+                setSimEscritaInput("");
+                setSimDone(false);
+                setSimTimer(15 * 60);
+                setSimStarted(true);
+              }} style={{ width: "100%", background: GREEN, boxShadow: "none" }}>
+                {t("sim_start")} →
+              </Btn>
+            </div>
+          </Wrap>
+          <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+        </Page>
+      );
+    }
+
+    // Done screen
+    if (simDone) {
+      const scores = Object.values(simEscritaFeedbacks).map(f => f.score || 0);
+      const avg = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length * 10) : 0;
+      const passed = avg >= 60;
+      const newHist = { ...progress.simHistory };
+      const prev = newHist.escrita || { attempts: 0, best: 0, last: 0 };
+      newHist.escrita = { attempts: prev.attempts + 1, best: Math.max(prev.best || 0, avg), last: avg };
+      setProgress(p => ({ ...p, simHistory: newHist }));
+
+      const resultMsg = () => {
+        if (avg >= 90) return { emoji: "🏆", title: "Excelente!", sub: `${avg}% — Escrita impecável! Você está muito bem preparado.`, color: GREEN };
+        if (avg >= 75) return { emoji: "🎉", title: t("sim_passed"), sub: `${avg}% — Aprovado! Continue praticando a escrita.`, color: GREEN };
+        if (avg >= 60) return { emoji: "✅", title: t("sim_passed"), sub: `${avg}% — Aprovado por margem pequena. O mínimo é 60%.`, color: GREEN };
+        if (avg >= 45) return { emoji: "✍️", title: t("sim_failed"), sub: `${avg}% — Faltaram ${60 - avg}%. Pratique mais o modo Escrita!`, color: C.gold };
+        return { emoji: "💪", title: t("sim_failed"), sub: `${avg}% — Precisa de 60%. Use o modo Escrita todos os dias!`, color: C.coral };
+      };
+      const { emoji, title, sub, color } = resultMsg();
+
+      return (
+        <Page dir={isRTL ? "rtl" : "ltr"}>
+          <Wrap style={{ textAlign: "center", paddingTop: 48 }}>
+            <div style={{ fontSize: 56, marginBottom: 16 }}>{emoji}</div>
+            <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 4 }}>{t("sim_result_title")}</div>
+            <div style={{ fontSize: 15, fontWeight: 600, color, marginBottom: 8 }}>{title}</div>
+            <div style={{ fontSize: 13, color: C.mid, marginBottom: 32, lineHeight: 1.6, maxWidth: 280, margin: "0 auto 32px" }}>{sub}</div>
+            <div style={{ width: 120, height: 120, borderRadius: "50%", background: passed ? "#E8F5E9" : "#FFF0F3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", border: `4px solid ${color}` }}>
+              <div style={{ fontSize: 36, fontWeight: 900, color }}>{avg}%</div>
+              <div style={{ fontSize: 11, color: C.mid }}>{scores.length}/{NUM_QUESTIONS} avaliadas</div>
+            </div>
+
+            {/* Per-question breakdown */}
+            <div style={{ textAlign: "left", marginBottom: 32 }}>
+              {simTextos.map((sentence, i) => {
+                const fb = simEscritaFeedbacks[i];
+                const score = fb ? fb.score : null;
+                const pct = score !== null ? score * 10 : null;
+                return (
+                  <div key={i} style={{ background: C.white, borderRadius: R.md, padding: "10px 14px", marginBottom: 8, boxShadow: shadow.sm }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                      <div style={{ fontSize: 12, color: C.mid, flex: 1, marginRight: 8 }} numberOfLines={1}>{sentence.split("...")[0]}...</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: pct !== null ? (pct >= 60 ? GREEN : C.coral) : C.mid, flexShrink: 0 }}>
+                        {pct !== null ? `${score}/10` : "—"}
+                      </div>
+                    </div>
+                    {fb && <div style={{ fontSize: 11, color: C.mid, fontStyle: "italic" }}>{fb.feedback}</div>}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <Btn onClick={() => { setSimStarted(false); setSimDone(false); }} style={{ background: GREEN, boxShadow: "none" }}>🔄 Tentar novamente</Btn>
+              <Btn onClick={() => { setScreen("simulados"); setTab("simulados"); setSimStarted(false); setSimDone(false); }} variant="secondary">← {t("sim_title")}</Btn>
+            </div>
+          </Wrap>
+          <BottomNav tab={tab} setTab={handleTabChange} tFn={t} />
+        </Page>
+      );
+    }
+
+    // Exam screen
+    const sentence = simTextos[simTextoIdx] || "";
+    const currentFeedback = simEscritaFeedbacks[simTextoIdx];
+    const answered = currentFeedback !== undefined;
+    const mins = String(Math.floor(simTimer / 60)).padStart(2, "0");
+    const secs = String(simTimer % 60).padStart(2, "0");
+    const timerColor = simTimer < 60 ? C.coral : simTimer < 180 ? C.gold : GREEN;
+    const currentInput = simAnswers[simTextoIdx] || "";
+
+    const evaluate = async () => {
+      if (!currentInput.trim()) return;
+      setSimEscritaLoading(true);
+      try {
+        const response = await fetch("/api/evaluate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sentence, answer: currentInput, lang })
+        });
+        const result = await response.json();
+        setSimEscritaFeedbacks(f => ({ ...f, [simTextoIdx]: result }));
+      } catch(e) {
+        setSimEscritaFeedbacks(f => ({ ...f, [simTextoIdx]: { score: 0, correct: false, feedback: "Erro ao avaliar.", example: "", grammar_tip: "" } }));
+      }
+      setSimEscritaLoading(false);
+    };
+
+    const goNext = () => {
+      setSimEscritaInput("");
+      if (simTextoIdx + 1 >= simTextos.length) setSimDone(true);
+      else setSimTextoIdx(i => i + 1);
+    };
+
+    return (
+      <Page dir={isRTL ? "rtl" : "ltr"}>
+        <Wrap style={{ paddingBottom: answered ? 90 : 40 }}>
+          {/* Header */}
+          <div style={{ position: "sticky", top: 0, zIndex: 100, background: C.bg, paddingTop: 20, paddingBottom: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
+              <button onClick={() => { setSimStarted(false); setScreen("simulados"); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 13, color: C.mid, fontFamily: font }}>✕ Sair</button>
+              <div style={{ display: "flex", alignItems: "center", gap: 6, background: C.white, borderRadius: R.full, padding: "6px 14px", boxShadow: shadow.sm }}>
+                <span style={{ fontSize: 14 }}>⏱</span>
+                <span style={{ fontSize: 15, fontWeight: 800, color: timerColor, fontVariantNumeric: "tabular-nums" }}>{mins}:{secs}</span>
+              </div>
+              <span style={{ fontSize: 13, color: C.mid, fontWeight: 600 }}>{simTextoIdx + 1}/{simTextos.length}</span>
+            </div>
+            <div style={{ height: 4, background: C.light, borderRadius: 99, overflow: "hidden" }}>
+              <div style={{ height: "100%", width: `${(simTextoIdx / simTextos.length) * 100}%`, background: GREEN, borderRadius: 99, transition: "width 0.3s" }} />
+            </div>
+          </div>
+
+          {/* Sentence */}
+          <CardBox style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: 11, color: GREEN, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>{t("schr_title")}</div>
+            <div style={{ fontSize: 18, fontWeight: 700, color: C.dark, lineHeight: 1.5 }}>{sentence}</div>
+          </CardBox>
+
+          {/* Input */}
+          {!answered && (
+            <div>
+              <textarea
+                value={currentInput}
+                onChange={e => {
+                  setSimAnswers(a => ({ ...a, [simTextoIdx]: e.target.value }));
+                  setSimEscritaInput(e.target.value);
+                }}
+                placeholder={t("schr_placeholder")}
+                style={{ width: "100%", minHeight: 100, fontFamily: font, fontSize: 15, padding: "12px 14px", border: `1.5px solid ${C.light}`, borderRadius: R.md, resize: "none", boxSizing: "border-box", marginBottom: 12, lineHeight: 1.6 }}
+              />
+              <Btn onClick={evaluate} style={{ width: "100%" }} disabled={simEscritaLoading || !currentInput.trim()}>
+                {simEscritaLoading ? t("schr_evaluating") : t("schr_submit")}
+              </Btn>
+            </div>
+          )}
+
+          {/* Feedback */}
+          {answered && currentFeedback && (
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14, padding: "12px 16px", borderRadius: R.md, background: currentFeedback.correct ? "#E8F5E9" : "#FFF0F3", border: `1.5px solid ${currentFeedback.correct ? "#A5D6A7" : "#FFCDD2"}` }}>
+                <div style={{ width: 44, height: 44, borderRadius: "50%", background: currentFeedback.correct ? GREEN : C.coral, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <span style={{ fontSize: 18, fontWeight: 800, color: "#fff" }}>{currentFeedback.score}</span>
+                </div>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: currentFeedback.correct ? GREEN : C.coral }}>{t("schr_score")}: {currentFeedback.score}/10</div>
+                  <div style={{ fontSize: 12, color: C.mid }}>{simAnswers[simTextoIdx]}</div>
+                </div>
+              </div>
+
+              <CardBox style={{ marginBottom: 12 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: C.coral, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>{t("schr_feedback")}</div>
+                <div style={{ fontSize: 14, color: C.dark, lineHeight: 1.6 }}>{currentFeedback.feedback}</div>
+                {currentFeedback.grammar_tip && (
+                  <div style={{ marginTop: 8, padding: "8px 12px", background: "#EDE7F6", borderRadius: R.md, fontSize: 13, color: "#512DA8" }}>
+                    💡 {currentFeedback.grammar_tip}
+                  </div>
+                )}
+              </CardBox>
+
+              {currentFeedback.example && !currentFeedback.correct && (
+                <CardBox style={{ marginBottom: 16, background: "#E8F5E9" }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: GREEN, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>{t("schr_example")}</div>
+                  <div style={{ fontSize: 14, color: "#1B5E20", fontStyle: "italic" }}>{sentence} {currentFeedback.example}</div>
+                </CardBox>
+              )}
+            </div>
+          )}
+        </Wrap>
+
+        {answered && (
+          <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, padding: "12px 16px", paddingBottom: "calc(12px + env(safe-area-inset-bottom))", background: C.white, borderTop: `1px solid ${C.light}`, zIndex: 250 }}>
+            <Btn onClick={goNext} style={{ width: "100%", background: GREEN, boxShadow: "none" }}>
+              {simTextoIdx + 1 >= simTextos.length ? "Ver resultado →" : "Próxima →"}
+            </Btn>
+          </div>
+        )}
+      </Page>
+    );
+  }
+
   if (screen === "schrijven") {
     const card = schrijvenCards[schrijvenIdx] || '';
     const avgScore = schrijvenScores.length > 0 ? Math.round(schrijvenScores.reduce((a,b) => a+b, 0) / schrijvenScores.length) : 0;
@@ -4156,7 +5064,7 @@ export default function NT2Simulator() {
       <Page dir={isRTL ? "rtl" : "ltr"}>
         <SaveModal {...saveModalProps} />
         <Wrap style={{ paddingBottom: answered ? 90 : 40 }}>
-          <AppHeader title={t("quiz_title")} subtitle={`${quizIdx + 1} / ${quizQuestions.length}`} onBack={() => { setQuizQuestions([]); setQuizDone(false); }} onSave={openSave} />
+          <AppHeader title={t("quiz_title")} subtitle={`${quizIdx + 1} / ${quizQuestions.length}`} onBack={() => { setQuizQuestions([]); setQuizDone(false); setScreen("praticar"); setTab("praticar"); }} onSave={openSave} />
 
           {/* Progress */}
           <div style={{ height: 4, background: C.light, borderRadius: R.full, marginBottom: 16, overflow: "hidden" }}>
