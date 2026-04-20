@@ -2956,10 +2956,7 @@ export default function NT2Simulator() {
       setScreen("dashboard");
       setTab("home");
     } else {
-      // TEMP: skip onboarding for testing
-      setProgress(p => ({ ...p, onboardingDone: true }));
-      setScreen("dashboard");
-      setTab("home");
+      setScreen("setup");
     }
   }, []);
 
