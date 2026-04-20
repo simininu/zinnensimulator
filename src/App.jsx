@@ -4372,7 +4372,97 @@ export default function NT2Simulator() {
   // ─────────────────────────────────────────────────────────────────────────────
   if (screen === "sim_escrita") {
     const GREEN = "#2E7D32";
-    const NUM_QUESTIONS = 10;
+
+    const WRITING_TASKS = [
+      {
+        id: 1, type: "email",
+        title: "E-mail: rijexamen",
+        prompt: "U moet volgende week rijexamen doen, maar u hebt uw arm gebroken. Schrijf een e-mail aan het rijexamenbureau. Leg uit waarom u niet kunt komen en vraag wat u moet doen.",
+        to: "info@rijexamen.nl",
+        subject: "Mijn examen volgende week",
+        hints: ["Waarom kunt u niet komen?", "Wat vraagt u het bureau?"],
+      },
+      {
+        id: 2, type: "email",
+        title: "E-mail: computercursus",
+        prompt: "U doet mee aan een computercursus die volgende week maandag begint. De eerste avond kunt u niet komen. Schrijf een e-mail aan de school. Leg uit waarom u niet kunt komen en vraag of u de les kunt inhalen.",
+        to: "docent@compuschool.org",
+        subject: "Start van de computercursus",
+        hints: ["Waarom kunt u niet komen?", "Wat vraagt u de school?", "Wat schrijft u over de andere maandagen?"],
+      },
+      {
+        id: 3, type: "email",
+        title: "E-mail: stofzuiger kapot",
+        prompt: "U hebt een stofzuiger gekocht via internet bij EXPERT. Toen de doos aankwam, zag u een probleem. U wilt de stofzuiger terugsturen. Schrijf een e-mail aan EXPERT. Beschrijf het probleem en vraag wat u moet doen.",
+        to: "info@expert.org",
+        subject: "Probleem met stofzuiger",
+        hints: ["Wat is het probleem?", "Wat vraagt u het bedrijf?"],
+      },
+      {
+        id: 4, type: "email",
+        title: "E-mail: afwezig op het werk",
+        prompt: "U bent ziek en kunt morgen niet naar uw werk komen. Schrijf een e-mail aan uw baas. Leg uit dat u ziek bent, wat uw klachten zijn en wanneer u denkt terug te komen.",
+        to: "baas@bedrijf.nl",
+        subject: "Ik ben ziek",
+        hints: ["Wat zijn uw klachten?", "Wanneer bent u terug?"],
+      },
+      {
+        id: 5, type: "email",
+        title: "E-mail: afspraak dokter verzetten",
+        prompt: "U hebt een afspraak bij de dokter op dinsdag om 10 uur. U kunt niet komen omdat u moet werken. Schrijf een e-mail aan de dokterssassistente. Vraag om een nieuwe afspraak.",
+        to: "praktijk@dokter.nl",
+        subject: "Afspraak verzetten",
+        hints: ["Wanneer is uw afspraak?", "Waarom kunt u niet komen?", "Wanneer kunt u wel komen?"],
+      },
+      {
+        id: 6, type: "briefje",
+        title: "Briefje: oppas voor uw kind",
+        prompt: "U gaat vanavond uit eten. Uw buurmeisje komt oppassen op uw kind. Schrijf een briefje voor het buurmeisje met instructies. Noem twee dingen waar ze op moet letten.",
+        hints: ["Hoe laat gaat u weg?", "Hoe laat moet het kind naar bed?", "Wat mag het kind eten of drinken?"],
+      },
+      {
+        id: 7, type: "briefje",
+        title: "Briefje: voor uw buurman",
+        prompt: "U gaat een week op vakantie. U vraagt uw buurman om op uw huis te letten. Schrijf een briefje. Vraag om twee dingen en schrijf hoe hij u kan bereiken.",
+        hints: ["Wat vraagt u uw buurman?", "Hoe laat vertrekken jullie?", "Hoe kan hij u bereiken?"],
+      },
+      {
+        id: 8, type: "tekst",
+        title: "Tekst: uzelf voorstellen",
+        prompt: "U bent verhuisd naar een nieuwe wijk. U schrijft iets over uzelf in de wijkkrant zodat uw buurtbewoners u kennen. Schrijf minimaal 3 zinnen. Schrijf over: uw naam en herkomst, met wie u woont, en wat u leuk vindt.",
+        hints: ["Wat is uw naam?", "Waar komt u vandaan?", "Met wie woont u?", "Wat vindt u leuk?"],
+      },
+      {
+        id: 9, type: "tekst",
+        title: "Tekst: uw buurt beschrijven",
+        prompt: "U schrijft een tekst voor de wijkkrant over uw buurt. Schrijf minimaal 3 zinnen. Beschrijf wat u leuk of niet leuk vindt in uw buurt en wat er beter kan.",
+        hints: ["Wat vindt u leuk in de buurt?", "Wat kan beter?", "Wat wilt u graag veranderen?"],
+      },
+      {
+        id: 10, type: "email",
+        title: "E-mail: klacht over lawaai",
+        prompt: "Uw buurman maakt elke avond tot laat lawaai. U kunt niet slapen. Schrijf een e-mail aan de verhuurder (woningcorporatie). Beschrijf het probleem en vraag om een oplossing.",
+        to: "contact@woningcorporatie.nl",
+        subject: "Klacht over lawaai",
+        hints: ["Wat is het probleem?", "Hoe lang al?", "Wat vraagt u de verhuurder?"],
+      },
+      {
+        id: 11, type: "email",
+        title: "E-mail: sollicitatie",
+        prompt: "U ziet een vacature voor schoonmaker bij een hotel. U wilt solliciteren. Schrijf een korte e-mail. Leg uit waarom u wilt werken bij dit hotel en wat uw ervaring is.",
+        to: "hr@hotel.nl",
+        subject: "Sollicitatie schoonmaker",
+        hints: ["Waarom wilt u hier werken?", "Wat is uw ervaring?", "Wanneer kunt u beginnen?"],
+      },
+      {
+        id: 12, type: "briefje",
+        title: "Briefje: voor uw kind op school",
+        prompt: "Uw kind was gisteren ziek en kon niet naar school. Vandaag is uw kind weer beter. Schrijf een briefje voor de leraar. Leg uit waarom uw kind er niet was.",
+        hints: ["Waarom was uw kind ziek?", "Hoe gaat het nu?"],
+      },
+    ];
+
+    const NUM_QUESTIONS = 4;
 
     // Start screen
     if (!simStarted) {
@@ -4386,10 +4476,10 @@ export default function NT2Simulator() {
               <div style={{ fontSize: 14, color: C.mid, marginBottom: 32, lineHeight: 1.6 }}>{t("sim_escrita_desc")}</div>
               <div style={{ background: C.bg, borderRadius: R.lg, padding: 16, marginBottom: 32, textAlign: "left" }}>
                 {[
-                  { icon: "⏱", text: `15 ${t("sim_time")}` },
-                  { icon: "📝", text: `${NUM_QUESTIONS} ${t("sim_questions")}` },
+                  { icon: "⏱", text: `40 ${t("sim_time")}` },
+                  { icon: "📝", text: `4 ${t("sim_questions")}` },
+                  { icon: "✉️", text: "Emails, briefjes e textos livres" },
                   { icon: "🤖", text: "Avaliado pelo Claude IA" },
-                  { icon: "🔒", text: t("sim_one_chance") },
                 ].map(({ icon, text }) => (
                   <div key={text} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
                     <span style={{ fontSize: 20, width: 28, textAlign: "center" }}>{icon}</span>
@@ -4398,14 +4488,14 @@ export default function NT2Simulator() {
                 ))}
               </div>
               <Btn onClick={() => {
-                const cards = shuffle([...AANVULZINNEN].filter(s => typeof s === "string")).slice(0, NUM_QUESTIONS);
-                setSimTextos(cards);
+                const tasks = shuffle([...WRITING_TASKS]).slice(0, NUM_QUESTIONS);
+                setSimTextos(tasks);
                 setSimTextoIdx(0);
                 setSimAnswers({});
                 setSimEscritaFeedbacks({});
                 setSimEscritaInput("");
                 setSimDone(false);
-                setSimTimer(15 * 60);
+                setSimTimer(40 * 60);
                 setSimStarted(true);
               }} style={{ width: "100%", background: GREEN, boxShadow: "none" }}>
                 {t("sim_start")} →
@@ -4450,14 +4540,14 @@ export default function NT2Simulator() {
 
             {/* Per-question breakdown */}
             <div style={{ textAlign: "left", marginBottom: 32 }}>
-              {simTextos.map((sentence, i) => {
+              {simTextos.map((taskItem, i) => {
                 const fb = simEscritaFeedbacks[i];
                 const score = fb ? fb.score : null;
                 const pct = score !== null ? score * 10 : null;
                 return (
                   <div key={i} style={{ background: C.white, borderRadius: R.md, padding: "10px 14px", marginBottom: 8, boxShadow: shadow.sm }}>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                      <div style={{ fontSize: 12, color: C.mid, flex: 1, marginRight: 8 }} numberOfLines={1}>{sentence.split("...")[0]}...</div>
+                      <div style={{ fontSize: 12, color: C.mid, flex: 1, marginRight: 8 }}>{taskItem?.title || `Tarefa ${i+1}`}</div>
                       <div style={{ fontSize: 13, fontWeight: 700, color: pct !== null ? (pct >= 60 ? GREEN : C.coral) : C.mid, flexShrink: 0 }}>
                         {pct !== null ? `${score}/10` : "—"}
                       </div>
@@ -4479,7 +4569,7 @@ export default function NT2Simulator() {
     }
 
     // Exam screen
-    const sentence = simTextos[simTextoIdx] || "";
+    const task = simTextos[simTextoIdx] || {};
     const currentFeedback = simEscritaFeedbacks[simTextoIdx];
     const answered = currentFeedback !== undefined;
     const mins = String(Math.floor(simTimer / 60)).padStart(2, "0");
@@ -4494,7 +4584,13 @@ export default function NT2Simulator() {
         const response = await fetch("/api/evaluate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ sentence, answer: currentInput, lang })
+          body: JSON.stringify({
+            sentence: `NT2 A2 writing task: ${task.prompt}`,
+            answer: currentInput,
+            lang,
+            taskType: "writing",
+            prompt: task.prompt,
+          })
         });
         const result = await response.json();
         setSimEscritaFeedbacks(f => ({ ...f, [simTextoIdx]: result }));
@@ -4509,6 +4605,8 @@ export default function NT2Simulator() {
       if (simTextoIdx + 1 >= simTextos.length) setSimDone(true);
       else setSimTextoIdx(i => i + 1);
     };
+
+    const typeIcon = { email: "✉️", briefje: "📝", tekst: "📰" };
 
     return (
       <Page dir={isRTL ? "rtl" : "ltr"}>
@@ -4528,10 +4626,27 @@ export default function NT2Simulator() {
             </div>
           </div>
 
-          {/* Sentence */}
-          <CardBox style={{ marginBottom: 16 }}>
-            <div style={{ fontSize: 11, color: GREEN, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>{t("schr_title")}</div>
-            <div style={{ fontSize: 18, fontWeight: 700, color: C.dark, lineHeight: 1.5 }}>{sentence}</div>
+          {/* Task */}
+          <CardBox style={{ marginBottom: 14 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+              <span style={{ fontSize: 18 }}>{typeIcon[task.type] || "✍️"}</span>
+              <div style={{ fontSize: 13, fontWeight: 800, color: GREEN, textTransform: "uppercase", letterSpacing: 0.5 }}>{task.title}</div>
+            </div>
+            <div style={{ fontSize: 14, color: C.dark, lineHeight: 1.7, marginBottom: task.to ? 12 : 0 }}>{task.prompt}</div>
+            {task.to && (
+              <div style={{ background: C.bg, borderRadius: R.md, padding: "8px 12px", fontSize: 12 }}>
+                <div><span style={{ color: C.mid }}>Aan: </span><span style={{ color: C.dark, fontWeight: 600 }}>{task.to}</span></div>
+                <div><span style={{ color: C.mid }}>Onderwerp: </span><span style={{ color: C.dark }}>{task.subject}</span></div>
+              </div>
+            )}
+            {task.hints && (
+              <div style={{ marginTop: 10, borderTop: `1px solid ${C.light}`, paddingTop: 10 }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: C.mid, textTransform: "uppercase", marginBottom: 6 }}>Denk aan:</div>
+                {task.hints.map(h => (
+                  <div key={h} style={{ fontSize: 12, color: C.mid, marginBottom: 2 }}>· {h}</div>
+                ))}
+              </div>
+            )}
           </CardBox>
 
           {/* Input */}
@@ -4543,8 +4658,8 @@ export default function NT2Simulator() {
                   setSimAnswers(a => ({ ...a, [simTextoIdx]: e.target.value }));
                   setSimEscritaInput(e.target.value);
                 }}
-                placeholder={t("schr_placeholder")}
-                style={{ width: "100%", minHeight: 100, fontFamily: font, fontSize: 15, padding: "12px 14px", border: `1.5px solid ${C.light}`, borderRadius: R.md, resize: "none", boxSizing: "border-box", marginBottom: 12, lineHeight: 1.6 }}
+                placeholder="Schrijf hier uw antwoord in het Nederlands..."
+                style={{ width: "100%", minHeight: 140, fontFamily: font, fontSize: 15, padding: "12px 14px", border: `1.5px solid ${C.light}`, borderRadius: R.md, resize: "none", boxSizing: "border-box", marginBottom: 12, lineHeight: 1.6 }}
               />
               <Btn onClick={evaluate} style={{ width: "100%" }} disabled={simEscritaLoading || !currentInput.trim()}>
                 {simEscritaLoading ? t("schr_evaluating") : t("schr_submit")}
