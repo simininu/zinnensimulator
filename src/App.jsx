@@ -500,6 +500,10 @@ const AANVULZINNEN = [
   "Zola maakt het huis schoon. Ze doet dat...",
 ];
 
+
+
+
+
 // ─── LOCAL EXPLANATION ENGINE ─────────────────────────────────────────────────
 
 const WOORDENBOEK = [
@@ -1276,6 +1280,7 @@ function getCardEmoji(text) {
   return "💬";
 }
 
+
 function generateExplanation(sentence) {
   const lower = sentence.toLowerCase();
 
@@ -1538,7 +1543,6 @@ const LEITURA_TEXTOS = [
 const LANGUAGES = [
   { code: "pt", label: "Português", flag: "🇧🇷" },
   { code: "en", label: "English",   flag: "🇬🇧" },
-  { code: "es", label: "Español",   flag: "🇪🇸" },
 
 ];
 
@@ -2088,200 +2092,6 @@ const T = {
     lbl_verbs: "verbs",
   },
 
-  es: {
-    app_subtitle: "NT2 · A2 · Examen de integracion",
-    app_tagline: "Tu entrenamiento para el examen de integracion holandes. 492 frases oficiales.",
-    sim_title: "Simulacros",
-    sim_subtitle: "Practica como en el examen real",
-    sim_leitura: "Simulacro de Lectura",
-    sim_leitura_desc: "Textos y preguntas cronometradas",
-    sim_escuta: "Simulacro de Escucha",
-    sim_escuta_desc: "Escucha una vez y responde",
-    sim_escrita: "Simulacro de Escritura",
-    sim_escrita_desc: "Completa frases evaluadas por IA",
-    sim_start: "Iniciar simulacro",
-    sim_time: "minutos",
-    sim_questions: "preguntas",
-    sim_result_title: "Resultado del Simulacro",
-    sim_passed: "Aprobado!",
-    sim_failed: "Sigue practicando!",
-    sim_best: "Mejor nota",
-    sim_last: "Ultima nota",
-    sim_attempts: "intentos",
-    sim_chrono: "Cronometrado",
-    sim_no_repeat: "Sin repetir audio",
-    sim_one_chance: "Un intento por pregunta",
-    nav_home: "Inicio", nav_practice: "Practicar", nav_simulados: "Simulacros", nav_config: "Ajustes",
-    onb_welcome_title: "Zinnensimulator",
-    onb_lang_title: "Elige tu idioma",
-    onb_lang_sub: "Usaremos este idioma para las explicaciones y la interfaz.",
-    onb_date_title: "Cuando es tu examen?",
-    onb_date_sub: "Con la fecha del examen, la app calcula cuantas frases debes estudiar por dia.",
-    onb_date_confirm: "Confirmar fecha →",
-    onb_date_skip: "Todavia no se la fecha — omitir",
-    onb_goal_title: "Cuantas frases por dia?",
-    onb_goal_sub: "Recomendamos empezar con 10 frases por dia.",
-    onb_goal_confirm: "Confirmar meta →",
-    onb_goal_skip: "Sin meta — practicare cuando tenga tiempo",
-    onb_goal_tip_low: "Buena eleccion para empezar! La constancia es mas importante que la cantidad.",
-    onb_goal_tip_high: "Meta ambiciosa! Asegurate de tener tiempo todos los dias.",
-    onb_voice_title: "Elige la voz",
-    onb_voice_sub: "Toca una voz para escuchar como suena en holandes.",
-    onb_voice_none: "No se encontro voz holandesa. Instala Ellen en Ajustes > Voces > Dutch.",
-    onb_start: "Empezar a estudiar →",
-    onb_no_voice: "Continuar sin voz →",
-    onb_have_code: "Ya tengo un codigo guardado",
-    onb_back: "Volver",
-    dash_streak: "racha",
-    dash_to_exam: "para el examen",
-    dash_add_date: "+ Agregar fecha",
-    dash_dominated: "dominadas",
-    dash_learning: "aprendiendo",
-    dash_new: "nuevas",
-    dash_goal_done: "Meta de hoy cumplida!",
-    dash_goal_today: "Meta de hoy",
-    dash_session: "Sesion del dia",
-    pd_title: "Practica del Dia",
-    lbl_answer: "Respuesta",
-    lbl_example: "Ejemplo",
-    lbl_explanation: "Explicacion",
-    lbl_frases_ouvir: "frases para escuchar y recordar",
-    lbl_go_home: "Volver al Inicio",
-    lbl_goal_high: "Meta ambiciosa! Asegurate de tener tiempo cada dia.",
-    lbl_goal_low: "Buena eleccion! La constancia importa mas que la cantidad.",
-    lbl_infinitivo: "Infinitivo",
-    lbl_knew_it: "Lo sabia!",
-    lbl_new_session: "Nueva sesion",
-    lbl_new_texts: "Nuevos textos",
-    lbl_no_understood: "No entendi",
-    lbl_progress_delete: "Todo el progreso sera eliminado permanentemente.",
-    lbl_tap_hint: "Toca para ver pista",
-    lbl_tudo: "Todo",
-    lbl_understood: "Entendido!",
-    dash_pratica: "Practica del Dia",
-    dash_pratica_done: "Completada hoy",
-    dash_pratica_back: "Vuelve manana para una nueva sesion",
-    dash_pratica_repeat: "Repetir",
-    dash_activities: "ATIVIDADES",
-    prat_subtitle: "Escolha uma atividade",
-    cfg_subtitle: "Personalize sua experiência",
-    quiz_subtitle2: "Teste seu conhecimento sobre a Holanda",
-    save_load: "Guardar / cargar progreso",
-    cfg_save_changes: "Guardar cambios",
-    lbl_tap_listen: "Toca para escuchar",
-    lbl_copy: "Copiar codigo",
-    lbl_days_exam: "d para el examen",
-    lbl_dominated: "dominadas",
-    lbl_learning: "aprendiendo",
-    lbl_new: "nuevas",
-    lbl_reveal_all: "Revelar todas las formas",
-    lbl_listening: "Reproduciendo...",
-    lbl_listen: "Escuchar frase",
-    lbl_reveal: "Revelar frase", act_revisao: "Revision Inteligente",
-    lbl_frases_meta: "frases para a meta diaria",
-    lbl_frases_hoje: "frases hoy",
-    lbl_arraste: "Desliza para evaluar",
-    lbl_ouca: "Escucha e intenta recordar",
-    lbl_textos: "textos: avisos, cartas e anuncios",
-    cat_all: "Todos os temas",
-    cat_saude: "Saude",
-    cat_educacao: "Educacao",
-    cat_trabalho: "Trabalho",
-    cat_governo: "Governo",
-    cat_habitacao: "Habitacao",
-    cat_transporte: "Transporte",
-    cat_cultura: "Cultura",
-    cat_integracao: "Integracao",
-    cat_servicos: "Servicos",
-    lbl_questions: "perguntas",
-    lbl_excellent: "Excelente resultado!",
-    lbl_good: "Buen trabajo!",
-    lbl_keep: "Sigue practicando!",
-    act_schrijven: "Escritura",
-    act_schrijven_desc: "Completa frases en holandes",
-    schr_title: "Completa la frase",
-    schr_placeholder: "Escribe la continuacion en holandes...",
-    schr_submit: "Evaluar respuesta",
-    schr_evaluating: "Evaluando...",
-    schr_next: "Siguiente frase",
-    schr_score: "Puntuacion",
-    schr_feedback: "Evaluacion",
-    schr_example: "Ejemplo de respuesta",
-    schr_finish: "Ver resultado",
-    schr_result_title: "Resultado de Escritura",
-    schr_result_sub: "frases evaluadas por Claude",
-    lbl_of: "de",
-    lbl_frases: "frases",
-    lbl_verbos: "verbos",
-    lbl_progress: "Progresso",
-    lbl_progress_auto: "Progreso guardado con cada tarjeta.",
-    lbl_back: "Voltar",
-    lbl_add_date: "+ Adicionar data",
-    lbl_goal_done: "Meta de hoje concluida!",
-    lbl_goal_today: "Meta de hoje",
-    lbl_repeat_session: "Repetir sessao",
-    lbl_i_know: "Ja sei →",
-    lbl_choose_theme: "Elige un tema o practica todos juntos:",
-    lbl_back_home: "Voltar ao Home",
-    lbl_back_praticar: "Voltar ao Praticar",
-    dash_pratica_desc: "actividades: flashcard, escucha, quiz y lectura",
-    dash_priority: "Prioridad",
-    dash_priority: "Prioridad",
-    dash_revisao: "Repaso Inteligente",
-    dash_revisao_cards: "tarjetas esperando repaso",
-    dash_activities: "Actividades",
-    act_flashcards: "Flashcards", act_escuta: "Modo Escucha", act_conjugacao: "Conjugacion",
-    act_quiz: "Quiz KNM", act_leitura: "Lectura", act_revisao: "Repaso Inteligente",
-    act_frases_meta: "frases • meta diaria", act_frases_zinnen: "492 frases • desliza para evaluar",
-    act_escuta_desc: "escucha e intenta recordar", act_conj_desc: "25 verbos esenciales con audio",
-    act_quiz_desc: "Pon a prueba tu conocimiento de Holanda", act_leitura_desc: "textos: avisos, cartas e anuncios",
-    act_revisao_desc: "tarjetas para repasar hoy", act_revisao_none: "Sin repaso pendiente",
-    prat_title: "Practicar", prat_frases: "Frases (492 zinnen)", prat_category: "Por categoria",
-    prat_va: "Preguntas V&A", prat_va_desc: "1–60 • Vraag & Antwoord",
-    prat_aanvul: "Aanvulzinnen", prat_aanvul_desc: "61–492 • Completa la frase",
-    prat_comprensao: "Comprension", prat_gramatica: "Gramatica", lbl_praticar_title: "Practicar", lbl_writing_section: "Escritura",
-    fc_hint: "Toca para ver la pista", fc_practice: "Practicar", fc_know: "Ya lo se", fc_evaluated: "Evaluado",
-    esc_listening: "Escuchando...", esc_tap: "Toca para escuchar", esc_reveal: "Revelar frase",
-    esc_understood: "Entendi!", esc_not_understood: "No entendi",
-    quiz_title: "Quiz KNM", quiz_subtitle: "Conocimiento de los Paises Bajos",
-    quiz_all: "Todos los temas", quiz_correct: "Correcto!", quiz_explanation: "Explicacion",
-    quiz_next: "Siguiente pregunta →", quiz_result: "Ver resultado", quiz_repeat: "Repetir este quiz",
-    quiz_other: "Elegir otro tema", quiz_excellent: "Excelente! Estas listo para el KNM!",
-    quiz_good: "Buen resultado! Sigue practicando.", quiz_keep: "Sigue estudiando — puedes lograrlo!",
-    leit_title: "Lectura", leit_question: "Pregunta", leit_of: "de", leit_text: "Texto",
-    leit_correct: "Correcto!", leit_answer: "Respuesta", leit_next: "Siguiente pregunta →",
-    leit_next_text: "Siguiente texto →", leit_result: "Ver resultado", leit_new: "Nuevos textos",
-    leit_back: "Volver a Practicar", leit_excellent: "Excelente comprension!",
-    leit_good: "Buen resultado! Sigue practicando.", leit_keep: "Sigue leyendo — mejoraras!",
-    pd_flashcard: "Flashcard", pd_escuta: "Escucha", pd_quiz: "Quiz KNM", pd_leitura: "Lectura",
-    pd_result: "Ver resultado", pd_next: "Siguiente →", pd_new: "Nueva sesion", pd_home: "Volver al Inicio",
-    pd_excellent: "Excelente! Que sesion increible!", pd_good: "Buen trabajo! Sigue asi.", pd_keep: "Sigue practicando!",
-    cfg_title: "Ajustes", cfg_exam_date: "Fecha del examen", cfg_save_date: "Guardar fecha",
-    cfg_goal: "Meta diaria de frases", cfg_goal_auto: "Calculada automaticamente por la fecha del examen.",
-    cfg_goal_choose: "Elige cuantas frases estudiar por dia:",
-    cfg_voice: "Voz holandesa", cfg_voice_tap: "Toca para escuchar",
-    cfg_save: "Guardar / cargar progreso", cfg_reset: "Borrar todo y empezar de cero",
-    cfg_reset_confirm: "Estas seguro?", cfg_reset_desc: "Todo el progreso se borrara permanentemente.",
-    cfg_cancel: "Cancelar", cfg_reset_btn: "Borrar todo",
-    save_title: "Progreso", save_auto: "Guardado automaticamente", save_auto_desc: "Progreso guardado en cada tarjeta.",
-    save_backup: "Copia de seguridad", save_copy: "Copiar codigo", save_restore: "Restaurar desde otro dispositivo:",
-    save_backup: "Copia de seguridad a otro dispositivo",
-    save_restore: "Restaurar desde otro dispositivo:",
-    save_paste: "Pega el codigo aqui...",
-    save_load: "Cargar progreso",
-    save_auto_title: "Guardado automaticamente",
-    cfg_reset: "Borrar todo y empezar de cero",
-    cfg_reset_btn: "Borrar todo",
-    cfg_reset_confirm: "Estas seguro? Esto borra todo tu progreso.",
-    lbl_cancel: "Cancelar",
-    save_load: "Cargar progreso", save_paste: "Pega el codigo aqui...", save_invalid: "Codigo invalido.",
-    conj_all: "Escuchar todo", conj_prev: "← Anterior", conj_next: "Siguiente →", conj_reveal: "Revelar",
-    btn_back: "Volver", btn_start: "Empezar", btn_save: "Guardar", btn_next: "Siguiente →",
-    lbl_day: "Dia", lbl_month: "Mes", lbl_year: "Ano",
-    lbl_correct: "correctas", lbl_of: "de", lbl_frases: "frases", lbl_perday: "frases/dia",
-    lbl_exam: "d para el examen", lbl_questions: "preguntas", lbl_texts: "textos", lbl_verbs: "verbos",
-  },
-
 };
 
 function shuffle(arr) {
@@ -2321,78 +2131,128 @@ function getYesterday() {
 const VERBOS = [
   { inf: "zijn", pt: "ser / estar",
     forms: [["ik","ben"],["jij je","bent"],["hij zij ze het","is"],["wij we","zijn"],["jullie","zijn"],["zij ze","zijn"]],
+    past:  [["ik","was"],["jij je","was"],["hij zij ze het","was"],["wij we","waren"],["jullie","waren"],["zij ze","waren"]],
+    participle: "geweest",
     ex: "Aaron is dokter. / Ik ben blij." },
   { inf: "hebben", pt: "ter",
     forms: [["ik","heb"],["jij je","hebt"],["hij zij ze het","heeft"],["wij we","hebben"],["jullie","hebben"],["zij ze","hebben"]],
+    past:  [["ik","had"],["jij je","had"],["hij zij ze het","had"],["wij we","hadden"],["jullie","hadden"],["zij ze","hadden"]],
+    participle: "gehad",
     ex: "Ze heeft pijn aan haar rug." },
   { inf: "gaan", pt: "ir",
     forms: [["ik","ga"],["jij je","gaat"],["hij zij ze het","gaat"],["wij we","gaan"],["jullie","gaan"],["zij ze","gaan"]],
+    past:  [["ik","ging"],["jij je","ging"],["hij zij ze het","ging"],["wij we","gingen"],["jullie","gingen"],["zij ze","gingen"]],
+    participle: "gegaan",
     ex: "Hij gaat naar het werk." },
   { inf: "werken", pt: "trabalhar",
     forms: [["ik","werk"],["jij je","werkt"],["hij zij ze het","werkt"],["wij we","werken"],["jullie","werken"],["zij ze","werken"]],
+    past:  [["ik","werkte"],["jij je","werkte"],["hij zij ze het","werkte"],["wij we","werkten"],["jullie","werkten"],["zij ze","werkten"]],
+    participle: "gewerkt",
     ex: "Ali werkt in een fabriek." },
   { inf: "wonen", pt: "morar",
     forms: [["ik","woon"],["jij je","woont"],["hij zij ze het","woont"],["wij we","wonen"],["jullie","wonen"],["zij ze","wonen"]],
+    past:  [["ik","woonde"],["jij je","woonde"],["hij zij ze het","woonde"],["wij we","woonden"],["jullie","woonden"],["zij ze","woonden"]],
+    participle: "gewoond",
     ex: "Ik woon in Amsterdam." },
   { inf: "kopen", pt: "comprar",
     forms: [["ik","koop"],["jij je","koopt"],["hij zij ze het","koopt"],["wij we","kopen"],["jullie","kopen"],["zij ze","kopen"]],
+    past:  [["ik","kocht"],["jij je","kocht"],["hij zij ze het","kocht"],["wij we","kochten"],["jullie","kochten"],["zij ze","kochten"]],
+    participle: "gekocht",
     ex: "Chen verkoopt bloemen op de markt." },
   { inf: "eten", pt: "comer",
     forms: [["ik","eet"],["jij je","eet"],["hij zij ze het","eet"],["wij we","eten"],["jullie","eten"],["zij ze","eten"]],
+    past:  [["ik","at"],["jij je","at"],["hij zij ze het","at"],["wij we","aten"],["jullie","aten"],["zij ze","aten"]],
+    participle: "gegeten",
     ex: "Carmen eet elke dag een banaan." },
   { inf: "drinken", pt: "beber",
     forms: [["ik","drink"],["jij je","drinkt"],["hij zij ze het","drinkt"],["wij we","drinken"],["jullie","drinken"],["zij ze","drinken"]],
+    past:  [["ik","dronk"],["jij je","dronk"],["hij zij ze het","dronk"],["wij we","dronken"],["jullie","dronken"],["zij ze","dronken"]],
+    participle: "gedronken",
     ex: "Christo drinkt een glas water." },
   { inf: "leren", pt: "aprender",
     forms: [["ik","leer"],["jij je","leert"],["hij zij ze het","leert"],["wij we","leren"],["jullie","leren"],["zij ze","leren"]],
+    past:  [["ik","leerde"],["jij je","leerde"],["hij zij ze het","leerde"],["wij we","leerden"],["jullie","leerden"],["zij ze","leerden"]],
+    participle: "geleerd",
     ex: "Claire leert Nederlands." },
   { inf: "vinden", pt: "achar / encontrar",
     forms: [["ik","vind"],["jij je","vindt"],["hij zij ze het","vindt"],["wij we","vinden"],["jullie","vinden"],["zij ze","vinden"]],
+    past:  [["ik","vond"],["jij je","vond"],["hij zij ze het","vond"],["wij we","vonden"],["jullie","vonden"],["zij ze","vonden"]],
+    participle: "gevonden",
     ex: "Ik vind Nederland mooi." },
   { inf: "willen", pt: "querer",
     forms: [["ik","wil"],["jij je","wilt"],["hij zij ze het","wil"],["wij we","willen"],["jullie","willen"],["zij ze","willen"]],
+    past:  [["ik","wilde"],["jij je","wilde"],["hij zij ze het","wilde"],["wij we","wilden"],["jullie","wilden"],["zij ze","wilden"]],
+    participle: "gewild",
     ex: "Ali wil ander werk." },
   { inf: "kunnen", pt: "poder / conseguir",
     forms: [["ik","kan"],["jij je","kunt kan"],["hij zij ze het","kan"],["wij we","kunnen"],["jullie","kunnen"],["zij ze","kunnen"]],
+    past:  [["ik","kon"],["jij je","kon"],["hij zij ze het","kon"],["wij we","konden"],["jullie","konden"],["zij ze","konden"]],
+    participle: "gekund",
     ex: "Dafne kan goed zingen." },
   { inf: "moeten", pt: "precisar / dever",
     forms: [["ik","moet"],["jij je","moet"],["hij zij ze het","moet"],["wij we","moeten"],["jullie","moeten"],["zij ze","moeten"]],
+    past:  [["ik","moest"],["jij je","moest"],["hij zij ze het","moest"],["wij we","moesten"],["jullie","moesten"],["zij ze","moesten"]],
+    participle: "gemoeten",
     ex: "Leon moet medicijnen nemen." },
   { inf: "maken", pt: "fazer / criar",
     forms: [["ik","maak"],["jij je","maakt"],["hij zij ze het","maakt"],["wij we","maken"],["jullie","maken"],["zij ze","maken"]],
+    past:  [["ik","maakte"],["jij je","maakte"],["hij zij ze het","maakte"],["wij we","maakten"],["jullie","maakten"],["zij ze","maakten"]],
+    participle: "gemaakt",
     ex: "Adam maakt soep." },
   { inf: "koken", pt: "cozinhar",
     forms: [["ik","kook"],["jij je","kookt"],["hij zij ze het","kookt"],["wij we","koken"],["jullie","koken"],["zij ze","koken"]],
+    past:  [["ik","kookte"],["jij je","kookte"],["hij zij ze het","kookte"],["wij we","kookten"],["jullie","kookten"],["zij ze","kookten"]],
+    participle: "gekookt",
     ex: "Diego kookt graag voor zijn familie." },
   { inf: "rijden", pt: "dirigir / andar de",
     forms: [["ik","rijd"],["jij je","rijdt"],["hij zij ze het","rijdt"],["wij we","rijden"],["jullie","rijden"],["zij ze","rijden"]],
+    past:  [["ik","reed"],["jij je","reed"],["hij zij ze het","reed"],["wij we","reden"],["jullie","reden"],["zij ze","reden"]],
+    participle: "gereden",
     ex: "Kwasi rijdt elke dag door de stad." },
   { inf: "komen", pt: "vir / chegar",
     forms: [["ik","kom"],["jij je","komt"],["hij zij ze het","komt"],["wij we","komen"],["jullie","komen"],["zij ze","komen"]],
+    past:  [["ik","kwam"],["jij je","kwam"],["hij zij ze het","kwam"],["wij we","kwamen"],["jullie","kwamen"],["zij ze","kwamen"]],
+    participle: "gekomen",
     ex: "De bus komt laat." },
   { inf: "spreken", pt: "falar",
     forms: [["ik","spreek"],["jij je","spreekt"],["hij zij ze het","spreekt"],["wij we","spreken"],["jullie","spreken"],["zij ze","spreken"]],
+    past:  [["ik","sprak"],["jij je","sprak"],["hij zij ze het","sprak"],["wij we","spraken"],["jullie","spraken"],["zij ze","spraken"]],
+    participle: "gesproken",
     ex: "Ik spreek Nederlands en Portugees." },
   { inf: "lopen", pt: "caminhar / andar a pé",
     forms: [["ik","loop"],["jij je","loopt"],["hij zij ze het","loopt"],["wij we","lopen"],["jullie","lopen"],["zij ze","lopen"]],
+    past:  [["ik","liep"],["jij je","liep"],["hij zij ze het","liep"],["wij we","liepen"],["jullie","liepen"],["zij ze","liepen"]],
+    participle: "gelopen",
     ex: "Aziz loopt elke dag naar zijn werk." },
   { inf: "kijken", pt: "olhar / assistir",
     forms: [["ik","kijk"],["jij je","kijkt"],["hij zij ze het","kijkt"],["wij we","kijken"],["jullie","kijken"],["zij ze","kijken"]],
+    past:  [["ik","keek"],["jij je","keek"],["hij zij ze het","keek"],["wij we","keken"],["jullie","keken"],["zij ze","keken"]],
+    participle: "gekeken",
     ex: "Karin kijkt elke avond naar het journaal." },
   { inf: "houden van", pt: "gostar de / amar",
     forms: [["ik","houd van"],["jij je","houdt van"],["hij zij ze het","houdt van"],["wij we","houden van"],["jullie","houden van"],["zij ze","houden van"]],
+    past:  [["ik","hield van"],["jij je","hield van"],["hij zij ze het","hield van"],["wij we","hielden van"],["jullie","hielden van"],["zij ze","hielden van"]],
+    participle: "gehouden van",
     ex: "John houdt van paarden." },
   { inf: "zoeken", pt: "procurar / buscar",
     forms: [["ik","zoek"],["jij je","zoekt"],["hij zij ze het","zoekt"],["wij we","zoeken"],["jullie","zoeken"],["zij ze","zoeken"]],
+    past:  [["ik","zocht"],["jij je","zocht"],["hij zij ze het","zocht"],["wij we","zochten"],["jullie","zochten"],["zij ze","zochten"]],
+    participle: "gezocht",
     ex: "Kenny zoekt op internet." },
   { inf: "nemen", pt: "pegar / tomar",
     forms: [["ik","neem"],["jij je","neemt"],["hij zij ze het","neemt"],["wij we","nemen"],["jullie","nemen"],["zij ze","nemen"]],
+    past:  [["ik","nam"],["jij je","nam"],["hij zij ze het","nam"],["wij we","namen"],["jullie","namen"],["zij ze","namen"]],
+    participle: "genomen",
     ex: "Masha neemt de bus naar haar werk." },
   { inf: "helpen", pt: "ajudar",
     forms: [["ik","help"],["jij je","helpt"],["hij zij ze het","helpt"],["wij we","helpen"],["jullie","helpen"],["zij ze","helpen"]],
+    past:  [["ik","hielp"],["jij je","hielp"],["hij zij ze het","hielp"],["wij we","hielpen"],["jullie","hielpen"],["zij ze","hielpen"]],
+    participle: "geholpen",
     ex: "Mijn lerares helpt mij." },
   { inf: "brengen", pt: "levar / trazer",
     forms: [["ik","breng"],["jij je","brengt"],["hij zij ze het","brengt"],["wij we","brengen"],["jullie","brengen"],["zij ze","brengen"]],
+    past:  [["ik","bracht"],["jij je","bracht"],["hij zij ze het","bracht"],["wij we","brachten"],["jullie","brachten"],["zij ze","brachten"]],
+    participle: "gebracht",
     ex: "Ahmed brengt zijn zoon naar het vliegveld." },
 ];
 
@@ -2744,20 +2604,20 @@ const Wrap = ({ children, style }) => (
 );
 const Btn = ({ children, onClick, variant = "primary", disabled, style, icon }) => {
   const styles = {
-    primary: { background: C.coral, color: "#fff", border: "none" },
-    secondary: { background: C.white, color: C.dark, border: `1.5px solid ${C.light}` },
+    primary: { background: C.coral, color: "#fff", border: "2px solid #D4003B", borderBottom: "5px solid #A30029" },
+    secondary: { background: C.white, color: C.dark, border: `2px solid ${C.light}`, borderBottom: `5px solid #C8C8C8` },
     ghost: { background: "transparent", color: C.mid, border: "none" },
-    outline: { background: "transparent", color: C.coral, border: `1.5px solid ${C.coral}` },
-    dark: { background: C.dark, color: "#fff", border: "none" },
-    green: { background: C.green, color: "#fff", border: "none" },
+    outline: { background: "transparent", color: C.coral, border: `2px solid ${C.coral}`, borderBottom: `4px solid #A30029` },
+    dark: { background: C.dark, color: "#fff", border: "2px solid #444", borderBottom: "5px solid #000" },
+    green: { background: C.green, color: "#fff", border: "2px solid #006A04", borderBottom: "5px solid #004A02" },
   };
   return (
     <button onClick={onClick} disabled={disabled} style={{
       ...styles[variant], padding: "14px 20px", borderRadius: R.full,
-      cursor: disabled ? "not-allowed" : "pointer", fontSize: 15, fontWeight: 600, fontFamily: font,
+      cursor: disabled ? "not-allowed" : "pointer", fontSize: 15, fontWeight: 700, fontFamily: font,
       display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
       opacity: disabled ? 0.4 : 1, transition: "opacity 0.2s",
-      boxShadow: variant === "primary" ? "0 2px 8px rgba(255,56,92,0.3)" : "none",
+      boxShadow: "none",
       ...style,
     }}>
       {icon && <Icon d={icon} size={18} stroke="currentColor" />}
@@ -2766,7 +2626,7 @@ const Btn = ({ children, onClick, variant = "primary", disabled, style, icon }) 
   );
 };
 const CardBox = ({ children, style, onClick }) => (
-  <div onClick={onClick} style={{ background: C.white, borderRadius: R.lg, boxShadow: shadow.card, padding: "20px", ...style }}>
+  <div onClick={onClick} style={{ background: C.white, borderRadius: 20, border: "2px solid #EBEBEB", borderBottom: "5px solid #D8D8D8", padding: "20px", ...style }}>
     {children}
   </div>
 );
@@ -2775,7 +2635,7 @@ const AppHeader = ({ title, onBack, subtitle, right, onSave }) => (
   <Wrap style={{ padding: "20px 0 16px", display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 0 }}>
     <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
       {onBack && (
-        <button onClick={onBack} style={{ background: C.white, border: "none", borderRadius: R.full, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: shadow.sm }}>
+        <button onClick={onBack} style={{ background: C.white, border: "2px solid #E0E0E0", borderBottom: "4px solid #C8C8C8", borderRadius: R.full, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
           <Icon d={Icons.back} size={18} stroke={C.dark} />
         </button>
       )}
@@ -2786,7 +2646,7 @@ const AppHeader = ({ title, onBack, subtitle, right, onSave }) => (
     </div>
     <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
       {right}
-      <button onClick={onSave} style={{ background: C.white, border: "none", borderRadius: R.full, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: shadow.sm }}>
+      <button onClick={onSave} style={{ background: C.white, border: "2px solid #E0E0E0", borderBottom: "4px solid #C8C8C8", borderRadius: R.full, width: 40, height: 40, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
         <Icon d={Icons.save} size={18} stroke={C.mid} />
       </button>
     </div>
@@ -2805,13 +2665,13 @@ const BottomNav = ({ tab, setTab, tFn }) => {
     { id: "config",    label: labels.config,     icon: Icons.settings },
   ];
   return (
-    <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 200, background: C.white, borderTop: `1px solid ${C.light}`, display: "flex", paddingBottom: "env(safe-area-inset-bottom)" }}>
+    <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 200, background: C.white, borderTop: "3px solid #E8E8E8", display: "flex", paddingBottom: "env(safe-area-inset-bottom)" }}>
       {tabs.map(t => (
         <button key={t.id} onClick={() => setTab(t.id)} style={{ flex: 1, background: "none", border: "none", padding: "10px 0 8px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, fontFamily: font }}>
-          <div style={{ width: 28, height: 28, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: R.md, background: tab === t.id ? C.coralLight : "transparent", transition: "background 0.2s" }}>
-            <Icon d={t.icon} size={18} stroke={tab === t.id ? C.coral : C.mid} strokeWidth={tab === t.id ? 2.2 : 1.8} />
+          <div style={{ width: 36, height: 28, display: "flex", alignItems: "center", justifyContent: "center", borderRadius: R.full, background: tab === t.id ? C.coralLight : "transparent", transition: "background 0.2s" }}>
+            <Icon d={t.icon} size={20} stroke={tab === t.id ? C.coral : C.mid} strokeWidth={tab === t.id ? 2.5 : 1.8} />
           </div>
-          <span style={{ fontSize: 10, fontWeight: tab === t.id ? 700 : 400, color: tab === t.id ? C.coral : C.mid }}>{t.label}</span>
+          <span style={{ fontSize: 10, fontWeight: tab === t.id ? 800 : 500, color: tab === t.id ? C.coral : C.mid }}>{t.label}</span>
         </button>
       ))}
     </div>
@@ -2952,6 +2812,34 @@ export default function NT2Simulator() {
   const [sessionScore, setSessionScore] = useState({ correct: 0, wrong: 0 });
   const [sessionDone, setSessionDone] = useState(false);
 
+  // ── Frase do Dia ──
+  const frazeIdx = Math.floor((Date.now() / 86400000)) % VRAAG_ANTWOORD.length;
+  const [frazeDoDiaRevealed, setFrazeDoDiaRevealed] = useState(false);
+
+  // ── Mini-quiz Relâmpago ──
+  const buildMiniQuiz = () => {
+    const vaQs = shuffle([...VRAAG_ANTWOORD]).slice(0, 2).map(sentence => {
+      const exp = generateExplanation(sentence);
+      const lines = exp.split("\n").filter(l => l && !l.startsWith("TRADUCAO") && !l.startsWith("EXEMPLOS") && !l.startsWith("COMPLETE"));
+      const correct = lines[0] || sentence;
+      const others = shuffle(VRAAG_ANTWOORD.filter(s => s !== sentence)).slice(0, 3).map(s => {
+        const e = generateExplanation(s);
+        const ls = e.split("\n").filter(l => l && !l.startsWith("TRADUCAO") && !l.startsWith("EXEMPLOS") && !l.startsWith("COMPLETE"));
+        return ls[0] || s;
+      });
+      const opts = shuffle([correct, ...others]);
+      return { type: "va", q: sentence, opts, a: opts.indexOf(correct) };
+    });
+    const knmQs = shuffle([...KNM_QUESTIONS]).slice(0, 1).map(q => ({
+      type: "knm", q: q.q, opts: q.opts, a: q.a
+    }));
+    return shuffle([...vaQs, ...knmQs]);
+  };
+  const [miniQuiz, setMiniQuiz] = useState(() => buildMiniQuiz());
+  const [miniQuizIdx, setMiniQuizIdx] = useState(0);
+  const [miniQuizAnswers, setMiniQuizAnswers] = useState({});
+  const [miniQuizDone, setMiniQuizDone] = useState(false);
+
   // ── Swipe ──
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -2965,6 +2853,7 @@ export default function NT2Simulator() {
   // ── Conjugação ──
   const [verbIdx, setVerbIdx] = useState(0);
   const [verbRevealed, setVerbRevealed] = useState([]);
+  const [verbTense, setVerbTense] = useState("present"); // "present" | "past"
 
   // ── Leitura ──
   const [leituraIdx, setLeituraIdx] = useState(0);
@@ -3529,92 +3418,91 @@ export default function NT2Simulator() {
       <Page dir={isRTL ? "rtl" : "ltr"}>
         <SaveModal {...saveModalProps} />
   
-        <div style={{ position: "fixed", top: 0, left: 0, right: 0, height: 160, background: "#FFD166", zIndex: 0 }} />
-
-        <Wrap style={{ position: "relative", zIndex: 1 }}>
+        <Wrap>
           <div style={{ paddingTop: 24 }} />
 
           {/* Unified progress card */}
-          <CardBox style={{ marginBottom: 20 }}>
+          <CardBox style={{ marginBottom: 16, background: "#7C3AED", border: "2px solid #9F67FF", borderBottom: "5px solid #5B21B6" }}>
 
             {/* Top row: streak + days to exam */}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <span style={{ fontSize: 18, lineHeight: 1 }}>🔥</span>
-                <span style={{ fontSize: 14, fontWeight: 700, color: "#E65100" }}>
+                <span style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>
                   {progress.lastStudyDate === getToday() ? progress.streak : 0}d {t("dash_streak")}
                 </span>
               </div>
               {stats.daysLeft != null ? (
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                  <Icon d={Icons.calendar} size={14} stroke={C.coral} />
-                  <span style={{ fontSize: 13, fontWeight: 600, color: C.coral }}>{stats.daysLeft}{t("lbl_days_exam")}</span>
+                  <Icon d={Icons.calendar} size={14} stroke="#DDD6FE" />
+                  <span style={{ fontSize: 13, fontWeight: 600, color: "#DDD6FE" }}>{stats.daysLeft}{t("lbl_days_exam")}</span>
                 </div>
               ) : (
-                <button onClick={() => handleTabChange("config")} style={{ background: "none", border: "none", fontSize: 12, color: C.mid, cursor: "pointer", fontFamily: font, padding: 0 }}>
+                <button onClick={() => handleTabChange("config")} style={{ background: "none", border: "none", fontSize: 12, color: "rgba(255,255,255,0.7)", cursor: "pointer", fontFamily: font, padding: 0 }}>
                   {t("lbl_add_date")}
                 </button>
               )}
             </div>
 
             {/* Progress bar */}
-            <div style={{ height: 10, background: "#F0F0F0", borderRadius: R.full, overflow: "hidden", marginBottom: 8 }}>
+            <div style={{ height: 10, background: "rgba(0,0,0,0.15)", borderRadius: R.full, overflow: "hidden", marginBottom: 8 }}>
               <div style={{ height: 10, display: "flex" }}>
-                <div style={{ width: `${(stats.dominated / 492) * 100}%`, background: C.green, transition: "width 0.5s" }} />
-                <div style={{ width: `${(stats.learning / 492) * 100}%`, background: "#FFD166", transition: "width 0.5s" }} />
+                <div style={{ width: `${(stats.dominated / 492) * 100}%`, background: "#fff", transition: "width 0.5s" }} />
+                <div style={{ width: `${(stats.learning / 492) * 100}%`, background: "rgba(255,255,255,0.5)", transition: "width 0.5s" }} />
               </div>
             </div>
 
             {/* Progress labels */}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: stats.dailyGoal != null ? 14 : 0 }}>
-              <div style={{ display: "flex", gap: 12, fontSize: 11, color: C.mid }}>
+              <div style={{ display: "flex", gap: 12, fontSize: 11, color: "rgba(255,255,255,0.75)" }}>
                 <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: C.green, display: "inline-block" }} />{stats.dominated} {t("lbl_dominated")}
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#fff", display: "inline-block" }} />{stats.dominated} {t("lbl_dominated")}
                 </span>
                 <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#FFD166", display: "inline-block" }} />{stats.learning} {t("lbl_learning")}
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "rgba(255,255,255,0.5)", display: "inline-block" }} />{stats.learning} {t("lbl_learning")}
                 </span>
                 <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#E0E0E0", display: "inline-block" }} />{stats.unseen} {t("lbl_new")}
+                  <span style={{ width: 7, height: 7, borderRadius: "50%", background: "rgba(255,255,255,0.25)", display: "inline-block" }} />{stats.unseen} {t("lbl_new")}
                 </span>
               </div>
-              <span style={{ fontSize: 14, fontWeight: 700, color: C.coral }}>{pct}%</span>
+              <span style={{ fontSize: 14, fontWeight: 700, color: "#fff" }}>{pct}%</span>
             </div>
 
             {/* Today's goal — only if set */}
             {stats.dailyGoal != null && (
-              <div style={{ borderTop: `1px solid ${C.light}`, paddingTop: 12 }}>
+              <div style={{ borderTop: "1px solid rgba(255,255,255,0.25)", paddingTop: 12 }}>
                 {todayStudied >= stats.dailyGoal ? (
-                  <div style={{ position: "relative", background: "linear-gradient(135deg, #E8F5E9, #F1F8E9)", borderRadius: R.md, padding: "12px 14px" }}>
+                  <div style={{ position: "relative", background: "rgba(255,255,255,0.2)", borderRadius: R.md, padding: "12px 14px" }}>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                         <span style={{ fontSize: 18, lineHeight: 1 }}>🏆</span>
-                        <span style={{ fontSize: 13, fontWeight: 700, color: C.green }}>{t("lbl_goal_done")}</span>
+                        <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>{t("lbl_goal_done")}</span>
                       </div>
-                      <span style={{ fontSize: 13, fontWeight: 700, color: C.green }}>{todayStudied}/{stats.dailyGoal}</span>
+                      <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>{todayStudied}/{stats.dailyGoal}</span>
                     </div>
                   </div>
                 ) : (
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                      <Icon d={Icons.target} size={16} stroke={C.coral} />
-                      <span style={{ fontSize: 13, fontWeight: 600, color: C.dark }}>{t("lbl_goal_today")}</span>
+                      <Icon d={Icons.target} size={16} stroke="rgba(255,255,255,0.8)" />
+                      <span style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>{t("lbl_goal_today")}</span>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                      <div style={{ width: 80, height: 6, background: "#F0F0F0", borderRadius: R.full, overflow: "hidden" }}>
-                        <div style={{ height: 6, width: `${Math.min((todayStudied / stats.dailyGoal) * 100, 100)}%`, background: C.coral, borderRadius: R.full, transition: "width 0.4s" }} />
+                      <div style={{ width: 80, height: 6, background: "rgba(0,0,0,0.15)", borderRadius: R.full, overflow: "hidden" }}>
+                        <div style={{ height: 6, width: `${Math.min((todayStudied / stats.dailyGoal) * 100, 100)}%`, background: "#fff", borderRadius: R.full, transition: "width 0.4s" }} />
                       </div>
-                      <span style={{ fontSize: 13, fontWeight: 700, color: C.dark }}>{todayStudied}/{stats.dailyGoal}</span>
+                      <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>{todayStudied}/{stats.dailyGoal}</span>
                     </div>
                   </div>
                 )}
               </div>
             )}
+
           </CardBox>
 
           {/* Pratica do Dia — destaque principal */}
           {progress.praticaDate === getToday() ? (
-            <div style={{ background: "#59962D", borderRadius: R.lg, padding: "20px 18px", marginBottom: 12, display: "flex", alignItems: "center", gap: 16 }}>
+            <div style={{ background: "#59962D", borderRadius: 20, padding: "20px 18px", marginBottom: 12, display: "flex", alignItems: "center", gap: 16, border: "2px solid #3F7520", borderBottom: "5px solid #3F7520" }}>
               <div style={{ width: 80, height: 80, flexShrink: 0, borderRadius: 12, backgroundImage: `url(${ICONS.trophy})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>{t("dash_pratica_done")}</div>
@@ -3626,7 +3514,7 @@ export default function NT2Simulator() {
               </button>
             </div>
           ) : (
-            <button onClick={startPraticaDoDia} style={{ width: "100%", background: "linear-gradient(135deg, #FF385C, #D4003B)", border: "none", borderRadius: R.lg, padding: "20px 18px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 16, marginBottom: 16, fontFamily: font, boxShadow: "0 4px 20px rgba(255,56,92,0.35)" }}>
+            <button onClick={startPraticaDoDia} style={{ width: "100%", background: "linear-gradient(135deg, #FF385C, #D4003B)", border: "2px solid #A30029", borderBottom: "5px solid #A30029", borderRadius: 20, padding: "20px 18px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 16, marginBottom: 12, fontFamily: font }}>
               <div style={{ width: 40, height: 64, flexShrink: 0, marginLeft: 0, backgroundImage: `url(${ICONS.zap})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>{t("dash_session")}</div>
@@ -3643,7 +3531,7 @@ export default function NT2Simulator() {
 
           {/* Revisao Inteligente — destaque quando tiver pendente */}
           {stats.due > 0 && (
-            <button onClick={startRevisao} style={{ width: "100%", background: "#FB790A", border: "none", borderRadius: R.lg, padding: "16px 18px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, marginBottom: 16, fontFamily: font, boxShadow: "0 4px 16px rgba(255,152,0,0.35)" }}>
+            <button onClick={startRevisao} style={{ width: "100%", background: "#FB790A", border: "2px solid #C05A00", borderBottom: "5px solid #C05A00", borderRadius: 20, padding: "16px 18px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, marginBottom: 12, fontFamily: font }}>
               <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.revisao})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>{t("dash_priority")}</div>
@@ -3654,55 +3542,85 @@ export default function NT2Simulator() {
             </button>
           )}
 
-          {/* Activities */}
-          <div style={{ fontSize: 13, fontWeight: 700, color: C.dark, marginBottom: 12, textTransform: "uppercase", letterSpacing: 0.5 }}>{t("dash_activities")}</div>
-          <div style={{ display: "grid", gap: 12, marginBottom: 20 }}>
-            {(() => {
-              const goal = stats.dailyGoal;
-              const todayDone = progress.todayDate === getToday() ? progress.todayStudied : 0;
-              const sessionSize = goal != null ? Math.max(goal - todayDone > 0 ? goal - todayDone : goal, 10) : 20;
-              const desc1 = goal != null ? `${sessionSize} ${t("lbl_frases_meta")}` : `60 zinnen, ${t("lbl_arraste").toLowerCase()}`;
-              const desc2 = goal != null ? `${sessionSize} ${t("lbl_frases_ouvir")}` : t("lbl_ouca");
-
-              const cardStyle = { background: C.white, border: "none", borderRadius: R.lg, padding: "12px 18px", cursor: "pointer", textAlign: "left", display: "flex", flexDirection: "row", alignItems: "center", gap: 16, boxShadow: shadow.card, fontFamily: font, width: "100%" };
-              const iconBox = { width: 52, height: 52, flexShrink: 0 };
-
-              return [
-                <button key="flash" onClick={() => startFlashcards("both")} style={cardStyle}>
-                  <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.flash})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_flashcards")}</div>
-                    <div style={{ fontSize: 12, color: C.mid }}>{desc1}</div>
-                  </div>
-                  <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
-                </button>,
-                <button key="escuta" onClick={startEscuta} style={cardStyle}>
-                  <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.escuta})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_escuta")}</div>
-                    <div style={{ fontSize: 12, color: C.mid }}>{desc2}</div>
-                  </div>
-                  <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
-                </button>,
-                <button key="conj" onClick={startConjugacao} style={cardStyle}>
-                  <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.conj})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_conjugacao")}</div>
-                    <div style={{ fontSize: 12, color: C.mid }}>{t("act_conj_desc")}</div>
-                  </div>
-                  <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
-                </button>,
-                <button key="quiz" onClick={() => startQuiz("all")} style={cardStyle}>
-                  <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.quiz})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_quiz")}</div>
-                    <div style={{ fontSize: 12, color: C.mid }}>{t("act_quiz_desc")}</div>
-                  </div>
-                  <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
-                </button>,
-              ];
-            })()}
+          {/* ── FRASE DO DIA ── */}
+          <div style={{ background: "#EFF4FF", borderRadius: 20, padding: "18px 18px 16px", marginBottom: 12, border: "2px solid #B8D0FF" }}>
+            <div style={{ fontSize: 15, fontWeight: 800, color: "#0066FF", marginBottom: 10 }}>Frase do Dia</div>
+            <div style={{ fontSize: 17, fontWeight: 700, color: C.dark, marginBottom: 14, lineHeight: 1.5 }}>{VRAAG_ANTWOORD[frazeIdx]}</div>
+            <button onClick={() => { window.speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(VRAAG_ANTWOORD[frazeIdx]); u.lang = "nl-NL"; u.rate = 0.85; const v = window.speechSynthesis.getVoices().find(v => v.lang?.startsWith("nl")); if (v) u.voice = v; window.speechSynthesis.speak(u); }} style={{ width: "100%", background: "#0066FF", border: "none", borderBottom: "4px solid #0047CC", borderRadius: R.full, padding: "13px", cursor: "pointer", fontSize: 15, fontWeight: 700, color: "#fff", fontFamily: font, marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
+              <Icon d={Icons.speaker} size={16} stroke="#fff" /> Ouvir
+            </button>
+            {!frazeDoDiaRevealed ? (
+              <button onClick={() => setFrazeDoDiaRevealed(true)} style={{ width: "100%", background: "#fff", border: "2px solid #B8D0FF", borderBottom: "4px solid #B8D0FF", borderRadius: R.full, padding: "11px", cursor: "pointer", fontSize: 14, color: "#0066FF", fontFamily: font, fontWeight: 700 }}>
+                Revelar tradução
+              </button>
+            ) : (
+              <div style={{ background: "#fff", borderRadius: R.lg, padding: "10px 14px", border: "2px solid #B8D0FF" }}>
+                {(() => {
+                  const exp = generateExplanation(VRAAG_ANTWOORD[frazeIdx]);
+                  const lines = exp.split("\n").filter(l => l && !l.startsWith("TRADUCAO") && !l.startsWith("EXEMPLOS") && !l.startsWith("COMPLETE"));
+                  return <div style={{ fontSize: 14, color: C.dark, fontStyle: "italic" }}>{lines[0]}</div>;
+                })()}
+              </div>
+            )}
           </div>
+
+          {/* ── MINI-QUIZ RELÂMPAGO ── */}
+          <div style={{ background: "#FFF3EC", borderRadius: 20, padding: "18px 18px 16px", marginBottom: 20, border: "2px solid #FFCBA4" }}>
+            <div style={{ fontSize: 15, fontWeight: 800, color: "#E65100", marginBottom: 10 }}>Mini-quiz Relâmpago</div>
+            {miniQuizDone ? (
+              <div style={{ textAlign: "center" }}>
+                <div style={{ fontSize: 32, marginBottom: 6 }}>
+                  {Object.values(miniQuizAnswers).filter((a, i) => a === miniQuiz[i]?.a).length === 3 ? "🏆" : Object.values(miniQuizAnswers).filter((a, i) => a === miniQuiz[i]?.a).length >= 2 ? "🎉" : "💪"}
+                </div>
+                <div style={{ fontSize: 16, fontWeight: 800, color: C.dark, marginBottom: 4 }}>
+                  {Object.values(miniQuizAnswers).filter((a, i) => a === miniQuiz[i]?.a).length}/3 corretas
+                </div>
+                <button onClick={() => { setMiniQuiz(buildMiniQuiz()); setMiniQuizIdx(0); setMiniQuizAnswers({}); setMiniQuizDone(false); }} style={{ background: "none", border: "none", fontSize: 13, color: "#E65100", cursor: "pointer", fontFamily: font, fontWeight: 600, marginTop: 4 }}>
+                  🔄 Novo quiz
+                </button>
+              </div>
+            ) : (
+              <div>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+                  <span style={{ fontSize: 12, color: C.mid }}>Pergunta {miniQuizIdx + 1} de {miniQuiz.length}</span>
+                  <div style={{ display: "flex", gap: 4 }}>
+                    {miniQuiz.map((_, i) => (
+                      <div key={i} style={{ width: 20, height: 4, borderRadius: 2, background: i < miniQuizIdx ? C.green : i === miniQuizIdx ? "#E65100" : C.light }} />
+                    ))}
+                  </div>
+                </div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: C.dark, marginBottom: 12, lineHeight: 1.5 }}>
+                  {miniQuiz[miniQuizIdx]?.q}
+                </div>
+                <div style={{ display: "grid", gap: 7 }}>
+                  {miniQuiz[miniQuizIdx]?.opts.map((opt, i) => {
+                    const answered = miniQuizAnswers[miniQuizIdx] !== undefined;
+                    const isCorrect = i === miniQuiz[miniQuizIdx].a;
+                    const isChosen = miniQuizAnswers[miniQuizIdx] === i;
+                    let bg = C.bg, border = C.light, col = C.dark;
+                    if (answered) {
+                      if (isCorrect) { bg = C.greenLight; border = C.green; col = C.green; }
+                      else if (isChosen) { bg = "#FFF0F3"; border = C.coral; col = C.coral; }
+                    }
+                    return (
+                      <button key={i} onClick={() => {
+                        if (answered) return;
+                        const newAnswers = { ...miniQuizAnswers, [miniQuizIdx]: i };
+                        setMiniQuizAnswers(newAnswers);
+                        setTimeout(() => {
+                          if (miniQuizIdx + 1 >= miniQuiz.length) setMiniQuizDone(true);
+                          else setMiniQuizIdx(j => j + 1);
+                        }, 700);
+                      }} style={{ textAlign: "left", padding: "11px 14px", background: answered && isCorrect ? "#E8F5E9" : answered && isChosen && !isCorrect ? "#FFF0F3" : "#fff", border: `2px solid ${answered && isCorrect ? C.green : answered && isChosen && !isCorrect ? C.coral : "#E0E0E0"}`, borderBottom: `4px solid ${answered && isCorrect ? "#00690A" : answered && isChosen && !isCorrect ? "#C0002A" : "#C0C0C0"}`, borderRadius: 14, cursor: answered ? "default" : "pointer", fontFamily: font, fontSize: 13, color: col, fontWeight: answered && isCorrect ? 700 : 500 }}>
+                        {opt}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+
 
         </Wrap>
 
@@ -3729,7 +3647,7 @@ export default function NT2Simulator() {
           </div>
 
           <div style={{ display: "grid", gap: 10, marginBottom: 24 }}>
-          <button onClick={() => startFlashcards("both")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+          <button onClick={() => startFlashcards("both")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.flash})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               </div>
@@ -3739,7 +3657,7 @@ export default function NT2Simulator() {
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
-          <button onClick={startEscuta} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+          <button onClick={startEscuta} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.escuta})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               </div>
@@ -3749,7 +3667,7 @@ export default function NT2Simulator() {
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
-          <button onClick={() => startFlashcards("vraag")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+          <button onClick={() => startFlashcards("vraag")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.va})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               </div>
@@ -3759,7 +3677,7 @@ export default function NT2Simulator() {
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
-          <button onClick={startLeitura} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+          <button onClick={startLeitura} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.leitura})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               </div>
@@ -3769,7 +3687,7 @@ export default function NT2Simulator() {
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
-          <button onClick={startConjugacao} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+          <button onClick={startConjugacao} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.conj})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               </div>
@@ -3779,7 +3697,7 @@ export default function NT2Simulator() {
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
-          <button onClick={startSchrijven} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+          <button onClick={startSchrijven} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ fontSize: 32 }}>✍️</div>
               </div>
@@ -3789,7 +3707,7 @@ export default function NT2Simulator() {
               </div>
               <Icon d={Icons.arrowRight} size={16} stroke={C.mid} />
             </button>
-          <button onClick={() => startQuiz("all")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, boxShadow: shadow.card, fontFamily: font, width: "100%" }}>
+          <button onClick={() => startQuiz("all")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.quiz})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
               </div>
@@ -3863,7 +3781,7 @@ export default function NT2Simulator() {
             {exams.map(exam => {
               const hist = simHistory[exam.id] || { attempts: 0, best: null, last: null };
               return (
-                <div key={exam.id} style={{ background: C.white, borderRadius: R.lg, overflow: "hidden", boxShadow: shadow.card }}>
+                <div key={exam.id} style={{ background: C.white, borderRadius: R.lg, overflow: "hidden", border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0" }}>
                   {/* Header */}
                   <div style={{ padding: "16px 16px 14px", display: "flex", alignItems: "center", gap: 14 }}>
                     <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -4116,7 +4034,7 @@ export default function NT2Simulator() {
           </div>
 
           {/* Text */}
-          <div style={{ background: C.white, borderRadius: R.lg, padding: 16, marginBottom: 14, boxShadow: shadow.sm }}>
+          <div style={{ background: C.white, borderRadius: R.lg, padding: 16, marginBottom: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0" }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: PURPLE, textTransform: "uppercase", marginBottom: 6 }}>{texto.cat} · {texto.title}</div>
             <pre style={{ fontFamily: font, fontSize: 13, lineHeight: 1.75, color: C.dark, whiteSpace: "pre-wrap", margin: 0 }}>{texto.text}</pre>
           </div>
@@ -4158,7 +4076,6 @@ export default function NT2Simulator() {
               <div style={{ fontSize: 13, color: C.dark, lineHeight: 1.6, marginBottom: 4 }}>{q.exp}</div>
               {q.expPt && lang === "pt" && <div style={{ fontSize: 12, color: C.mid, fontStyle: "italic" }}>🇧🇷 {q.expPt}</div>}
               {q.expEn && lang === "en" && <div style={{ fontSize: 12, color: C.mid, fontStyle: "italic" }}>🇬🇧 {q.expEn}</div>}
-              {q.expEs && lang === "es" && <div style={{ fontSize: 12, color: C.mid, fontStyle: "italic" }}>🇪🇸 {q.expEs}</div>}
             </div>
           )}
         </Wrap>
@@ -4857,7 +4774,8 @@ export default function NT2Simulator() {
   // ─────────────────────────────────────────────────────────────────────────────
   if (screen === "conjugacao") {
     const verb = VERBOS[verbIdx];
-    const allRevealed = verbRevealed.length === verb.forms.length;
+    const activeForms = verbTense === "past" ? verb.past : verb.forms;
+    const allRevealed = verbRevealed.length === activeForms.length;
     return (
       <Page dir={isRTL ? "rtl" : "ltr"}>
         <SaveModal {...saveModalProps} />
@@ -4865,6 +4783,14 @@ export default function NT2Simulator() {
         <Wrap>
           <AppHeader title={t("act_conjugacao")} subtitle={`${verbIdx + 1} / ${VERBOS.length} ${t("lbl_verbos")}`} onBack={() => handleTabChange("praticar")} onSave={openSave} />
 
+          {/* Tense toggle */}
+          <div style={{ display: "flex", background: C.light, borderRadius: R.full, padding: 3, marginBottom: 16, gap: 3 }}>
+            {[["present","Presente"],["past","Passado"]].map(([tense, label]) => (
+              <button key={tense} onClick={() => { setVerbTense(tense); setVerbRevealed([]); }} style={{ flex: 1, padding: "9px 0", borderRadius: R.full, border: "none", cursor: "pointer", fontFamily: font, fontSize: 14, fontWeight: 700, background: verbTense === tense ? C.white : "transparent", color: verbTense === tense ? C.dark : C.mid, boxShadow: verbTense === tense ? shadow.sm : "none", transition: "all 0.2s" }}>
+                {label}
+              </button>
+            ))}
+          </div>
 
           {/* Verb card */}
           <CardBox style={{ marginBottom: 16 }}>
@@ -4873,15 +4799,21 @@ export default function NT2Simulator() {
                 <div style={{ fontSize: 11, fontWeight: 600, color: C.mid, marginBottom: 4, textTransform: "uppercase", letterSpacing: 1 }}>{t("lbl_infinitivo")}</div>
                 <div style={{ fontSize: 30, fontWeight: 700, color: C.dark }}>{verb.inf}</div>
                 <div style={{ fontSize: 14, color: C.mid, marginTop: 4 }}>{verb.pt}</div>
+                {verbTense === "past" && (
+                  <div style={{ marginTop: 6, background: C.blueLight, borderRadius: R.full, padding: "3px 10px", display: "inline-block" }}>
+                    <span style={{ fontSize: 11, color: C.blue, fontWeight: 600 }}>deelwoord: </span>
+                    <span style={{ fontSize: 11, color: C.blue, fontWeight: 700 }}>{verb.participle}</span>
+                  </div>
+                )}
               </div>
-              <button onClick={() => speakAllRows(verb.forms)} style={{ background: C.coralLight, border: "none", borderRadius: R.full, padding: "10px 16px", cursor: "pointer", display: "flex", alignItems: "center", gap: 6, color: C.coral, fontWeight: 600, fontSize: 13, fontFamily: font }}>
+              <button onClick={() => speakAllRows(activeForms)} style={{ background: C.coralLight, border: "none", borderRadius: R.full, padding: "10px 16px", cursor: "pointer", display: "flex", alignItems: "center", gap: 6, color: C.coral, fontWeight: 600, fontSize: 13, fontFamily: font }}>
                 <Icon d={Icons.speaker} size={16} stroke={C.coral} />
                 {t("lbl_tudo")}
               </button>
             </div>
 
             <div style={{ borderTop: `1px solid ${C.light}`, paddingTop: 4 }}>
-              {verb.forms.map(([pronoun, form], i) => {
+              {activeForms.map(([pronoun, form], i) => {
                 const revealed = verbRevealed.includes(i);
                 return (
                   <div key={i} style={{ display: "flex", alignItems: "center", padding: "13px 0", borderBottom: i < verb.forms.length - 1 ? `1px solid ${C.bg}` : "none", gap: 10 }}>
@@ -4913,10 +4845,10 @@ export default function NT2Simulator() {
           </CardBox>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-            <Btn onClick={() => { setVerbIdx(i => Math.max(0, i - 1)); setVerbRevealed([]); }} variant="secondary" disabled={verbIdx === 0} icon={Icons.arrowLeft}>
+            <Btn onClick={() => { setVerbIdx(i => Math.max(0, i - 1)); setVerbRevealed([]); setVerbTense("present"); }} variant="secondary" disabled={verbIdx === 0} icon={Icons.arrowLeft}>
               Anterior
             </Btn>
-            <Btn onClick={() => { if (verbIdx < VERBOS.length - 1) { setVerbIdx(i => i + 1); setVerbRevealed([]); } else setScreen("dashboard"); }} icon={verbIdx < VERBOS.length - 1 ? Icons.arrowRight : Icons.check}>
+            <Btn onClick={() => { if (verbIdx < VERBOS.length - 1) { setVerbIdx(i => i + 1); setVerbRevealed([]); setVerbTense("present"); } else setScreen("dashboard"); }} icon={verbIdx < VERBOS.length - 1 ? Icons.arrowRight : Icons.check}>
               {verbIdx < VERBOS.length - 1 ? "Próximo" : "Concluído"}
             </Btn>
           </div>
@@ -5445,7 +5377,7 @@ export default function NT2Simulator() {
           {/* ── ESCUTA item ── */}
           {item.type === "escuta" && (
             <div>
-              <div style={{ background: C.white, borderRadius: R.xl, padding: "28px 24px", marginBottom: 16, textAlign: "center", boxShadow: shadow.card }}>
+              <div style={{ background: C.white, borderRadius: R.xl, padding: "28px 24px", marginBottom: 16, textAlign: "center", border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0" }}>
                 <span style={{ fontSize: 40, display: "block", marginBottom: 16 }}>{getCardEmoji(item.card.text)}</span>
                 <button onClick={() => {
                   if (praticaSpeaking) { window.speechSynthesis.cancel(); setPraticaSpeaking(false); return; }
