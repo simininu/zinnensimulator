@@ -5076,8 +5076,8 @@ export default function NT2Simulator() {
                   {/* Header */}
                   <div style={{ padding: "16px 16px 14px", display: "flex", alignItems: "center", gap: 14 }}>
                     <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      {exam.icon
-                        ? <div style={{ width: 52, height: 52, backgroundImage: `url(${exam.icon})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                      {exam.lucideIcon
+                        ? <LucideBox name={exam.lucideIcon} boxSize={52} iconSize={28} />
                         : <span style={{ fontSize: 36 }}>{exam.emoji}</span>
                       }
                     </div>
