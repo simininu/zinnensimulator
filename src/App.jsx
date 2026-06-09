@@ -3030,128 +3030,504 @@ const VERBOS = [
     forms: [["ik","ben"],["jij je","bent"],["hij zij ze het","is"],["wij we","zijn"],["jullie","zijn"],["zij ze","zijn"]],
     past:  [["ik","was"],["jij je","was"],["hij zij ze het","was"],["wij we","waren"],["jullie","waren"],["zij ze","waren"]],
     participle: "geweest",
-    ex: "Aaron is dokter. / Ik ben blij." },
+    ex: "Aaron is dokter. / Ik ben blij.",
+    exPresent: [
+      "Ik ben student. (Sou estudante.)",
+      "Hij is ziek vandaag. (Ele está doente hoje.)",
+      "Wij zijn thuis. (Estamos em casa.)",
+      "Jullie zijn te laat! (Vocês estão atrasados!)",
+      "Het is koud buiten. (Está frio lá fora.)"
+    ],
+    exPast: [
+      "Ik was moe na het werk. (Eu estava cansado depois do trabalho.)",
+      "Hij was gisteren ziek. (Ele estava doente ontem.)",
+      "We waren samen op vakantie. (Estávamos juntos de férias.)",
+      "Het was een mooie dag. (Foi um dia bonito.)",
+      "Jullie waren heel vroeg. (Vocês estavam muito cedo.)"
+    ]
+  },
   { inf: "hebben", pt: "ter",
     forms: [["ik","heb"],["jij je","hebt"],["hij zij ze het","heeft"],["wij we","hebben"],["jullie","hebben"],["zij ze","hebben"]],
     past:  [["ik","had"],["jij je","had"],["hij zij ze het","had"],["wij we","hadden"],["jullie","hadden"],["zij ze","hadden"]],
     participle: "gehad",
-    ex: "Ze heeft pijn aan haar rug." },
+    ex: "Ze heeft pijn aan haar rug.",
+    exPresent: [
+      "Ik heb honger. (Estou com fome.)",
+      "Hij heeft een nieuwe baan. (Ele tem um novo emprego.)",
+      "Wij hebben twee kinderen. (Temos dois filhos.)",
+      "Ze heeft pijn aan haar rug. (Ela tem dor nas costas.)",
+      "Jullie hebben gelijk. (Vocês têm razão.)"
+    ],
+    exPast: [
+      "Ik had vroeger een fiets. (Eu tinha uma bicicleta antes.)",
+      "Hij had gisteren vrij. (Ele tinha folga ontem.)",
+      "We hadden geen geld. (Não tínhamos dinheiro.)",
+      "Ze had hoofdpijn de hele dag. (Ela tinha dor de cabeça o dia todo.)",
+      "Jullie hadden geluk! (Vocês tiveram sorte!)"
+    ]
+  },
   { inf: "gaan", pt: "ir",
     forms: [["ik","ga"],["jij je","gaat"],["hij zij ze het","gaat"],["wij we","gaan"],["jullie","gaan"],["zij ze","gaan"]],
     past:  [["ik","ging"],["jij je","ging"],["hij zij ze het","ging"],["wij we","gingen"],["jullie","gingen"],["zij ze","gingen"]],
     participle: "gegaan",
-    ex: "Hij gaat naar het werk." },
+    ex: "Hij gaat naar het werk.",
+    exPresent: [
+      "Ik ga morgen naar de dokter. (Vou ao médico amanhã.)",
+      "Hij gaat elke dag naar school. (Ele vai à escola todos os dias.)",
+      "We gaan dit weekend naar Amsterdam. (Vamos a Amsterdão este fim de semana.)",
+      "Zij gaat met de bus naar het werk. (Ela vai de autocarro para o trabalho.)",
+      "Jullie gaan te laat naar bed! (Vocês vão dormir muito tarde!)"
+    ],
+    exPast: [
+      "Ik ging gisteren naar de markt. (Fui ao mercado ontem.)",
+      "Hij ging vorige week naar de tandarts. (Ele foi ao dentista na semana passada.)",
+      "We gingen samen naar het feest. (Fomos juntos à festa.)",
+      "Ze ging vroeg naar huis. (Ela foi para casa cedo.)",
+      "Jullie gingen met de trein. (Vocês foram de comboio.)"
+    ]
+  },
   { inf: "werken", pt: "trabalhar",
     forms: [["ik","werk"],["jij je","werkt"],["hij zij ze het","werkt"],["wij we","werken"],["jullie","werken"],["zij ze","werken"]],
     past:  [["ik","werkte"],["jij je","werkte"],["hij zij ze het","werkte"],["wij we","werkten"],["jullie","werkten"],["zij ze","werkten"]],
     participle: "gewerkt",
-    ex: "Ali werkt in een fabriek." },
+    ex: "Ali werkt in een fabriek.",
+    exPresent: [
+      "Ik werk vijf dagen per week. (Trabalho cinco dias por semana.)",
+      "Hij werkt in een ziekenhuis. (Ele trabalha num hospital.)",
+      "Wij werken samen aan het project. (Trabalhamos juntos no projeto.)",
+      "Ze werkt parttime in een winkel. (Ela trabalha a meio tempo numa loja.)",
+      "Jullie werken hard vandaag. (Vocês estão a trabalhar muito hoje.)"
+    ],
+    exPast: [
+      "Ik werkte gisteren de hele dag. (Trabalhei o dia todo ontem.)",
+      "Hij werkte vroeger in een fabriek. (Ele trabalhava antes numa fábrica.)",
+      "We werkten samen in Rotterdam. (Trabalhámos juntos em Roterdão.)",
+      "Ze werkte tot laat 's avonds. (Ela trabalhou até tarde da noite.)",
+      "Jullie werkten heel snel. (Vocês trabalharam muito rápido.)"
+    ]
+  },
   { inf: "wonen", pt: "morar",
     forms: [["ik","woon"],["jij je","woont"],["hij zij ze het","woont"],["wij we","wonen"],["jullie","wonen"],["zij ze","wonen"]],
     past:  [["ik","woonde"],["jij je","woonde"],["hij zij ze het","woonde"],["wij we","woonden"],["jullie","woonden"],["zij ze","woonden"]],
     participle: "gewoond",
-    ex: "Ik woon in Amsterdam." },
+    ex: "Ik woon in Amsterdam.",
+    exPresent: [
+      "Ik woon in een flat in Utrecht. (Moro num apartamento em Utrecht.)",
+      "Hij woont naast een park. (Ele mora ao lado de um parque.)",
+      "Wij wonen al tien jaar in Nederland. (Moramos há dez anos na Holanda.)",
+      "Ze woont samen met haar man en kinderen. (Ela mora com o marido e os filhos.)",
+      "Jullie wonen ver van het centrum. (Vocês moram longe do centro.)"
+    ],
+    exPast: [
+      "Ik woonde vroeger in Marokko. (Eu morava antes em Marrocos.)",
+      "Hij woonde een jaar in Den Haag. (Ele morou um ano em Haia.)",
+      "We woonden in een klein huis. (Morávamos numa casa pequena.)",
+      "Ze woonde vlak bij haar familie. (Ela morava perto da família.)",
+      "Jullie woonden in de Jordaan. (Vocês moravam na Jordaan.)"
+    ]
+  },
   { inf: "kopen", pt: "comprar",
     forms: [["ik","koop"],["jij je","koopt"],["hij zij ze het","koopt"],["wij we","kopen"],["jullie","kopen"],["zij ze","kopen"]],
     past:  [["ik","kocht"],["jij je","kocht"],["hij zij ze het","kocht"],["wij we","kochten"],["jullie","kochten"],["zij ze","kochten"]],
     participle: "gekocht",
-    ex: "Chen verkoopt bloemen op de markt." },
+    ex: "Chen verkoopt bloemen op de markt.",
+    exPresent: [
+      "Ik koop elke week groente op de markt. (Compro legumes no mercado todas as semanas.)",
+      "Hij koopt een nieuwe fiets. (Ele está a comprar uma bicicleta nova.)",
+      "Wij kopen altijd brood bij de bakker. (Compramos sempre pão na padaria.)",
+      "Ze koopt kleding in de sale. (Ela compra roupa nas saldas.)",
+      "Jullie kopen te veel snoep! (Vocês compram doces a mais!)"
+    ],
+    exPast: [
+      "Ik kocht gisteren een nieuwe jas. (Comprei um casaco novo ontem.)",
+      "Hij kocht een huis in Leiden. (Ele comprou uma casa em Leiden.)",
+      "We kochten eten voor het feest. (Comprámos comida para a festa.)",
+      "Ze kocht bloemen voor haar moeder. (Ela comprou flores para a mãe.)",
+      "Jullie kochten te dure schoenen. (Vocês compraram sapatos demasiado caros.)"
+    ]
+  },
   { inf: "eten", pt: "comer",
     forms: [["ik","eet"],["jij je","eet"],["hij zij ze het","eet"],["wij we","eten"],["jullie","eten"],["zij ze","eten"]],
     past:  [["ik","at"],["jij je","at"],["hij zij ze het","at"],["wij we","aten"],["jullie","aten"],["zij ze","aten"]],
     participle: "gegeten",
-    ex: "Carmen eet elke dag een banaan." },
+    ex: "Carmen eet elke dag een banaan.",
+    exPresent: [
+      "Ik eet 's ochtends altijd een ei. (Como sempre um ovo de manhã.)",
+      "Hij eet geen vlees. (Ele não come carne.)",
+      "Wij eten samen aan tafel. (Comemos juntos à mesa.)",
+      "Ze eet graag Indonesisch eten. (Ela gosta de comer comida indonésia.)",
+      "Jullie eten te snel. (Vocês comem demasiado rápido.)"
+    ],
+    exPast: [
+      "Ik at gisteren pizza. (Comi pizza ontem.)",
+      "Hij at de hele dag niets. (Ele não comeu nada o dia todo.)",
+      "We aten samen in een restaurant. (Comemos juntos num restaurante.)",
+      "Ze at een boterham met kaas. (Ela comeu uma sanduíche com queijo.)",
+      "Jullie aten veel te laat. (Vocês comeram muito tarde.)"
+    ]
+  },
   { inf: "drinken", pt: "beber",
     forms: [["ik","drink"],["jij je","drinkt"],["hij zij ze het","drinkt"],["wij we","drinken"],["jullie","drinken"],["zij ze","drinken"]],
     past:  [["ik","dronk"],["jij je","dronk"],["hij zij ze het","dronk"],["wij we","dronken"],["jullie","dronken"],["zij ze","dronken"]],
     participle: "gedronken",
-    ex: "Christo drinkt een glas water." },
+    ex: "Christo drinkt een glas water.",
+    exPresent: [
+      "Ik drink elke ochtend koffie. (Bebo café todas as manhãs.)",
+      "Hij drinkt geen alcohol. (Ele não bebe álcool.)",
+      "Wij drinken thee na het eten. (Bebemos chá depois de comer.)",
+      "Ze drinkt veel water per dag. (Ela bebe muita água por dia.)",
+      "Jullie drinken te veel frisdrank. (Vocês bebem refrigerante a mais.)"
+    ],
+    exPast: [
+      "Ik dronk gisteren te veel koffie. (Bebi demasiado café ontem.)",
+      "Hij dronk een glas melk voor het slapengaan. (Ele bebeu um copo de leite antes de dormir.)",
+      "We dronken wijn bij het diner. (Bebemos vinho ao jantar.)",
+      "Ze dronk water omdat ze dorst had. (Ela bebeu água porque tinha sede.)",
+      "Jullie dronken de hele avond thee. (Vocês beberam chá a noite toda.)"
+    ]
+  },
   { inf: "leren", pt: "aprender",
     forms: [["ik","leer"],["jij je","leert"],["hij zij ze het","leert"],["wij we","leren"],["jullie","leren"],["zij ze","leren"]],
     past:  [["ik","leerde"],["jij je","leerde"],["hij zij ze het","leerde"],["wij we","leerden"],["jullie","leerden"],["zij ze","leerden"]],
     participle: "geleerd",
-    ex: "Claire leert Nederlands." },
+    ex: "Claire leert Nederlands.",
+    exPresent: [
+      "Ik leer elke dag nieuwe woorden. (Aprendo palavras novas todos os dias.)",
+      "Hij leert Nederlands voor zijn examen. (Ele aprende holandês para o exame.)",
+      "Wij leren samen in de bibliotheek. (Aprendemos juntos na biblioteca.)",
+      "Ze leert rijden bij een rijschool. (Ela aprende a conduzir numa escola de condução.)",
+      "Jullie leren snel! (Vocês aprendem rápido!)"
+    ],
+    exPast: [
+      "Ik leerde vorig jaar Spaans. (Aprendi espanhol no ano passado.)",
+      "Hij leerde koken van zijn moeder. (Ele aprendeu a cozinhar com a mãe.)",
+      "We leerden samen voor het examen. (Estudámos juntos para o exame.)",
+      "Ze leerde hard om te slagen. (Ela estudou muito para passar.)",
+      "Jullie leerden veel op school. (Vocês aprenderam muito na escola.)"
+    ]
+  },
   { inf: "vinden", pt: "achar / encontrar",
     forms: [["ik","vind"],["jij je","vindt"],["hij zij ze het","vindt"],["wij we","vinden"],["jullie","vinden"],["zij ze","vinden"]],
     past:  [["ik","vond"],["jij je","vond"],["hij zij ze het","vond"],["wij we","vonden"],["jullie","vonden"],["zij ze","vonden"]],
     participle: "gevonden",
-    ex: "Ik vind Nederland mooi." },
+    ex: "Ik vind Nederland mooi.",
+    exPresent: [
+      "Ik vind Nederlands een moeilijke taal. (Acho o holandês uma língua difícil.)",
+      "Hij vindt zijn werk erg leuk. (Ele acha o trabalho muito agradável.)",
+      "Wij vinden de stad te druk. (Achamos a cidade demasiado movimentada.)",
+      "Ze vindt het eten hier lekker. (Ela acha a comida aqui boa.)",
+      "Jullie vinden het film saai. (Vocês acham o filme aborrecido.)"
+    ],
+    exPast: [
+      "Ik vond het examen erg moeilijk. (Achei o exame muito difícil.)",
+      "Hij vond zijn sleutels niet. (Ele não encontrou as chaves.)",
+      "We vonden een goedkoop huis. (Encontrámos uma casa barata.)",
+      "Ze vond de cursus heel interessant. (Ela achou o curso muito interessante.)",
+      "Jullie vonden het concert geweldig. (Vocês acharam o concerto incrível.)"
+    ]
+  },
   { inf: "willen", pt: "querer",
     forms: [["ik","wil"],["jij je","wilt"],["hij zij ze het","wil"],["wij we","willen"],["jullie","willen"],["zij ze","willen"]],
     past:  [["ik","wilde"],["jij je","wilde"],["hij zij ze het","wilde"],["wij we","wilden"],["jullie","wilden"],["zij ze","wilden"]],
     participle: "gewild",
-    ex: "Ali wil ander werk." },
+    ex: "Ali wil ander werk.",
+    exPresent: [
+      "Ik wil graag meer verdienen. (Quero ganhar mais.)",
+      "Hij wil een nieuwe auto kopen. (Ele quer comprar um carro novo.)",
+      "Wij willen naar het strand gaan. (Queremos ir à praia.)",
+      "Ze wil lerares worden. (Ela quer ser professora.)",
+      "Jullie willen te veel tegelijk! (Vocês querem demasiado ao mesmo tempo!)"
+    ],
+    exPast: [
+      "Ik wilde vroeger voetballer worden. (Eu queria ser futebolista antes.)",
+      "Hij wilde niet naar de dokter. (Ele não queria ir ao médico.)",
+      "We wilden samen op vakantie. (Queríamos ir de férias juntos.)",
+      "Ze wilde meer tijd met haar kinderen. (Ela queria mais tempo com os filhos.)",
+      "Jullie wilden eerder vertrekken. (Vocês queriam partir mais cedo.)"
+    ]
+  },
   { inf: "kunnen", pt: "poder / conseguir",
     forms: [["ik","kan"],["jij je","kunt kan"],["hij zij ze het","kan"],["wij we","kunnen"],["jullie","kunnen"],["zij ze","kunnen"]],
     past:  [["ik","kon"],["jij je","kon"],["hij zij ze het","kon"],["wij we","konden"],["jullie","konden"],["zij ze","konden"]],
     participle: "gekund",
-    ex: "Dafne kan goed zingen." },
+    ex: "Dafne kan goed zingen.",
+    exPresent: [
+      "Ik kan goed Nederlands spreken. (Consigo falar bem holandês.)",
+      "Hij kan niet komen vandaag. (Ele não pode vir hoje.)",
+      "Wij kunnen je morgen helpen. (Podemos ajudar-te amanhã.)",
+      "Ze kan heel goed koken. (Ela cozinha muito bem.)",
+      "Jullie kunnen hier parkeren. (Vocês podem estacionar aqui.)"
+    ],
+    exPast: [
+      "Ik kon gisteren niet slapen. (Não consegui dormir ontem.)",
+      "Hij kon de deur niet openen. (Ele não conseguiu abrir a porta.)",
+      "We konden niet op tijd komen. (Não conseguimos chegar a tempo.)",
+      "Ze kon vroeger heel goed dansen. (Ela conseguia dançar muito bem antes.)",
+      "Jullie konden de vraag niet beantwoorden. (Vocês não conseguiram responder à pergunta.)"
+    ]
+  },
   { inf: "moeten", pt: "precisar / dever",
     forms: [["ik","moet"],["jij je","moet"],["hij zij ze het","moet"],["wij we","moeten"],["jullie","moeten"],["zij ze","moeten"]],
     past:  [["ik","moest"],["jij je","moest"],["hij zij ze het","moest"],["wij we","moesten"],["jullie","moesten"],["zij ze","moesten"]],
     participle: "gemoeten",
-    ex: "Leon moet medicijnen nemen." },
+    ex: "Leon moet medicijnen nemen.",
+    exPresent: [
+      "Ik moet morgen vroeg opstaan. (Preciso de me levantar cedo amanhã.)",
+      "Hij moet zijn huiswerk maken. (Ele tem de fazer os trabalhos de casa.)",
+      "Wij moeten om 9 uur beginnen. (Temos de começar às 9 horas.)",
+      "Ze moet naar de dokter gaan. (Ela tem de ir ao médico.)",
+      "Jullie moeten stil zijn in de klas! (Vocês têm de estar em silêncio na aula!)"
+    ],
+    exPast: [
+      "Ik moest gisteren overwerken. (Tive de fazer horas extra ontem.)",
+      "Hij moest de hele dag wachten. (Ele teve de esperar o dia todo.)",
+      "We moesten vroeg vertrekken. (Tivemos de partir cedo.)",
+      "Ze moest naar het ziekenhuis. (Ela teve de ir ao hospital.)",
+      "Jullie moesten het formulier invullen. (Vocês tiveram de preencher o formulário.)"
+    ]
+  },
   { inf: "maken", pt: "fazer / criar",
     forms: [["ik","maak"],["jij je","maakt"],["hij zij ze het","maakt"],["wij we","maken"],["jullie","maken"],["zij ze","maken"]],
     past:  [["ik","maakte"],["jij je","maakte"],["hij zij ze het","maakte"],["wij we","maakten"],["jullie","maakten"],["zij ze","maakten"]],
     participle: "gemaakt",
-    ex: "Adam maakt soep." },
+    ex: "Adam maakt soep.",
+    exPresent: [
+      "Ik maak elke ochtend mijn bed op. (Faço a cama todas as manhãs.)",
+      "Hij maakt een afspraak met de dokter. (Ele marca uma consulta com o médico.)",
+      "Wij maken samen het avondeten. (Fazemos o jantar juntos.)",
+      "Ze maakt veel foto's op vakantie. (Ela tira muitas fotos de férias.)",
+      "Jullie maken veel lawaai! (Vocês fazem muito barulho!)"
+    ],
+    exPast: [
+      "Ik maakte gisteren een fout. (Cometi um erro ontem.)",
+      "Hij maakte een taart voor zijn verjaardag. (Ele fez um bolo para o aniversário.)",
+      "We maakten een wandeling in het park. (Fizemos um passeio no parque.)",
+      "Ze maakte haar huiswerk snel af. (Ela terminou rapidamente os trabalhos de casa.)",
+      "Jullie maakten een mooi project. (Vocês fizeram um projeto bonito.)"
+    ]
+  },
   { inf: "koken", pt: "cozinhar",
     forms: [["ik","kook"],["jij je","kookt"],["hij zij ze het","kookt"],["wij we","koken"],["jullie","koken"],["zij ze","koken"]],
     past:  [["ik","kookte"],["jij je","kookte"],["hij zij ze het","kookte"],["wij we","kookten"],["jullie","kookten"],["zij ze","kookten"]],
     participle: "gekookt",
-    ex: "Diego kookt graag voor zijn familie." },
+    ex: "Diego kookt graag voor zijn familie.",
+    exPresent: [
+      "Ik kook elke avond voor mijn gezin. (Cozinho para a minha família todas as noites.)",
+      "Hij kookt vanavond pasta. (Ele vai cozinhar massa esta noite.)",
+      "Wij koken samen op zondag. (Cozinhamos juntos ao domingo.)",
+      "Ze kookt heel goed Turkse gerechten. (Ela cozinha muito bem pratos turcos.)",
+      "Jullie koken altijd te veel! (Vocês cozinham sempre demasiado!)"
+    ],
+    exPast: [
+      "Ik kookte gisteren rijst met groenten. (Cozinhei arroz com legumes ontem.)",
+      "Hij kookte vroeger elke dag. (Ele cozinhava todos os dias antes.)",
+      "We kookten een grote maaltijd voor het feest. (Cozinhámos uma refeição grande para a festa.)",
+      "Ze kookte soep toen ik ziek was. (Ela fez sopa quando eu estava doente.)",
+      "Jullie kookten een heerlijk diner. (Vocês cozinharam um jantar delicioso.)"
+    ]
+  },
   { inf: "rijden", pt: "dirigir / andar de",
     forms: [["ik","rijd"],["jij je","rijdt"],["hij zij ze het","rijdt"],["wij we","rijden"],["jullie","rijden"],["zij ze","rijden"]],
     past:  [["ik","reed"],["jij je","reed"],["hij zij ze het","reed"],["wij we","reden"],["jullie","reden"],["zij ze","reden"]],
     participle: "gereden",
-    ex: "Kwasi rijdt elke dag door de stad." },
+    ex: "Kwasi rijdt elke dag door de stad.",
+    exPresent: [
+      "Ik rijd elke dag naar mijn werk. (Vou todos os dias de carro para o trabalho.)",
+      "Hij rijdt te snel op de snelweg. (Ele vai demasiado rápido na autoestrada.)",
+      "Wij rijden samen naar het ziekenhuis. (Vamos juntos de carro ao hospital.)",
+      "Ze rijdt altijd voorzichtig. (Ela conduz sempre com cuidado.)",
+      "Jullie rijden te hard! (Vocês estão a ir demasiado rápido!)"
+    ],
+    exPast: [
+      "Ik reed gisteren naar Rotterdam. (Fui de carro a Roterdão ontem.)",
+      "Hij reed door rood licht. (Ele passou no sinal vermelho.)",
+      "We reden drie uur om er te komen. (Conduziram três horas para lá chegar.)",
+      "Ze reed elke dag naar school. (Ela ia todos os dias de carro para a escola.)",
+      "Jullie reden te lang voor niets. (Vocês conduziram demasiado tempo sem razão.)"
+    ]
+  },
   { inf: "komen", pt: "vir / chegar",
     forms: [["ik","kom"],["jij je","komt"],["hij zij ze het","komt"],["wij we","komen"],["jullie","komen"],["zij ze","komen"]],
     past:  [["ik","kwam"],["jij je","kwam"],["hij zij ze het","kwam"],["wij we","kwamen"],["jullie","kwamen"],["zij ze","kwamen"]],
     participle: "gekomen",
-    ex: "De bus komt laat." },
+    ex: "De bus komt laat.",
+    exPresent: [
+      "Ik kom morgen naar je toe. (Vou ter contigo amanhã.)",
+      "Hij komt altijd op tijd. (Ele chega sempre a tempo.)",
+      "Wij komen van ver. (Viemos de longe.)",
+      "Ze komt uit Turkije. (Ela é da Turquia.)",
+      "Jullie komen te laat! (Vocês chegam tarde!)"
+    ],
+    exPast: [
+      "Ik kwam gisteren te laat op mijn werk. (Cheguei atrasado ao trabalho ontem.)",
+      "Hij kwam niet opdagen. (Ele não apareceu.)",
+      "We kwamen aan in Amsterdam om 10 uur. (Chegámos a Amsterdão às 10 horas.)",
+      "Ze kwam naar mijn feestje! (Ela veio à minha festa!)",
+      "Jullie kwamen precies op tijd. (Vocês chegaram mesmo a tempo.)"
+    ]
+  },
   { inf: "spreken", pt: "falar",
     forms: [["ik","spreek"],["jij je","spreekt"],["hij zij ze het","spreekt"],["wij we","spreken"],["jullie","spreken"],["zij ze","spreken"]],
     past:  [["ik","sprak"],["jij je","sprak"],["hij zij ze het","sprak"],["wij we","spraken"],["jullie","spraken"],["zij ze","spraken"]],
     participle: "gesproken",
-    ex: "Ik spreek Nederlands en Portugees." },
+    ex: "Ik spreek Nederlands en Portugees.",
+    exPresent: [
+      "Ik spreek elke dag Nederlands op mijn werk. (Falo holandês todos os dias no trabalho.)",
+      "Hij spreekt drie talen vloeiend. (Ele fala três línguas fluentemente.)",
+      "Wij spreken altijd Nederlands thuis. (Falamos sempre holandês em casa.)",
+      "Ze spreekt zacht en vriendelijk. (Ela fala baixinho e de forma simpática.)",
+      "Jullie spreken te snel voor mij! (Vocês falam demasiado rápido para mim!)"
+    ],
+    exPast: [
+      "Ik sprak gisteren met mijn baas. (Falei com o meu chefe ontem.)",
+      "Hij sprak geen woord Nederlands. (Ele não falava uma palavra de holandês.)",
+      "We spraken twee uur over het probleem. (Falámos duas horas sobre o problema.)",
+      "Ze sprak heel goed voor de klas. (Ela falou muito bem perante a turma.)",
+      "Jullie spraken met de directeur. (Vocês falaram com o diretor.)"
+    ]
+  },
   { inf: "lopen", pt: "caminhar / andar a pé",
     forms: [["ik","loop"],["jij je","loopt"],["hij zij ze het","loopt"],["wij we","lopen"],["jullie","lopen"],["zij ze","lopen"]],
     past:  [["ik","liep"],["jij je","liep"],["hij zij ze het","liep"],["wij we","liepen"],["jullie","liepen"],["zij ze","liepen"]],
     participle: "gelopen",
-    ex: "Aziz loopt elke dag naar zijn werk." },
+    ex: "Aziz loopt elke dag naar zijn werk.",
+    exPresent: [
+      "Ik loop elke ochtend een half uur. (Caminho meia hora todas as manhãs.)",
+      "Hij loopt altijd naar de supermarkt. (Ele vai sempre a pé ao supermercado.)",
+      "Wij lopen samen door het park. (Caminhamos juntos pelo parque.)",
+      "Ze loopt hard op de atletiekbaan. (Ela corre na pista de atletismo.)",
+      "Jullie lopen te langzaam! (Vocês andam demasiado devagar!)"
+    ],
+    exPast: [
+      "Ik liep gisteren vijf kilometer. (Caminhei cinco quilómetros ontem.)",
+      "Hij liep de verkeerde kant op. (Ele foi na direção errada.)",
+      "We liepen een uur in de regen. (Andámos uma hora à chuva.)",
+      "Ze liep snel naar de bushalte. (Ela foi a correr para a paragem do autocarro.)",
+      "Jullie liepen de hele dag door de stad. (Vocês andaram pela cidade o dia todo.)"
+    ]
+  },
   { inf: "kijken", pt: "olhar / assistir",
     forms: [["ik","kijk"],["jij je","kijkt"],["hij zij ze het","kijkt"],["wij we","kijken"],["jullie","kijken"],["zij ze","kijken"]],
     past:  [["ik","keek"],["jij je","keek"],["hij zij ze het","keek"],["wij we","keken"],["jullie","keken"],["zij ze","keken"]],
     participle: "gekeken",
-    ex: "Karin kijkt elke avond naar het journaal." },
+    ex: "Karin kijkt elke avond naar het journaal.",
+    exPresent: [
+      "Ik kijk graag documentaires. (Gosto de ver documentários.)",
+      "Hij kijkt elke dag naar het nieuws. (Ele vê as notícias todos os dias.)",
+      "Wij kijken samen naar de wedstrijd. (Vemos o jogo juntos.)",
+      "Ze kijkt uit het raam en denkt na. (Ela olha pela janela e pensa.)",
+      "Jullie kijken te veel tv! (Vocês veem demasiada televisão!)"
+    ],
+    exPast: [
+      "Ik keek gisteren een film op Netflix. (Vi um filme no Netflix ontem.)",
+      "Hij keek verbaasd toen hij het hoorde. (Ele ficou surpreendido quando ouviu.)",
+      "We keken samen naar de finale. (Vimos juntos a final.)",
+      "Ze keek de hele avond naar haar telefoon. (Ela passou a noite toda a olhar para o telemóvel.)",
+      "Jullie keken niet goed op de kaart. (Vocês não olharam bem para o mapa.)"
+    ]
+  },
   { inf: "houden van", pt: "gostar de / amar",
     forms: [["ik","houd van"],["jij je","houdt van"],["hij zij ze het","houdt van"],["wij we","houden van"],["jullie","houden van"],["zij ze","houden van"]],
     past:  [["ik","hield van"],["jij je","hield van"],["hij zij ze het","hield van"],["wij we","hielden van"],["jullie","hielden van"],["zij ze","hielden van"]],
     participle: "gehouden van",
-    ex: "John houdt van paarden." },
+    ex: "John houdt van paarden.",
+    exPresent: [
+      "Ik houd van muziek en dansen. (Gosto de música e dança.)",
+      "Hij houdt van voetbal kijken. (Ele gosta de ver futebol.)",
+      "Wij houden van reizen naar het buitenland. (Gostamos de viajar para o estrangeiro.)",
+      "Ze houdt van haar kinderen boven alles. (Ela ama os filhos acima de tudo.)",
+      "Jullie houden van lekker eten. (Vocês gostam de boa comida.)"
+    ],
+    exPast: [
+      "Ik hield vroeger veel van zwemmen. (Eu gostava muito de nadar antes.)",
+      "Hij hield van haar maar ze gingen uit elkaar. (Ele amava-a mas separaram-se.)",
+      "We hielden van die oude buurt. (Gostávamos daquele bairro antigo.)",
+      "Ze hield altijd van lezen. (Ela sempre gostou de ler.)",
+      "Jullie hielden van hetzelfde muziek. (Vocês gostavam da mesma música.)"
+    ]
+  },
   { inf: "zoeken", pt: "procurar / buscar",
     forms: [["ik","zoek"],["jij je","zoekt"],["hij zij ze het","zoekt"],["wij we","zoeken"],["jullie","zoeken"],["zij ze","zoeken"]],
     past:  [["ik","zocht"],["jij je","zocht"],["hij zij ze het","zocht"],["wij we","zochten"],["jullie","zochten"],["zij ze","zochten"]],
     participle: "gezocht",
-    ex: "Kenny zoekt op internet." },
+    ex: "Kenny zoekt op internet.",
+    exPresent: [
+      "Ik zoek een nieuwe baan. (Procuro um novo emprego.)",
+      "Hij zoekt zijn paspoort al een uur. (Ele procura o passaporte há uma hora.)",
+      "Wij zoeken een grotere woning. (Procuramos uma habitação maior.)",
+      "Ze zoekt informatie op internet. (Ela procura informação na internet.)",
+      "Jullie zoeken in de verkeerde la! (Vocês estão a procurar na gaveta errada!)"
+    ],
+    exPast: [
+      "Ik zocht de hele dag naar mijn sleutels. (Procurei as chaves o dia todo.)",
+      "Hij zocht werk na zijn studie. (Ele procurou emprego depois dos estudos.)",
+      "We zochten een goedkoop hotel. (Procurámos um hotel barato.)",
+      "Ze zocht haar dochter op het schoolplein. (Ela procurou a filha no recreio.)",
+      "Jullie zochten op de verkeerde plek. (Vocês procuraram no lugar errado.)"
+    ]
+  },
   { inf: "nemen", pt: "pegar / tomar",
     forms: [["ik","neem"],["jij je","neemt"],["hij zij ze het","neemt"],["wij we","nemen"],["jullie","nemen"],["zij ze","nemen"]],
     past:  [["ik","nam"],["jij je","nam"],["hij zij ze het","nam"],["wij we","namen"],["jullie","namen"],["zij ze","namen"]],
     participle: "genomen",
-    ex: "Masha neemt de bus naar haar werk." },
+    ex: "Masha neemt de bus naar haar werk.",
+    exPresent: [
+      "Ik neem elke dag de trein naar Amsterdam. (Tomo o comboio para Amsterdão todos os dias.)",
+      "Hij neemt altijd de trap, nooit de lift. (Ele usa sempre as escadas, nunca o elevador.)",
+      "Wij nemen een kopje koffie. (Tomamos uma chávena de café.)",
+      "Ze neemt haar medicijnen elke ochtend. (Ela toma os medicamentos todas as manhãs.)",
+      "Jullie nemen te veel risico! (Vocês correm demasiado risco!)"
+    ],
+    exPast: [
+      "Ik nam gisteren de bus omdat mijn auto kapot was. (Apanhei o autocarro ontem porque o meu carro estava avariado.)",
+      "Hij nam een beslissing zonder te praten. (Ele tomou uma decisão sem falar.)",
+      "We namen de snelweg om sneller te gaan. (Apanhámos a autoestrada para ir mais rápido.)",
+      "Ze nam haar paraplu mee omdat het regende. (Ela levou o guarda-chuva porque estava a chover.)",
+      "Jullie namen de verkeerde afslag. (Vocês tomaram a saída errada.)"
+    ]
+  },
   { inf: "helpen", pt: "ajudar",
     forms: [["ik","help"],["jij je","helpt"],["hij zij ze het","helpt"],["wij we","helpen"],["jullie","helpen"],["zij ze","helpen"]],
     past:  [["ik","hielp"],["jij je","hielp"],["hij zij ze het","hielp"],["wij we","hielpen"],["jullie","hielpen"],["zij ze","hielpen"]],
     participle: "geholpen",
-    ex: "Mijn lerares helpt mij." },
+    ex: "Mijn lerares helpt mij.",
+    exPresent: [
+      "Ik help mijn buurman met zijn tuin. (Ajudo o meu vizinho com o jardim.)",
+      "Hij helpt zijn kinderen met het huiswerk. (Ele ajuda os filhos com os trabalhos de casa.)",
+      "Wij helpen elkaar altijd. (Ajudamo-nos sempre uns aos outros.)",
+      "Ze helpt elke week vrijwillig in het buurthuis. (Ela ajuda voluntariamente no centro comunitário todas as semanas.)",
+      "Jullie helpen veel mensen. (Vocês ajudam muitas pessoas.)"
+    ],
+    exPast: [
+      "Ik hielp haar met verhuizen. (Ajudei-a a mudar de casa.)",
+      "Hij hielp me toen ik ziek was. (Ele ajudou-me quando eu estava doente.)",
+      "We hielpen de kinderen met knutselen. (Ajudámos as crianças a fazer trabalhos manuais.)",
+      "Ze hielp mij Nederlands leren. (Ela ajudou-me a aprender holandês.)",
+      "Jullie hielpen ons heel goed! (Vocês ajudaram-nos muito bem!)"
+    ]
+  },
   { inf: "brengen", pt: "levar / trazer",
     forms: [["ik","breng"],["jij je","brengt"],["hij zij ze het","brengt"],["wij we","brengen"],["jullie","brengen"],["zij ze","brengen"]],
     past:  [["ik","bracht"],["jij je","bracht"],["hij zij ze het","bracht"],["wij we","brachten"],["jullie","brachten"],["zij ze","brachten"]],
     participle: "gebracht",
-    ex: "Ahmed brengt zijn zoon naar het vliegveld." },
+    ex: "Ahmed brengt zijn zoon naar het vliegveld.",
+    exPresent: [
+      "Ik breng mijn kinderen elke ochtend naar school. (Levo os meus filhos à escola todas as manhãs.)",
+      "Hij brengt bloemen mee voor zijn moeder. (Ele traz flores para a mãe.)",
+      "Wij brengen het pakket naar het postkantoor. (Levamos o pacote aos correios.)",
+      "Ze brengt altijd iets lekkers mee naar het werk. (Ela traz sempre algo de bom para o trabalho.)",
+      "Jullie brengen de kinderen naar de oppas. (Vocês levam as crianças à baby-sitter.)"
+    ],
+    exPast: [
+      "Ik bracht mijn auto naar de garage. (Levei o meu carro à garagem.)",
+      "Hij bracht haar naar het ziekenhuis. (Ele levou-a ao hospital.)",
+      "We brachten cadeaus mee naar het feest. (Trouxemos presentes para a festa.)",
+      "Ze bracht haar dochter elke dag naar de crèche. (Ela levava a filha à creche todos os dias.)",
+      "Jullie brachten het goed nieuws! (Vocês trouxeram as boas notícias!)"
+    ]
+  },
 ];
+
 
 // ─── PROGRESS ENGINE ──────────────────────────────────────────────────────────
 
@@ -5736,8 +6112,18 @@ export default function NT2Simulator() {
 
             {allRevealed && (
               <div style={{ marginTop: 16, background: C.greenLight, padding: "12px 16px", borderRadius: R.md, borderLeft: `3px solid ${C.green}` }}>
-                <div style={{ fontSize: 11, fontWeight: 600, color: C.green, marginBottom: 4, textTransform: "uppercase" }}>{t("lbl_example")}</div>
-                <div style={{ fontSize: 14, fontStyle: "italic", color: C.dark }}>{verb.ex}</div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: C.green, marginBottom: 8, textTransform: "uppercase" }}>
+                  {verbTense === "present" ? "Voorbeelden — Presente" : "Voorbeelden — Passado (Imperfectum)"}
+                </div>
+                {(verbTense === "present" ? (verb.exPresent || [verb.ex]) : (verb.exPast || [verb.ex])).map((ex, i) => (
+                  <div key={i} style={{ fontSize: 13, color: C.dark, marginBottom: i < 4 ? 8 : 0, paddingBottom: i < 4 ? 8 : 0, borderBottom: i < 4 ? `1px solid ${C.greenLight}` : "none" }}>
+                    <span style={{ fontWeight: 700 }}>{i + 1}. </span>
+                    <span style={{ fontStyle: "italic" }}>{ex.split(" (")[0]}</span>
+                    {ex.includes(" (") && (
+                      <span style={{ color: C.mid, fontSize: 12 }}> ({ex.split(" (")[1].replace(")", "")})</span>
+                    )}
+                  </div>
+                ))}
               </div>
             )}
 
