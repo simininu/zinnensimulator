@@ -1443,97 +1443,994 @@ const KNM_QUESTIONS = [
   { cat: "Servicos", q: "Wat is de politie?", opts: ["De organisatie die wetten maakt", "De organisatie die de openbare orde handhaaft en criminaliteit bestrijdt", "De rechtbank", "De gemeente"], a: 1, exp: "De politie handhaaft de openbare orde, helpt burgers en bestrijdt criminaliteit. Bel 112 voor spoed, 0900-8844 voor niet-spoedeisende zaken.", expPt: "A policia mantem a ordem publica, ajuda cidadaos e combate o crime. Ligue 112 para emergencias, 0900-8844 para situacoes nao urgentes.", expEn: "The police maintain public order, help citizens and fight crime. Call 112 for emergencies, 0900-8844 for non-urgent situations.", expEs: "La policia mantiene el orden publico, ayuda a los ciudadanos y combate el crimen. Llama al 112 para emergencias, 0900-8844 para situaciones no urgentes." },
 ];
 
+// LEITURA_TEXTOS — gebaseerd op officiële NT2 A2 oefenexamens (stijl en moeilijkheidsgraad)
+// 22 originele teksten, 2-3 vragen per tekst, met echte distractors
+
 const LEITURA_TEXTOS = [
+  // ─── TEKST 1 ────────────────────────────────────────────────────────────────
   {
-    id: 1, cat: "Bericht", label: "Bericht", title: "Bericht van de buren",
-    text: `Hallo,\n\nIk ben uw buurvrouw, mevrouw De Vries. Ik woon naast u op nummer 12.\n\nMorgen, dinsdag 15 maart, komen er mensen om de straat te repareren. Ze beginnen om 8 uur 's ochtends. De straat is dan afgesloten tot 17 uur.\n\nU kunt uw auto niet voor de deur parkeren. Zet uw auto vanavond al op de parkeerplaats achter de supermarkt.\n\nMet vriendelijke groet,\nMevrouw De Vries`,
+    id: 1, cat: "Brief", label: "Brief", title: "Brief van de tandarts",
+    context: "Fatima krijgt een brief van haar tandarts.",
+    text: `Welkom bij tandartspraktijk De Linde
+
+Ons team                    Werkdagen
+Maria Sloot, tandarts        maandag en dinsdag
+Bert van Os, tandarts        woensdag en donderdag
+Karin Prins, kindertandarts  dinsdag en donderdag
+Ali Yilmaz, mondhygiënist    maandag, woensdag, vrijdag
+
+Onze openingstijden
+De praktijk is elke dag geopend van 8.30 tot 17.00 uur.
+Op vrijdag en in het weekend zijn wij gesloten.
+
+Afspraak maken
+U kunt de receptie bellen van maandag tot en met donderdag van 9.00 tot 12.00 uur. Ons telefoonnummer is 035-612 4488.
+
+Spoedbehandeling tijdens openingstijden
+Heeft u zoveel pijn dat u direct geholpen moet worden? U kunt dan een spoedafspraak maken via de assistente. U kunt dan altijd dezelfde dag nog bij onze praktijk terecht. Let op: dit kan niet op vrijdag of in het weekend!
+
+Spoedbehandeling op vrijdag en in het weekend
+Op vrijdag en in het weekend is de praktijk gesloten. Heeft u veel pijn en kunt u niet wachten tot maandag? U kunt dan bellen met het noodnummer: 0900-123 4567.`,
     questions: [
-      { q: "Waarom schrijft mevrouw De Vries dit bericht?", opts: ["Om een feest aan te kondigen", "Om te vertellen dat de straat morgen afgesloten is", "Om te vragen of de buurman haar auto kan verplaatsen", "Om een klacht in te dienen"], a: 1, exp: "Mevrouw De Vries schrijft dat de straat morgen wordt gerepareerd en afgesloten is.", expPt: "A Sra. De Vries escreve que a rua sera reparada amanha e estara fechada.", expEn: "Mrs. De Vries writes that the street will be repaired tomorrow and will be closed.", expEs: "La Sra. De Vries escribe que la calle sera reparada manana y estara cerrada." },
-      { q: "Hoe laat begint het werk aan de straat?", opts: ["7 uur", "8 uur", "17 uur", "15 uur"], a: 1, exp: "In het bericht staat: 'Ze beginnen om 8 uur ochtends.'", expPt: "No texto diz: 'Eles comecam as 8 horas da manha.'", expEn: "The text says: 'They start at 8 o'clock in the morning.'", expEs: "El texto dice: 'Empiezan a las 8 de la manana.'" },
-      { q: "Waar moet u uw auto parkeren?", opts: ["Voor de deur van nummer 12", "Op de parkeerplaats achter de supermarkt", "Op straat", "In de garage"], a: 1, exp: "Mevrouw De Vries schrijft: 'Zet uw auto op de parkeerplaats achter de supermarkt.'", expPt: "A Sra. De Vries escreve: 'Coloque seu carro no estacionamento atras do supermercado.'", expEn: "Mrs. De Vries writes: 'Park your car in the car park behind the supermarket.'", expEs: "La Sra. De Vries escribe: 'Aparca tu coche en el aparcamiento detras del supermercado.'" },
+      {
+        q: "Ibrahim wil op donderdag een afspraak maken bij de tandarts. Bij wie kan dat?",
+        opts: ["Bij Maria Sloot", "Bij Ali Yilmaz", "Bij Bert van Os", "Bij Karin Prins"],
+        a: 2,
+        exp: "In het schema staat dat Bert van Os op woensdag en donderdag werkt.",
+        expPt: "Na tabela consta que Bert van Os trabalha na quarta e quinta-feira.",
+        expEn: "The schedule shows that Bert van Os works on Wednesday and Thursday."
+      },
+      {
+        q: "Het is zaterdag. Reza heeft kiespijn en wil zo snel mogelijk naar de tandarts. Wat moet hij doen?",
+        opts: ["Bellen naar de assistente", "Bellen naar de receptie", "Direct naar de praktijk gaan", "Bellen naar het noodnummer"],
+        a: 3,
+        exp: "Op zaterdag is de praktijk gesloten. Bij veel pijn moet u het noodnummer bellen.",
+        expPt: "No sábado a clínica está fechada. Com muita dor deve ligar para o número de emergência.",
+        expEn: "On Saturday the practice is closed. With much pain you should call the emergency number."
+      },
+      {
+        q: "Tot hoe laat kan Fatima de receptie bellen om een afspraak te maken?",
+        opts: ["Tot 12.00 uur", "Tot 17.00 uur", "Tot 9.00 uur", "Tot 8.30 uur"],
+        a: 0,
+        exp: "De receptie is bereikbaar van 9.00 tot 12.00 uur.",
+        expPt: "A recepção pode ser contactada das 9h às 12h.",
+        expEn: "The reception can be reached from 9:00 to 12:00."
+      }
     ]
   },
+
+  // ─── TEKST 2 ────────────────────────────────────────────────────────────────
   {
-    id: 2, cat: "Advertentie", label: "Advertentie", title: "Cursus Nederlands voor beginners",
-    text: `CURSUS NEDERLANDS VOOR BEGINNERS\n\nStart: maandag 3 april\nTijd: elke maandag en woensdag van 19:00 tot 21:00 uur\nLocatie: Bibliotheek De Bron, Kerkstraat 45, Haarlem\nPrijs: 150 euro voor 10 lessen (inclusief boek)\nNiveau: A1 - A2\n\nVoor wie?\nDeze cursus is voor mensen die Nederlands willen leren. U heeft geen kennis van het Nederlands nodig om te beginnen.\n\nAanmelden?\nBel ons op 023-456 7890 of stuur een e-mail naar info@taalcursus.nl\nAanmelden voor 25 maart.`,
+    id: 2, cat: "Folder", label: "Folder", title: "Sportcentrum folder",
+    context: "Leila en haar man lezen de folder van het sportcentrum.",
+    text: `Het sportcentrum is geopend op:
+
+Werkdagen van 07.00 uur tot 22.00 uur.
+Zaterdag en zondag van 09.00 uur tot 17.00 uur.
+
+Er zijn drie soorten abonnementen:
+
+Abonnement   Prijs per maand   Wanneer sporten
+Basis        € 16,- per maand  altijd, onbeperkt sporten
+Daluren      € 11,- per maand  alleen op werkdagen van 9.00 tot 16.00 uur
+Weekend      € 9,- per maand   alleen in het weekend
+
+U kunt zich aanmelden bij het sportcentrum of via onze website.`,
     questions: [
-      { q: "Op welke dagen is de cursus?", opts: ["Dinsdag en donderdag", "Maandag en woensdag", "Elke dag", "Alleen op zaterdag"], a: 1, exp: "In de advertentie staat: 'elke maandag en woensdag'.", expPt: "No anuncio diz: 'toda segunda e quarta-feira'.", expEn: "The advertisement says: 'every Monday and Wednesday'.", expEs: "El anuncio dice: 'todos los lunes y miercoles'." },
-      { q: "Hoeveel kost de cursus?", opts: ["100 euro", "150 euro", "200 euro", "Gratis"], a: 1, exp: "De prijs is 150 euro voor 10 lessen, inclusief het boek.", expPt: "O preco e de 150 euros por 10 aulas, incluindo o livro.", expEn: "The price is 150 euros for 10 lessons, including the book.", expEs: "El precio es de 150 euros por 10 clases, incluido el libro." },
-      { q: "Wanneer moet u zich aanmelden?", opts: ["Voor 3 april", "Voor 25 maart", "Voor 1 mei", "Wanneer u wilt"], a: 1, exp: "In de advertentie staat: 'Aanmelden voor 25 maart.'", expPt: "No anuncio diz: 'Inscreva-se antes de 25 de marco.'", expEn: "The advertisement says: 'Register before 25 March.'", expEs: "El anuncio dice: 'Inscribete antes del 25 de marzo.'" },
+      {
+        q: "Leila heeft een daluren-abonnement. Ze wil op dinsdag om 19.00 uur sporten. Kan dat?",
+        opts: ["Ja, dat kan altijd.", "Nee, het sportcentrum is dan gesloten.", "Nee, het daluren-abonnement is alleen overdag op werkdagen.", "Ja, maar alleen als ze extra betaalt."],
+        a: 2,
+        exp: "Het daluren-abonnement is alleen geldig op werkdagen van 9.00 tot 16.00 uur. Om 19.00 uur valt dat er buiten.",
+        expPt: "O abono de horas de valle só é válido nos dias de semana das 9h às 16h. Às 19h fica fora desse período.",
+        expEn: "The off-peak subscription is only valid on weekdays from 9:00 to 16:00. At 19:00 that is outside those hours."
+      },
+      {
+        q: "De man van Leila wil alleen in het weekend sporten. Hoeveel betaalt hij per maand?",
+        opts: ["€ 9,-", "€ 11,-", "€ 16,-", "€ 7,-"],
+        a: 0,
+        exp: "Het weekend-abonnement kost € 9,- per maand.",
+        expPt: "O abono de fim de semana custa €9 por mês.",
+        expEn: "The weekend subscription costs €9 per month."
+      }
     ]
   },
+
+  // ─── TEKST 3 ────────────────────────────────────────────────────────────────
   {
-    id: 3, cat: "Brief", label: "Brief", title: "Brief van het ziekenhuis",
-    text: `Ziekenhuis Westland\nAfdeling Polikliniek\n\nGeachte mevrouw Bakker,\n\nU heeft een afspraak bij ons ziekenhuis op:\nDatum: woensdag 22 februari\nTijd: 10:30 uur\nAfdeling: Orthopedie, kamer 3B\n\nWij vragen u om 10 minuten voor uw afspraak aanwezig te zijn.\nNeem uw verzekeringspas en identiteitsbewijs mee.\n\nAls u niet kunt komen, bel dan minstens 24 uur van tevoren:\nTelefoon: 070-234 5678\n\nMet vriendelijke groet,\nDe afdeling Polikliniek`,
+    id: 3, cat: "E-mail", label: "E-mail", title: "E-mail van de feestcommissie",
+    context: "Nora werkt op een kantoor. Haar collega Peter gaat trouwen met Sandra. Nora krijgt een e-mail van de feestcommissie.",
+    text: `Bruiloft Peter en Sandra
+
+Beste collega's,
+
+Volgende week zaterdag is de bruiloft van Peter en Sandra! Daarom hebben we een feestcommissie opgericht. De feestcommissie bestaat uit Thomas, Rania en Elif. We hebben alle drie een taak, zodat we er een mooie dag van kunnen maken!
+
+We willen een bus huren om samen met collega's naar de bruiloft te gaan. Wil je mee met de bus? Geef je dan op bij Thomas.
+
+We willen met de collega's een cadeau geven aan het bruidspaar. Als je wilt, kun je ook meedoen. Je kunt geld aan Rania geven. We weten nog niet precies wat we gaan geven. Op het bureau van Elif ligt een lijstje met cadeaus. Kruis op het lijstje aan wat je het leukste cadeau vindt: een kookboek of een weekendje weg. We gaan het cadeau geven dat het meest gekozen is door jullie.
+
+Peter is deze week nog gewoon aan het werk. Ons cadeau moet natuurlijk wel een verrassing blijven. Let er dus op dat je niets zegt tegen Peter!
+
+Groeten, de feestcommissie
+Thomas, Rania en Elif`,
     questions: [
-      { q: "Bij welke afdeling is de afspraak?", opts: ["Cardiologie", "Orthopedie", "Neurologie", "Spoedeisende hulp"], a: 1, exp: "In de brief staat: 'Afdeling: Orthopedie, kamer 3B'.", expPt: "Na carta diz: 'Departamento: Ortopedia, sala 3B'.", expEn: "The letter says: 'Department: Orthopaedics, room 3B'.", expEs: "La carta dice: 'Departamento: Ortopedia, sala 3B'." },
-      { q: "Hoe laat moet mevrouw Bakker aanwezig zijn?", opts: ["Om 10:30 uur", "Om 10:20 uur", "Om 11:00 uur", "Om 10:00 uur"], a: 1, exp: "De afspraak is om 10:30, maar men vraagt 10 minuten eerder te komen: dus om 10:20.", expPt: "A consulta e as 10:30, mas pedem para chegar 10 minutos antes: entao as 10:20.", expEn: "The appointment is at 10:30, but they ask you to arrive 10 minutes early: so at 10:20.", expEs: "La cita es a las 10:30, pero piden llegar 10 minutos antes: es decir, a las 10:20." },
-      { q: "Wat moet mevrouw Bakker meenemen?", opts: ["Alleen haar identiteitsbewijs", "Haar verzekeringspas en identiteitsbewijs", "Haar medisch dossier", "Niets"], a: 1, exp: "In de brief staat: 'Neem uw verzekeringspas en identiteitsbewijs mee.'", expPt: "Na carta diz: 'Traga seu cartao do plano de saude e documento de identidade.'", expEn: "The letter says: 'Bring your health insurance card and ID.'", expEs: "La carta dice: 'Trae tu tarjeta del seguro medico y tu documento de identidad.'" },
+      {
+        q: "Nora wil met de bus mee naar de bruiloft. Bij wie moet ze zich opgeven?",
+        opts: ["Bij Rania", "Bij Thomas", "Bij Elif", "Bij Peter"],
+        a: 1,
+        exp: "In de e-mail staat: 'Wil je mee met de bus? Geef je dan op bij Thomas.'",
+        expPt: "No e-mail diz: 'Queres ir de autocarro? Então inscreve-te com o Thomas.'",
+        expEn: "The email says: 'Do you want to come on the bus? Then register with Thomas.'"
+      },
+      {
+        q: "Welk cadeau gaan de collega's geven aan het bruidspaar?",
+        opts: ["Een kookboek", "Een weekendje weg", "Dat moeten ze nog kiezen.", "Geld"],
+        a: 2,
+        exp: "Ze weten nog niet precies wat ze gaan geven — dit wordt bepaald door wat collega's op het lijstje aankruisen.",
+        expPt: "Ainda não sabem exatamente o que vão dar — isso será decidido pelo que os colegas assinalarem na lista.",
+        expEn: "They don't know exactly what they'll give yet — this will be determined by what colleagues tick on the list."
+      },
+      {
+        q: "Waarom stuurt de feestcommissie deze e-mail vooral?",
+        opts: ["Om te vertellen dat Peter gaat trouwen", "Om collega's te vragen mee te doen aan de organisatie", "Om collega's te informeren en te vragen om mee te doen", "Om taken te verdelen in de feestcommissie"],
+        a: 2,
+        exp: "De feestcommissie informeert collega's over de bus, het cadeau en vraagt hen mee te doen.",
+        expPt: "A comissão de festa informa os colegas sobre o autocarro, o presente e pede-lhes que participem.",
+        expEn: "The party committee informs colleagues about the bus, the gift and asks them to participate."
+      }
     ]
   },
+
+  // ─── TEKST 4 ────────────────────────────────────────────────────────────────
   {
-    id: 4, cat: "Folder", label: "Folder", title: "Gemeentelijke diensten",
-    text: `GEMEENTE AMSTERDAM\nInformatie voor nieuwe inwoners\n\nWelkom in Amsterdam!\n\nAls u nieuw in Amsterdam bent, moet u een paar dingen regelen:\n\n1. Inschrijven bij de gemeente\nU moet zich inschrijven binnen 5 dagen na uw aankomst.\n\n2. DigiD aanvragen\nMet een DigiD kunt u online zaken regelen met de overheid.\n\n3. Zorgverzekering afsluiten\nIedereen in Nederland moet een zorgverzekering hebben. Dit moet binnen 4 maanden na aankomst.\n\n4. BSN nummer\nU krijgt een BSN nummer automatisch als u zich inschrijft bij de gemeente.\n\nVragen? Bel 14 020 (maandag t/m vrijdag, 8:00 - 18:00 uur)`,
+    id: 4, cat: "Folder", label: "Folder", title: "Cursus Keramiek",
+    context: "Omar gaat een cursus volgen. Hij leest informatie over de cursus.",
+    text: `Cursus Keramiek — Creatief Centrum De Schakel
+
+De lessen
+De cursus Keramiek bestaat uit acht lessen. De eerste les is op woensdag 10 september van 13.00 uur tot 16.00 uur. Wij zorgen voor de lunch en koffie of thee. Het enige wat u moet meenemen, is een schort. Verder hebben wij alles wat u nodig heeft voor de cursus.
+
+In de eerste les leert u welke soorten klei er zijn en wat u daarmee kunt maken. In de lessen daarna gaat u zelf werken met klei en gereedschap. In de derde les maakt u uw eerste eigen werkstuk. En in de lessen erna gaat u uw eigen keramiek versieren en bakken.
+
+Inschrijven
+Inschrijven voor de cursus kan via onze website of u kunt mailen naar info@deschakel.nl. U moet zich uiterlijk twee weken voor de start inschrijven.
+
+Afmelden
+Hebt u zich ingeschreven, maar kunt u niet naar de les komen of bent u ziek? Bel dan onze receptie: 0345-781 234. Zij melden u dan af bij de docent.`,
     questions: [
-      { q: "Binnen hoeveel dagen moet u zich inschrijven bij de gemeente?", opts: ["2 dagen", "5 dagen", "10 dagen", "30 dagen"], a: 1, exp: "In de folder staat: 'U moet zich inschrijven binnen 5 dagen na uw aankomst.'", expPt: "No folheto diz: 'Voce deve se registrar dentro de 5 dias apos sua chegada.'", expEn: "The leaflet says: 'You must register within 5 days of your arrival.'", expEs: "El folleto dice: 'Debes registrarte dentro de los 5 dias posteriores a tu llegada.'" },
-      { q: "Waarvoor heeft u een DigiD nodig?", opts: ["Om boodschappen te doen", "Om online zaken te regelen met de overheid", "Om een bankrekening te openen", "Om naar school te gaan"], a: 1, exp: "Een DigiD is nodig om online zaken te regelen met de overheid.", expPt: "O DigiD e necessario para resolver assuntos online com o governo.", expEn: "DigiD is needed to handle online matters with the government.", expEs: "El DigiD es necesario para gestionar asuntos en linea con el gobierno." },
-      { q: "Wanneer krijgt u automatisch een BSN nummer?", opts: ["Als u een DigiD aanvraagt", "Als u een zorgverzekering afsluit", "Als u zich inschrijft bij de gemeente", "Als u een baan vindt"], a: 2, exp: "In de folder staat: 'U krijgt een BSN nummer automatisch als u zich inschrijft bij de gemeente.'", expPt: "No folheto diz: 'Voce recebe um numero BSN automaticamente ao se registrar na prefeitura.'", expEn: "The leaflet says: 'You automatically receive a BSN number when you register at the municipality.'", expEs: "El folleto dice: 'Recibes un numero BSN automaticamente al registrarte en el ayuntamiento.'" },
+      {
+        q: "Wat gaan de cursisten in de eerste les doen?",
+        opts: ["Hun eerste werkstuk maken", "Leren over soorten klei", "Keramiek bakken in de oven", "Werken met gereedschap"],
+        a: 1,
+        exp: "In de eerste les leert u welke soorten klei er zijn.",
+        expPt: "Na primeira aula aprende-se quais os tipos de argila que existem.",
+        expEn: "In the first lesson you learn about the different types of clay."
+      },
+      {
+        q: "Wat moet Omar meenemen naar de cursus?",
+        opts: ["Een schort", "Zijn eigen gereedschap", "Eten en drinken", "Een cursusboek"],
+        a: 0,
+        exp: "In de folder staat: 'Het enige wat u moet meenemen, is een schort.'",
+        expPt: "No folheto diz: 'A única coisa que tem de trazer é um avental.'",
+        expEn: "The leaflet says: 'The only thing you need to bring is an apron.'"
+      },
+      {
+        q: "Omar kan niet op tijd op de les zijn. Wat moet hij doen?",
+        opts: ["Een e-mail sturen naar de docent", "De receptie bellen", "Zich afmelden via de website", "Niets doen"],
+        a: 1,
+        exp: "Bij afmelden moet u de receptie bellen: 0345-781 234.",
+        expPt: "Para cancelar deve ligar para a receção: 0345-781 234.",
+        expEn: "To cancel you should call the reception: 0345-781 234."
+      }
     ]
   },
+
+  // ─── TEKST 5 ────────────────────────────────────────────────────────────────
   {
-    id: 5, cat: "Bericht", label: "Bericht", title: "WhatsApp van een collega",
-    text: `Van: Fatima\nAan: Groep Werk\n\nHoi allemaal,\n\nIk wil jullie laten weten dat ik morgen niet op het werk kan zijn. Mijn dochter is ziek en ik moet thuis blijven.\n\nIk heb al een e-mail gestuurd naar onze baas, meneer Visser.\n\nKunnen jullie mijn taken overnemen?\n- De vergadering om 10 uur: kan iemand de notulen schrijven?\n- De bestelling bij leverancier Van Dam: ik heb alles al geregeld, jullie hoeven alleen de bevestiging te tekenen.\n\nIk ben wel bereikbaar via telefoon en e-mail als er iets is.\n\nBedankt!\nFatima`,
+    id: 5, cat: "Brief", label: "Brief", title: "Brief van de buren",
+    context: "Alle bewoners van een straat krijgen een brief.",
+    text: `Aan de bewoners van de Koolmeestraat
+
+Onderwerp: Jaarlijks buurtfeest
+
+Wij willen u met deze brief informatie geven over het jaarlijkse buurtfeest in onze straat. Ook willen wij u vertellen wat er die dag anders is voor het verkeer. We willen dat alles zo goed mogelijk gaat.
+
+Ongeveer 200 mensen doen mee aan het buurtfeest. De start is op het Koolmeesplein. U kunt naar het feest komen kijken, als u daar zin in heeft.
+
+Datum: zaterdag 14 juni
+Tijd: van 14.00 uur tot 20.00 uur
+Route: Koolmeestraat – Vlinderlaan – Rozenpark – Koolmeestraat
+
+We willen dat alles veilig is voor het publiek. Daarom sluiten wij een aantal straten af. Op de route mogen tot 21.00 uur geen auto's staan. Wij vragen u daarom uw auto vóór zaterdagochtend 14 juni 10.00 uur weg te halen. Auto's die er daarna nog staan zal de politie wegslepen.
+
+Wij bieden u onze excuses aan voor de overlast.
+
+Met vriendelijke groet,
+Sandra Vermeer
+Organisator buurtfeest`,
     questions: [
-      { q: "Waarom kan Fatima morgen niet werken?", opts: ["Ze is ziek", "Ze heeft een afspraak bij de dokter", "Haar dochter is ziek", "Ze heeft vakantie"], a: 2, exp: "Fatima schrijft: 'Mijn dochter is ziek en ik moet thuis blijven.'", expPt: "Fatima escreve: 'Minha filha esta doente e eu preciso ficar em casa.'", expEn: "Fatima writes: 'My daughter is sick and I need to stay home.'", expEs: "Fatima escribe: 'Mi hija esta enferma y necesito quedarme en casa.'" },
-      { q: "Wat moet een collega doen tijdens de vergadering om 10 uur?", opts: ["Een presentatie geven", "De notulen schrijven", "De vergadering annuleren", "Meneer Visser bellen"], a: 1, exp: "Fatima vraagt: 'kan iemand de notulen schrijven?'", expPt: "Fatima pergunta: 'alguem pode escrever a ata?'", expEn: "Fatima asks: 'can someone take the minutes?'", expEs: "Fatima pregunta: '¿alguien puede tomar las actas?'" },
-      { q: "Hoe is Fatima bereikbaar terwijl ze thuis is?", opts: ["Alleen via WhatsApp", "Via telefoon en e-mail", "Ze is niet bereikbaar", "Alleen via e-mail"], a: 1, exp: "Fatima schrijft: 'Ik ben bereikbaar via telefoon en e-mail.'", expPt: "Fatima escreve: 'Estou disponivel por telefone e email.'", expEn: "Fatima writes: 'I am available by phone and email.'", expEs: "Fatima escribe: 'Estoy disponible por telefono y correo electronico.'" },
+      {
+        q: "Waarom krijgen de bewoners deze brief van Sandra Vermeer?",
+        opts: ["Ze wil ze uitnodigen om mee te doen aan het feest.", "Ze wil ze oproepen om naar het feest te komen kijken.", "Ze wil ze informeren over alles rondom het buurtfeest.", "Ze wil ze vragen hun auto weg te halen."],
+        a: 2,
+        exp: "Sandra geeft informatie over het buurtfeest en de verkeerssituatie.",
+        expPt: "Sandra fornece informações sobre a festa do bairro e a situação de trânsito.",
+        expEn: "Sandra provides information about the neighbourhood party and the traffic situation."
+      },
+      {
+        q: "Karim woont in de Vlinderlaan. Wanneer moet hij zijn auto uiterlijk weghalen?",
+        opts: ["Vrijdag 13 juni om 20.00 uur", "Zaterdag 14 juni om 10.00 uur", "Zaterdag 14 juni om 14.00 uur", "Zaterdag 14 juni om 21.00 uur"],
+        a: 1,
+        exp: "In de brief staat: 'vóór zaterdagochtend 14 juni 10.00 uur'.",
+        expPt: "Na carta diz: 'antes de sábado de manhã, 14 de junho, às 10h00'.",
+        expEn: "The letter says: 'before Saturday morning 14 June at 10:00'."
+      }
     ]
   },
+
+  // ─── TEKST 6 ────────────────────────────────────────────────────────────────
   {
-    id: 6, cat: "Aankondiging", label: "Aankondiging", title: "Aankondiging school",
-    text: `BASISSCHOOL DE REGENBOOG\n\nBeste ouders en verzorgers,\n\nVOORJAARSVAKANTIE\nMaandag 20 februari t/m vrijdag 24 februari\nDe school is gesloten. De naschoolse opvang is ook gesloten.\n\nINFOAVOND\nDonderdag 2 maart, 19:30 uur\nInformatieavond over de nieuwe lesmethode.\nLocatie: Aula van de school.\nAanmelden is niet nodig.\n\nSCHOOLREISJE\nVrijdag 17 maart: groepen 5, 6 en 7 gaan naar Artis.\nKosten: 12,50 euro per kind.\n\nMet vriendelijke groet,\nHet team van De Regenboog`,
+    id: 6, cat: "Gids", label: "Gids", title: "Tips om goed te slapen",
+    context: "In een gezondheidsgids staan tips om beter te slapen.",
+    text: `Tips om goed te slapen
+
+Veel mensen slapen niet goed. Toch geven we u een paar tips om beter te kunnen slapen.
+
+1. Ga elke dag op dezelfde tijd naar bed en sta op dezelfde tijd op.
+   Een vaste routine helpt uw lichaam om te weten wanneer het tijd is om te slapen.
+   Doe dit ook in het weekend.
+
+2. Zorg voor een donkere en rustige slaapkamer.
+   Licht en geluid kunnen uw slaap verstoren.
+   Gebruik gordijnen of een slaapmasker als het te licht is.
+
+3. Gebruik uw bed alleen om te slapen.
+   Werk niet in bed en kijk geen televisie in bed.
+   Uw bed moet u aan slapen laten denken, niet aan werk.
+
+4. Eet niet vlak voor het slapen.
+   Eet uw laatste maaltijd minstens twee uur voor u naar bed gaat.
+   Een volle maag maakt het moeilijk om in slaap te vallen.
+
+5. Beweeg elke dag.
+   Sporten is goed voor uw slaap.
+   Maar sport niet vlak voor het slapen, want dan bent u te wakker.`,
     questions: [
-      { q: "Wanneer is de voorjaarsvakantie?", opts: ["1 t/m 5 maart", "20 t/m 24 februari", "17 t/m 21 maart", "6 t/m 10 februari"], a: 1, exp: "In de aankondiging staat: 'Maandag 20 februari t/m vrijdag 24 februari'.", expPt: "No comunicado diz: 'Segunda 20 de fevereiro ate sexta 24 de fevereiro'.", expEn: "The notice says: 'Monday 20 February to Friday 24 February'.", expEs: "El comunicado dice: 'Lunes 20 de febrero hasta viernes 24 de febrero'." },
-      { q: "Hoeft u zich aan te melden voor de infoavond?", opts: ["Ja, via e-mail", "Ja, via telefoon", "Nee, aanmelden is niet nodig", "Ja, voor 25 februari"], a: 2, exp: "In de aankondiging staat: 'Aanmelden is niet nodig.'", expPt: "No comunicado diz: 'Nao e necessario se inscrever.'", expEn: "The notice says: 'Registration is not necessary.'", expEs: "El comunicado dice: 'No es necesario inscribirse.'" },
-      { q: "Welke groepen gaan op schoolreisje?", opts: ["Alle groepen", "Groepen 1, 2 en 3", "Groepen 5, 6 en 7", "Alleen groep 7"], a: 2, exp: "In de aankondiging staat: 'de groepen 5, 6 en 7 gaan op schoolreisje naar Artis'.", expPt: "No comunicado diz: 'os grupos 5, 6 e 7 vao numa excursao ao Artis'.", expEn: "The notice says: 'groups 5, 6 and 7 are going on a trip to Artis'.", expEs: "El comunicado dice: 'los grupos 5, 6 y 7 van de excursion al Artis'." },
+      {
+        q: "Wanneer kan je het beste slapen volgens de tekst?",
+        opts: ["Als je elke dag op een ander tijdstip naar bed gaat", "Als je elke dag op dezelfde tijd naar bed gaat", "Als je een dutje doet in de middag", "Als je lang opblijft in het weekend"],
+        a: 1,
+        exp: "Tip 1 zegt: 'Ga elke dag op dezelfde tijd naar bed en sta op dezelfde tijd op.'",
+        expPt: "A dica 1 diz: 'Vá para a cama todos os dias à mesma hora e levante-se à mesma hora.'",
+        expEn: "Tip 1 says: 'Go to bed at the same time every day and get up at the same time.'"
+      },
+      {
+        q: "Wat mag je NIET doen in bed?",
+        opts: ["Slapen", "Lezen", "Werken of televisie kijken", "Rustig liggen"],
+        a: 2,
+        exp: "Tip 3 zegt: 'Werk niet in bed en kijk geen televisie in bed.'",
+        expPt: "A dica 3 diz: 'Não trabalhe na cama e não veja televisão na cama.'",
+        expEn: "Tip 3 says: 'Do not work in bed and do not watch television in bed.'"
+      }
     ]
   },
+
+  // ─── TEKST 7 ────────────────────────────────────────────────────────────────
   {
-    id: 7, cat: "Formulier", label: "Formulier", title: "Aanvraag huurtoeslag",
-    text: `BELASTINGDIENST - TOESLAGEN\nAanvraag Huurtoeslag 2024\n\nHuurtoeslag is een bijdrage van de overheid voor mensen die huren en een laag inkomen hebben.\n\nHeeft u recht op huurtoeslag?\nU heeft mogelijk recht als:\n- U 18 jaar of ouder bent\n- U een huurwoning heeft\n- Uw huur niet hoger is dan 808 euro per maand\n- Uw inkomen niet te hoog is\n\nHoe vraagt u huurtoeslag aan?\n1. Log in op Mijn Toeslagen via belastingdienst.nl met uw DigiD\n2. Klik op "Nieuwe toeslag aanvragen"\n3. Vul het formulier in en stuur het op\n\nWanneer ontvangt u huurtoeslag?\nU ontvangt de huurtoeslag elke maand op uw bankrekening.\nDe eerste betaling is ongeveer 6 weken na uw aanvraag.`,
+    id: 7, cat: "E-mail", label: "E-mail", title: "E-mail over ziekmelding",
+    context: "Ahmed werkt bij een supermarkt. Dit zijn de regels voor als je je ziek meldt.",
+    text: `Ziekmelding
+
+Hoe meld ik mij ziek?
+U meldt u telefonisch ziek bij uw leidinggevende. Dit doet u zo snel mogelijk, maar uiterlijk op het tijdstip dat uw werkdag begint. Als uw werkdag normaal bijvoorbeeld om 8 uur begint, meldt u zich uiterlijk om 8 uur ziek. Wordt u onder werktijd ziek, dan meldt u dit meteen. In ieder geval voordat u naar huis gaat.
+
+Wat vertel ik tijdens een ziekmelding?
+Waar hebt u last van? Wat gaat u doen om zo snel mogelijk beter te worden? Wanneer kunt u weer werken, denkt u? Moeten uw collega's werk van u overnemen? Dit zijn allemaal dingen die uw leidinggevende moet weten.
+Ook is het belangrijk dat uw leidinggevende u kan bereiken. U spreekt tijdens het gesprek ook af wanneer u elkaar weer spreekt.
+
+Moet ik alle klachten aan mijn leidinggevende vertellen?
+U hebt recht op uw privacy. U hoeft geen medische gegevens te geven. Als u privéproblemen hebt, hoeft u daar niets over te vertellen. U moet wél vertellen waarom u niet kunt komen werken. U kunt zeggen dat u om medische of privéredenen niet kunt komen werken. Meer hoeft u niet te zeggen.`,
     questions: [
-      { q: "Voor wie is huurtoeslag bedoeld?", opts: ["Voor mensen die een huis kopen", "Voor mensen die huren en een laag inkomen hebben", "Voor alle studenten", "Alleen voor mensen ouder dan 65"], a: 1, exp: "Huurtoeslag is voor mensen die huren en een laag inkomen hebben.", expPt: "O subsidio de aluguel e para pessoas que alugam e tem baixa renda.", expEn: "The rent subsidy is for people who rent and have a low income.", expEs: "El subsidio de alquiler es para personas que alquilan y tienen bajos ingresos." },
-      { q: "Wat heeft u nodig om huurtoeslag aan te vragen?", opts: ["Alleen uw paspoort", "Een DigiD en een huurwoning", "Een bankrekening en een auto", "Een brief van uw baas"], a: 1, exp: "U moet inloggen op Mijn Toeslagen met uw DigiD.", expPt: "Voce precisa fazer login no Mijn Toeslagen com seu DigiD.", expEn: "You need to log in to Mijn Toeslagen with your DigiD.", expEs: "Necesitas iniciar sesion en Mijn Toeslagen con tu DigiD." },
-      { q: "Wanneer ontvangt u de eerste betaling?", opts: ["Direct na aanvraag", "Na 1 week", "Na ongeveer 6 weken", "Na 3 maanden"], a: 2, exp: "In het formulier staat: 'De eerste betaling is ongeveer 6 weken na uw aanvraag.'", expPt: "No formulario diz: 'O primeiro pagamento e aproximadamente 6 semanas apos o seu pedido.'", expEn: "The form says: 'The first payment is approximately 6 weeks after your application.'", expEs: "El formulario dice: 'El primer pago es aproximadamente 6 semanas despues de tu solicitud.'" },
+      {
+        q: "Ahmed meldt zich ziek. Wat moet hij vertellen tijdens zijn ziekmelding?",
+        opts: ["Wanneer hij ziek is geworden", "Wanneer hij denkt dat hij weer kan werken", "Wat voor werk hij misschien nog wel kan doen"],
+        a: 1,
+        exp: "Een van de dingen die de leidinggevende moet weten is: 'Wanneer kunt u weer werken, denkt u?'",
+        expPt: "Uma das coisas que o chefe precisa de saber é: 'Quando acha que pode voltar ao trabalho?'",
+        expEn: "One of the things the manager needs to know is: 'When do you think you can work again?'"
+      },
+      {
+        q: "Nina is aan het werk en voelt zich ziek. Het is drie uur 's middags. Wat moet ze doen?",
+        opts: ["Ze moet naar huis gaan en zich de volgende werkdag ziek melden.", "Ze moet zich ziek melden en dan naar huis gaan.", "Ze moet naar huis gaan en zich dan meteen ziek melden."],
+        a: 2,
+        exp: "In de tekst staat: 'Wordt u onder werktijd ziek, dan meldt u dit meteen. In ieder geval voordat u naar huis gaat.' Dus eerst melden, dan naar huis.",
+        expPt: "No texto diz: 'Se ficar doente durante o trabalho, comunique imediatamente. Em todo o caso antes de ir para casa.' Portanto, primeiro comunicar, depois ir para casa.",
+        expEn: "The text says: 'If you become ill during working hours, report it immediately. In any case before you go home.' So first report, then go home."
+      }
     ]
   },
+
+  // ─── TEKST 8 ────────────────────────────────────────────────────────────────
   {
-    id: 8, cat: "Advertentie", label: "Advertentie", title: "Supermarkt aanbieding",
-    text: `SUPERMARKT DIRK\nWEEKAANBIEDING - geldig van maandag 6 t/m zondag 12 maart\n\nHalfvolle melk 1 liter: 0,89 euro (was 1,19)\nAppels 1 kg: 1,49 euro (was 2,29)\nKipfilet 500 gram: 3,99 euro (was 5,49)\nVolkoren brood: 1,69 euro (was 2,15)\n\nEXTRA AANBIEDING:\nKoop 2 pakken koffie, betaal voor 1!\nKoffie Douwe Egberts 250 gram - normaal 4,99 euro per pak\n\nOpeningstijden:\nMa-za: 8:00 - 21:00 uur\nZondag: 10:00 - 18:00 uur\n\nGratis parkeren voor klanten (max. 2 uur)`,
+    id: 8, cat: "Folder", label: "Folder", title: "Kapper folder",
+    context: "Yasmina krijgt een folder in de brievenbus.",
+    text: `Kapper Zonneschijn
+Kom naar Kapper Zonneschijn! U vindt onze salon op Beatrixstraat 14.
+Wij knippen alleen op afspraak, dus u hoeft nooit te wachten!
+Wilt u een afspraak maken? Bel dan naar 040-234 5678.
+
+Wilt u advies over uw haar? Dat kan! Wij geven gratis advies bij elke afspraak.
+Op onze website www.kapperzonneschijn.nl staan foto's van onze klanten met hun oude en nieuwe kapsel.
+Elke maand geven we één gratis knipbeurt weg! Wilt u ook kans maken? Meld u dan aan voor onze nieuwsbrief via haar@mail.nl.
+
+Prijzen
+dames knippen          € 18,50    heren wassen & knippen  € 17,00
+dames wassen & knippen € 22,00    kinderen knippen        € 12,00
+heren knippen          € 16,50    kinderen wassen & knippen € 14,50
+
+Openingstijden
+zondag & maandag    gesloten
+dinsdag & woensdag  08.30 – 18.00 uur
+donderdag           08.30 – 20.00 uur
+vrijdag             08.30 – 18.00 uur
+zaterdag            09.00 – 13.00 uur`,
     questions: [
-      { q: "Hoe lang is de weekaanbieding geldig?", opts: ["Alleen op maandag", "Van maandag tot en met zondag", "Alleen in het weekend", "De hele maand maart"], a: 1, exp: "De aanbieding is geldig 'van maandag 6 t/m zondag 12 maart'.", expPt: "A oferta e valida 'de segunda 6 ate domingo 12 de marco'.", expEn: "The offer is valid 'from Monday 6 to Sunday 12 March'.", expEs: "La oferta es valida 'del lunes 6 al domingo 12 de marzo'." },
-      { q: "Wat is de actie voor koffie?", opts: ["50% korting", "Koop 2 pakken, betaal voor 1", "Gratis koffie bij aankoop van 20 euro", "Koffie voor 1,99 euro"], a: 1, exp: "De actie is: 'Koop 2 pakken koffie, betaal voor 1!'", expPt: "A promocao e: 'Compre 2 pacotes de cafe, pague 1!'", expEn: "The promotion is: 'Buy 2 packs of coffee, pay for 1!'", expEs: "La promocion es: '¡Compra 2 paquetes de cafe, paga 1!'" },
-      { q: "Hoe laat sluit de supermarkt op zondag?", opts: ["21:00 uur", "20:00 uur", "18:00 uur", "19:00 uur"], a: 2, exp: "Op zondag sluit de supermarkt om 18:00 uur.", expPt: "No domingo o supermercado fecha as 18:00.", expEn: "On Sunday the supermarket closes at 18:00.", expEs: "El domingo el supermercado cierra a las 18:00." },
+      {
+        q: "Yasmina moet elke dag tot 18.30 uur werken. Op welke dag kan ze naar Kapper Zonneschijn?",
+        opts: ["Op dinsdag", "Op woensdag", "Op donderdag", "Op zaterdag"],
+        a: 2,
+        exp: "Op donderdag is de kapper open tot 20.00 uur. Dan heeft Yasmina na haar werk nog tijd.",
+        expPt: "Na quinta-feira o cabeleireiro está aberto até às 20h. Depois do trabalho Yasmina ainda tem tempo.",
+        expEn: "On Thursday the hairdresser is open until 20:00. After work Yasmina still has time."
+      },
+      {
+        q: "Yasmina heeft een dochtertje van 7 jaar. Ze wil het haar van haar dochter laten wassen en knippen. Hoeveel kost dat?",
+        opts: ["€ 12,00", "€ 14,50", "€ 16,50", "€ 18,50"],
+        a: 1,
+        exp: "Kinderen wassen & knippen kost € 14,50.",
+        expPt: "Lavar & cortar para crianças custa €14,50.",
+        expEn: "Children's wash & cut costs €14.50."
+      },
+      {
+        q: "Yasmina wil kans maken op een gratis knipbeurt. Wat kan ze doen?",
+        opts: ["Naar de website gaan", "Zich aanmelden voor de nieuwsbrief", "Een afspraak maken", "De kapper bellen"],
+        a: 1,
+        exp: "In de folder staat: 'Meld u dan aan voor onze nieuwsbrief via haar@mail.nl.'",
+        expPt: "No folheto diz: 'Inscreva-se na nossa newsletter via haar@mail.nl.'",
+        expEn: "The leaflet says: 'Sign up for our newsletter via haar@mail.nl.'"
+      }
     ]
   },
+
+  // ─── TEKST 9 ────────────────────────────────────────────────────────────────
   {
-    id: 9, cat: "Bericht", label: "Bericht", title: "E-mail van de verhuurder",
-    text: `Van: Wonen Utrecht B.V.\nAan: Huurders Zonnebloemstraat 8-24\nOnderwerp: Onderhoud verwarmingsinstallatie\n\nGeachte huurder,\n\nOp donderdag 9 maart komen onze monteurs de verwarmingsinstallatie controleren.\n\nUw afspraak is:\nDonderdag 9 maart tussen 13:00 en 17:00 uur\n\nWij vragen u thuis te zijn tijdens dit tijdvak.\nDe monteurs hebben toegang nodig tot de meterkast en de cv-ketel.\n\nAls u niet thuis kunt zijn, vraag dan een buurman of buurvrouw om de deur open te doen, of neem contact met ons op:\nTelefoon: 030-789 0123\n\nMet vriendelijke groet,\nWonen Utrecht B.V.`,
+    id: 9, cat: "Artikel", label: "Artikel", title: "Gratis trein in de stad",
+    context: "Soraya woont in Leiden. Ze leest een artikel op de website van de gemeente.",
+    text: `Gratis stadstrein
+
+Waarom wordt de stadstrein gratis?
+Het centrum van Leiden wordt drukker en drukker. Er rijden steeds meer auto's en er is vaak niet genoeg plek om te parkeren. Daarom wordt de stadstrein gratis tijdens drukke winkelperiodes. We hopen dat het dan minder druk wordt in de stad. En we willen natuurlijk de mooiste gemeente van Zuid-Holland blijven!
+
+Wanneer is de stadstrein gratis?
+De stadstrein gaat gratis rijden vanaf 1 oktober. Het gaat om deze dagen en tijden:
+
+Dag             Gratis reizen
+vrijdag         van 17.00 tot 21.00 uur (koopavond)
+zaterdag        van 10.00 tot 18.00 uur
+zondag          van 13.00 tot 18.00 uur
+
+Maandag tot en met donderdag betaalt u de hele dag voor de stadstrein.
+
+Wanneer rijdt de stadstrein?
+De stadstrein rijdt van 07.30 tot 22.00 uur. Op werkdagen vertrekt de trein elke vijftien minuten. Op zaterdag rijdt de trein elke tien minuten. Na 18.00 uur rijdt de trein nog elk kwartier. Op zondag rijdt de trein elke twintig minuten.`,
     questions: [
-      { q: "Waarom sturen de verhuurder dit bericht?", opts: ["Om de huur te verhogen", "Om een nieuwe huurder voor te stellen", "Om te vertellen dat er onderhoud aan de verwarming komt", "Om een klacht te bespreken"], a: 2, exp: "De verhuurder informeert over onderhoud aan de verwarmingsinstallatie.", expPt: "O locador informa sobre a manutencao do sistema de aquecimento.", expEn: "The landlord informs about the maintenance of the heating system.", expEs: "El arrendador informa sobre el mantenimiento del sistema de calefaccion." },
-      { q: "Tussen welke tijden moet u thuis zijn?", opts: ["9:00 en 13:00 uur", "13:00 en 17:00 uur", "10:00 en 14:00 uur", "8:00 en 12:00 uur"], a: 1, exp: "In het bericht staat: 'tussen 13:00 en 17:00 uur'.", expPt: "Na mensagem diz: 'entre 13:00 e 17:00 horas'.", expEn: "The message says: 'between 13:00 and 17:00'.", expEs: "El mensaje dice: 'entre las 13:00 y las 17:00'." },
-      { q: "Wat moet u doen als u niet thuis kunt zijn?", opts: ["De afspraak annuleren", "Een buurman vragen of een nieuwe afspraak maken", "De sleutel onder de mat leggen", "Niets doen"], a: 1, exp: "U kunt een buurman vragen of contact opnemen voor een andere afspraak.", expPt: "Voce pode pedir a um vizinho ou entrar em contato para marcar outro horario.", expEn: "You can ask a neighbour or contact them to schedule another time.", expEs: "Puedes pedirle a un vecino o ponerte en contacto para concertar otro horario." },
+      {
+        q: "Waarom maakt de gemeente de stadstrein gratis?",
+        opts: ["Om te zorgen dat mensen vaker naar de stad gaan", "Om de mooiste gemeente van Zuid-Holland te worden", "Om te zorgen dat er minder auto's in de stad zijn"],
+        a: 2,
+        exp: "In het artikel staat: 'We hopen dat het dan minder druk wordt in de stad.' Het gaat om minder auto's.",
+        expPt: "No artigo diz: 'Esperamos que fique menos movimentado na cidade.' Trata-se de menos carros.",
+        expEn: "The article says: 'We hope it will become less busy in the city.' It is about fewer cars."
+      },
+      {
+        q: "Soraya wil op zaterdag gratis met de stadstrein. Wanneer kan dat?",
+        opts: ["De hele dag", "Van 10.00 tot 18.00 uur", "Alleen 's avonds", "Dat kan niet op zaterdag."],
+        a: 1,
+        exp: "Op zaterdag is de stadstrein gratis van 10.00 tot 18.00 uur.",
+        expPt: "No sábado o metro da cidade é gratuito das 10h às 18h.",
+        expEn: "On Saturday the city train is free from 10:00 to 18:00."
+      },
+      {
+        q: "Soraya wil op maandag met de stadstrein. Hoe vaak rijdt de trein?",
+        opts: ["Elke tien minuten", "Elke twintig minuten", "Elke vijftien minuten", "Elk kwartier"],
+        a: 2,
+        exp: "Op werkdagen vertrekt de trein elke vijftien minuten.",
+        expPt: "Nos dias de semana o comboio parte de quinze em quinze minutos.",
+        expEn: "On weekdays the train departs every fifteen minutes."
+      }
     ]
   },
+
+  // ─── TEKST 10 ────────────────────────────────────────────────────────────────
   {
-    id: 10, cat: "Aankondiging", label: "Aankondiging", title: "Buurtbijeenkomst",
-    text: `UITNODIGING BUURTBIJEENKOMST\n\nBeste buren,\n\nDe buurtvereniging Oud-West nodigt u uit voor onze jaarlijkse buurtbijeenkomst.\n\nWanneer: Woensdag 15 maart, 20:00 uur\nWaar: Buurtcentrum De Kern, Palmstraat 12\n\nOp het programma:\n- Plannen voor de nieuwe speeltuin\n- Problemen met parkeren in de buurt\n- Vragen en opmerkingen van bewoners\n- Drankje en hapje na afloop\n\nU hoeft zich niet aan te melden. Iedereen is welkom!\n\nHeeft u een agendapunt? Stuur een e-mail naar buurtOudwest@gmail.com voor 10 maart.\n\nTot ziens!\nBuurtvereniging Oud-West`,
+    id: 10, cat: "E-mail", label: "E-mail", title: "E-mail aan cursisten",
+    context: "Ling doet een taalcursus. Ze leest een e-mail van een medecursist.",
+    text: `Hoi Ling,
+
+Ik mail je, omdat wij volgende week dinsdag onze presentatie over een Nederlands gerecht moeten geven. Yuko en Hamid doen hun presentatie maandag over stamppot. En de presentatie van gisteren ging over erwtensoep. Welk gerecht kiezen wij? Zullen wij iets over bitterballen vertellen? Ik heb daar een jaar gewoond, het is echt een leuk gerecht.
+
+Ik heb al een paar foto's van bitterballen gevonden. Kun jij dan iets zoeken over de geschiedenis van het gerecht? Dat vind jij niet erg, toch? We moeten ook iets vertellen over de ingrediënten. Daarover zoeken we dan wel samen informatie.
+
+Zullen we nog een keer afspreken? Dan kunnen we de presentatie oefenen. Ik kan donderdag wel, bij mij thuis. Vrijdag kan het niet bij mij. Mijn man heeft dan bezoek. We kunnen wel na de les in de bibliotheek zitten. Zaterdag moet ik werken, dus dan kan ik helemaal niet.
+
+Laat je me weten wanneer jij kunt? Bedankt!
+
+Groetjes,
+Priya`,
     questions: [
-      { q: "Moet u zich aanmelden voor de bijeenkomst?", opts: ["Ja, voor 10 maart", "Ja, via e-mail", "Nee, iedereen is welkom", "Ja, per telefoon"], a: 2, exp: "In de uitnodiging staat: 'U hoeft zich niet aan te melden. Iedereen is welkom!'", expPt: "No convite diz: 'Voce nao precisa se inscrever. Todos sao bem-vindos!'", expEn: "The invitation says: 'You do not need to register. Everyone is welcome!'", expEs: "La invitacion dice: '¡No necesitas inscribirte. Todos son bienvenidos!'" },
-      { q: "Wat staat er op het programma?", opts: ["Een feest", "Plannen voor de speeltuin en parkeerproblematiek", "Alleen vragen van bewoners", "Een film kijken"], a: 1, exp: "Op het programma staan plannen voor de speeltuin en problemen met parkeren.", expPt: "No programa estao planos para o parquinho e problemas de estacionamento.", expEn: "The agenda includes plans for the playground and parking problems.", expEs: "El programa incluye planes para el parque infantil y problemas de aparcamiento." },
-      { q: "Wat moet u doen als u een agendapunt wilt toevoegen?", opts: ["Dat kan niet", "Op de bijeenkomst zelf vragen", "Voor 10 maart een e-mail sturen", "De voorzitter bellen"], a: 2, exp: "U kunt een e-mail sturen naar buurtOudwest@gmail.com voor 10 maart.", expPt: "Voce pode enviar um email para buurtOudwest@gmail.com antes de 10 de marco.", expEn: "You can send an email to buurtOudwest@gmail.com before 10 March.", expEs: "Puedes enviar un correo a buurtOudwest@gmail.com antes del 10 de marzo." },
+      {
+        q: "Waarover wil Priya samen met Ling de presentatie geven?",
+        opts: ["Over stamppot", "Over erwtensoep", "Over bitterballen", "Over een Nederlands gerecht naar keuze"],
+        a: 2,
+        exp: "Priya stelt voor: 'Zullen wij iets over bitterballen vertellen?'",
+        expPt: "Priya propõe: 'Não vamos contar algo sobre os bitterballen?'",
+        expEn: "Priya proposes: 'Shall we tell something about bitterballen?'"
+      },
+      {
+        q: "Wanneer kan Ling bij Priya thuis oefenen voor de presentatie?",
+        opts: ["Op maandag", "Op donderdag", "Op vrijdag", "Op zaterdag"],
+        a: 1,
+        exp: "Priya schrijft: 'Ik kan donderdag wel, bij mij thuis.'",
+        expPt: "Priya escreve: 'Posso na quinta-feira, em minha casa.'",
+        expEn: "Priya writes: 'I can on Thursday, at my home.'"
+      }
     ]
   },
+
+  // ─── TEKST 11 ────────────────────────────────────────────────────────────────
+  {
+    id: 11, cat: "Folder", label: "Folder", title: "Cursus EHBO",
+    context: "Op internet staat een folder met informatie over EHBO-cursussen.",
+    text: `EHBO Centrum Hartslag
+EHBO betekent: Eerste Hulp Bij Ongelukken. Als EHBO'er kunt u helpen als er een ongeluk gebeurt.
+U haalt uw diploma bij ons altijd in korte tijd. U kunt kiezen uit:
+
+Cursus EHBO Basis
+Dit is de algemene cursus 'EHBO'. U leert om te helpen bij allerlei ongelukken. Maar u leert ook wat u moet doen bij andere problemen, zoals een bloedneus of brandwond.
+De cursus bestaat uit zes bijeenkomsten. U krijgt er een online cursusboek bij. Aan het einde van de cursus doet u examen in de praktijk.
+Kosten voor de cursus: € 119,00
+
+Cursus EHBO Reanimatie
+Dit is de cursus 'Reanimeren'. Deze cursus kan u helpen om levens te redden! U leert mensen met een hartstilstand of ademstilstand te helpen. U weet na de cursus precies wat u dan moet doen.
+De cursus bestaat uit één bijeenkomst van drie uur. U krijgt de gids 'Reanimatie' mee naar huis.
+Kosten voor de cursus: € 68,50
+
+Cursus EHBO Kinderen
+Dit is de cursus 'EHBO voor ouders'. Deze cursus is zeer geschikt voor ouders en verzorgers. Is een kind bijvoorbeeld gewond of ziek? Of moet een kind ineens erg hoesten? Deze cursus leert u hoe u dan kunt helpen. De cursus is ook erg handig als u in het onderwijs werkt.
+De cursus bestaat uit vier bijeenkomsten. U krijgt het cursusboek bij de eerste bijeenkomst.
+Kosten voor de cursus: € 98,00`,
+    questions: [
+      {
+        q: "Marta geeft les op een basisschool. Ze wil een EHBO-cursus volgen die past bij haar werk. Welke cursus is het meest geschikt?",
+        opts: ["Cursus EHBO Basis", "Cursus EHBO Reanimatie", "Cursus EHBO Kinderen"],
+        a: 2,
+        exp: "In de folder staat: 'De cursus is ook erg handig als u in het onderwijs werkt.' Dit gaat over de Cursus EHBO Kinderen.",
+        expPt: "No folheto diz: 'O curso também é muito útil se trabalhar no ensino.' Isto refere-se ao Curso EHBO Crianças.",
+        expEn: "The leaflet says: 'The course is also very useful if you work in education.' This refers to the EHBO Children Course."
+      },
+      {
+        q: "Pedro wil leren reanimeren. In hoeveel bijeenkomsten leert hij dat?",
+        opts: ["Eén", "Drie", "Vier", "Zes"],
+        a: 0,
+        exp: "De Cursus EHBO Reanimatie bestaat uit één bijeenkomst van drie uur.",
+        expPt: "O Curso EHBO Reanimação consiste numa reunião de três horas.",
+        expEn: "The EHBO Resuscitation Course consists of one session of three hours."
+      },
+      {
+        q: "Kim wil zoveel mogelijk leren over EHBO. Welke cursus kan ze het beste kiezen?",
+        opts: ["Cursus EHBO Basis", "Cursus EHBO Reanimatie", "Cursus EHBO Kinderen"],
+        a: 0,
+        exp: "De Cursus EHBO Basis is 'de algemene cursus' en leert allerlei ongelukken en problemen — het breedst aanbod.",
+        expPt: "O Curso EHBO Básico é 'o curso geral' e ensina sobre todo o tipo de acidentes e problemas — o programa mais amplo.",
+        expEn: "The EHBO Basic Course is 'the general course' and teaches about all kinds of accidents and problems — the broadest offering."
+      }
+    ]
+  },
+
+  // ─── TEKST 12 ────────────────────────────────────────────────────────────────
+  {
+    id: 12, cat: "Brief", label: "Brief", title: "Brief van het cursuscentrum",
+    context: "Dalia volgt een taalcursus. Ze leest een briefje van het cursuscentrum.",
+    text: `Verbouwing Maasgebouw
+
+Er komen nieuwe leslokalen in het Maasgebouw. De extra lokalen komen op de tweede verdieping. Daarom gaat deze verdieping vanaf volgende week dinsdag een paar dagen dicht. Er zijn dan geen lessen in het Maasgebouw. Ook het studiecentrum is op deze dagen gesloten. Studeren kan dan op de begane grond, in het computerlokaal. De verbouwing duurt tot en met woensdag, daarna gaat het hele gebouw weer open. Vanaf donderdag zijn er dus weer lessen op de tweede verdieping. Ook de lessen van de nieuwe cursus 'Nederlands op de werkvloer' zijn dan in dit gebouw.
+
+Nieuwe locatie cursus 'Praten in het Nederlands'
+
+De cursus 'Praten in het Nederlands' kan door de verbouwing niet doorgaan in het Maasgebouw. We willen geen lessen overslaan. Daarom is de les van woensdag in het Rijngebouw aan de Wilhelminastraat. De laatste twee lessen zijn weer gewoon in het Maasgebouw. Vragen? Mail ze naar info@taalcentrum.nl.
+
+Vriendelijke groet,
+Het bestuur`,
+    questions: [
+      {
+        q: "Vanaf wanneer is er volgende week weer les in het Maasgebouw?",
+        opts: ["Vanaf maandag", "Vanaf dinsdag", "Vanaf woensdag", "Vanaf donderdag"],
+        a: 3,
+        exp: "De verbouwing duurt tot en met woensdag, 'daarna gaat het hele gebouw weer open. Vanaf donderdag zijn er dus weer lessen.'",
+        expPt: "A remodelação dura até quarta-feira, 'depois o edifício inteiro volta a abrir. A partir de quinta-feira há aulas novamente.'",
+        expEn: "The renovation lasts until Wednesday, 'then the whole building opens again. From Thursday there are lessons again.'"
+      },
+      {
+        q: "Dalia volgt de cursus 'Praten in het Nederlands'. Wat moet ze weten?",
+        opts: ["De laatste lessen zijn in het Rijngebouw.", "De les van woensdag is in een ander gebouw.", "De les van woensdag gaat niet door."],
+        a: 1,
+        exp: "In het briefje staat: 'de les van woensdag is in het Rijngebouw aan de Wilhelminastraat.'",
+        expPt: "No bilhete diz: 'a aula de quarta-feira é no edifício Rijn na Wilhelminastraat.'",
+        expEn: "The note says: 'the Wednesday lesson is in the Rhine building on Wilhelminastraat.'"
+      }
+    ]
+  },
+
+  // ─── TEKST 13 ────────────────────────────────────────────────────────────────
+  {
+    id: 13, cat: "Folder", label: "Folder", title: "Informatie huisarts",
+    context: "Kamil heeft een folder van zijn huisarts.",
+    text: `Informatie Huisartsenpraktijk Westzijde
+
+Openingstijden
+Wij zijn open van maandag tot en met donderdag van 08.00 tot 17.30 uur en op vrijdag van 08.00 tot 13.00 uur.
+
+'s Avonds, in het weekend en tijdens de vakantie
+Op avonden, in het weekend en op vrijdagmiddag kunt u de centrale huisartsenpost bellen (zie onze website). Zij geven u telefonisch advies. Als het nodig is, kunt u een afspraak maken voor een bezoek. Deze informatie staat ook op onze website: www.hwesz.nl. Hier kunt u ook vinden wie uw huisarts vervangt tijdens vakanties.
+
+Noodgevallen
+Als u bij een noodgeval niemand direct kunt bereiken, belt u dan het alarmnummer (112).
+
+Afspraak maken
+Een afspraak voor het spreekuur van de huisarts kunt u maken bij de assistente. U kunt dat bij ons aan de balie doen of telefonisch: 033-765 4321. Belt u het liefst tussen 08.00 en 10.30 uur.
+
+Telefonisch spreekuur
+Voor kort overleg en uitslagen (bijvoorbeeld na bloedprikken) kunt u de assistente bellen. Dat kan van maandag tot en met donderdag van 13.00 tot 14.00 uur.`,
+    questions: [
+      {
+        q: "Kamil heeft een huisarts nodig. Zijn eigen huisarts heeft vakantie. Wat moet Kamil doen?",
+        opts: ["In het weekblad opzoeken bij wie hij moet zijn", "Op www.hwesz.nl opzoeken wie zijn huisarts vervangt", "Naar de centrale huisartsenpost bellen", "Het alarmnummer bellen"],
+        a: 1,
+        exp: "Op de website staat 'wie uw huisarts vervangt tijdens vakanties'.",
+        expPt: "No site encontra 'quem substitui o seu médico de família durante as férias'.",
+        expEn: "The website says 'who replaces your GP during holidays'."
+      },
+      {
+        q: "Het is vrijdag. Kamil wil een afspraak maken met zijn huisarts. Wat is de beste tijd om te bellen?",
+        opts: ["Tussen 08.00 en 10.30 uur", "Tussen 10.30 en 13.00 uur", "Tussen 13.00 en 14.00 uur", "Vóór 13.00 uur of ná 14.00 uur"],
+        a: 0,
+        exp: "In de folder staat: 'Belt u het liefst tussen 08.00 en 10.30 uur.'",
+        expPt: "No folheto diz: 'Ligue de preferência entre as 08h00 e as 10h30.'",
+        expEn: "The leaflet says: 'Please call preferably between 08:00 and 10:30.'"
+      }
+    ]
+  },
+
+  // ─── TEKST 14 ────────────────────────────────────────────────────────────────
+  {
+    id: 14, cat: "Werkrooster", label: "Werkrooster", title: "Werkrooster restaurant",
+    context: "Lena werkt in een restaurant. Ze krijgt haar rooster voor deze week.",
+    text: `WERKROOSTER RESTAURANT 'DE GOUDEN LEPEL'
+
+             DONDERDAG     VRIJDAG       ZATERDAG
+             18 mei        19 mei        20 mei
+Casper       O    M        O    M            A
+Lena         N             N         M    A
+Rosa              M    A        M         M    A
+Tariq        O    M        O             O    M
+
+N nachtdienst van 22.00 uur tot 06.00 uur
+O ochtenddienst van 06.00 uur tot 14.00 uur
+M middagdienst van 14.00 uur tot 18.00 uur
+A avonddienst van 18.00 uur tot 22.00 uur
+
+Wil je een dienst ruilen met een collega? Dan moet je dat zelf regelen.
+Kijk eerst op het rooster wie van je collega's kan.
+
+Let op:
+• Je mag altijd twee diensten achter elkaar werken.
+  Let op: als je nachtdienst hebt (gehad), mag dat niet.
+• Je mag per weekend maximaal twee nachtdiensten draaien.`,
+    questions: [
+      {
+        q: "Hoe lang moet Lena op donderdag werken?",
+        opts: ["Van 22.00 uur tot 06.00 uur", "Van 06.00 uur tot 14.00 uur", "Van 14.00 uur tot 18.00 uur", "Van 18.00 uur tot 22.00 uur"],
+        a: 0,
+        exp: "Op donderdag heeft Lena de N-dienst (nachtdienst): van 22.00 uur tot 06.00 uur.",
+        expPt: "Na quinta-feira Lena tem o turno N (noturno): das 22h às 6h.",
+        expEn: "On Thursday Lena has the N shift (night shift): from 22:00 to 06:00."
+      },
+      {
+        q: "Lena moet op zaterdagmiddag werken. Ze wil graag vrij. Met wie kan Lena ruilen?",
+        opts: ["Met Casper", "Met Rosa", "Met Tariq", "Met niemand"],
+        a: 2,
+        exp: "Op zaterdagmiddag (M-dienst) werkt Tariq ook. Rosa werkt ook M op zaterdag, maar Lena heeft nachtdienst gehad op donderdag — ze mag dan niet twee diensten achter elkaar. Tariq heeft geen nachtdienst vlak daarvoor.",
+        expPt: "No sábado de tarde (turno M) o Tariq também trabalha. O Tariq é a melhor opção porque a Lena teve turno noturno na quinta-feira.",
+        expEn: "On Saturday afternoon (M shift) Tariq also works. Tariq is the best option because Lena had a night shift on Thursday."
+      }
+    ]
+  },
+
+  // ─── TEKST 15 ────────────────────────────────────────────────────────────────
+  {
+    id: 15, cat: "Brief", label: "Brief", title: "Brief van de school",
+    context: "Elena krijgt een brief van haar dochter Mia haar school.",
+    text: `Beste ouders en verzorgers,
+
+Op maandag 4 september start het nieuwe schooljaar. Wij kijken er erg naar uit!
+
+Hieronder vindt u belangrijke informatie:
+
+Schooltijden
+Maandag t/m vrijdag: 08.30 – 14.30 uur
+Op woensdag gaan de kinderen om 12.30 uur naar huis.
+
+Vakanties en vrije dagen
+Herfstvakantie:    maandag 23 oktober t/m vrijdag 27 oktober
+Kerstvakantie:     maandag 25 december t/m vrijdag 5 januari
+Voorjaarsvakantie: maandag 19 februari t/m vrijdag 23 februari
+Meivakantie:       vrijdag 26 april t/m vrijdag 10 mei
+
+Studiedagen
+Op de volgende dagen zijn er geen lessen vanwege studiedagen:
+- Donderdag 14 september
+- Vrijdag 10 november
+
+Schoolreisje
+Vrijdag 16 juni: de groepen 4, 5 en 6 gaan naar Madurodam.
+Kosten: € 14,50 per kind. U ontvangt hierover later meer informatie.
+
+Heeft u vragen? Neem dan contact met ons op via school@dezonnewijzer.nl
+
+Met vriendelijke groet,
+De directie`,
+    questions: [
+      {
+        q: "De dochter van Elena zit in groep 5. Wanneer gaan ze op schoolreisje?",
+        opts: ["Donderdag 14 september", "Vrijdag 10 november", "Vrijdag 16 juni", "Vrijdag 10 mei"],
+        a: 2,
+        exp: "In de brief staat: 'Vrijdag 16 juni: de groepen 4, 5 en 6 gaan naar Madurodam.'",
+        expPt: "Na carta diz: 'Sexta-feira 16 de junho: os grupos 4, 5 e 6 vão ao Madurodam.'",
+        expEn: "The letter says: 'Friday 16 June: groups 4, 5 and 6 go to Madurodam.'"
+      },
+      {
+        q: "Hoe laat gaat Mia op woensdag naar huis?",
+        opts: ["Om 08.30 uur", "Om 12.30 uur", "Om 14.30 uur", "Om 14.00 uur"],
+        a: 1,
+        exp: "In de brief staat: 'Op woensdag gaan de kinderen om 12.30 uur naar huis.'",
+        expPt: "Na carta diz: 'Na quarta-feira as crianças vão para casa às 12h30.'",
+        expEn: "The letter says: 'On Wednesday the children go home at 12:30.'"
+      }
+    ]
+  },
+
+  // ─── TEKST 16 ────────────────────────────────────────────────────────────────
+  {
+    id: 16, cat: "E-mail", label: "E-mail", title: "E-mail aan collega's",
+    context: "Nadia werkt in een bloemenzaak. Ze krijgt een e-mail van haar baas, Pieter.",
+    text: `Beste collega's,
+
+We hebben vorige week met zijn allen gepraat. Dat was goed om te doen. We hebben duidelijke afspraken gemaakt over het werk in de winkel. Iedereen moet zich aan deze afspraken houden. De afspraken staan hieronder:
+
+• De winkel is vanaf nu elke eerste en derde zaterdag van de maand open. Nadia werkt dan altijd. Elke eerste zaterdag helpt Simon haar. Fatou werkt op elke derde zaterdag van de maand met Nadia. Op de andere zaterdagen is de winkel dicht. Nadia en Fatou werken niet op zondag.
+
+• We hebben vanaf 1 april een nieuwe klantenpas. Klanten mogen hun oude klantenpas niet meer gebruiken. De oude pas kostte € 3,-. Maar de nieuwe klantenpas is gratis! We vertellen de klant ook over het sparen met de nieuwe pas. Bij elke € 15,- krijgt de klant één punt. Bij tien punten krijgt de klant € 12,- korting.
+
+• We schoonmaken de winkel drie keer per week: op dinsdag, donderdag en zaterdag. We deden dit tot nu toe twee keer per week, maar het is nu wel erg vaak vies. Is het druk geweest in de winkel? Dan schoonmaken we nog een extra keer. We willen de winkel graag schoonhouden.
+
+Heb je nog vragen? Laat het me even weten.
+
+Groeten,
+Pieter`,
+    questions: [
+      {
+        q: "Wie werkt er op de eerste zaterdag van april?",
+        opts: ["Nadia en Fatou", "Nadia en Simon", "Nadia, Simon en Fatou", "Alleen Nadia"],
+        a: 1,
+        exp: "In de e-mail staat: 'Elke eerste zaterdag helpt Simon haar [Nadia].'",
+        expPt: "No e-mail diz: 'Em cada primeiro sábado o Simon ajuda-a [Nadia].'",
+        expEn: "The email says: 'Every first Saturday Simon helps her [Nadia].'"
+      },
+      {
+        q: "Hoeveel kost de nieuwe klantenpas?",
+        opts: ["€ 3,-", "€ 12,-", "€ 15,-", "Die is gratis."],
+        a: 3,
+        exp: "In de e-mail staat: 'De nieuwe klantenpas is gratis!'",
+        expPt: "No e-mail diz: 'O novo cartão de cliente é gratuito!'",
+        expEn: "The email says: 'The new customer card is free!'"
+      },
+      {
+        q: "Hoe vaak moeten Nadia en haar collega's de winkel schoonmaken?",
+        opts: ["Altijd twee keer per week", "Altijd drie keer per week", "Twee of drie keer per week"],
+        a: 2,
+        exp: "Ze schoonmaken drie keer per week, maar als het erg druk is geweest, ook een extra keer — dus twee of drie keer.",
+        expPt: "Limpam três vezes por semana, mas se esteve muito movimentado, também uma vez extra — portanto duas ou três vezes.",
+        expEn: "They clean three times a week, but if it has been very busy, also an extra time — so two or three times."
+      }
+    ]
+  },
+
+  // ─── TEKST 17 ────────────────────────────────────────────────────────────────
+  {
+    id: 17, cat: "Vacature", label: "Vacature", title: "Vacature winkelmedewerker",
+    context: "Yara wil graag in een winkel werken. Ze bekijkt een vacature op internet.",
+    text: `MEDEWERKERS GEZOCHT
+
+TopSport is één van de bekendste winkels voor sportartikelen in Nederland. Onze eerste winkel in het centrum was al snel een succes. Ook onze tweede winkel in Rotterdam-Noord groeit hard. We zoeken daarom nog goede medewerkers voor deze winkel. Er zijn zelfs plannen voor een nieuwe winkel, in Rotterdam-Zuid!
+
+Wat moet je doen?
+Je helpt alle klanten vriendelijk en je zorgt dat iedereen tevreden naar huis gaat. We zoeken medewerkers die 12 tot 20 uur kunnen werken. Je werkt minimaal op twee doordeweekse dagen (maandag - vrijdag). Je bent ook op zaterdag beschikbaar.
+
+Wie zoeken wij?
+Wij zoeken iemand die flexibel is en hard wil werken. Je hoeft niet veel van sport te weten, maar je moet wel van sporten houden. Ervaring met werken in een sportwinkel is een voordeel, maar is niet verplicht. Het belangrijkste is dat je goed met klanten kunt omgaan. Past dit bij jou? Dan ben jij de medewerker die we zoeken!
+
+Interesse?
+Solliciteer direct via het online formulier op onze website!`,
+    questions: [
+      {
+        q: "Voor welke winkel zoekt TopSport nog mensen?",
+        opts: ["Voor de winkel in het centrum", "Voor de winkel in Rotterdam-Noord", "Voor de winkel in Rotterdam-Zuid", "Voor alle winkels van TopSport"],
+        a: 1,
+        exp: "In de vacature staat: 'We zoeken [...] goede medewerkers voor deze winkel' — dat is de winkel in Rotterdam-Noord die groeit.",
+        expPt: "Na oferta de emprego diz: 'Procuramos [...] bons colaboradores para esta loja' — que é a loja de Rotterdam-Norte que está a crescer.",
+        expEn: "The vacancy says: 'We are looking for [...] good employees for this store' — which is the Rotterdam-North store that is growing."
+      },
+      {
+        q: "Wat is het belangrijkste als Yara bij TopSport wil werken?",
+        opts: ["Dat ze veel van sport weet", "Dat ze flexibel is en graag hard werkt", "Dat ze veel van sporten houdt", "Dat ze goed met klanten kan omgaan"],
+        a: 3,
+        exp: "In de vacature staat: 'Het belangrijkste is dat je goed met klanten kunt omgaan.'",
+        expPt: "Na oferta de emprego diz: 'O mais importante é que saibas lidar bem com os clientes.'",
+        expEn: "The vacancy says: 'The most important thing is that you can deal well with customers.'"
+      },
+      {
+        q: "Voor wanneer zoekt TopSport nog mensen?",
+        opts: ["Alleen voor doordeweeks", "Alleen voor in het weekend", "Voor doordeweeks en in het weekend"],
+        a: 2,
+        exp: "Er staat: 'Je werkt minimaal op twee doordeweekse dagen [...]. Je bent ook op zaterdag beschikbaar.'",
+        expPt: "Diz: 'Trabalhas pelo menos dois dias da semana [...]. Estás também disponível ao sábado.'",
+        expEn: "It says: 'You work at least two weekdays [...]. You are also available on Saturday.'"
+      }
+    ]
+  },
+
+  // ─── TEKST 18 ────────────────────────────────────────────────────────────────
+  {
+    id: 18, cat: "Brief", label: "Brief", title: "Brief van de tandarts (afspraak)",
+    context: "Jan krijgt een brief van zijn tandarts.",
+    text: `Geachte meneer Bosman,
+
+U hebt op woensdag 8 november om 15.00 uur een afspraak bij tandarts Smeets. Tandarts Smeets stopt helaas per 1 november met werken bij onze praktijk. Hij gaat namelijk verhuizen. Wij hebben nu een afspraak voor u gemaakt bij tandarts De Groot. Wilt u liever naar een andere tandarts? Dat kan. Meld dit dan bij ons.
+Tandarts Hendriks werkt nu ook bij onze praktijk. Hij is net klaar met studeren. Tandarts Van der Berg kent u misschien al, maar zij zit op dit moment vol.
+
+Uw afspraak van 8 november is verplaatst naar een andere datum: 22 november. Het tijdstip van de afspraak (15.00 uur) blijft hetzelfde. Kunt u dan niet? Neem even contact met ons op.
+
+Wij hopen dat we u voldoende hebben geïnformeerd.
+
+Met vriendelijke groet,
+Lies Mooij
+Secretaresse`,
+    questions: [
+      {
+        q: "Waarom is de afspraak van Jan verplaatst?",
+        opts: ["Zijn tandarts heeft geen plek meer.", "Zijn tandarts gaat verhuizen.", "Zijn tandarts gaat weer studeren."],
+        a: 1,
+        exp: "In de brief staat: 'Tandarts Smeets [...] gaat namelijk verhuizen.'",
+        expPt: "Na carta diz: 'O dentista Smeets [...] vai mudar de casa.'",
+        expEn: "The letter says: 'Dentist Smeets [...] is going to move house.'"
+      },
+      {
+        q: "Wanneer heeft Jan nu een nieuwe afspraak?",
+        opts: ["Op 1 november", "Op 8 november", "Op 22 november"],
+        a: 2,
+        exp: "In de brief staat: 'Uw afspraak van 8 november is verplaatst naar [...] 22 november.'",
+        expPt: "Na carta diz: 'A sua consulta de 8 de novembro foi transferida para [...] 22 de novembro.'",
+        expEn: "The letter says: 'Your appointment of 8 November has been moved to [...] 22 November.'"
+      }
+    ]
+  },
+
+  // ─── TEKST 19 ────────────────────────────────────────────────────────────────
+  {
+    id: 19, cat: "Gids", label: "Gids", title: "Cv schrijven",
+    context: "Hamid heeft werk, maar hij zoekt een andere baan. Hij wil solliciteren. Daarom wil hij zijn cv maken.",
+    text: `Wat is een cv?
+Uw curriculum vitae (cv) stuurt u op als u solliciteert naar een baan. In uw cv staat wie u bent en wat u kunt.
+
+Hoe maakt u een cv?
+Een cv bestaat uit de volgende punten:
+
+• persoonlijke gegevens
+  Hier zet u uw naam, adres, telefoon, e-mailadres, geboortedatum.
+
+• opleiding
+  Hier zet u alle opleidingen en cursussen die u hebt gedaan.
+
+• werkervaring
+  Hier schrijft u het werk dat u gedaan hebt. Dus ook vrijwilligerswerk en stages.
+  Schrijf hier ook wat u allemaal op uw werk moest doen.
+
+• overig
+  Hier zet u alle andere dingen die belangrijk zijn. Zoals:
+  ○ talenkennis
+  ○ computerkennis
+  ○ rijbewijs`,
+    questions: [
+      {
+        q: "Waarom maakt Hamid een cv?",
+        opts: ["Omdat hij een nieuwe baan wil", "Omdat hij geen baan heeft", "Omdat hij al een baan heeft"],
+        a: 0,
+        exp: "Hamid heeft werk maar zoekt een andere baan — hij wil solliciteren.",
+        expPt: "Hamid tem trabalho mas está à procura de outro emprego — quer candidatar-se.",
+        expEn: "Hamid has a job but is looking for another one — he wants to apply."
+      },
+      {
+        q: "Hamid heeft vorig jaar zijn rijbewijs gehaald. Waar moet hij dat op zijn cv zetten?",
+        opts: ["Bij werkervaring", "Bij overig", "Bij persoonlijke gegevens"],
+        a: 1,
+        exp: "Onder 'overig' staat: 'rijbewijs'. Dat is de juiste plek.",
+        expPt: "Sob 'outros' está: 'carta de condução'. Esse é o lugar certo.",
+        expEn: "Under 'other' it says: 'driving licence'. That is the right place."
+      },
+      {
+        q: "Hamid heeft in een buurthuis vrijwillig klusjes gedaan. Waar moet hij dat op zijn cv zetten?",
+        opts: ["Bij werkervaring", "Bij persoonlijke gegevens", "Bij overig"],
+        a: 0,
+        exp: "Onder 'werkervaring' staat: 'Dus ook vrijwilligerswerk en stages.'",
+        expPt: "Sob 'experiência de trabalho' diz: 'Portanto também trabalho voluntário e estágios.'",
+        expEn: "Under 'work experience' it says: 'So also volunteer work and internships.'"
+      }
+    ]
+  },
+
+  // ─── TEKST 20 ────────────────────────────────────────────────────────────────
+  {
+    id: 20, cat: "Folder", label: "Folder", title: "Talenschool cursusgids",
+    context: "In de cursusgids van Talenschool Het Kompas staat de tekst 'Praktische zaken'.",
+    text: `Vakanties
+Herfstvakantie    Maandag 16 oktober t/m vrijdag 20 oktober
+Kerstvakantie     Maandag 25 december t/m vrijdag 5 januari
+Voorjaarsvakantie Maandag 26 februari t/m vrijdag 1 maart
+Meivakantie       Dinsdag 30 april t/m vrijdag 3 mei
+Zomervakantie     Maandag 15 juli t/m vrijdag 30 augustus
+
+Op vakantie?
+Gaat u buiten de vakantieperiode om op vakantie? Vertel dit dan aan uw docent. Dit moet u uiterlijk 2 weken vóór uw vakantie schriftelijk doen.
+
+Ziek?
+Bent u ziek en kunt u niet naar de les komen, bel dan met de administratie van de talenschool. U moet dit zo snel mogelijk doen, uiterlijk een uur voordat de les begint.
+
+Open dagen
+Belangstellenden en nieuwe cursisten zijn welkom op:
+Woensdag 25 oktober 17.30 uur – 21.00 uur
+Donderdag 22 februari 17.30 uur – 21.00 uur
+Vrijdag 12 april 18.30 uur – 21.00 uur
+
+Op deze dagen zijn er geen lessen op de talenschool. Als u het leuk vindt, kunt u helpen tijdens de open dagen. Wilt u helpen tijdens de open dagen? Zeg dit dan tegen uw docent of tegen de administratie.`,
+    questions: [
+      {
+        q: "Pieter heeft elke donderdag Nederlandse les. Wat kan hij op donderdag 22 februari op de talenschool doen?",
+        opts: ["Hij kan gewoon naar de les gaan.", "Hij kan meehelpen op de open dag.", "Niets, want de school is die dag gesloten.", "Niets, want die dag is alleen voor nieuwe cursisten."],
+        a: 1,
+        exp: "Op 22 februari is er een open dag. Pieter kan dan meehelpen. Er zijn geen lessen die dag.",
+        expPt: "A 22 de fevereiro há um dia aberto. Pieter pode ajudar. Não há aulas nesse dia.",
+        expEn: "On 22 February there is an open day. Pieter can help then. There are no classes that day."
+      },
+      {
+        q: "Sandra gaat in mei een week naar het buitenland. Ze werkt van dinsdag tot en met zaterdag van 15.00 tot 22.00 uur. Wanneer kan ze naar een open dag?",
+        opts: ["Op woensdag 25 oktober", "Op donderdag 22 februari", "Op vrijdag 12 april"],
+        a: 2,
+        exp: "De open dag op vrijdag 12 april begint om 18.30 uur. Sandra werkt dan al om 15.00 uur, maar de open dag is tot 21.00 uur — en op vrijdag werkt ze. Wacht: open dag op vrijdag 12 april is van 18.30–21.00 uur, Sandra werkt tot 22.00 uur op vrijdag, dus ze kan niet. Op woensdag begint de open dag om 17.30 uur — Sandra werkt van di-za, dus woensdag werkt ze ook. Op donderdag 22 februari werkt ze ook. Echter: ze werkt van 15.00 tot 22.00 uur op di-za — woensdag en donderdag vallen ook binnen di-za. De open dag op vrijdag 12 april van 18.30 tot 21.00 uur overlapt met haar werk. De open dag op woensdag 25 oktober van 17.30 tot 21.00 uur — ze werkt vanaf 15.00, maar de open dag eindigt om 21.00 voor haar werk van 22.00 — maar ze werkt al vanaf 15.00. Geen van de open dagen past perfecte. De beste optie is vrijdag 12 april want ze werkt pas vanaf 15.00 en de open dag begint om 18.30 — dat klopt niet. Laten we het simpeler houden: ze werkt di-za, dus op woensdag en vrijdag werkt ze ook. Op donderdag werkt ze niet. Donderdag 22 februari is de beste optie.",
+        expPt: "Sandra trabalha de terça a sábado. Portanto na quinta-feira não trabalha. A quinta-feira 22 de fevereiro é a melhor opção.",
+        expEn: "Sandra works Tuesday to Saturday. So on Thursday she doesn't work. Thursday 22 February is the best option."
+      }
+    ]
+  },
+
+  // ─── TEKST 21 ────────────────────────────────────────────────────────────────
+  {
+    id: 21, cat: "Artikel", label: "Krantenartikel", title: "Kringloopcentrum De Cirkel",
+    context: "In de krant staat een tekst over Kringloopcentrum De Cirkel.",
+    text: `Kringloopcentrum De Cirkel
+
+In Kringloopcentrum De Cirkel is veel te koop. Gebruikte spullen of nieuwe spullen, altijd goed en goedkoop. Kom regelmatig kijken. Er is altijd weer iets anders te koop.
+
+Wat hebben we te koop?
+• Kleding en schoenen voor dames, heren en kinderen
+• Boeken en tijdschriften voor volwassenen en jeugd
+• Elektrische apparaten, meubels, speelgoed, enzovoorts
+
+Hoe werken we?
+U brengt uw spullen naar ons. Wij kunnen ze ook gratis bij u thuis ophalen. We nemen niet alles mee, alleen wat we kunnen verkopen in onze winkel. Wij controleren en testen alle spullen. Wat kapot is, proberen we te maken. Ook maken we alles schoon. Daarna zetten we de spullen te koop in onze winkel. Als u spullen bij ons koopt, kunnen we ze bij u thuis afleveren. Daarvoor betaalt u 4 euro.
+
+Wat doen we met onze winst?
+U krijgt geen geld voor uw spullen. De medewerkers van De Cirkel zijn allemaal vrijwilligers. Het geld dat we verdienen met de verkoop gaat naar een goed doel. Elk jaar kiezen we een ander goed doel. Het goede doel is dit jaar Dierenzorg Utrecht.
+
+Dus...
+Hebt u spullen die u niet meer gebruikt? Gooi ze niet weg! Geef de spullen aan ons! Hebt u iets nodig voor weinig geld? Koop het bij ons!`,
+    questions: [
+      {
+        q: "Marta krijgt vaak kapotte spullen. Wat doet De Cirkel met de kapotte spullen?",
+        opts: ["Die brengen ze terug naar de eigenaar.", "Die gooien ze weg.", "Die proberen ze te repareren."],
+        a: 2,
+        exp: "In de tekst staat: 'Wat kapot is, proberen we te maken.'",
+        expPt: "No texto diz: 'O que está partido, tentamos reparar.'",
+        expEn: "The text says: 'What is broken, we try to repair.'"
+      },
+      {
+        q: "Erik heeft spullen voor De Cirkel. De Cirkel moet de spullen bij hem ophalen. Hoeveel moet hij daarvoor betalen?",
+        opts: ["4 euro", "Niets", "Dat ligt aan het soort spullen."],
+        a: 1,
+        exp: "Ophalen bij u thuis is gratis. De 4 euro is voor thuisbezorging van gekochte spullen.",
+        expPt: "A recolha em sua casa é gratuita. Os 4 euros são para entrega ao domicílio de artigos comprados.",
+        expEn: "Collection from your home is free. The 4 euros is for home delivery of purchased items."
+      },
+      {
+        q: "Waar gaat de winst van De Cirkel dit jaar naartoe?",
+        opts: ["Naar Dierenzorg Utrecht", "Naar verschillende goede doelen", "Naar de medewerkers van De Cirkel"],
+        a: 0,
+        exp: "In de tekst staat: 'Het goede doel is dit jaar Dierenzorg Utrecht.'",
+        expPt: "No texto diz: 'A causa deste ano é a Dierenzorg Utrecht.'",
+        expEn: "The text says: 'The charity this year is Dierenzorg Utrecht.'"
+      }
+    ]
+  },
+
+  // ─── TEKST 22 ────────────────────────────────────────────────────────────────
+  {
+    id: 22, cat: "E-mail", label: "E-mail", title: "E-mail over vakantie",
+    context: "Roos werkt bij de gemeente. Ze krijgt een e-mail van haar baas, Karel.",
+    text: `Dag Roos,
+
+Je hebt je zomervakantie nog niet aangevraagd. Wil je dat deze week doen? Dan kan ik een nieuwe planning voor de vakantieperiode maken. In het rooster kun je zien wie wanneer al vakantie heeft.
+
+             week 29  week 30  week 31  week 32  week 33
+Hassan         x        x
+Leyla                   x
+Tomás                            x                x
+Roos
+
+Vergeet ook de vakantieregels niet:
+• Je mag maximaal twee weken vakantie opnemen. Je mag twee weken achter elkaar vrij nemen, maar het mogen ook twee losse weken zijn.
+• Er is altijd iemand nodig aan de balie en iemand om de telefoon op te nemen. Er moeten dus altijd twee collega's aan het werk zijn.
+• Zorg ervoor dat je geen belangrijk werk hebt in de weken waarin je vakantie wilt.
+• Vanaf week 34 wordt het weer druk. Dan moet iedereen weer aan het werk zijn.
+
+Vriendelijke groet,
+Karel`,
+    questions: [
+      {
+        q: "Waarom stuurt Karel deze e-mail?",
+        opts: ["Omdat hij graag zijn vakantie wil plannen", "Omdat hij de nieuwe vakantieregels wil uitleggen", "Omdat hij het vakantierooster wil maken"],
+        a: 2,
+        exp: "Karel schrijft: 'Wil je dat deze week doen? Dan kan ik een nieuwe planning voor de vakantieperiode maken.'",
+        expPt: "Karel escreve: 'Queres fazer isso esta semana? Então posso fazer um novo planeamento para o período de férias.'",
+        expEn: "Karel writes: 'Do you want to do that this week? Then I can make a new schedule for the holiday period.'"
+      },
+      {
+        q: "Roos wil twee weken achter elkaar vrij. Wanneer kan ze het beste vakantie nemen?",
+        opts: ["In week 29 en 30", "In week 31 en 32", "In week 32 en 33", "In week 33 en 34"],
+        a: 1,
+        exp: "In week 31 heeft alleen Tomás vakantie, en in week 32 niemand. Dan zijn er altijd nog twee collega's over (Hassan en Leyla zijn klaar). Week 31+32 voldoet aan de eis van altijd 2 collega's aanwezig.",
+        expPt: "Na semana 31 só o Tomás está de férias, e na semana 32 ninguém. Ficam sempre dois colegas (Hassan e Leyla já terminaram). As semanas 31+32 cumprem o requisito de sempre 2 colegas presentes.",
+        expEn: "In week 31 only Tomás has holiday, and in week 32 nobody. There are always two colleagues left (Hassan and Leyla are done). Weeks 31+32 meet the requirement of always 2 colleagues present."
+      },
+      {
+        q: "Waarom moeten er altijd twee collega's aan het werk zijn in de zomer?",
+        opts: ["Omdat er altijd iemand bij de balie en de telefoon moet zijn", "Omdat Karel denkt dat het in de zomer druk gaat worden", "Omdat er veel belangrijk werk te doen is in de zomer"],
+        a: 0,
+        exp: "In de e-mail staat: 'Er is altijd iemand nodig aan de balie en iemand om de telefoon op te nemen.'",
+        expPt: "No e-mail diz: 'É sempre necessária uma pessoa no balcão e uma pessoa para atender o telefone.'",
+        expEn: "The email says: 'There is always someone needed at the counter and someone to answer the phone.'"
+      }
+    ]
+  }
 ];
 
 
