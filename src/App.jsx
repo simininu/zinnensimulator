@@ -4637,7 +4637,7 @@ export default function NT2Simulator() {
         color: PURPLE,
         colorLight: "#EDE7F6",
         time: 65,
-        questions: LEITURA_TEXTOS.reduce((s, tx) => s + tx.questions.length, 0),
+        questions: 25,
         tags: [t("sim_chrono"), t("sim_one_chance")],
       },
       {
@@ -4777,8 +4777,8 @@ export default function NT2Simulator() {
               {/* Rules */}
               <div style={{ background: C.bg, borderRadius: R.lg, padding: 16, marginBottom: 32, textAlign: "left" }}>
                 {[
-                  { icon: "⏱", text: `10 ${t("sim_time")}` },
-                  { icon: "📝", text: `${LEITURA_TEXTOS.reduce((s,tx) => s + tx.questions.length, 0)} ${t("sim_questions")}` },
+                  { icon: "⏱", text: `65 ${t("sim_time")}` },
+                  { icon: "📝", text: `25 ${t("sim_questions")}` },
                   { icon: "🔒", text: t("sim_one_chance") },
                   { icon: "📖", text: `${LEITURA_TEXTOS.length} textos` },
                 ].map(({ icon, text }) => (
@@ -4790,7 +4790,6 @@ export default function NT2Simulator() {
               </div>
 
               <Btn onClick={() => {
-                // Pick texts until we have ~25 questions (like real exam)
                 const shuffled = shuffle([...LEITURA_TEXTOS]);
                 const txs = [];
                 let qCount = 0;
