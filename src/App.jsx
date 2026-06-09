@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import { Trophy, Zap, RotateCcw, Layers, Headphones, MessageCircle, BookOpen, GitFork, Brain, PenLine, Clock, Target, Lock, ChevronRight, Lightbulb } from "lucide-react";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -2444,16 +2445,33 @@ const LANGUAGES = [
 ];
 
 // ─── ICONS (extracted from PNG) ──────────────────────────────────────────────
-const ICONS = {
-  trophy: "/icons/trophy.png",
-  zap: "/icons/zap.png",
-  flash: "/icons/flash.png",
-  escuta: "/icons/escuta.png",
-  quiz: "/icons/quiz.png",
-  revisao: "/icons/revisao.png",
-  leitura: "/icons/leitura.png",
-  va: "/icons/va.png",
-  conj: "/icons/conj.png",
+// Lucide icon mapping (replaces PNG illustrations)
+const LUCIDE_MAP = {
+  trophy:  { Icon: Trophy,        color: "#59962D" },
+  zap:     { Icon: Zap,           color: "#FF385C" },
+  flash:   { Icon: Layers,        color: "#FF385C" },
+  escuta:  { Icon: Headphones,    color: "#0066FF" },
+  quiz:    { Icon: Brain,         color: "#7C3AED" },
+  revisao: { Icon: RotateCcw,     color: "#FB790A" },
+  leitura: { Icon: BookOpen,      color: "#7C3AED" },
+  va:      { Icon: MessageCircle, color: "#FF385C" },
+  conj:    { Icon: GitFork,       color: "#C47B00" },
+  schrijven: { Icon: PenLine,      color: "#00A652" },
+};
+const ICONS = {}; // kept for backward compat — unused
+
+// Renders a Lucide icon inside a soft colored rounded box
+const LucideBox = ({ name, boxSize = 56, iconSize = 28, radius = 14, customColor }) => {
+  const entry = LUCIDE_MAP[name] || { Icon: BookOpen, color: "#717171" };
+  const color = customColor || entry.color;
+  const { Icon } = entry;
+  return (
+    <div style={{ width: boxSize, height: boxSize, borderRadius: radius,
+      background: color + "18", display: "flex", alignItems: "center",
+      justifyContent: "center", flexShrink: 0 }}>
+      <Icon size={iconSize} color={color} strokeWidth={1.8} />
+    </div>
+  );
 };
 
 const T = {
@@ -4776,7 +4794,7 @@ export default function NT2Simulator() {
           {/* Pratica do Dia — destaque principal */}
           {progress.praticaDate === getToday() ? (
             <div style={{ background: "#59962D", borderRadius: 20, padding: "20px 18px", marginBottom: 12, display: "flex", alignItems: "center", gap: 16, border: "2px solid #3F7520", borderBottom: "5px solid #3F7520" }}>
-              <div style={{ width: 80, height: 80, flexShrink: 0, borderRadius: 12, backgroundImage: `url(${ICONS.trophy})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+              <LucideBox name="trophy" boxSize={80} iconSize={64} />
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>{t("dash_pratica_done")}</div>
                 <div style={{ fontSize: 17, fontWeight: 700, color: "#fff", marginBottom: 2 }}>{t("pd_title")}</div>
@@ -4788,7 +4806,7 @@ export default function NT2Simulator() {
             </div>
           ) : (
             <button onClick={startPraticaDoDia} style={{ width: "100%", background: "linear-gradient(135deg, #FF385C, #D4003B)", border: "2px solid #A30029", borderBottom: "5px solid #A30029", borderRadius: 20, padding: "20px 18px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 16, marginBottom: 12, fontFamily: font }}>
-              <div style={{ width: 40, height: 64, flexShrink: 0, marginLeft: 0, backgroundImage: `url(${ICONS.zap})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+              <LucideBox name="zap" boxSize={40} iconSize={24} />
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.75)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>{t("dash_session")}</div>
                 <div style={{ fontSize: 17, fontWeight: 700, color: "#fff", marginBottom: 2 }}>{t("pd_title")}</div>
@@ -4805,7 +4823,7 @@ export default function NT2Simulator() {
           {/* Revisao Inteligente — destaque quando tiver pendente */}
           {stats.due > 0 && (
             <button onClick={startRevisao} style={{ width: "100%", background: "#FB790A", border: "2px solid #C05A00", borderBottom: "5px solid #C05A00", borderRadius: 20, padding: "16px 18px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, marginBottom: 12, fontFamily: font }}>
-              <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.revisao})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+              <LucideBox name="revisao" boxSize={56} iconSize={40} />
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.8)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 2 }}>{t("dash_priority")}</div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 2 }}>{t("act_revisao")}</div>
@@ -4922,7 +4940,7 @@ export default function NT2Simulator() {
           <div style={{ display: "grid", gap: 10, marginBottom: 24 }}>
           <button onClick={() => startFlashcards("both")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.flash})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                <LucideBox name="flash" boxSize={56} iconSize={40} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_flashcards")}</div>
@@ -4932,7 +4950,7 @@ export default function NT2Simulator() {
             </button>
           <button onClick={startEscuta} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.escuta})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                <LucideBox name="escuta" boxSize={56} iconSize={40} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_escuta")}</div>
@@ -4942,7 +4960,7 @@ export default function NT2Simulator() {
             </button>
           <button onClick={() => startFlashcards("vraag")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.va})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                <LucideBox name="va" boxSize={56} iconSize={40} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("prat_va")}</div>
@@ -4952,7 +4970,7 @@ export default function NT2Simulator() {
             </button>
           <button onClick={startLeitura} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.leitura})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                <LucideBox name="leitura" boxSize={56} iconSize={40} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_leitura")}</div>
@@ -4962,7 +4980,7 @@ export default function NT2Simulator() {
             </button>
           <button onClick={startConjugacao} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.conj})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                <LucideBox name="conj" boxSize={56} iconSize={40} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_conjugacao")}</div>
@@ -4972,7 +4990,7 @@ export default function NT2Simulator() {
             </button>
           <button onClick={startSchrijven} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ fontSize: 32 }}>✍️</div>
+                <LucideBox name="schrijven" boxSize={52} iconSize={26} customColor="#00A652" />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_schrijven")}</div>
@@ -4982,7 +5000,7 @@ export default function NT2Simulator() {
             </button>
           <button onClick={() => startQuiz("all")} style={{ background: C.white, border: "none", borderRadius: R.lg, padding: "12px 16px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: 14, border: "2px solid #EBEBEB", borderBottom: "5px solid #D0D0D0", fontFamily: font, width: "100%" }}>
               <div style={{ width: 52, height: 52, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ width: 56, height: 56, flexShrink: 0, backgroundImage: `url(${ICONS.quiz})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                <LucideBox name="quiz" boxSize={56} iconSize={40} />
               </div>
               <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <div style={{ fontSize: 15, fontWeight: 700, color: C.dark, marginBottom: 2 }}>{t("act_quiz")}</div>
@@ -5009,7 +5027,7 @@ export default function NT2Simulator() {
         id: "leitura",
         title: t("sim_leitura"),
         desc: t("sim_leitura_desc"),
-        icon: ICONS.leitura,
+        lucideIcon: "leitura",
         color: PURPLE,
         colorLight: "#EDE7F6",
         time: 65,
@@ -5020,7 +5038,7 @@ export default function NT2Simulator() {
         id: "escuta",
         title: t("sim_escuta"),
         desc: t("sim_escuta_desc"),
-        icon: ICONS.escuta,
+        lucideIcon: "escuta",
         color: C.blue,
         colorLight: C.blueLight,
         time: 8,
@@ -5145,7 +5163,7 @@ export default function NT2Simulator() {
             <AppHeader title={t("sim_leitura")} onBack={() => { setScreen("simulados"); setTab("simulados"); }} onSave={openSave} />
             <div style={{ textAlign: "center", padding: "32px 8px 24px" }}>
               <div style={{ width: 90, height: 90, borderRadius: "50%", background: "#EDE7F6", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
-                <div style={{ width: 56, height: 56, backgroundImage: `url(${ICONS.leitura})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                <LucideBox name="leitura" boxSize={56} iconSize={40} />
               </div>
               <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 8 }}>{t("sim_leitura")}</div>
               <div style={{ fontSize: 14, color: C.mid, marginBottom: 32, lineHeight: 1.6 }}>{t("sim_leitura_desc")}</div>
@@ -5153,13 +5171,18 @@ export default function NT2Simulator() {
               {/* Rules */}
               <div style={{ background: C.bg, borderRadius: R.lg, padding: 16, marginBottom: 32, textAlign: "left" }}>
                 {[
-                  { icon: "⏱", text: `65 ${t("sim_time")}` },
-                  { icon: "📝", text: `25 ${t("sim_questions")}` },
-                  { icon: "🔒", text: t("sim_one_chance") },
-                  { icon: "📖", text: `${LEITURA_TEXTOS.length} textos` },
+                  { icon: "clock", text: `65 ${t("sim_time")}` },
+                  { icon: "target", text: `25 ${t("sim_questions")}` },
+                  { icon: "lock", text: t("sim_one_chance") },
+                  { icon: "book", text: `${LEITURA_TEXTOS.length} textos` },
                 ].map(({ icon, text }) => (
                   <div key={text} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
-                    <span style={{ fontSize: 20, width: 28, textAlign: "center" }}>{icon}</span>
+                    <div style={{ width: 28, display: "flex", justifyContent: "center" }}>
+                      {icon === "clock" && <Clock size={18} color="#0066FF" strokeWidth={1.8} />}
+                      {icon === "target" && <Target size={18} color="#FF385C" strokeWidth={1.8} />}
+                      {icon === "lock" && <Lock size={18} color="#C47B00" strokeWidth={1.8} />}
+                      {icon === "book" && <BookOpen size={18} color="#7C3AED" strokeWidth={1.8} />}
+                    </div>
                     <span style={{ fontSize: 14, color: C.dark, fontWeight: 500 }}>{text}</span>
                   </div>
                 ))}
@@ -5402,7 +5425,7 @@ export default function NT2Simulator() {
             <AppHeader title={t("sim_escuta")} onBack={() => { setScreen("simulados"); setTab("simulados"); }} onSave={openSave} />
             <div style={{ textAlign: "center", padding: "32px 8px 24px" }}>
               <div style={{ width: 90, height: 90, borderRadius: "50%", background: C.blueLight, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 20px" }}>
-                <div style={{ width: 56, height: 56, backgroundImage: `url(${ICONS.escuta})`, backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center" }} />
+                <LucideBox name="escuta" boxSize={56} iconSize={40} />
               </div>
               <div style={{ fontSize: 22, fontWeight: 800, color: C.dark, marginBottom: 8 }}>{t("sim_escuta")}</div>
               <div style={{ fontSize: 14, color: C.mid, marginBottom: 32, lineHeight: 1.6 }}>{t("sim_escuta_desc")}</div>
@@ -5411,10 +5434,15 @@ export default function NT2Simulator() {
                   { icon: "⏱", text: `8 ${t("sim_time")}` },
                   { icon: "📝", text: `15 ${t("sim_questions")}` },
                   { icon: "🔇", text: t("sim_no_repeat") },
-                  { icon: "🔒", text: t("sim_one_chance") },
+                  { icon: "lock", text: t("sim_one_chance") },
                 ].map(({ icon, text }) => (
                   <div key={text} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
-                    <span style={{ fontSize: 20, width: 28, textAlign: "center" }}>{icon}</span>
+                    <div style={{ width: 28, display: "flex", justifyContent: "center" }}>
+                      {icon === "clock" && <Clock size={18} color="#0066FF" strokeWidth={1.8} />}
+                      {icon === "target" && <Target size={18} color="#FF385C" strokeWidth={1.8} />}
+                      {icon === "lock" && <Lock size={18} color="#C47B00" strokeWidth={1.8} />}
+                      {icon === "book" && <BookOpen size={18} color="#7C3AED" strokeWidth={1.8} />}
+                    </div>
                     <span style={{ fontSize: 14, color: C.dark, fontWeight: 500 }}>{text}</span>
                   </div>
                 ))}
@@ -5707,7 +5735,12 @@ export default function NT2Simulator() {
                   { icon: "🤖", text: "Avaliado pelo Claude IA" },
                 ].map(({ icon, text }) => (
                   <div key={text} style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
-                    <span style={{ fontSize: 20, width: 28, textAlign: "center" }}>{icon}</span>
+                    <div style={{ width: 28, display: "flex", justifyContent: "center" }}>
+                      {icon === "clock" && <Clock size={18} color="#0066FF" strokeWidth={1.8} />}
+                      {icon === "target" && <Target size={18} color="#FF385C" strokeWidth={1.8} />}
+                      {icon === "lock" && <Lock size={18} color="#C47B00" strokeWidth={1.8} />}
+                      {icon === "book" && <BookOpen size={18} color="#7C3AED" strokeWidth={1.8} />}
+                    </div>
                     <span style={{ fontSize: 14, color: C.dark, fontWeight: 500 }}>{text}</span>
                   </div>
                 ))}
